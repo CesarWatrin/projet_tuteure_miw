@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+html{
+    width: 100%;
+}
+
+.content {
+    width: 600px;
+    margin: 0 auto;
+    font-size: 20px;
+    margin-top: 50px;
+    p {
+        color: yellow;
+    }
+}
