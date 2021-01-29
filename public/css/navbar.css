@@ -3,7 +3,7 @@
   background-color: #020B5D;
   color: white;
   font-family: "Nunito";
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   justify-content: space-evenly;
   position: fixed;
@@ -64,8 +64,8 @@
 }
 @media screen and (min-width: 992px) {
   .navbar {
-    width: 50%;
-    max-width: 844px;
+    width: 57%;
+    max-width: 750px;
     max-height: 64px;
     border-radius: 16px;
     bottom: auto;
