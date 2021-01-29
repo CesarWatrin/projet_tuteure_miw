@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="18 18 375 140">
+    <defs>
+        <filter id="More_Sauce" x="0" y="0" width="411" height="140" filterUnits="userSpaceOnUse">
+            <feOffset dy="6" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feFlood flood-color="#96b4f4" flood-opacity="0.212"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="Sauce" x="0" y="0" width="411" height="140" filterUnits="userSpaceOnUse">
+            <feOffset dy="6" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="6" result="blur-2"/>
+            <feFlood flood-color="#bfd1f7" flood-opacity="0.212"/>
+            <feComposite operator="in" in2="blur-2"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="Groupe_70" data-name="Groupe 70" transform="translate(18 12)">
+        <g transform="matrix(1, 0, 0, 1, -18, -12)" filter="url(#More_Sauce)">
+            <path id="More_Sauce-2" data-name="More Sauce" d="M375-148.524S328.554-111,253.446-162.721c-20.56-14.158-55.512-28.362-84.175-11.264s-53.288-3.7-72.457-22.931C55.05-238.8,0-192.284,0-192.284v-46.763l375-.326Z" transform="translate(18 251.37)" fill="#bfd1f7"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, -18, -12)" filter="url(#Sauce)">
+            <path id="Sauce-2" data-name="Sauce" d="M0-148.524S46.446-111,121.554-162.721c20.56-14.158,55.512-28.362,84.175-11.264s53.288-3.7,72.457-22.931C319.95-238.8,375-192.284,375-192.284v-46.763L0-239.372Z" transform="translate(18 251.37)" fill="#eaeffc"/>
+        </g>
+    </g>
+</svg>

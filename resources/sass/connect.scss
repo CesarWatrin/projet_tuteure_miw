@@ -31,6 +31,7 @@ body {
    .imagebvn{
       width: 200px;
       height: 200px;
+      clip-path: circle();
    }
 
    .centre{
@@ -122,6 +123,11 @@ body {
 
 @media screen and (min-width: 769px){
 
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
    .connect
    {
@@ -148,8 +154,8 @@ body {
       }
 
       .imagebvn{
-         width: 80%;
-         height: 80%;
+         width: 30vw;
+         height: 30vw;
       }
 
       .formulaireConnect{
