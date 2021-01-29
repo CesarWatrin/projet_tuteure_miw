@@ -1,10 +1,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap);
-html, body {
-  width: 100%;
+body {
+  background-color: #F1F4FC;
 }
 
 .connect {
-  background-color: #F1F4FC;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -102,7 +102,7 @@ html, body {
 
 @media screen and (min-width: 769px) {
   .connect {
-    padding-top: 150px;
+    padding-top: 50px;
     flex-direction: row;
     justify-content: center;
   }

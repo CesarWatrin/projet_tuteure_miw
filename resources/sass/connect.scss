@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
-html,body{
-    width: 100%;
+body {
+   background-color: #F1F4FC;
 }
+
 .connect{
-    background-color: #F1F4FC;
-    display: flex;
-    flex-direction: column;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
 
    .head {
       width: 100%;
@@ -16,101 +17,101 @@ html,body{
       width: 100%;
    }
 
-    .titreImg{
-        font-family: 'Yeseva One', cursive;
-        color: #020B5D;
-        text-align: center;
-        margin-top: 10px;
-        font-size: 2.5rem;
-    }
-    .titreForm{
-        display: none;
-    }
+   .titreImg{
+      font-family: 'Yeseva One', cursive;
+      color: #020B5D;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 2.5rem;
+   }
+   .titreForm{
+      display: none;
+   }
 
-    .imagebvn{
-        width: 200px;
-        height: 200px;
-    }
+   .imagebvn{
+      width: 200px;
+      height: 200px;
+   }
 
-    .centre{
-        text-align: center;
+   .centre{
+      text-align: center;
 
-    }
+   }
 
-    .formulaireConnect{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 60px;
+   .formulaireConnect{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-bottom: 60px;
 
 
-        .inputText{
-            width: 80%;
-            margin: 0 auto;
-            height: 50px;
-            margin-top: 10px;
-            font-size: 1rem;
-            border: solid #475BF5 1px;
-            border-radius: 15px;
-            color: #475BF5;
-            padding-left: 20px;
-            box-shadow: 0px 2px 9px 0px rgba(150,180,244,0.20);
-        }
-        .inputText::placeholder{
-            color: #96B4F4;
+      .inputText{
+         width: 80%;
+         margin: 0 auto;
+         height: 50px;
+         margin-top: 10px;
+         font-size: 1rem;
+         border: solid #475BF5 1px;
+         border-radius: 15px;
+         color: #475BF5;
+         padding-left: 20px;
+         box-shadow: 0px 2px 9px 0px rgba(150,180,244,0.20);
+      }
+      .inputText::placeholder{
+         color: #96B4F4;
 
-        }
+      }
 
-        .button{
-            margin: 0 auto;
-            box-shadow: 0px 2px 9px 0px rgba(150,180,244,0.20);
-            height: 60px;
-            font-size: 1rem;
-            width: 70%;
-            border-radius: 15px;
-            border: none;
+      .button{
+         margin: 0 auto;
+         box-shadow: 0px 2px 9px 0px rgba(150,180,244,0.20);
+         height: 60px;
+         font-size: 1rem;
+         width: 70%;
+         border-radius: 15px;
+         border: none;
 
-        }
-        .bbleu{
-            background-color: #020B5D;
-            color: white;
-            // margin-top: 10px;
-        }
-        .brouge{
-            background-color: #E4534B;
-            color: white;
-            margin-top: 20px;
+      }
+      .bbleu{
+         background-color: #020B5D;
+         color: white;
+         // margin-top: 10px;
+      }
+      .brouge{
+         background-color: #E4534B;
+         color: white;
+         margin-top: 20px;
 
-        }
-        .bgoogle
-        {
-            background-color: white;
-            color:  #020B5D;
-            margin-top: 10px;
-            font-size: 1rem;
-        }
+      }
+      .bgoogle
+      {
+         background-color: white;
+         color:  #020B5D;
+         margin-top: 10px;
+         font-size: 1rem;
+      }
 
-        .logoGoogle
-        {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-        .ou{
-            font-size: 1rem;
-            margin-top: 10px;
-        }
+      .logoGoogle
+      {
+         width: 30px;
+         height: 30px;
+         margin-right: 10px;
+      }
+      .ou{
+         font-size: 1rem;
+         margin-top: 10px;
+      }
 
-    }
+   }
 
-    .footer{
-        background-color: darkblue;
-        height: 50px;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        color: white;
-    }
+   .footer{
+      background-color: darkblue;
+      height: 50px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      color: white;
+   }
 
 
 
@@ -122,70 +123,70 @@ html,body{
 @media screen and (min-width: 769px){
 
 
-    .connect
-    {
-        padding-top:150px;
-        flex-direction: row;
-        justify-content: center;
+   .connect
+   {
+      padding-top: 50px;
+      flex-direction: row;
+      justify-content: center;
 
-        .footer{
-            top:0;
-            background-color: #00000000;
-            color: #020B5D;
-            text-align: right;
-        }
-        .titreImg{
-            display: none;
-        }
-        .titreForm{
-            display: block;
-            font-family: 'Yeseva One', cursive;
-            color: #020B5D;
-            text-align: center;
-            margin-top: 60px;
-            font-size: 4rem;
-        }
+      .footer{
+         top:0;
+         background-color: #00000000;
+         color: #020B5D;
+         text-align: right;
+      }
+      .titreImg{
+         display: none;
+      }
+      .titreForm{
+         display: block;
+         font-family: 'Yeseva One', cursive;
+         color: #020B5D;
+         text-align: center;
+         margin-top: 60px;
+         font-size: 4rem;
+      }
 
-        .imagebvn{
-            width: 80%;
-            height: 80%;
-        }
+      .imagebvn{
+         width: 80%;
+         height: 80%;
+      }
 
-        .formulaireConnect{
-            .inputText{
-                width: 60%;
-                margin-top: 10px;
-                font-size: 1.3rem;
-                color: #475BF5;
-            }
+      .formulaireConnect{
+         .inputText{
+            width: 60%;
+            margin-top: 10px;
+            font-size: 1.3rem;
+            color: #475BF5;
+         }
 
-            .button{
-                margin: 0 auto;
-                height: 60px;
-                font-size: 1.3rem;
-                width: 50%;
-                border-radius: 15px;
-                border: none;
-            }
-            .bbleu{
-                background-color: #020B5D;
-                color: white;
-                // margin-top: 10px;
-            }
-            .brouge{
-                margin-top: 20px;
-            }
-            .bgoogle
-            {
-                margin-top: 10px;
-            }
+         .button{
+            margin: 0 auto;
+            height: 60px;
+            font-size: 1.3rem;
+            width: 50%;
+            border-radius: 15px;
+            border: none;
+         }
+         .bbleu{
+            background-color: #020B5D;
+            color: white;
+            // margin-top: 10px;
+         }
+         .brouge{
+            margin-top: 20px;
+         }
+         .bgoogle
+         {
+            margin-top: 10px;
+         }
 
-            .logoGoogle
-            {
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-            }
-        }
-    }
+         .logoGoogle
+         {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+         }
+      }
+   }
 }
