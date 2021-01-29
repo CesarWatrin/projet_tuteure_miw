@@ -13,7 +13,7 @@ nav{
 
 
 #map {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -21,4 +21,9 @@ nav{
     height : 100vh;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+
+.leaflet-control-zoom{
+    width: 30px;
 }
