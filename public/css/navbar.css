@@ -49,13 +49,6 @@
 .navbar .onglet:hover div:first-of-type span {
   color: white;
 }
-.navbar .currentPage {
-  opacity: 1;
-  cursor: pointer;
-}
-.navbar .currentPage div:first-of-type span {
-  color: white;
-}
 
 @media screen and (min-width: 768px) {
   .navbar .onglet div:last-of-type {
@@ -77,3 +70,5 @@
     padding: 5px;
   }
 }
+
+/*# sourceMappingURL=navbar.css.map */

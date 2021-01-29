@@ -1,10 +1,10 @@
-@import url(https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap);
-html, body {
-  width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+body {
+  background-color: #F1F4FC;
 }
 
 .connect {
-  background-color: #F1F4FC;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -27,6 +27,7 @@ html, body {
 .connect .imagebvn {
   width: 200px;
   height: 200px;
+  clip-path: circle();
 }
 .connect .centre {
   text-align: center;
@@ -48,12 +49,6 @@ html, body {
   color: #475BF5;
   padding-left: 20px;
   box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
-}
-.connect .formulaireConnect .inputText::-moz-placeholder {
-  color: #96B4F4;
-}
-.connect .formulaireConnect .inputText:-ms-input-placeholder {
-  color: #96B4F4;
 }
 .connect .formulaireConnect .inputText::placeholder {
   color: #96B4F4;
@@ -101,8 +96,14 @@ html, body {
 }
 
 @media screen and (min-width: 769px) {
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .connect {
-    padding-top: 150px;
+    padding-top: 50px;
     flex-direction: row;
     justify-content: center;
   }
@@ -124,8 +125,8 @@ html, body {
     font-size: 4rem;
   }
   .connect .imagebvn {
-    width: 80%;
-    height: 80%;
+    width: 30vw;
+    height: 30vw;
   }
   .connect .formulaireConnect .inputText {
     width: 60%;
@@ -157,3 +158,5 @@ html, body {
     margin-right: 10px;
   }
 }
+
+/*# sourceMappingURL=connect.css.map */

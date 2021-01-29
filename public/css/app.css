@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 *,
 *::before,
 *::after {
@@ -186,6 +186,7 @@ label,
 select,
 summary,
 textarea {
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
 
@@ -335,3 +336,5 @@ template {
 img {
   width: 100%;
 }
+
+/*# sourceMappingURL=app.css.map */
