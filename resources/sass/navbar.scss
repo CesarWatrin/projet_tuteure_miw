@@ -6,7 +6,7 @@ $corner: 16px;
    background-color: $color;
    color: white;
    font-family: 'Nunito';
-   font-size: 18px;
+   font-size: 16px;
    display: flex;
    justify-content: space-evenly;
    position: fixed;
@@ -91,15 +91,15 @@ $corner: 16px;
 @media screen and (min-width: 992px) {
    .navbar {
       // margin: 20px auto;
-      width: 50%;
-      max-width: 844px;
+      width: 57%;
+      max-width: 750px;
       max-height: 64px;
       border-radius: 16px;
       bottom: auto;
       left: auto;
       top: 20px;
       right: 20px;
-      
+
       .onglet {
          padding: 5px;
       }
