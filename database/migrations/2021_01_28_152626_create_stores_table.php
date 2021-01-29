@@ -28,7 +28,11 @@ class CreateStoresTable extends Migration
             $table->mediumText('description');
             $table->boolean('delivery');
             $table->text('delivery_conditions')->nullable();
-            $table->enum('state', ['1', '2' ,'3']);
+            $table->enum('state', ['1', '2' ,'3', '4']);
+            // 1 : magasin désactivé
+            // 2 : en attente de modération (1ère soumission)
+            // 3 : en attente de modération (#ème soumission)
+            // 4 : magasin activé
             $table->string('comments_code');
             $table->string('website')->nullable();
             $table->text('opening_hours')->nullable();
