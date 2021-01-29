@@ -30,7 +30,11 @@
 <body>
     <div id="app">
       <div class="navbar">
-         <div class="onglet" onclick="location.href='{{ url('/') }}';">
+         @if (Route::current()->uri === '/')
+            <div class="onglet currentPage" onclick="location.href='{{ url('/') }}';">
+         @else
+            <div class="onglet" onclick="location.href='{{ url('/') }}';">
+         @endif
             <div>
                <img src="../images/accueil.svg" alt="acceuil">
                <span>______</span>
@@ -39,7 +43,11 @@
                <span>Accueil</span>
             </div>
          </div>
-         <div class="onglet" onclick="location.href='{{ route('map') }}';">
+         @if (Route::current()->uri === 'map')
+            <div class="onglet currentPage" onclick="location.href='{{ route('map') }}';">
+         @else
+            <div class="onglet" onclick="location.href='{{ route('map') }}';">
+         @endif
             <div>
                <img src="../images/carte.svg" alt="carte">
                <span>______</span>
@@ -48,7 +56,11 @@
                <span>Carte</span>
             </div>
          </div>
-         <div class="onglet" onclick="location.href='#';">
+         @if (Route::current()->uri === '#')
+            <div class="onglet currentPage" onclick="location.href='#';">
+         @else
+            <div class="onglet" onclick="location.href='#';">
+         @endif
             <div>
                <img src="../images/favoris.svg" alt="favoris">
                <span>______</span>
@@ -57,7 +69,11 @@
                <span>Favoris</span>
             </div>
          </div>
-         <div class="onglet" onclick="location.href='{{ route('login') }}';">
+         @if (Route::current()->uri === 'login')
+            <div class="onglet currentPage" onclick="location.href='{{ route('login') }}';">
+         @else
+            <div class="onglet" onclick="location.href='{{ route('login') }}';">
+         @endif
             <div>
                <img src="../images/mon_compte.svg" alt="mon_compte">
                <span>______</span>

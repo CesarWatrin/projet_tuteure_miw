@@ -56,15 +56,20 @@ $corner: 16px;
       cursor: pointer;
 
       div:first-of-type {
-         padding-right: 5px;
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
 
          span {
-            font-size: 6px;
-            font-weight: bold;
+            color: white;
+         }
+      }
+   }
+
+   .currentPage {
+      opacity: 1;
+      cursor: pointer;
+
+      div:first-of-type {
+
+         span {
             color: white;
          }
       }

@@ -46,16 +46,14 @@
   opacity: 1;
   cursor: pointer;
 }
-.navbar .onglet:hover div:first-of-type {
-  padding-right: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .navbar .onglet:hover div:first-of-type span {
-  font-size: 6px;
-  font-weight: bold;
+  color: white;
+}
+.navbar .currentPage {
+  opacity: 1;
+  cursor: pointer;
+}
+.navbar .currentPage div:first-of-type span {
   color: white;
 }
 
