@@ -1,0 +1,100 @@
+$color: #020B5D;
+$corner: 16px;
+
+.navbar {
+   width: 100%;
+   background-color: $color;
+   color: white;
+   font-family: 'Nunito';
+   font-size: 18px;
+   display: flex;
+   justify-content: space-evenly;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+
+   .onglet {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      opacity: 0.5;
+
+      div {
+         margin: auto 0;
+      }
+
+      div:first-of-type {
+         padding-right: 5px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         padding: 5px;
+
+         img {
+            padding-top: 4px;
+            width: 25px;
+         }
+
+         span {
+            font-size: 6px;
+            font-family: 'Nunito-Bold';
+            font-weight: bold;
+            color: $color;
+         }
+      }
+
+      div:last-of-type {
+         padding-left: 5px;
+         display: none;
+      }
+   }
+
+   .onglet:hover {
+      opacity: 1;
+      cursor: pointer;
+
+      div:first-of-type {
+         padding-right: 5px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+
+         span {
+            font-size: 6px;
+            font-weight: bold;
+            color: white;
+         }
+      }
+   }
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (min-width: 768px) {
+   .navbar {
+      .onglet {
+         div:last-of-type {
+            display: inline;
+         }
+      }
+   }
+}
+
+// Large devices (desktops, 992px and up)
+@media screen and (min-width: 992px) {
+   .navbar {
+      // margin: 20px auto;
+      max-width: 844px;
+      max-height: 64px;
+      border-radius: 16px;
+      bottom: auto;
+      left: auto;
+      top: 20px;
+      right: 20px;
+      .onglet {
+         padding: 5px;
+      }
+   }
+}

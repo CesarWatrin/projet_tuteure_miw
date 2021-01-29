@@ -3,9 +3,9 @@
 @section('content')
 <div class="connect">
   <div class="head">
-    
+
     <h1 class="titreImg">Bienvenue</h1>
-    
+
     <div class="centre">
       <svg class="imagebvn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 185 185">
         <defs>
@@ -252,20 +252,20 @@
     <form class="formulaireConnect">
       <input type="email" id="email" class="inputText" placeholder="Adresse e-mail" required>
       <input type="password" id="password" class="inputText" placeholder="Mot de passe" required>
-      
+
       <button type="button" class="button brouge">Se connecter</button>
       <button type="button" class="button bgoogle"><img src="../images/google.svg" class="logoGoogle">Continuer avec Google</button>
       <p class="ou">— ou —</p>
       <button type="button" class="button bbleu">S'inscrire</button>
     </form>
   </div>
-  
-  
-  <div class="footer">
+
+
+  <!-- <div class="footer">
 
     <footer>
       'tite navbar sympatoche'
     </footer>
-  </div>
+  </div> -->
 </div>
 @endsection

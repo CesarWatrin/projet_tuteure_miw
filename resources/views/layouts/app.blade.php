@@ -21,6 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/map.css') }}" rel="stylesheet">
     <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
 
     <!-- Importation de LeafLet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
@@ -28,7 +29,45 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <div class="navbar">
+         <div class="onglet" onclick="location.href='{{ url('/') }}';">
+            <div>
+               <img src="../images/accueil.svg" alt="acceuil">
+               <span>______</span>
+            </div>
+            <div>
+               <span>Accueil</span>
+            </div>
+         </div>
+         <div class="onglet" onclick="location.href='{{ route('map') }}';">
+            <div>
+               <img src="../images/carte.svg" alt="carte">
+               <span>______</span>
+            </div>
+            <div>
+               <span>Carte</span>
+            </div>
+         </div>
+         <div class="onglet" onclick="location.href='#';">
+            <div>
+               <img src="../images/favoris.svg" alt="favoris">
+               <span>______</span>
+            </div>
+            <div>
+               <span>Favoris</span>
+            </div>
+         </div>
+         <div class="onglet" onclick="location.href='{{ route('login') }}';">
+            <div>
+               <img src="../images/mon_compte.svg" alt="mon_compte">
+               <span>______</span>
+            </div>
+            <div>
+               <span>Mon compte</span>
+            </div>
+         </div>
+      </div>
+        <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -38,16 +77,16 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
+
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('map') }}">Carte</a>
                         </li>
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -82,8 +121,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
+        </nav> -->
         <main>
             @yield('content')
         </main>
