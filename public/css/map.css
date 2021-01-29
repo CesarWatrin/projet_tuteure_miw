@@ -1,13 +1,7 @@
-/*html, body, .app{
-    width : 100vw !important;
-    height : 100vh !important;
-}*/
-nav {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100vw;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #map {
@@ -23,5 +17,96 @@ nav {
 }
 
 .leaflet-control-zoom {
-  width: 30px;
+  display: none;
+}
+
+.searchbar {
+  margin-top: 25px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  width: 100vw;
+  background-color: red;
+}
+.searchbar .search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80vw;
+}
+.searchbar .search input {
+  padding-left: 15px;
+  width: 100%;
+  border-radius: 15px;
+  height: 45px;
+  border: solid 1px #475BF5;
+}
+.searchbar .search button {
+  height: 45px;
+  min-width: 45px;
+  position: absolute;
+  border: 0;
+  background-color: #475BF5;
+  border-radius: 15px;
+}
+.searchbar .filter {
+  height: 45px;
+  min-width: 45px;
+  border: 0;
+  background-color: #475BF5;
+  border-radius: 15px;
+}
+
+::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #475BF5;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #475BF5;
+  opacity: 1;
+  /* Firefox */
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #475BF5;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #475BF5;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #475BF5;
+}
+
+@media screen and (min-width: 576px) {
+  .searchbar {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .leaflet-control-zoom {
+    display: inline;
+  }
+
+  main {
+    align-items: start;
+  }
+  main .searchbar {
+    margin-left: 5vw;
+    width: 35vw;
+  }
 }

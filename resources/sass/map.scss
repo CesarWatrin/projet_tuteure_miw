@@ -1,16 +1,10 @@
-/*html, body, .app{
-    width : 100vw !important;
-    height : 100vh !important;
-}*/
+@import 'variables';
 
-nav{
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100vw;
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 
 #map {
     position: absolute;
@@ -25,5 +19,79 @@ nav{
 }
 
 .leaflet-control-zoom{
-    width: 30px;
+    display: none;
+}
+
+.searchbar{
+    margin-top: 25px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    width: 100vw;
+    background-color: red;
+    .search{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 80vw;
+        input{
+            padding-left: 15px;
+            width: 100%;
+            border-radius: 15px;
+            height: 45px;
+            border: solid 1px $normal_blue;
+        }
+        button{
+            height: 45px;
+            min-width: 45px;
+            position: absolute;
+            border: 0;
+            background-color: $normal_blue;
+            border-radius: 15px;
+        }
+    }
+    .filter{
+        height: 45px;
+        min-width: 45px;
+        border: 0;
+        background-color: $normal_blue;
+        border-radius: 15px;
+    }
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $normal_blue;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $normal_blue;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $normal_blue;
+}
+
+@media screen and (min-width: 576px) {
+    .searchbar{
+        width: 90vw;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .leaflet-control-zoom{
+        display: inline;
+    }
+
+    main{
+        align-items: start;
+        .searchbar{
+            margin-left: 5vw;
+         width: 35vw;
+        }
+    }
 }
