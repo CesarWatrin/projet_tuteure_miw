@@ -64,6 +64,7 @@
 }
 @media screen and (min-width: 992px) {
   .navbar {
+    width: 50%;
     max-width: 844px;
     max-height: 64px;
     border-radius: 16px;

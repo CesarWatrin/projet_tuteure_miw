@@ -91,6 +91,7 @@ $corner: 16px;
 @media screen and (min-width: 992px) {
    .navbar {
       // margin: 20px auto;
+      width: 50%;
       max-width: 844px;
       max-height: 64px;
       border-radius: 16px;
@@ -98,6 +99,7 @@ $corner: 16px;
       left: auto;
       top: 20px;
       right: 20px;
+      
       .onglet {
          padding: 5px;
       }
