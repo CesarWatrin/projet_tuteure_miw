@@ -2,6 +2,13 @@
 
 @section ('content')
 
-<svg style="width: 200px; height:100px"><use xlink:href="images/sprite.svg#vaguefavoris"></use></svg>
+<div class="favoris_header">
+   <span class="corp">MAC-YO Corp.</span>
+   <h1>Vos Favoris</h1>
+   <div class="list_favoris">
+
+   </div>
+</div>
+<!-- <img src="../images/sky_wave.svg" alt="wave"> -->
 
 @endsection
