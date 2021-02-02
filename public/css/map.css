@@ -1,3 +1,75 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  height: 300px;
+  width: 270px;
+}
+.card .img_store {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  background-color: #ff0096;
+}
+.card .infos_store {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 50%;
+}
+.text h3 {
+  color: #020b5d;
+}
+.text .distance {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  color: #475BF5;
+}
+.text .distance svg {
+  height: 15px;
+  width: 15px;
+  fill: #475BF5;
+}
+.text .note {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  color: #FF847C;
+}
+.text .note svg {
+  height: 15px;
+  width: 15px;
+  fill: #FF847C;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+.icons svg {
+  height: 45px;
+  width: 45px;
+  fill: #FF847C;
+}
+
 main {
   display: flex;
   flex-direction: column;
