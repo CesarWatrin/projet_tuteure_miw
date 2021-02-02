@@ -14,6 +14,11 @@
         text-align: center;
     }
 
+    .header_content {
+        display: flex;
+        flex-direction: column;
+    }
+
     .main_illustration {
         width: 100%;
         position: relative;
@@ -69,7 +74,7 @@
         border: 1px solid #475BF5;
         border-radius: 16px;
         color: white;
-        transition: 0.2s;
+        //transition: 0.2s;
 
         &:hover {
             background-color: #96b4f4;
@@ -85,7 +90,7 @@
     .recherche {
         position: absolute;
         right: 36px;
-        transform: translateY(-3rem);
+        //transform: translateY(-3rem);
         padding: 0.75rem;
         width: 3rem;
         height: 3rem;
@@ -96,16 +101,89 @@
         color: #475BF5;
     }
 
-    .geoloc {
+    .geoloc svg {
+        margin-left: 0.75rem;
+    }
+}
 
-        svg {
-            margin-left: 0.75rem;
+.vagues_header {
+    filter: drop-shadow(0 6px 12px rgba(150, 180, 244, 21%));
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+
+    .index_header {
+
+        .header_content {
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            width: 122.5%;
+            right: 22.5%;
+        }
+
+        .main_illustration {
+            width: 60%;
+            position: initial;
+            //left: calc(-18.5% - 2.25rem);
+        }
+
+        /*.flex_container {
+            width: calc(768px - 4.5rem);
+            margin: 0 auto;
+        }*/
+
+        .flex_container {
+            width: 40%;
+        }
+
+        .accroche {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .recherche {
+            //right: calc((100% - 768px)/2 + 2.25rem);
+            right: 0;
         }
     }
 
 }
 
-    .vagues_header {
-        filter: drop-shadow(0 6px 12px rgba(150, 180, 244, 21%));
-        width: 100%;
+@media screen and (min-width: 992px) {
+
+    .index_header {
+
+        .header_content {
+            margin-bottom: -6rem;
+        }
+
+        .corp {
+            text-align: left;
+        }
+
+        .flex_container {
+            width: 451px;
+            margin: 0 auto;
+        }
+
+        .recherche {
+            //right: calc((100% - 768px)/2 + 2.25rem);
+            right: calc((40% - 451px)/2);
+        }
+
     }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .index_header {
+
+        .accroche {
+            font-size: 3.5rem;
+        }
+
+    }
+}

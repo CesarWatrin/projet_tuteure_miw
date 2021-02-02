@@ -64,10 +64,6 @@
 }
 @media screen and (min-width: 992px) {
   .navbar {
-    width: initial;
-  }
-
-  .navbar {
     width: 57%;
     max-width: 750px;
     max-height: 64px;
@@ -78,6 +74,7 @@
     right: 20px;
   }
   .navbar .onglet {
+    width: initial;
     padding: 5px;
   }
 }
