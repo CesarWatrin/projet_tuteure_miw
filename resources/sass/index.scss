@@ -57,7 +57,7 @@
         border-radius: 16px;
         color: #475BF5;
         padding: 0.75rem 1rem;
-        box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
+        box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
 
         &::placeholder {
             color: #96B4F4;
@@ -90,7 +90,10 @@
     .recherche {
         position: absolute;
         right: 36px;
+<<<<<<< HEAD
         //transform: translateY(-3rem);
+=======
+>>>>>>> b8b29e8e90b1d789b6fb01f25e4951cdf05ca523
         padding: 0.75rem;
         width: 3rem;
         height: 3rem;
@@ -112,6 +115,7 @@
 }
 
 @media screen and (min-width: 768px) {
+<<<<<<< HEAD
 
     .index_header {
 
@@ -171,6 +175,71 @@
         .recherche {
             //right: calc((100% - 768px)/2 + 2.25rem);
             right: calc((40% - 451px)/2);
+=======
+
+    .index_header {
+
+        .header_content {
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            width: 122.5%;
+            right: 22.5%;
+        }
+
+        .main_illustration {
+            width: 60%;
+            position: initial;
+        }
+
+        .flex_container {
+            width: 40%;
+        }
+
+        .accroche {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .recherche {
+            right: 0;
+>>>>>>> b8b29e8e90b1d789b6fb01f25e4951cdf05ca523
+        }
+
+    }
+
+}
+
+<<<<<<< HEAD
+@media screen and (min-width: 1200px) {
+
+    .index_header {
+
+        .accroche {
+            font-size: 3.5rem;
+        }
+
+    }
+=======
+@media screen and (min-width: 992px) {
+
+    .index_header {
+
+        .header_content {
+            margin-bottom: -6rem;
+        }
+
+        .corp {
+            text-align: left;
+        }
+
+        .flex_container {
+            width: 451px;
+            margin: 0 auto;
+        }
+
+        .recherche {
+            right: calc((40% - 451px)/2);
         }
 
     }
@@ -186,4 +255,5 @@
         }
 
     }
+>>>>>>> b8b29e8e90b1d789b6fb01f25e4951cdf05ca523
 }

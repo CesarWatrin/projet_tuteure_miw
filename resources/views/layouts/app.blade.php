@@ -39,7 +39,8 @@
             <div class="onglet" onclick="location.href='{{ url('/') }}';">
          @endif
             <div>
-               <img src="../images/accueil.svg" alt="acceuil">
+               <!--<img src="../images/accueil.svg" alt="acceuil">-->
+                <svg><use xlink:href="../images/sprite.svg#accueil"></use></svg>
                <span>______</span>
             </div>
             <div>
@@ -52,8 +53,9 @@
             <div class="onglet" onclick="location.href='{{ route('map') }}';">
          @endif
             <div>
-               <img src="../images/carte.svg" alt="carte">
-               <span>______</span>
+               <!--<img src="../images/carte.svg" alt="carte">-->
+                <svg><use xlink:href="../images/sprite.svg#carte"></use></svg>
+                <span>______</span>
             </div>
             <div>
                <span>Carte</span>
@@ -65,8 +67,9 @@
             <div class="onglet" onclick="location.href='{{ route('favoris') }}';">
          @endif
             <div>
-               <img src="../images/favoris.svg" alt="favoris">
-               <span>______</span>
+               <!--<img src="../images/favoris.svg" alt="favoris">-->
+                <svg><use xlink:href="../images/sprite.svg#favoris"></use></svg>
+                <span>______</span>
             </div>
             <div>
                <span>Favoris</span>
@@ -78,8 +81,9 @@
             <div class="onglet" onclick="location.href='{{ route('login') }}';">
          @endif
             <div>
-               <img src="../images/mon_compte.svg" alt="mon_compte">
-               <span>______</span>
+               <!--<img src="../images/mon_compte.svg" alt="mon_compte">-->
+                <svg><use xlink:href="../images/sprite.svg#mon_compte"></use></svg>
+                <span>______</span>
             </div>
             <div>
                <span>Mon compte</span>
