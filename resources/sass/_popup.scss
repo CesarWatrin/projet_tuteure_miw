@@ -20,15 +20,19 @@
         height: 75px;
         background-color: red;
     }
-    .popup_body{
+    .popup_body{padding-top: 25px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         width: 80%;
+        height: 50%;
         overflow-y: auto;
     }
     .popup_buttons{
+        position: absolute;
+        bottom: 135px;
+        left: 0;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -65,7 +69,7 @@
 // Medium devices (tablets, 768px and up)
 @media  screen and  (min-width: 768px) {
     .popup {
-        min-width: 25vw;
+        min-width: 25%;
     }
 }
 
