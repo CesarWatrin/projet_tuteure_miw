@@ -35,6 +35,9 @@
         justify-content: start;
         align-items: center;
         color: $normal_blue;
+        p{
+            margin: 0;
+        }
         svg{
             height: 15px;
             width: 15px;
@@ -47,6 +50,9 @@
         justify-content: start;
         align-items: center;
         color: $normal_red;
+        p{
+            margin: 0;
+        }
         svg{
             height: 15px;
             width: 15px;
