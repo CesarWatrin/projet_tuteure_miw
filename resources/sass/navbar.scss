@@ -32,9 +32,11 @@ $corner: 16px;
          align-items: center;
          padding: 5px;
 
-         img {
+         svg {
             padding-top: 4px;
-            width: 25px;
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
          }
 
          span {
