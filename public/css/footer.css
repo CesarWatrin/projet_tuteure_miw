@@ -69,28 +69,28 @@ footer {
 @media screen and (min-width: 1200px) {
   .content_footer {
     position: absolute;
-    bottom: 0;
+    bottom: -15px;
     background-color: transparent;
   }
   .content_footer p {
     text-align: left;
-    padding-left: 60px;
+    padding-left: 40px;
   }
   .content_footer p:first-child {
-    padding-left: 60px;
+    padding-left: 40px;
   }
   .content_footer .ml {
     background-color: transparent;
   }
 
   .social_media {
-    margin: 0 0 0 60px;
+    margin: 0 0 0 40px;
   }
 
   .copyright {
     padding-bottom: 20px;
   }
   .copyright p:first-child {
-    padding-left: 60px;
+    padding-left: 40px;
   }
 }

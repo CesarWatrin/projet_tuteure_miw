@@ -83,16 +83,16 @@ footer {
 
    .content_footer {
       position: absolute;
-      bottom: 0;
+      bottom: -15px;
       background-color: transparent;
 
       p {
          text-align: left;
-         padding-left: 60px;
+         padding-left: 40px;
       }
 
       p:first-child {
-         padding-left: 60px;
+         padding-left: 40px;
       }
 
       .ml {
@@ -101,14 +101,14 @@ footer {
    }
 
    .social_media {
-      margin: 0 0 0 60px;
+      margin: 0 0 0 40px;
    }
 
    .copyright {
       padding-bottom: 20px;
 
       p:first-child {
-         padding-left: 60px;
+         padding-left: 40px;
       }
    }
 }
