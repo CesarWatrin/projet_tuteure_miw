@@ -22,7 +22,8 @@
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('css/map.css') }}" rel="stylesheet">
     <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
-     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/favoris.css') }}" rel="stylesheet">
 
     <!-- Importation de LeafLet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
@@ -57,10 +58,10 @@
                <span>Carte</span>
             </div>
          </div>
-         @if (Route::current()->uri === '#')
-            <div class="onglet currentPage" onclick="location.href='#';">
+         @if (Route::current()->uri === 'favoris')
+            <div class="onglet currentPage" onclick="location.href='{{ route('favoris') }}';">
          @else
-            <div class="onglet" onclick="location.href='#';">
+            <div class="onglet" onclick="location.href='{{ route('favoris') }}';">
          @endif
             <div>
                <img src="../images/favoris.svg" alt="favoris">
