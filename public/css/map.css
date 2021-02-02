@@ -61,6 +61,20 @@ main {
   border-radius: 15px;
 }
 
+::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #475BF5;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #475BF5;
+  opacity: 1;
+  /* Firefox */
+}
+
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #475BF5;
@@ -96,5 +110,3 @@ main {
     width: 35vw;
   }
 }
-
-/*# sourceMappingURL=map.css.map */
