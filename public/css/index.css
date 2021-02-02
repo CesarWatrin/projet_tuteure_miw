@@ -50,7 +50,7 @@
   border-radius: 16px;
   color: #475BF5;
   padding: 0.75rem 1rem;
-  box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
+  box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
 }
 .index_header .inputVille::-moz-placeholder {
   color: #96B4F4;
@@ -101,12 +101,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .index_header {
-    /*.flex_container {
-        width: calc(768px - 4.5rem);
-        margin: 0 auto;
-    }*/
-  }
   .index_header .header_content {
     flex-direction: row;
     align-items: center;
