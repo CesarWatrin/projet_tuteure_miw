@@ -39,10 +39,6 @@ footer {
 
 @media screen and (min-width: 992px) {
 
-   .wave {
-
-   }
-
    .content_footer {
       position: absolute;
       bottom: -85px;
@@ -83,7 +79,7 @@ footer {
 
    .content_footer {
       position: absolute;
-      bottom: -15px;
+      bottom: 10px;
       background-color: transparent;
 
       p {
@@ -105,10 +101,12 @@ footer {
    }
 
    .copyright {
-      padding-bottom: 20px;
+      width: 100%;
+      padding: 0;
 
       p:first-child {
          padding-left: 40px;
+         margin: 0;
       }
    }
 }
