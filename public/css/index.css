@@ -48,6 +48,12 @@
   padding: 0.75rem 1rem;
   box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
 }
+.index_header .inputVille::-moz-placeholder {
+  color: #96B4F4;
+}
+.index_header .inputVille:-ms-input-placeholder {
+  color: #96B4F4;
+}
 .index_header .inputVille::placeholder {
   color: #96B4F4;
 }
@@ -91,5 +97,3 @@
   filter: drop-shadow(0 6px 12px rgba(150, 180, 244, 0.21));
   width: 100%;
 }
-
-/*# sourceMappingURL=index.css.map */
