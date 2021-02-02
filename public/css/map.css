@@ -6,12 +6,11 @@
   z-index: 2;
   height: 300px;
   width: 270px;
+  padding: 10px;
 }
 .card .img_store {
-  border-radius: 15px;
   width: 100%;
   height: auto;
-  background-color: #ff0096;
 }
 .card .infos_store {
   display: flex;
@@ -26,10 +25,11 @@
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  width: 50%;
+  width: 100%;
 }
 .text h3 {
   color: #020b5d;
+  padding-top: 10px;
 }
 .text .distance {
   display: flex;
@@ -41,10 +41,9 @@
 .text .distance p {
   margin: 0;
 }
-.text .distance svg {
+.text .distance img {
   height: 15px;
   width: 15px;
-  fill: #475BF5;
 }
 .text .note {
   display: flex;
@@ -56,10 +55,9 @@
 .text .note p {
   margin: 0;
 }
-.text .note svg {
+.text .note img {
   height: 15px;
   width: 15px;
-  fill: #FF847C;
 }
 
 .icons {
@@ -67,13 +65,12 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  width: 50%;
   height: 100%;
 }
-.icons svg {
-  height: 45px;
-  width: 45px;
-  fill: #FF847C;
+.icons img {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
 }
 
 .popup {

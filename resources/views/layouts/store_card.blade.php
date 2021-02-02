@@ -1,29 +1,29 @@
 <div class="card">
     <div class="img_store">
-    <img src="images/main_illustration.svg">
+      <img src="images/commerce.png">
     </div>
     <div class="infos_store">
         <div class="text">
-            <h3>Nom magasin</h3>
+            <h3>SPAR Gap</h3>
             <div class="distance">
-                <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
-                <p>à 3.2km</p>
+                <img src="images/cursor.svg" alt="position">
+                <p>&nbsp;à 3.2km</p>
             </div>
             <div class="note">
-                <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
-                <p>4.5/5</p>
+                <img src="images/star.svg" alt="etoile">
+                <p>&nbsp;4.5/5</p>
             </div>
         </div>
         <div class="icons">
             @if (Route::current()->uri === 'map')
-                <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
+                <img src="images/corbeille.svg" alt="corbeille">
             @endif
             @if (Route::current()->uri === '/')
-                 <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
+                 <img src="images/corbeille.svg" alt="corbeille">
                  <p>favoris</p>
             @endif
             @if (Route::current()->uri === 'favoris')
-                <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
+               <img src="images/corbeille.svg" alt="corbeille">
             @endif
         </div>
     </div>
