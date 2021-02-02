@@ -90,6 +90,10 @@ $corner: 16px;
 // Large devices (desktops, 992px and up)
 @media screen and (min-width: 992px) {
    .navbar {
+      width: initial;
+   }
+
+   .navbar {
       width: 57%;
       max-width: 750px;
       max-height: 64px;
