@@ -69,7 +69,7 @@ footer {
 @media screen and (min-width: 1200px) {
   .content_footer {
     position: absolute;
-    bottom: -15px;
+    bottom: 10px;
     background-color: transparent;
   }
   .content_footer p {
@@ -88,9 +88,11 @@ footer {
   }
 
   .copyright {
-    padding-bottom: 20px;
+    width: 100%;
+    padding: 0;
   }
   .copyright p:first-child {
     padding-left: 40px;
+    margin: 0;
   }
 }
