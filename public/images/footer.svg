@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1956" height="568" viewBox="30 0 1900 540">
+  <defs>
+    <filter id="a" x="0" y="0" width="1956" height="568" filterUnits="userSpaceOnUse">
+      <feOffset dy="-6"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#475bf5" flood-opacity=".212"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="b" x="0" y="0" width="1956" height="568" filterUnits="userSpaceOnUse">
+      <feOffset dy="-6"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-color="#0e1a85" flood-opacity=".212"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-name="Groupe 73">
+    <g filter="url(#a)">
+      <path data-name="More Sauce" d="M1938 91.27s-237.8-191.953-622.356 72.624c-105.269 72.428-284.219 145.085-430.978 57.621s-272.833 18.947-370.981 117.299C299.854 553.089 18 315.121 18 315.121v239.208l1920 1.669z" fill="#475bf5"/>
+    </g>
+    <g filter="url(#b)">
+      <path data-name="Sauce" d="M18 91.27s237.8-191.951 622.355 72.626c105.269 72.426 284.22 145.083 430.978 57.619s272.833 18.947 370.982 117.3C1656.146 553.089 1938 315.121 1938 315.121v239.208L18 555.998z" fill="#0e1a85"/>
+    </g>
+  </g>
+</svg>
