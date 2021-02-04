@@ -36,16 +36,4 @@
             <button><svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>Itinéraire</button>
         </div>
     </div>
-
-
-
-    <script>
-        var map = document.getElementById('map')
-        var popup = document.getElementsByClassName('popup')[0];
-        map.addEventListener('click', () => {
-            popup.classList.toggle('active');
-        });
-    </script>
 @endsection
-
-

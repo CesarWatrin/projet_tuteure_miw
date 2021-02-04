@@ -2,3 +2,8 @@ let carte = L.map('map', {center: [46.3630104, 2.9846608],zoom: 5, attributionCo
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(carte);
 L.control.zoom({position:'bottomright'}).addTo(carte);
 
+var map = document.getElementById('map')
+var popup = document.getElementsByClassName('popup')[0];
+map.addEventListener('click', () => {
+    popup.classList.toggle('active');
+});
