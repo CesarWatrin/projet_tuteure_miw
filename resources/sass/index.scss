@@ -1,6 +1,8 @@
+@import 'variables', 'global';
+
 .index_header {
     width: 100%;
-    background-color: #EAEFFC;
+    background-color: $bg_blue;
     padding: 0 2.25rem;
     font-family: Nunito, sans-serif;
 
@@ -8,7 +10,7 @@
         display: block;
         width: 100%;
         padding: 1.5rem 0;
-        color: #020B5D;
+        color: $dark_blue;
         font-family: "Yeseva One", serif;
         font-size: 1.5rem;
         text-align: center;
@@ -31,13 +33,13 @@
         align-items: center;
     }
 
-    .accroche, form, .inputVille {
+    .accroche, form, .champ {
         width: 100%;
     }
 
     .accroche {
         padding: 1.5rem 0;
-        color: #475BF5;
+        color: $normal_blue;
         font-family: "Yeseva One", serif;
         font-size: 2.25rem;
         font-weight: normal;
@@ -45,69 +47,25 @@
         line-height: 1;
 
         span {
+            font-family: inherit;
             display: block;
-            color: #020B5D;
+            color: $dark_blue;
         }
-    }
-
-    .inputVille {
-        height: 3rem;
-        font-size: 1.125rem;
-        border: 1px solid #475BF5;
-        border-radius: 16px;
-        color: #475BF5;
-        padding: 0.75rem 1rem;
-        box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
-
-        &::placeholder {
-            color: #96B4F4;
-        }
-    }
-
-    .bouton {
-        height: 3rem;
-        padding: 0.75rem 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #475BF5;
-        border: 1px solid #475BF5;
-        border-radius: 16px;
-        color: white;
-        //transition: 0.2s;
-
-        &:hover {
-            background-color: #96b4f4;
-        }
-    }
-
-    .icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        fill: currentColor;
-    }
-
-    .recherche {
-        position: absolute;
-        right: 36px;
-        padding: 0.75rem;
-        width: 3rem;
-        height: 3rem;
     }
 
     .separateur {
         margin: 0.5em 0;
-        color: #475BF5;
+        color: $normal_blue;
+    }
+
+    .geoloc {
+        width: initial;
+        padding: 0.75rem 1rem;
     }
 
     .geoloc svg {
         margin-left: 0.75rem;
     }
-}
-
-.vagues_header {
-    filter: drop-shadow(0 6px 12px rgba(150, 180, 244, 21%));
-    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -135,10 +93,6 @@
             font-size: 3rem;
             text-align: center;
         }
-
-        .recherche {
-            right: 0;
-        }
     }
 
 }
@@ -158,10 +112,6 @@
         .flex_container {
             width: 451px;
             margin: 0 auto;
-        }
-
-        .recherche {
-            right: calc((40% - 451px)/2);
         }
 
     }
