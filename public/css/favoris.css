@@ -1,10 +1,11 @@
 .favoris_header {
-  background-image: url("/images/sky_wave.svg");
-  background-size: cover;
   width: 100%;
-  height: 60vw;
   font-family: "Yeseva One";
   color: #020B5D;
+}
+.favoris_header .sky_wave {
+  position: absolute;
+  z-index: -1;
 }
 .favoris_header .corp {
   display: block;
@@ -16,4 +17,8 @@
 .favoris_header h1 {
   font-size: 25px;
   text-align: center;
+}
+
+.list_favoris .card {
+  margin: 0 auto;
 }
