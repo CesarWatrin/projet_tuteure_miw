@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'variables', 'global';
 
 .index_header {
     width: 100%;
@@ -33,7 +33,7 @@
         align-items: center;
     }
 
-    .accroche, form, .inputSearch {
+    .accroche, form, .champ {
         width: 100%;
     }
 
@@ -47,60 +47,10 @@
         line-height: 1;
 
         span {
+            font-family: inherit;
             display: block;
             color: $dark_blue;
         }
-    }
-
-    .inputSearch {
-        height: 3rem;
-        font-size: 1.125rem;
-        border: 1px solid $normal_blue;
-        border-radius: 16px;
-        color: $normal_blue;
-        padding: 0.75rem 1rem;
-        box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
-        transition: 0.2s;
-
-        &::placeholder {
-            color: $light_blue;
-        }
-
-        &:focus {
-            outline: none;
-            box-shadow: 0 2px 14px 0 rgba(150, 180, 244, 0.6);
-        }
-    }
-
-    .bouton {
-        height: 3rem;
-        padding: 0.75rem 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $normal_blue;
-        border: 1px solid $normal_blue;
-        border-radius: 16px;
-        color: $white;
-        //transition: 0.2s;
-
-        &:hover {
-            background-color: $light_blue;
-        }
-    }
-
-    .icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        fill: currentColor;
-    }
-
-    .buttonSearch {
-        position: absolute;
-        right: 36px;
-        padding: 0.75rem;
-        width: 3rem;
-        height: 3rem;
     }
 
     .separateur {
@@ -108,14 +58,14 @@
         color: $normal_blue;
     }
 
+    .geoloc {
+        width: initial;
+        padding: 0.75rem 1rem;
+    }
+
     .geoloc svg {
         margin-left: 0.75rem;
     }
-}
-
-.vagues_header {
-    filter: drop-shadow(0 6px 12px rgba(150, 180, 244, 21%));
-    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -143,10 +93,6 @@
             font-size: 3rem;
             text-align: center;
         }
-
-        .buttonSearch {
-            right: 0;
-        }
     }
 
 }
@@ -166,10 +112,6 @@
         .flex_container {
             width: 451px;
             margin: 0 auto;
-        }
-
-        .buttonSearch {
-            right: calc((40% - 451px)/2);
         }
 
     }
