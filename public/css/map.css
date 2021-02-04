@@ -212,6 +212,11 @@ main {
   border: 0;
   background-color: #475BF5;
   border-radius: 15px;
+  display: flex;
+}
+.searchbar .search button img {
+  width: 23px;
+  margin: auto;
 }
 .searchbar .filter {
   height: 45px;
@@ -219,6 +224,11 @@ main {
   border: 0;
   background-color: #475BF5;
   border-radius: 15px;
+  display: flex;
+}
+.searchbar .filter img {
+  width: 23px;
+  margin: auto;
 }
 
 ::-moz-placeholder {

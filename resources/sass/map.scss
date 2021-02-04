@@ -54,6 +54,12 @@ main{
             border: 0;
             background-color: $normal_blue;
             border-radius: 15px;
+            display: flex;
+
+            img {
+               width: 23px;
+               margin: auto;
+            }
         }
     }
     .filter{
@@ -62,6 +68,12 @@ main{
         border: 0;
         background-color: $normal_blue;
         border-radius: 15px;
+        display: flex;
+
+        img {
+           width: 23px;
+           margin: auto;
+        }
     }
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

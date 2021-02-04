@@ -5,9 +5,9 @@
     <div class="searchbar">
         <div class="search">
             <input type="text" placeholder="Essayer un nom de ville ...">
-            <button></button>
+            <button><img src="images/search.svg" alt="search"></button>
         </div>
-        <button class="filter"></button>
+        <button class="filter"><img src="images/filter.svg" alt="filter"></button>
     </div>
 
     <div id="map"></div>
