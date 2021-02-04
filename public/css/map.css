@@ -1,3 +1,148 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  height: 300px;
+  width: 270px;
+  padding: 10px;
+}
+.card .img_store {
+  width: 100%;
+  height: auto;
+}
+.card .infos_store {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+.text h3 {
+  color: #020b5d;
+  padding-top: 10px;
+}
+.text .distance {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  color: #475BF5;
+}
+.text .distance p {
+  margin: 0;
+}
+.text .distance img {
+  height: 15px;
+  width: 15px;
+}
+.text .note {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  color: #FF847C;
+}
+.text .note p {
+  margin: 0;
+}
+.text .note img {
+  height: 15px;
+  width: 15px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+.icons img {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: calc(100% - 1rem);
+  min-width: 100%;
+  transform: translateY(105%);
+  transition: 1s ease-in-out;
+  background-color: white;
+  z-index: 0;
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+.popup .popup_header {
+  border-radius: 25px 25px 0 0;
+  width: 100%;
+  height: 75px;
+  background-color: red;
+}
+.popup .popup_body {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 80%;
+  height: 50%;
+  overflow-y: auto;
+}
+.popup .popup_buttons {
+  position: absolute;
+  bottom: 135px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.popup .popup_buttons button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 75px;
+  border: 0;
+  border-radius: 15px;
+  background-color: #475BF5;
+  color: #FFFFFF;
+}
+.popup .popup_buttons button svg {
+  height: 25px;
+  width: 25px;
+  fill: #FFFFFF;
+}
+
+.active {
+  transform: translateY(10%);
+}
+
+@media screen and (min-width: 768px) {
+  .popup {
+    min-width: 25%;
+  }
+}
 main {
   display: flex;
   flex-direction: column;
@@ -61,6 +206,20 @@ main {
   border-radius: 15px;
 }
 
+::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #475BF5;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #475BF5;
+  opacity: 1;
+  /* Firefox */
+}
+
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #475BF5;
@@ -96,5 +255,3 @@ main {
     width: 35vw;
   }
 }
-
-/*# sourceMappingURL=map.css.map */

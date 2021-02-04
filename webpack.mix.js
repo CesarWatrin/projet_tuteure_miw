@@ -22,3 +22,9 @@ mix.js('resources/js/map.js', 'public/js')
 mix.sass('resources/sass/navbar.scss', 'public/css').sourceMaps();
 
 mix.sass('resources/sass/connect.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/favoris.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/footer.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/index.scss', 'public/css').sourceMaps();

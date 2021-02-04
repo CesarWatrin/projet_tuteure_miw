@@ -22,7 +22,9 @@
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('css/map.css') }}" rel="stylesheet">
     <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
-     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/favoris.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 
     <!-- Importation de LeafLet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
@@ -37,7 +39,8 @@
             <div class="onglet" onclick="location.href='{{ url('/') }}';">
          @endif
             <div>
-               <img src="../images/accueil.svg" alt="acceuil">
+               <!--<img src="../images/accueil.svg" alt="acceuil">-->
+                <svg><use xlink:href="../images/sprite.svg#accueil"></use></svg>
                <span>______</span>
             </div>
             <div>
@@ -50,21 +53,23 @@
             <div class="onglet" onclick="location.href='{{ route('map') }}';">
          @endif
             <div>
-               <img src="../images/carte.svg" alt="carte">
-               <span>______</span>
+               <!--<img src="../images/carte.svg" alt="carte">-->
+                <svg><use xlink:href="../images/sprite.svg#carte"></use></svg>
+                <span>______</span>
             </div>
             <div>
                <span>Carte</span>
             </div>
          </div>
-         @if (Route::current()->uri === '#')
-            <div class="onglet currentPage" onclick="location.href='#';">
+         @if (Route::current()->uri === 'favoris')
+            <div class="onglet currentPage" onclick="location.href='{{ route('favoris') }}';">
          @else
-            <div class="onglet" onclick="location.href='#';">
+            <div class="onglet" onclick="location.href='{{ route('favoris') }}';">
          @endif
             <div>
-               <img src="../images/favoris.svg" alt="favoris">
-               <span>______</span>
+               <!--<img src="../images/favoris.svg" alt="favoris">-->
+                <svg><use xlink:href="../images/sprite.svg#favoris"></use></svg>
+                <span>______</span>
             </div>
             <div>
                <span>Favoris</span>
@@ -76,72 +81,46 @@
             <div class="onglet" onclick="location.href='{{ route('login') }}';">
          @endif
             <div>
-               <img src="../images/mon_compte.svg" alt="mon_compte">
-               <span>______</span>
+               <!--<img src="../images/mon_compte.svg" alt="mon_compte">-->
+                <svg><use xlink:href="../images/sprite.svg#mon_compte"></use></svg>
+                <span>______</span>
             </div>
             <div>
                <span>Mon compte</span>
             </div>
          </div>
       </div>
-        <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('map') }}">Carte</a>
-                        </li>
-                    </ul>
-
-
-                    <ul class="navbar-nav ml-auto">
-
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
         <main>
             @yield('content')
         </main>
+
+        @if (Route::current()->uri !== 'map')
+           <footer>
+              <div class="wave">
+                <img src="../images/footer.svg" alt="footer_wave">
+              </div>
+              <div class="content_footer">
+                <p>Retrouvez-nous</p>
+                <div class="social_media">
+                     <div>
+                        <a href="#"><img src="../images/share.svg" alt="share_icon"></a>
+                     </div>
+                     <div>
+                        <a href="#"><img src="../images/facebook.svg" alt="facebook_icon"></a>
+                     </div>
+                     <div>
+                        <a href="#"><img src="../images/instagram.svg" alt="instagram_icon"></a>
+                     </div>
+                </div>
+                <p>Plan du site</p>
+                <p class="ml">Mentions légales</p>
+                <div class="copyright">
+                  <p>Copyright © 2021 MAC-YO Corp.<br>Tous droits réservés.</p>
+                </div>
+              </div>
+           </footer>
+        @endif
+
     </div>
 </body>
 </html>

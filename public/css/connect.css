@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap);
 body {
   background-color: #F1F4FC;
 }
@@ -27,7 +27,8 @@ body {
 .connect .imagebvn {
   width: 200px;
   height: 200px;
-  clip-path: circle();
+  -webkit-clip-path: circle();
+          clip-path: circle();
 }
 .connect .centre {
   text-align: center;
@@ -49,6 +50,12 @@ body {
   color: #475BF5;
   padding-left: 20px;
   box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
+}
+.connect .formulaireConnect .inputText::-moz-placeholder {
+  color: #96B4F4;
+}
+.connect .formulaireConnect .inputText:-ms-input-placeholder {
+  color: #96B4F4;
 }
 .connect .formulaireConnect .inputText::placeholder {
   color: #96B4F4;
@@ -158,5 +165,3 @@ body {
     margin-right: 10px;
   }
 }
-
-/*# sourceMappingURL=connect.css.map */

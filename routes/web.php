@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/map', 'MapController@home')->name('map');
+
+Route::get('/favoris', 'FavorisController@home')->name('favoris');

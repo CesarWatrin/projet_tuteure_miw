@@ -1,4 +1,5 @@
 .index_header {
+  width: 100%;
   background-color: #EAEFFC;
   padding: 0 2.25rem;
   font-family: Nunito, sans-serif;
@@ -11,6 +12,10 @@
   font-family: "Yeseva One", serif;
   font-size: 1.5rem;
   text-align: center;
+}
+.index_header .header_content {
+  display: flex;
+  flex-direction: column;
 }
 .index_header .main_illustration {
   width: 100%;
@@ -45,7 +50,13 @@
   border-radius: 16px;
   color: #475BF5;
   padding: 0.75rem 1rem;
-  box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
+  box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
+}
+.index_header .inputVille::-moz-placeholder {
+  color: #96B4F4;
+}
+.index_header .inputVille:-ms-input-placeholder {
+  color: #96B4F4;
 }
 .index_header .inputVille::placeholder {
   color: #96B4F4;
@@ -60,7 +71,6 @@
   border: 1px solid #475BF5;
   border-radius: 16px;
   color: white;
-  transition: 0.2s;
 }
 .index_header .bouton:hover {
   background-color: #96b4f4;
@@ -73,7 +83,6 @@
 .index_header .recherche {
   position: absolute;
   right: 36px;
-  transform: translateY(-3rem);
   padding: 0.75rem;
   width: 3rem;
   height: 3rem;
@@ -91,4 +100,46 @@
   width: 100%;
 }
 
-/*# sourceMappingURL=index.css.map */
+@media screen and (min-width: 768px) {
+  .index_header .header_content {
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    width: 122.5%;
+    right: 22.5%;
+  }
+  .index_header .main_illustration {
+    width: 60%;
+    position: initial;
+  }
+  .index_header .flex_container {
+    width: 40%;
+  }
+  .index_header .accroche {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .index_header .recherche {
+    right: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .index_header .header_content {
+    margin-bottom: -6rem;
+  }
+  .index_header .corp {
+    text-align: left;
+  }
+  .index_header .flex_container {
+    width: 451px;
+    margin: 0 auto;
+  }
+  .index_header .recherche {
+    right: calc((40% - 451px)/2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .index_header .accroche {
+    font-size: 3.5rem;
+  }
+}

@@ -32,9 +32,11 @@ $corner: 16px;
          align-items: center;
          padding: 5px;
 
-         img {
+         svg {
             padding-top: 4px;
-            width: 25px;
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
          }
 
          span {
@@ -63,17 +65,17 @@ $corner: 16px;
       }
    }
 
-   // .currentPage {
-   //    opacity: 1;
-   //    cursor: pointer;
-   //
-   //    div:first-of-type {
-   //
-   //       span {
-   //          color: white;
-   //       }
-   //    }
-   // }
+   .currentPage {
+      opacity: 1;
+      cursor: pointer;
+
+      div:first-of-type {
+
+         span {
+            color: white;
+         }
+      }
+   }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -89,6 +91,7 @@ $corner: 16px;
 
 // Large devices (desktops, 992px and up)
 @media screen and (min-width: 992px) {
+
    .navbar {
       width: 57%;
       max-width: 750px;
@@ -100,6 +103,7 @@ $corner: 16px;
       right: 20px;
 
       .onglet {
+         width: initial;
          padding: 5px;
       }
    }

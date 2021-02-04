@@ -3,6 +3,9 @@
     "/js/map.js": "/js/map.js",
     "/css/connect.css": "/css/connect.css",
     "/css/app.css": "/css/app.css",
+    "/css/favoris.css": "/css/favoris.css",
     "/css/navbar.css": "/css/navbar.css",
-    "/css/map.css": "/css/map.css"
+    "/css/map.css": "/css/map.css",
+    "/css/index.css": "/css/index.css",
+    "/css/footer.css": "/css/footer.css"
 }
