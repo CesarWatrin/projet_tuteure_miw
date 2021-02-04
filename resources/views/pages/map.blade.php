@@ -4,8 +4,8 @@
 @section('content')
     <div class="searchbar">
         <div class="search">
-            <input type="text" placeholder="Essayer un nom de ville ...">
-            <button><img src="images/search.svg" alt="search"></button>
+            <input type="text" id="inputSearch" placeholder="Essayer un nom de ville ...">
+            <button id="buttonSearch"><img src="images/search.svg" alt="search"></button>
         </div>
         <button class="filter"><img src="images/filter.svg" alt="filter"></button>
     </div>
