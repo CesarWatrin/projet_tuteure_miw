@@ -26,3 +26,23 @@ buttonSearch.addEventListener('click', nearStores);
 // map.addEventListener('click', () => {
 //     popup.classList.toggle('active');
 // });
+
+let inputSearch = document.getElementById('inputSearch');
+inputSearch.addEventListener('input', chargeVilles);
+
+function chargeVilles() {
+   if (inputSearch.value.replace(/\s+/, '').length) {
+      $.ajax({
+         url: "https://api-adresse.data.gouv.fr/search/?q="+inputSearch.value+"&limit=10",
+         success: function(data) {
+            console.log(data);
+            // recupVilles(data.features);
+         },
+         error: function(data) {
+            console.log('error when search');
+         }
+      });
+   } else {
+      list_villes.innerHTML = '';
+   }
+}
