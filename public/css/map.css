@@ -78,7 +78,7 @@
   top: 0;
   right: 0;
   height: calc(100% - 1rem);
-  min-width: 100%;
+  width: 100%;
   transform: translateY(105%);
   transition: 1s ease-in-out;
   background-color: white;
@@ -140,7 +140,11 @@
 
 @media screen and (min-width: 768px) {
   .popup {
-    min-width: 25%;
+    width: 25%;
+  }
+
+  .popup_body {
+    height: 75%;
   }
 }
 main {
