@@ -6,6 +6,7 @@
 .favoris_header .sky_wave {
   position: absolute;
   z-index: -1;
+  overflow-y: hidden;
 }
 .favoris_header .corp {
   display: block;
@@ -15,10 +16,32 @@
   text-align: center;
 }
 .favoris_header h1 {
-  font-size: 25px;
+  font-size: 40px;
   text-align: center;
+  padding: 50px;
 }
 
+.list_favoris {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .list_favoris .card {
-  margin: 0 auto;
+  margin: 0 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .list_favoris {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 992px) {
+  .favoris_header .corp {
+    text-align: left;
+    padding-left: 36px;
+  }
 }
