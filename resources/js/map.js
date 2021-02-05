@@ -102,7 +102,7 @@ function recherche() {
 function userPosition() {
    if ("geolocation" in navigator) {
          navigator.geolocation.getCurrentPosition(function(position) {
-            myPosition = L.marker([position.coords.latitude, position.coords.longitude], {icon: markerPosition}).addTo(carte);
+            L.marker([position.coords.latitude, position.coords.longitude], {icon: markerPosition}).addTo(carte);
             // carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
          });
    } else {
