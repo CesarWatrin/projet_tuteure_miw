@@ -48,6 +48,12 @@
   fill: currentColor;
 }
 
+.small_icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
 .recherche {
   position: absolute;
   right: 36px;
