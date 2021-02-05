@@ -2,6 +2,7 @@
 
 @push('styles')
     <link href="{{ asset('css/map.css') }}" rel="stylesheet">
+    <link href="{{asset('')}}"
 @endpush
 
 @section('content')

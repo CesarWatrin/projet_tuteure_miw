@@ -1,3 +1,5 @@
+@import 'global';
+
 .card{
     display: flex;
     flex-direction: column;
@@ -38,10 +40,6 @@
         p{
             margin: 0;
         }
-        img {
-            height: 15px;
-            width: 15px;
-        }
     }
     .note{
         display: flex;
@@ -52,10 +50,6 @@
         p{
             margin: 0;
         }
-        img{
-            height: 15px;
-            width: 15px;
-        }
     }
 }
 .icons{
@@ -64,9 +58,24 @@
     align-items: flex-end;
     justify-content: center;
     height: 100%;
+    color: $dark_red;
+
     img{
         height: 30px;
         width: 30px;
         margin-right: 20px;
     }
+
+    .card_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .icon {
+            width: 2rem;
+            height: 2rem;
+        }
+
+    }
+
 }
