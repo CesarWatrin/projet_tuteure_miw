@@ -36,7 +36,4 @@
             <button><svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>Itinéraire</button>
         </div>
     </div>
-    <script>
-        document.getElementById()
-    </script>
 @endsection
