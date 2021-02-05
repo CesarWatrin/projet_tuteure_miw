@@ -1,13 +1,24 @@
 @extends('layouts.app')
 
+@push('styles')
+    <link href="{{ asset('css/map.css') }}" rel="stylesheet">
+    <link href="{{asset('')}}"
+@endpush
 
 @section('content')
     <div class="searchbar">
         <div class="search">
-            <input type="text" placeholder="Essayer un nom de ville ...">
-            <button></button>
+            <!--<input type="text" id="inputSearch" placeholder="Essayer un nom de ville ...">
+            <button id="buttonSearch"><img src="images/search.svg" alt="search"></button>-->
+            <button class="bouton recherche" id="buttonSearch">
+                <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
+            </button>
+            <input type="text" class="champ champRecherche" id="inputSearch" placeholder="Essayez un nom de ville..."/>
         </div>
-        <button class="filter"></button>
+        <button class="bouton filter">
+            <!--<img src="images/filter.svg" alt="filter">-->
+            <svg class="icon"><use xlink:href="images/sprite.svg#filter"></use></svg>
+        </button>
     </div>
 
     <div id="map"></div>

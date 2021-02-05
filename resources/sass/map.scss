@@ -1,4 +1,4 @@
-@import 'variables', 'store_card','popup';
+@import 'global', 'store_card','popup', 'markercluster';
 
 main{
     display: flex;
@@ -22,8 +22,7 @@ main{
     display: none;
 }
 
-.searchbar{
-    position: absolute;
+.searchbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,47 +33,23 @@ main{
     position: fixed;
     top: 20px;
     left: 20px;
-    .search{
+
+    .search {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        width: 80%;
-        input{
-            padding-left: 15px;
-            width: 100%;
-            border-radius: 15px;
-            height: 45px;
-            border: solid 1px $normal_blue;
-        }
-        button{
-            height: 45px;
-            min-width: 45px;
-            position: absolute;
-            border: 0;
-            background-color: $normal_blue;
-            border-radius: 15px;
-        }
+        width: calc(100% - 3.5rem);
     }
-    .filter{
-        height: 45px;
-        min-width: 45px;
-        border: 0;
-        background-color: $normal_blue;
-        border-radius: 15px;
+
+    .recherche {
+        right: 3.5rem;
     }
-}
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: $normal_blue;
-    opacity: 1; /* Firefox */
-}
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: $normal_blue;
-}
+    .champRecherche {
+        width: 100%;
+    }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-    color: $normal_blue;
 }
 
 

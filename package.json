@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.6.0",
+        "leaflet.markercluster": "^1.4.1",
         "resolve-url-loader": "^3.1.2"
     }
 }
