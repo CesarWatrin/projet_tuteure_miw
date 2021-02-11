@@ -23,4 +23,5 @@ Route::get('/map', 'MapController@home')->name('map');
 
 Route::get('/favoris', 'FavorisController@home')->name('favoris');
 
+Route::get('/account', 'AccountController@home')->name('account');
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');

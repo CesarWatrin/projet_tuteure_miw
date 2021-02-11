@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  font-family: "Nunito", sans-serif;
+}
+.user .waves {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+.user a {
+  display: flex;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.user #modif {
+  color: #E4534B;
+}
+.user #logout {
+  color: #020B5D;
+}
+.user a p {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.user .info {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.user .info .titre {
+  font-family: "Yeseva One", cursive;
+}
+.user .info .imgUser {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+}
+.user .info .imagepp {
+  width: 100%;
+  border-radius: 200px;
+}
+.user .info p {
+  font-size: 2rem;
+  margin-top: 10px;
+  word-wrap: break-word;
+  color: #020B5D;
+}
+.user .info .name span {
+  padding: 0 5px;
+}
+.user .info .orange {
+  color: #E4534B;
+}
+.user .info .separation {
+  width: 100px;
+  border: solid #E4534B 1px;
+}
+.user .modout {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 769px) {
+  .user {
+    width: 100%;
+  }
+  .user .modout {
+    justify-content: left;
+  }
+  .user #modif {
+    margin-left: 20px;
+  }
+  .user #modif:hover {
+    color: white;
+  }
+  .user #logout {
+    margin-left: 20px;
+  }
+}

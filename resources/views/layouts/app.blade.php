@@ -25,6 +25,7 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/favoris.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/account.css') }}" rel="stylesheet">
 
 @stack('styles')
 
