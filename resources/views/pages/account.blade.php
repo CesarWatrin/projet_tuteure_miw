@@ -3,11 +3,11 @@
 @section('content')
 <div class="user">
 <img class="waves" src="images/sky_wave.svg">
-  
+
   <div class="modout">
-    
+
     <a href="#" id="modif">
-      
+
     <svg xmlns="http://www.w3.org/2000/svg" class="edit" width="18.001" height="20" viewBox="0 0 28.001 30">
       <g id="Expanded" transform="translate(-2 0)">
         <g id="Groupe_90" data-name="Groupe 90">
@@ -33,7 +33,9 @@
       <p>Modifier</p>
     </a>
 
-    <a href="#" id="logout">
+    <a href="{{ route('logout') }}"
+       onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+       id="logout">
     <svg xmlns="http://www.w3.org/2000/svg" class="logout" width="23.695" height="20" viewBox="0 0 33.695 30">
       <g id="noun_Leave_1796639" transform="translate(-4 -4)">
         <g id="Groupe_91" data-name="Groupe 91" transform="translate(4 4)">
@@ -45,20 +47,24 @@
     <p>Se Déconnecter</p>
     </a>
 
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          @csrf
+      </form>
+
   </div>
-  
-  
+
+
   <div class="info">
     <p class="titre">Votre Compte</p>
     <div class="imgUser">
       <img class="imagepp" src="images/image.jpg"/>
     </div>
-    
-    <p class="name">Annie<span class="orange">MALE</span></p>
+
+    <p class="name">{{ $user->firstname }}<span class="orange">{{ $user->surname }}</span></p>
     <hr class="separation">
-    <p class="tel">06.07.08.09.10</p>
+    <p class="tel">{{ join('.', str_split($user->phonenumber, 2)) }}</p>
     <hr class="separation">
-    <p class="mail">annie.male<span class="orange">@</span>gmail.com</p>
+    <p class="mail">{{ explode('@', $user->email)[0] }}<span class="orange">@</span>{{ explode('@', $user->email)[1] }}</p>
   </div>
 
 
