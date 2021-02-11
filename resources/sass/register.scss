@@ -1,0 +1,14 @@
+#register_form {
+    input[type="radio"] {
+        appearance: checkbox;
+    }
+
+    .input_row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input_error {
+        color: red;
+    }
+}

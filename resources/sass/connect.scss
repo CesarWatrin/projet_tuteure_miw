@@ -64,20 +64,35 @@ body {
       }
 
       .button{
+          display: flex;
+          justify-content: center;
+          align-items: center;
          margin: 0 auto;
-         box-shadow: 0px 2px 9px 0px rgba(150,180,244,0.20);
          height: 60px;
          font-size: 1rem;
          width: 70%;
          border-radius: 15px;
          border: none;
+          transition: 0.2s;
+
+          &:hover {
+              text-decoration: none;
+
+          }
 
       }
-      .bbleu{
-         background-color: #020B5D;
-         color: white;
-         // margin-top: 10px;
+      .bbleu {
+          background-color: #020B5D;
+          box-shadow: 0 2px 9px 0 rgb(2, 11, 93, 0.2);
+          color: white;
+          // margin-top: 10px;
+
+          &:hover {
+              box-shadow: 0 2px 9px 0 rgb(2, 11, 93, 0.4);
+
+          }
       }
+
       .brouge{
          background-color: #E4534B;
          color: white;

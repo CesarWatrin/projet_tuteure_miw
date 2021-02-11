@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-family: 'Nunito', sans-serif;
+
+
+    .waves
+    {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+    }
+
+    a{
+        display: flex;
+        // font-family: 'Yeseva One', cursive;
+        font-weight: bold;
+        margin-top: 5px;
+
+    }
+    #modif
+    {
+        color:  #E4534B;
+    }
+    #logout{
+        color: #020B5D;
+    }
+    a p {
+        // margin-top: 5px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    
+    .info{
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        .titre{
+            font-family: 'Yeseva One', cursive;
+        }
+        .imgUser{
+            width: 200px;
+            height: 200px;
+            border-radius: 50px;
+        }
+        .imagepp{
+            width: 100%;
+            border-radius: 200px;
+        }
+
+        p{
+            font-size: 2rem;
+            margin-top: 10px;
+            word-wrap: break-word;
+            color: #020B5D;
+        }
+        .name{
+
+            span{
+                padding: 0 5px;
+            }
+        }
+        .orange{
+
+            color: #E4534B;
+        }
+        .separation{
+            width: 100px;
+            border: solid #E4534B 1px;
+        }
+
+    }
+    .modout
+    {
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+}
+
+@media screen and (min-width: 769px){
+    
+    .user{
+        width: 100%;
+
+        .modout
+        {
+            justify-content: left;
+        }
+        #modif
+        {
+            margin-left: 20px;
+        }
+        #modif:hover
+        {
+            color: white;
+        }
+
+        #logout{
+            
+            margin-left: 20px;
+        }
+    }
+
+    
+    
+}

@@ -19,7 +19,7 @@
       <button type="button" class="button brouge">Se connecter</button>
       <button type="button" class="button bgoogle"><img src="../images/google.svg" class="logoGoogle">Continuer avec Google</button>
       <p class="ou">— ou —</p>
-      <button type="button" class="button bbleu">S'inscrire</button>
+      <a href="{{ route('register') }}" class="button bbleu">S'inscrire</a>
     </form>
   </div>
 
