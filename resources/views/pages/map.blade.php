@@ -13,7 +13,10 @@
             <button class="bouton recherche" id="buttonSearch">
                 <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
             </button>
-            <input type="text" class="champ champRecherche" id="inputSearch" placeholder="Essayez un nom de ville..."/>
+            <div class="champRecherche">
+               <input type="text" class="champ " id="inputSearch" placeholder="Essayez un nom de ville..."/>
+               <div id="autocomplete"></div>
+            </div>
         </div>
         <button class="bouton filter">
             <!--<img src="images/filter.svg" alt="filter">-->

@@ -417,9 +417,47 @@ main {
 }
 .searchbar .recherche {
   right: 3.5rem;
+  position: absolute;
+  z-index: 2;
+  right: 56px;
 }
 .searchbar .champRecherche {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.searchbar .champRecherche input {
+  width: 100%;
+}
+
+.filter {
+  z-index: 1;
+}
+
+#autocomplete {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: calc(100% + 3.5rem);
+  background-color: rgba(71, 91, 245, 0.2);
+  border-radius: 16px;
+}
+#autocomplete p:first-child {
+  margin-top: 60px;
+}
+#autocomplete p:last-child:hover {
+  border-radius: 0px 0px 16px 16px;
+}
+#autocomplete p {
+  color: #020B5D;
+  padding: 10px 10px 10px 10px;
+  margin: 0;
+}
+#autocomplete p:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 992px) {
