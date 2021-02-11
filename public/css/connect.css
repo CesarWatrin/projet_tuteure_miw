@@ -61,17 +61,27 @@ body {
   color: #96B4F4;
 }
 .connect .formulaireConnect .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
   height: 60px;
   font-size: 1rem;
   width: 70%;
   border-radius: 15px;
   border: none;
+  transition: 0.2s;
+}
+.connect .formulaireConnect .button:hover {
+  text-decoration: none;
 }
 .connect .formulaireConnect .bbleu {
   background-color: #020B5D;
+  box-shadow: 0 2px 9px 0 rgba(2, 11, 93, 0.2);
   color: white;
+}
+.connect .formulaireConnect .bbleu:hover {
+  box-shadow: 0 2px 9px 0 rgba(2, 11, 93, 0.4);
 }
 .connect .formulaireConnect .brouge {
   background-color: #E4534B;

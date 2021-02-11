@@ -1,12 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/map.js": "/js/map.js",
-    "/css/account.css": "/css/account.css",
     "/css/connect.css": "/css/connect.css",
     "/css/app.css": "/css/app.css",
     "/css/favoris.css": "/css/favoris.css",
     "/css/navbar.css": "/css/navbar.css",
     "/css/map.css": "/css/map.css",
+    "/css/register.css": "/css/register.css",
     "/css/index.css": "/css/index.css",
     "/css/footer.css": "/css/footer.css"
 }
