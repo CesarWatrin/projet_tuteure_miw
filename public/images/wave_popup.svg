@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="377" height="103" viewBox="0 0 377 103">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_61" data-name="Rectangle 61" width="377" height="103" transform="translate(22 315.998)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_101" data-name="Groupe 101" transform="translate(399 418.998) rotate(180)" clip-path="url(#clip-path)">
+    <g id="Texture" transform="translate(22 339.791)">
+      <path id="That_s_enough_" data-name="That&apos;s enough!" d="M0-74.584s46.7-16.641,122.212,6.3c20.672,6.278,55.812,12.577,84.632,4.995s53.576,1.643,72.848,10.168c41.99,18.579,96.758-2.067,96.758-2.067v138S267.681,94.793,214.762,72.36C193.489,63.344,168.754,38,115.867,57.77S0,58.491,0,58.491Z" transform="translate(0 80.416)" fill="#020b5d"/>
+      <path id="More_Sauce" data-name="More Sauce" d="M376.45-74.584s-46.7-16.641-122.212,6.3c-20.672,6.278-55.812,12.577-84.632,4.995S116.03-61.65,96.758-53.124C54.768-34.548,0-55.19,0-55.19V13.6S65.692,53.309,128.679,28.946c32.761-12.669,96.972,23.831,153.8,6.872s93.97,22.673,93.97,22.673Z" transform="translate(0 88.723)" fill="#0e1a85"/>
+      <path id="Sauce" d="M0,58.818s46.794,14.427,122.467-5.455c20.715-5.443,55.929-10.9,84.809-4.33s53.688-1.424,73-8.816c42.077-16.1,96.96,1.792,96.96,1.792V-77.644s-109-10.387-162.026,9.057c-21.317,7.817-46.1,29.787-99.1,12.651S0-56.557,0-56.557Z" transform="translate(0 94.457)" fill="#475bf5" opacity="0.186"/>
+    </g>
+  </g>
+</svg>
