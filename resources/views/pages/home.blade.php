@@ -1,5 +1,9 @@
 @extends ('layouts.app')
 
+@push('styles')
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+@endpush
+
 @section ('content')
 
     <header class="index_header">
@@ -12,7 +16,7 @@
                     <button class="bouton recherche">
                         <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
                     </button>
-                    <input type="text" class="inputVille" placeholder="Essayez un nom de ville..."/>
+                    <input type="text" class="champ" placeholder="Essayez un nom de ville..."/>
                 </form>
                 <span class="separateur">— ou —</span>
                 <button class="bouton geoloc">

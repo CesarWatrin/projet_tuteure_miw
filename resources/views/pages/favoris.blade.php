@@ -13,6 +13,4 @@
    </div>
 </div>
 
-<!-- <img src="../images/sky_wave.svg" alt="wave"> -->
-
 @endsection
