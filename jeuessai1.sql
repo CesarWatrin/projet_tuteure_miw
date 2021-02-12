@@ -1,7 +1,7 @@
-INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'utilisateur', NULL, NULL),
-(2, 'commercant', NULL, NULL),
-(3, 'moderateur', NULL, NULL);
+INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Utilisateur', 'Vous souhaitez parcourir les commerces disponibles sur la carte, synchroniser vos commerces favoris, et laisser des avis.', NULL, NULL),
+(2, 'Commerçant', 'Vous avez un ou plusieurs commerces et vous souhaitez les faire apparaître sur notre plateforme.', NULL, NULL),
+(3, 'Modérateur', NULL, NULL, NULL);
 
 INSERT INTO `users` (`id`, `surname`, `firstname`, `phonenumber`, `email`, `password`, `remember_token`, `email_verified_at`, `created_at`, `updated_at`, `role_id`) VALUES
 (123456, 'Auboisdormant', 'Abdel', '0623568974', 'abdel-93@gmail.com', '5b3c97354ff11e0a9afa9b37529adbfd', NULL, NULL, NULL, NULL, 1),
