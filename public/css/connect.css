@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap);
 body {
-  background-color: #F1F4FC;
+  background-color: #eaeffc;
 }
 
 .connect {
@@ -16,7 +16,7 @@ body {
 }
 .connect .titreImg {
   font-family: "Yeseva One", cursive;
-  color: #020B5D;
+  color: #020b5d;
   text-align: center;
   margin-top: 10px;
   font-size: 2.5rem;
@@ -37,28 +37,31 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-top: 10px;
   padding-bottom: 60px;
 }
 .connect .formulaireConnect .inputText {
   width: 80%;
-  margin: 0 auto;
+  margin: 5px auto;
   height: 50px;
-  margin-top: 10px;
   font-size: 1rem;
   border: solid #475BF5 1px;
   border-radius: 15px;
   color: #475BF5;
-  padding-left: 20px;
-  box-shadow: 0px 2px 9px 0px rgba(150, 180, 244, 0.2);
+  padding: 0 20px;
+  box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
 }
 .connect .formulaireConnect .inputText::-moz-placeholder {
-  color: #96B4F4;
+  color: #96b4f4;
 }
 .connect .formulaireConnect .inputText:-ms-input-placeholder {
-  color: #96B4F4;
+  color: #96b4f4;
 }
 .connect .formulaireConnect .inputText::placeholder {
-  color: #96B4F4;
+  color: #96b4f4;
+}
+.connect .formulaireConnect .input_error {
+  color: #e4534b;
 }
 .connect .formulaireConnect .button {
   display: flex;
@@ -76,7 +79,7 @@ body {
   text-decoration: none;
 }
 .connect .formulaireConnect .bbleu {
-  background-color: #020B5D;
+  background-color: #020b5d;
   box-shadow: 0 2px 9px 0 rgba(2, 11, 93, 0.2);
   color: white;
 }
@@ -84,13 +87,18 @@ body {
   box-shadow: 0 2px 9px 0 rgba(2, 11, 93, 0.4);
 }
 .connect .formulaireConnect .brouge {
-  background-color: #E4534B;
+  background-color: #e4534b;
+  box-shadow: 0 2px 9px 0 rgba(228, 83, 75, 0.2);
   color: white;
   margin-top: 20px;
 }
+.connect .formulaireConnect .brouge:hover {
+  box-shadow: 0 2px 9px 0 rgba(228, 83, 75, 0.4);
+  cursor: pointer;
+}
 .connect .formulaireConnect .bgoogle {
   background-color: white;
-  color: #020B5D;
+  color: #020b5d;
   margin-top: 10px;
   font-size: 1rem;
 }
@@ -112,7 +120,7 @@ body {
   color: white;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .head {
     display: flex;
     align-items: center;
@@ -127,7 +135,7 @@ body {
   .connect .footer {
     top: 0;
     background-color: #00000000;
-    color: #020B5D;
+    color: #020b5d;
     text-align: right;
   }
   .connect .titreImg {
@@ -136,7 +144,7 @@ body {
   .connect .titreForm {
     display: block;
     font-family: "Yeseva One", cursive;
-    color: #020B5D;
+    color: #020b5d;
     text-align: center;
     margin-top: 60px;
     font-size: 4rem;
@@ -148,19 +156,19 @@ body {
   .connect .formulaireConnect .inputText {
     width: 60%;
     margin-top: 10px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #475BF5;
   }
   .connect .formulaireConnect .button {
     margin: 0 auto;
     height: 60px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     width: 50%;
     border-radius: 15px;
     border: none;
   }
   .connect .formulaireConnect .bbleu {
-    background-color: #020B5D;
+    background-color: #020b5d;
     color: white;
   }
   .connect .formulaireConnect .brouge {
