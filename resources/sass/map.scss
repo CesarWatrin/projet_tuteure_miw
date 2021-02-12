@@ -29,6 +29,7 @@ main{
     align-items: center;
     z-index: 1;
     width: calc(100% - 40px);
+    max-width: 560px;
     //background-color: red;
     position: fixed;
     top: 20px;

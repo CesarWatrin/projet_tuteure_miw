@@ -388,6 +388,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./resources/sass/account.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/account.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9hY2NvdW50LnNjc3M/NzY0NCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEiLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9hY2NvdW50LnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/sass/account.scss\n");
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -568,7 +579,8 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 			["./resources/sass/favoris.scss"],
 /******/ 			["./resources/sass/footer.scss"],
 /******/ 			["./resources/sass/index.scss"],
-/******/ 			["./resources/sass/register.scss"]
+/******/ 			["./resources/sass/register.scss"],
+/******/ 			["./resources/sass/account.scss"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

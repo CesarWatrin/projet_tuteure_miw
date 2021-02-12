@@ -79,7 +79,7 @@
   align-items: center;
   z-index: 2;
   height: 300px;
-  width: 270px;
+  max-width: 270px;
   padding: 10px;
 }
 .card .img_store {
