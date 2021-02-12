@@ -26,7 +26,7 @@
 
 <div id="map"></div>
 
-<div class="popup active">
+<div class="popup">
    <div class="popup_header">
       <img src="images/wave_popup.svg" alt="wave-image">
    </div>
