@@ -86,7 +86,7 @@ async function nearStores(coord) {
          }
          store_desc.textContent = store.description;
          store_schedule.textContent = store.opening_hours;
-         store_tel.textContent = store.phonenumber;
+         store_tel.textContent = '📞 ' + store.phonenumber;
 
          if (popup.classList[1] === undefined) {
             popup.classList.value = 'popup active';
