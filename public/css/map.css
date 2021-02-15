@@ -40,6 +40,7 @@
 }
 .bouton:hover {
   background-color: #96b4f4;
+  cursor: pointer;
 }
 
 .icon {
@@ -114,6 +115,7 @@
 }
 .bouton:hover {
   background-color: #96b4f4;
+  cursor: pointer;
 }
 
 .icon {
