@@ -63,6 +63,41 @@ body {
 .connect .formulaireConnect .input_error {
   color: #e4534b;
 }
+.connect .formulaireConnect .roles_row {
+  display: flex;
+  flex-direction: column;
+}
+.connect .formulaireConnect .roles_row .role_button {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.connect .formulaireConnect .roles_row .role_radio {
+  display: none;
+}
+.connect .formulaireConnect .roles_row .role_radio:checked ~ .role_label {
+  color: white;
+  background-color: #475BF5;
+}
+.connect .formulaireConnect .roles_row .role_label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  border: solid #475BF5 1px;
+  border-radius: 15px;
+  color: #475BF5;
+  background-color: #FFFFFF;
+  padding: 5px 20px;
+  box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
+}
+.connect .formulaireConnect .roles_row .role_titre {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 .connect .formulaireConnect .button {
   display: flex;
   justify-content: center;
@@ -152,9 +187,13 @@ body {
   .connect .imagebvn {
     width: 30vw;
     height: 30vw;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .connect .formulaireConnect .inputText {
-    width: 60%;
+    max-width: 500px;
     margin-top: 10px;
     font-size: 1.2rem;
     color: #475BF5;
