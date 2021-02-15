@@ -19,8 +19,8 @@
       </div>
    </div>
    <button class="bouton filter">
-      <!--<img src="images/filter.svg" alt="filter">-->
-      <svg class="icon"><use xlink:href="images/sprite.svg#filter"></use></svg>
+      <img id="filter_cancel" src="images/filter.svg" alt="filter">
+      <!-- <svg class="icon"><use xlink:href="images/sprite.svg#filter"></use></svg> -->
    </button>
 </div>
 
@@ -49,12 +49,8 @@
          <div class="popup_contact">
             <h4>Nous contacter : </h4>
             <p id="store_tel">📞 06 01 32 59 89</p>
-            <p>📧 magasin.macyo@hotmail.com</p>
-            <div class="fb-page"
-            data-href="https://www.facebook.com/facebook"
-            data-adapt-container-width="true"
-            data-hide-cover="false"
-            data-show-facepile="false"></div>
+            <p id="store_mail">📧 magasin.macyo@hotmail.com</p>
+            <p>🌍 <a id="store_website" target="_blank" href="https://cesarwatrin.fr">Accéder au site web</a></p>
          </div>
       </div>
    </div>
@@ -63,13 +59,10 @@
          <img src="images/catalogue.svg" alt="catalogue">
          <p>Catalogue</p>
       </div>
-      <div>
+      <a id='popup_gmaps' href="https://googlemaps.com" target="_blank">
          <img src="images/cursorPopup.svg" alt="position">
          <p>Itinéraire</p>
-      </div>
-      <div>
-         <p>Fermer</p>
-      </div>
+      </a>
    </div>
 </div>
 @endsection
