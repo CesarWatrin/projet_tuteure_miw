@@ -58,3 +58,18 @@ INSERT INTO `favorites` (`user_id`, `store_id`, `created_at`, `updated_at`) VALU
 (123459, 2, NULL, NULL),
 (123459, 5, NULL, NULL);
 
+INSERT INTO `ratings` (`user_id`, `store_id`, `rating`, `comment`, `created_at`, `updated_at`) VALUES
+(123456, 1, 5, NULL, NULL, NULL),
+(123456, 2, 5, 'Les tacos sont délicieux !', NULL, NULL),
+(123456, 3, 3, 'Bien mangé, mais le service était trop long.', NULL, NULL),
+(123456, 7, 4, NULL, NULL, NULL),
+(123457, 1, 5, NULL, NULL, NULL),
+(123457, 4, 1, 'Une honte!!!', NULL, NULL),
+(123457, 5, 5, 'Bien mieux que l\'autre restau chinois de la ville', NULL, NULL),
+(123458, 2, 4, NULL, NULL, NULL),
+(123458, 7, 4, NULL, NULL, NULL),
+(123458, 8, 4, NULL, NULL, NULL),
+(123459, 2, 5, 'Très bon rapport qualité/prix.', NULL, NULL),
+(123459, 4, 5, 'J\'ai apprécié mon repas, personnel serviable.', NULL, NULL),
+(123459, 6, 4, 'Rien à dire, tout est super.', NULL, NULL),
+(123459, 8, 2, 'J\'ai attendu 1h avant de me faire servir !!', NULL, NULL);

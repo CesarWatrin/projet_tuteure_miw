@@ -28,4 +28,8 @@ class Store extends Model
     public function favorited_by() {
         return $this->belongstoMany(User::class, 'favorites');
     }
+
+    public function ratings() {
+        return $this->hasMany(Rating::class);
+    }
 }
