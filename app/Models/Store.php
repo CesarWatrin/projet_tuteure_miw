@@ -24,4 +24,8 @@ class Store extends Model
     public function manager() {
         return $this->belongsTo(User::class);
     }
+
+    public function favorited_by() {
+        return $this->belongstoMany(User::class, 'favorites');
+    }
 }

@@ -47,3 +47,14 @@ INSERT INTO `stores` (`id`, `name`, `address1`, `address2`, `lat`, `lon`, `phone
 (7, 'Proxi de l\'Adret', 'Route de Veynes', 'Cité de l\'Adret', 44.558181, 6.069126, '0981487199', 'proxigap@gmail.com', '72200393609038', 'Epicerie - boulangerie', 0, NULL, '4', '64de7f6af7', 'https://boulangerie-proxi-de-ladret-en-passant.business.site/', 'Tous les jours: 9h-18h', 5061, 2, 6, 123461, NULL, NULL),
 (8, 'Boucherie Perrot', '6 Rue Tronchet', '', 45.769584, 4.844217, '0981487200', 'perrotviande@boucher.com', '72200393609037', 'Boucherie Familiale', 0, NULL, '4', '64de7f6af8', 'https://www.boucherie-perrot-lyon.fr/', 'Tous les jours: 6h-19h30', 69380, 3, 8, 123462, NULL, NULL),
 (9, 'Boucherie Djemai', '31 Rue Sébastien Gryphe', NULL, 45.752280, 4.843948, '0981487201', 'abdel@gmail.com', '72200393609038', 'Boucherie Halal', 0, NULL, '4', '64de7f6af9', 'http://boucherie-djemai.business.site/', 'Tous les jours: 8h30-19h30', 69380, 3, 9, 123456, NULL, NULL);
+
+INSERT INTO `favorites` (`user_id`, `store_id`, `created_at`, `updated_at`) VALUES
+(123456, 2, NULL, NULL),
+(123456, 5, NULL, NULL),
+(123456, 8, NULL, NULL),
+(123457, 1, NULL, NULL),
+(123457, 3, NULL, NULL),
+(123458, 5, NULL, NULL),
+(123459, 2, NULL, NULL),
+(123459, 5, NULL, NULL);
+
