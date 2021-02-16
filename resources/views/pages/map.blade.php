@@ -14,12 +14,16 @@
          <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
       </button>
       <div class="champRecherche">
-         <input type="text" class="champ " id="inputSearch" placeholder="Essayez un nom de ville..."/>
+         <input type="text" class="champ " id="inputSearch" placeholder="Rechercher sur la carte"/>
          <div id="autocomplete"></div>
       </div>
    </div>
    <button class="bouton filter">
       <img id="filter_cancel" src="images/filter.svg" alt="filter">
+      <!-- <svg class="icon"><use xlink:href="images/sprite.svg#filter"></use></svg> -->
+   </button>
+   <button class="bouton emptySearch">
+      <img src="images/cancelSearch.svg" alt="delete_search">
       <!-- <svg class="icon"><use xlink:href="images/sprite.svg#filter"></use></svg> -->
    </button>
 </div>
