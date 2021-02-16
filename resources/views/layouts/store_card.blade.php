@@ -18,7 +18,10 @@
         </div>
         <div class="icons">
             @if (Route::current()->uri === 'map')
-                <img src="images/corbeille.svg" alt="corbeille">
+               <div class="card_btn">
+                  <svg class="icon"><use xlink:href="images/sprite.svg#heart_full"></use></svg>
+                  <span>Favori</span>
+              </div>
             @endif
             @if (Route::current()->uri === '/')
                  <img src="images/corbeille.svg" alt="corbeille">
@@ -26,11 +29,8 @@
             @endif
             @if (Route::current()->uri === 'favoris')
                <!--<img src="images/corbeille.svg" alt="corbeille">-->
-               <div class="card_btn">
-                   <svg class="icon"><use xlink:href="images/sprite.svg#heart_full"></use></svg>
-                   <span>Favori</span>
-               </div>
-                @endif
+               <img src="images/corbeille.svg" alt="corbeille">
+            @endif
         </div>
     </div>
 </div>

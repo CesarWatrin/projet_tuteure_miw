@@ -245,6 +245,9 @@
 .popup .popup_header {
   width: 100%;
 }
+.popup .popup_info {
+  width: 100%;
+}
 .popup .popup_body {
   display: flex;
   flex-direction: column;
@@ -268,13 +271,20 @@
   justify-content: space-evenly;
   color: white;
 }
-.popup .popup_buttons div {
+.popup .popup_buttons div, .popup .popup_buttons a {
   background-color: #475BF5;
+  color: white;
   display: flex;
   padding: 10px;
   border-radius: 16px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
 }
-.popup .popup_buttons div:hover {
+.popup .popup_buttons a {
+  text-decoration: none;
+}
+.popup .popup_buttons div:hover, .popup .popup_buttons a:hover {
   filter: brightness(150%);
 }
 .popup .popup_buttons p {

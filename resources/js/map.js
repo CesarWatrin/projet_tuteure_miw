@@ -16,7 +16,26 @@ carte.addEventListener('click', () => {
    if (popup.classList[1] === 'active') {
       popup.classList.value = 'popup';
    }
+   switchFilter();
 });
+
+var bouton_filter = document.getElementsByClassName('filter')[0];
+var filter_cancel = document.getElementById('filter_cancel');
+
+bouton_filter.addEventListener('click', () => {
+   if (filter_cancel.src = 'images/cancel.svg') {
+      popup.classList.value = 'popup';
+   }
+   switchFilter();
+});
+
+function switchFilter() {
+   if (popup.classList[1] === 'active') {
+      filter_cancel.src = 'images/cancel.svg';
+   } else {
+      filter_cancel.src = 'images/filter.svg';
+   }
+}
 
 function distance(lat1, lon1, lat2, lon2, unit) {
    if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -38,6 +57,33 @@ function distance(lat1, lon1, lat2, lon2, unit) {
       if (unit=="N") { dist = dist * 0.8684 }
       return dist;
    }
+}
+
+function formatTel(ndt) {
+   if(isNaN(ndt*1)) {
+      return false;
+   } else {
+      ndt = ndt.toString();
+   }
+   var newTel = "";
+   var count = 0;
+   for(var i=0; i!=ndt.length; i++) {
+      switch(count) {
+         case 0:
+         newTel+=ndt.charAt(i);
+         count++;
+         break;
+         case 1:
+         newTel+=ndt.charAt(i);
+         count++;
+         break;
+         case 2:
+         newTel+=" "+ndt.charAt(i);
+         count=1;
+         break;
+      }
+   }
+   return newTel;
 }
 
 async function nearStores(coord) {
@@ -72,6 +118,8 @@ async function nearStores(coord) {
          var store_desc = document.getElementById('store_desc');
          var store_schedule = document.getElementById('store_schedule');
          var store_tel = document.getElementById('store_tel');
+         var store_mail = document.getElementById('store_mail');
+         var store_website = document.getElementById('store_website');
 
          var dist = distance(lat, lon, store.lat, store.lon, 'K');
          dist = dist.toFixed(1);
@@ -86,11 +134,18 @@ async function nearStores(coord) {
          }
          store_desc.textContent = store.description;
          store_schedule.textContent = store.opening_hours;
-         store_tel.textContent = '📞 ' + store.phonenumber;
+         var phonenumber = formatTel(store.phonenumber);
+         store_tel.textContent = '📞 ' + phonenumber;
+         store_mail.textContent = '📧 ' + store.email;
+         store_website.href = store.website;
 
          if (popup.classList[1] === undefined) {
             popup.classList.value = 'popup active';
          }
+         switchFilter();
+
+         var popup_gmaps = document.getElementById('popup_gmaps');
+         popup_gmaps.href = 'https://www.google.com/maps/search/?api=1&query='+store.name+'+'+store.city.name;
       });
       marker.addTo(markers);
    });
@@ -101,6 +156,10 @@ buttonSearch.addEventListener('click', recherche);
 
 let inputSearch = document.getElementById('inputSearch');
 inputSearch.addEventListener('input', chargeVilles);
+inputSearch.addEventListener('click', () => {
+   popup.classList.value = 'popup';
+   switchFilter();
+});
 
 let autocomplete = document.getElementById('autocomplete');
 
