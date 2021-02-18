@@ -47,7 +47,7 @@
     <p>Se Déconnecter</p>
     </a>
 
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" style="display:none">
           @csrf
       </form>
 

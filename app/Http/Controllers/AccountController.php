@@ -14,5 +14,9 @@ class AccountController extends Controller
 
     public function home() {
         return view('pages.account', ['user' => Auth::user()]);
-     }
+    }
+
+    public function stores(){
+        return view('pages.stores', ['user' => Auth::user()]);
+    }
 }
