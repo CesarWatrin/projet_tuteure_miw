@@ -38,23 +38,40 @@
       @include('layouts.store_card')
       <div class="popup_info">
          <div>
-            <h4>Livraison possible : </h4>
-            <p id="store_delivery">Non</p>
+            <h4>Infos pratiques</h4>
          </div>
          <div>
-            <h4>Description : </h4>
+            <span><i class="fas fa-map-marker-alt"></i></span>
+            <span id="store_address">Adresse</span>
+         </div>
+         <div>
+            <span><i id="delivery_check" class="fas fa-check"></i></span>
+            <span id="store_delivery">Livraison possible</span>
+         </div>
+         <div>
+            <span><i id="delivery_check" class="fas fa-calendar-alt"></i></span>
+            <span id="store_schedule">Tous les jours : 11h-14h - 18h-23h</span>
+         </div>
+         <div>
+            <h4>Description</h4>
+         </div>
+         <div>
             <p id="store_desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
          </div>
          <div>
-            <h4>Horaires d'ouvertures : </h4>
-            <p id="store_schedule">Tous les jours : 11h-14h - 18h-23h</p>
+            <h4>Contact</h4>
          </div>
-
-         <div class="popup_contact">
-            <h4>Nous contacter : </h4>
-            <p id="store_tel">📞 06 01 32 59 89</p>
-            <p id="store_mail">📧 magasin.macyo@hotmail.com</p>
-            <p>🌍 <a id="store_website" target="_blank" href="https://cesarwatrin.fr">Accéder au site web</a></p>
+         <div>
+            <span><i class="fas fa-phone-alt"></i> </span>
+            <span id="store_tel">06 01 32 59 89</span>
+         </div>
+         <div>
+            <span><i class="fas fa-envelope"></i></span>
+            <span id="store_mail">magasin.macyo@hotmail.com</span>
+         </div>
+         <div>
+            <span><i class="fas fa-globe"></i> </span>
+            <span><a id="store_website" target="_blank" href="https://cesarwatrin.fr">Accéder au site web</a></span>
          </div>
       </div>
    </div>
