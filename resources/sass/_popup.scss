@@ -24,7 +24,8 @@
    }
 
    .card {
-      height: 100%;
+       height: fit-content;
+       margin: 0 auto;
    }
 
    .popup_info {
@@ -57,10 +58,6 @@
    }
 
    .popup_body {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
       width: 80%;
       height: 100%;
       overflow-y: auto;
