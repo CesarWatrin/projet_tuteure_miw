@@ -62,7 +62,9 @@ body {
   color: #96b4f4;
 }
 .connect .formulaireConnect .input_error {
+  display: block;
   color: #e4534b;
+  margin-bottom: 0.5rem;
 }
 .connect .formulaireConnect .roles_row {
   display: flex;
@@ -98,9 +100,6 @@ body {
 .connect .formulaireConnect .roles_row .role_titre {
   font-size: 1.2rem;
   font-weight: bold;
-}
-.connect .formulaireConnect #suite_form {
-  display: none;
 }
 .connect .formulaireConnect .button {
   display: flex;
@@ -197,13 +196,13 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-  .connect .formulaireConnect .inputText {
+  .connect mulaireConnect .inputText {
     max-width: 500px;
     margin-top: 10px;
     font-size: 1.2rem;
     color: #475BF5;
   }
-  .connect .formulaireConnect .button {
+  .connect mulaireConnect .button {
     margin: 0 auto;
     height: 60px;
     font-size: 1.2rem;
@@ -211,17 +210,17 @@ body {
     border-radius: 15px;
     border: none;
   }
-  .connect .formulaireConnect .bbleu {
+  .connect mulaireConnect .bbleu {
     background-color: #020b5d;
     color: white;
   }
-  .connect .formulaireConnect .brouge {
+  .connect mulaireConnect .brouge {
     margin-top: 20px;
   }
-  .connect .formulaireConnect .bgoogle {
+  .connect mulaireConnect .bgoogle {
     margin-top: 10px;
   }
-  .connect .formulaireConnect .logoGoogle {
+  .connect mulaireConnect .logoGoogle {
     width: 30px;
     height: 30px;
     margin-right: 10px;

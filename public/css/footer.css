@@ -25,6 +25,13 @@ footer {
   margin: 0 auto;
   padding-bottom: 35px;
 }
+.social_media svg {
+  color: white;
+  transition: all 0.2s;
+}
+.social_media svg:hover {
+  color: #BED0F7;
+}
 
 .copyright {
   padding-bottom: 50px;

@@ -43,7 +43,6 @@ main{
    z-index: 1;
    width: calc(100% - 40px);
    max-width: 560px;
-   //background-color: red;
    position: fixed;
    top: 20px;
    left: 20px;
@@ -84,20 +83,14 @@ main{
    background-color: transparent;
    border: none;
 
-   img {
+   svg {
       padding: 5px;
+      color: #5F73F2;
    }
 }
 
 .emptySearch:hover {
    background-color: transparent;
-}
-
-.bouton.active.focus, .bouton.active:focus,
-.bouton.focus, .bouton:active.focus,
-.bouton:active:focus, .bouton:focus {
-   outline: none;
-   box-shadow: none;
 }
 
 .filter {
@@ -106,7 +99,6 @@ main{
 
 #autocomplete {
    position: absolute;
-   // top: 48px;
    top: 0;
    z-index: -1;
    width: calc(100% + 3.5rem);

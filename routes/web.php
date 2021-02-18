@@ -28,4 +28,7 @@ Route::get('/account', 'AccountController@home')->name('account');
 
 Route::get('/stores', 'AccountController@stores')->name('stores');
 
+Route::get('/store/add', 'ManagerController@storeAdd')->name('store_add');
+
+// routes API
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');
