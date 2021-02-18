@@ -57,7 +57,7 @@
   <div class="info">
     <p class="titre">Votre Compte</p>
     <div class="imgUser">
-      <img class="imagepp" src="images/image.jpg"/>
+      <img class="imagepp" src="images/user.jpg"/>
     </div>
 
     <p class="name">{{ $user->firstname }}<span class="orange">{{ $user->surname }}</span></p>

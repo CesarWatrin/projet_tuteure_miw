@@ -66,7 +66,9 @@ body {
       }
 
        .input_error {
+           display: block;
            color: $dark-red;
+           margin-bottom: .5rem;
        }
 
        .roles_row {
@@ -104,10 +106,6 @@ body {
                font-size: 1.2rem;
                font-weight: bold;
            }
-       }
-
-       #suite_form {
-           display: none;
        }
 
       .button{
@@ -231,7 +229,9 @@ body {
           transform: translateY(-50%);
       }
 
-      .formulaireConnect{
+      mulaireConnect{
+
+
          .inputText{
             //width: 60%;
              max-width: 500px;

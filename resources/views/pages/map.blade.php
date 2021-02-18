@@ -8,8 +8,6 @@
 @section('content')
 <div class="searchbar">
    <div class="search">
-      <!--<input type="text" id="inputSearch" placeholder="Essayer un nom de ville ...">
-      <button id="buttonSearch"><img src="images/search.svg" alt="search"></button>-->
       <button class="bouton recherche" id="buttonSearch">
          <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
       </button>
@@ -19,12 +17,10 @@
       </div>
    </div>
    <button class="bouton filter">
-      <img id="filter_cancel" src="images/filter.svg" alt="filter">
-      <!-- <svg class="icon"><use xlink:href="images/sprite.svg#filter"></use></svg> -->
+      <svg class="icon"><use id="filter_cancel" xlink:href="images/sprite.svg#filter"></use></svg>
    </button>
    <button class="bouton emptySearch">
-      <img src="images/cancelSearch.svg" alt="delete_search">
-      <!-- <svg class="icon"><use xlink:href="images/sprite.svg#filter"></use></svg> -->
+      <svg class="icon"><use xlink:href="images/sprite.svg#cancelSearch"></use></svg>
    </button>
 </div>
 
@@ -76,12 +72,12 @@
       </div>
    </div>
    <div class="popup_buttons">
-      <div>
-         <img src="images/catalogue.svg" alt="catalogue">
+      <a href="#">
+         <svg class="icon"><use xlink:href="images/sprite.svg#catalogue"></use></svg>
          <p>Catalogue</p>
-      </div>
+      </a>
       <a id='popup_gmaps' href="https://googlemaps.com" target="_blank">
-         <img src="images/cursorPopup.svg" alt="position">
+         <svg class="icon"><use xlink:href="images/sprite.svg#geoloc"></use></svg>
          <p>Itinéraire</p>
       </a>
    </div>

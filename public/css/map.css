@@ -37,10 +37,26 @@
   border: 1px solid #475BF5;
   border-radius: 16px;
   color: #FFFFFF;
+  transition: 0.2s;
 }
 .bouton:hover {
-  background-color: #96b4f4;
+  color: #475BF5;
+  background-color: #EAEFFC;
   cursor: pointer;
+}
+
+button.active.focus, button.active:focus,
+button.focus, button:active.focus,
+button:active:focus, button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input.active.focus, input.active:focus,
+input.focus, input:active.focus,
+input:active:focus, input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .icon {
@@ -52,6 +68,18 @@
 .small_icon {
   width: 1rem;
   height: 1rem;
+  fill: currentColor;
+}
+
+.big_icon {
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
+
+.fb_icon {
+  width: 18px;
+  height: 36px;
   fill: currentColor;
 }
 
@@ -154,10 +182,26 @@
   border: 1px solid #475BF5;
   border-radius: 16px;
   color: #FFFFFF;
+  transition: 0.2s;
 }
 .bouton:hover {
-  background-color: #96b4f4;
+  color: #475BF5;
+  background-color: #EAEFFC;
   cursor: pointer;
+}
+
+button.active.focus, button.active:focus,
+button.focus, button:active.focus,
+button:active:focus, button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input.active.focus, input.active:focus,
+input.focus, input:active.focus,
+input:active:focus, input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .icon {
@@ -169,6 +213,18 @@
 .small_icon {
   width: 1rem;
   height: 1rem;
+  fill: currentColor;
+}
+
+.big_icon {
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
+
+.fb_icon {
+  width: 18px;
+  height: 36px;
   fill: currentColor;
 }
 
@@ -250,7 +306,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   width: 100%;
 }
 
@@ -307,6 +363,14 @@
 .icons .card_btn .icon {
   width: 2rem;
   height: 2rem;
+  transition: all 0.05s;
+}
+.icons .card_btn:hover {
+  cursor: pointer;
+}
+.icons .card_btn:hover .icon {
+  width: 2.2rem;
+  height: 2.2rem;
 }
 
 .popup {
@@ -334,7 +398,10 @@
   height: 130px;
 }
 .popup .card {
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
 }
 .popup .popup_info {
   width: 100%;
@@ -360,10 +427,6 @@
   color: #E4534B;
 }
 .popup .popup_body {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
   width: 80%;
   height: 100%;
   overflow-y: auto;
@@ -379,26 +442,28 @@
   justify-content: space-evenly;
   color: white;
 }
-.popup .popup_buttons div, .popup .popup_buttons a {
+.popup .popup_buttons a {
   background-color: #475BF5;
   color: white;
   display: flex;
   padding: 10px;
   border-radius: 16px;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
 }
 .popup .popup_buttons a {
   text-decoration: none;
 }
-.popup .popup_buttons div:hover, .popup .popup_buttons a:hover {
-  filter: brightness(150%);
+.popup .popup_buttons a:hover {
+  color: #475BF5;
+  background-color: #EAEFFC;
 }
 .popup .popup_buttons p {
   margin: auto 0;
 }
-.popup .popup_buttons img {
+.popup .popup_buttons svg {
   width: 20px;
   margin-right: 5px;
 }
@@ -581,19 +646,13 @@ main {
   background-color: transparent;
   border: none;
 }
-.emptySearch img {
+.emptySearch svg {
   padding: 5px;
+  color: #5F73F2;
 }
 
 .emptySearch:hover {
   background-color: transparent;
-}
-
-.bouton.active.focus, .bouton.active:focus,
-.bouton.focus, .bouton:active.focus,
-.bouton:active:focus, .bouton:focus {
-  outline: none;
-  box-shadow: none;
 }
 
 .filter {

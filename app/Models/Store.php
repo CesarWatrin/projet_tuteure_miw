@@ -32,4 +32,12 @@ class Store extends Model
     public function ratings() {
         return $this->hasMany(Rating::class);
     }
+
+    public function pictures() {
+        return $this->belongsToMany(Picture::class);
+    }
+
+    public function views_all() {
+        return $this->hasMany(View::class);
+    }
 }

@@ -31,7 +31,7 @@ var bouton_filter = document.getElementsByClassName('filter')[0];
 var filter_cancel = document.getElementById('filter_cancel');
 
 bouton_filter.addEventListener('click', () => {
-   if (filter_cancel.src = 'images/cancel.svg') {
+   if (filter_cancel.getAttribute('xlink:href') == 'images/sprite.svg#filter_cancel') {
       popup.classList.value = 'popup';
    }
    switchFilter();
@@ -39,9 +39,9 @@ bouton_filter.addEventListener('click', () => {
 
 function switchFilter() {
    if (popup.classList[1] === 'active') {
-      filter_cancel.src = 'images/cancel.svg';
+      filter_cancel.setAttribute('xlink:href', 'images/sprite.svg#filter_cancel');
    } else {
-      filter_cancel.src = 'images/filter.svg';
+      filter_cancel.setAttribute('xlink:href', 'images/sprite.svg#filter');
    }
 }
 

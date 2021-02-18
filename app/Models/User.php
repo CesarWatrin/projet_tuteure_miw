@@ -48,8 +48,12 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function is_manager() {
+        return $this->role->id === 2; // 2 = "Commerçant" dans la bdd
+    }
+
     public function stores() {
-        return $this->hasMany(Store::class);
+        return $this->hasMany(Store::class, 'manager_id');
     }
 
     public function favorites() {

@@ -9,13 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="Nzhw9TVU"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    @if (Route::current()->uri === 'map')
-      <script src="{{ asset('js/map.js') }}" defer></script>
-    @endif
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -44,7 +37,6 @@
             <div class="onglet" onclick="location.href='{{ url('/') }}';">
          @endif
             <div>
-               <!--<img src="../images/accueil.svg" alt="acceuil">-->
                 <svg><use xlink:href="../images/sprite.svg#accueil"></use></svg>
                <span>______</span>
             </div>
@@ -58,7 +50,6 @@
             <div class="onglet" onclick="location.href='{{ route('map') }}';">
          @endif
             <div>
-               <!--<img src="../images/carte.svg" alt="carte">-->
                 <svg><use xlink:href="../images/sprite.svg#carte"></use></svg>
                 <span>______</span>
             </div>
@@ -72,7 +63,6 @@
             <div class="onglet" onclick="location.href='{{ route('favoris') }}';">
          @endif
             <div>
-               <!--<img src="../images/favoris.svg" alt="favoris">-->
                 <svg><use xlink:href="../images/sprite.svg#favoris"></use></svg>
                 <span>______</span>
             </div>
@@ -86,7 +76,6 @@
             <div class="onglet" onclick="location.href='{{ route('login') }}';">
          @endif
             <div>
-               <!--<img src="../images/mon_compte.svg" alt="mon_compte">-->
                 <svg><use xlink:href="../images/sprite.svg#mon_compte"></use></svg>
                 <span>______</span>
             </div>
@@ -112,13 +101,13 @@
                 <p>Retrouvez-nous</p>
                 <div class="social_media">
                      <div>
-                        <a href="#"><img src="../images/share.svg" alt="share_icon"></a>
+                        <a href="#"><svg class="big_icon"><use xlink:href="images/sprite.svg#share"></use></svg></a>
                      </div>
                      <div>
-                        <a href="#"><img src="../images/facebook.svg" alt="facebook_icon"></a>
+                        <a href="#"><svg class="fb_icon"><use xlink:href="images/sprite.svg#facebook"></use></svg></a>
                      </div>
                      <div>
-                        <a href="#"><img src="../images/instagram.svg" alt="instagram_icon"></a>
+                        <a href="#"><svg class="big_icon"><use xlink:href="images/sprite.svg#instagram"></use></svg></a>
                      </div>
                 </div>
                 <p>Plan du site</p>
@@ -132,4 +121,11 @@
 
     </div>
 </body>
+   <!-- Scripts -->
+   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="Nzhw9TVU"></script>
+   <script src="{{ asset('js/app.js') }}" defer></script>
+   @if (Route::current()->uri === 'map')
+     <script src="{{ asset('js/map.js') }}" defer></script>
+   @endif
+   <script src="{{ asset('js/favori.js') }}"></script>
 </html>

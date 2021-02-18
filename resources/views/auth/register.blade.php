@@ -160,7 +160,7 @@
 
             </div>
 
-            <div id="suite_form">
+            <div id="suite_form" @if(!$errors->any()) style="display: none" @endif>
 
             <div class="input_row">
 {{--                <label for="surname">{{ __('Surname') }}</label>--}}
@@ -179,7 +179,7 @@
 {{--                <label for="firstname">{{ __('First name') }}</label>--}}
 
                 <input id="firstname" name="firstname" type="text" class="inputText" placeholder="Prénom"
-                       value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                       value="{{ old('firstname') }}" required autocomplete="firstname">
 
                 @error('firstname')
                 <span class="input_error">
@@ -205,7 +205,7 @@
 {{--                <label for="phonenumber">{{ __('Phone number') }}</label>--}}
 
                 <input id="phonenumber" name="phonenumber" type="phonenumber" class="inputText" placeholder="Nº de téléphone"
-                       value="{{ old('phonenumber') }}" required autocomplete="phonenumber">
+                       value="{{ old('phonenumber') }}" autocomplete="phonenumber">
 
                 @error('phonenumber')
                 <span class="input_error">
