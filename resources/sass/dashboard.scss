@@ -48,6 +48,7 @@ body{
     height: 50px;
     border-radius: 15px;
     width: 300px;
+    margin-bottom: 25px;
     p{
         margin: 0;
         color: $light_blue;
@@ -58,7 +59,49 @@ body{
 .rewards{
     display: flex;
     flex-direction: column;
-    align-items: center;justify-content: end;
+    align-items: center;
+    justify-content: center;
     width: 95%;
-    background-color: red;
+    margin-bottom: 25px;
+    .reward{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        p{
+            color: $white;
+            font-family: "Yeseva One";
+        }
+        p:first-child{
+            font-size: 35px;
+        }
+        p:nth-child(2n){
+            font-size: 20px;
+            margin: 0;
+        }
+        svg{
+            width: 200px;
+        }
+
+    }
+    .categorie_reward{
+        background-color: $light_red;
+        align-self: flex-end;
+        svg{
+            color: $dark_blue;
+        }
+    }
+    .subcategorie_reward{
+        background-color: $normal_blue;
+        align-self: flex-start;
+        svg{
+            color: $light_red;
+        }
+    }
+}
+
+.top_product{
 }

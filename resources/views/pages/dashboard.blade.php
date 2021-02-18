@@ -24,12 +24,12 @@
                 <div class="categorie_reward reward">
                     <p>n°1</p>
                     <p>Categorie</p>
-                    <img src="">
+                    <svg><use xlink:href="images/sprite.svg#reward_bg"></use></svg>
                 </div>
                 <div class="subcategorie_reward reward">
                     <p>n°1</p>
                     <p>Categorie</p>
-                    <img src="">
+                    <svg><use xlink:href="images/sprite.svg#reward_bg"></use></svg>
                 </div>
             </div>
 
