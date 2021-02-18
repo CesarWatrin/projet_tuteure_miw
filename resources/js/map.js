@@ -232,12 +232,14 @@ async function nearStores(coord) {
          var store_name = document.getElementById('store_name');
          var store_distance = document.getElementById('store_distance');
          var store_score = document.getElementById('store_score');
+         var store_address = document.getElementById('store_address');
          var store_delivery = document.getElementById('store_delivery');
          var store_desc = document.getElementById('store_desc');
          var store_schedule = document.getElementById('store_schedule');
          var store_tel = document.getElementById('store_tel');
          var store_mail = document.getElementById('store_mail');
          var store_website = document.getElementById('store_website');
+         var delivery_check = document.getElementById('delivery_check');
 
          var dist = distance(lat, lon, store.lat, store.lon, 'K');
          dist = dist.toFixed(1);
@@ -245,16 +247,22 @@ async function nearStores(coord) {
          store_name.textContent = store.name;
          store_distance.textContent = '\u00a0à ' + dist + 'km';
          store_score.textContent = '\u00a04/5';
+         if ((store.city.zip).length < 5) {
+            store.city.zip = '0' + store.city.zip;
+         }
+         store_address.textContent = store.address1 + ', ' + store.city.zip + ' ' + store.city.name;
          if (store.delivery === 1) {
-            store_delivery.textContent = 'Oui';
+            delivery_check.classList.value  = 'fas fa-check';
+            store_delivery.textContent = 'Livraison possible';
          } else {
-            store_delivery.textContent = 'Non';
+            delivery_check.classList.value = 'fas fa-times';
+            store_delivery.textContent = 'Livraison indisponible';
          }
          store_desc.textContent = store.description;
          store_schedule.textContent = store.opening_hours;
          var phonenumber = formatTel(store.phonenumber);
-         store_tel.textContent = '📞 ' + phonenumber;
-         store_mail.textContent = '📧 ' + store.email;
+         store_tel.textContent = phonenumber;
+         store_mail.textContent = store.email;
          store_website.href = store.website;
 
          if (popup.classList[1] === undefined) {
@@ -275,7 +283,7 @@ buttonSearch.addEventListener('click', recherche);
 let inputSearch = document.getElementById('inputSearch');
 inputSearch.addEventListener('input', chargeVilles);
 inputSearch.addEventListener('click', () => {
-   popup.classList.value = 'popup';
+   popup.class= 'popup';
    switchFilter();
 });
 

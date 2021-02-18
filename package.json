@@ -20,6 +20,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.2",
         "bootstrap": "^4.6.0",
         "leaflet.markercluster": "^1.4.1",
         "resolve-url-loader": "^3.1.2"
