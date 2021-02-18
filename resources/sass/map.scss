@@ -1,66 +1,103 @@
 @import 'global', 'store_card','popup', 'markercluster';
 
+.mycluster {
+   height: 30px;
+   width: 30px;
+   border-radius: 10px;
+   background-color: rgba(2,11,93,0.8);
+   color: white;
+   text-align: center;
+   font-size: 18px;
+   line-height: 30px;
+   margin-top: -20px;
+   margin-left: -20px;
+}
+
 main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 #map {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width : 100vw;
-    height : 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 0;
+   width : 100vw;
+   height : 100vh;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
 }
 
 .leaflet-control-zoom{
-    display: none;
+   display: none;
 }
 
 .searchbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
-    width: calc(100% - 40px);
-    //background-color: red;
-    position: fixed;
-    top: 20px;
-    left: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 1;
+   width: calc(100% - 40px);
+   max-width: 560px;
+   //background-color: red;
+   position: fixed;
+   top: 20px;
+   left: 20px;
 
-    .search {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        width: calc(100% - 3.5rem);
-    }
+   .search {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: calc(100% - 3.5rem);
+   }
 
-    .recherche {
-        right: 3.5rem;
-        position: absolute;
-        z-index: 2;
-        right: 56px;
-    }
+   .recherche {
+      right: 3.5rem;
+      position: absolute;
+      z-index: 2;
+      right: 56px;
+   }
 
-    .champRecherche {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        z-index: 1;
+   .champRecherche {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
 
-        input {
-           width: 100%;
-        }
-    }
+      input {
+         width: 100%;
+         font-size: 15px;
+      }
+   }
+}
 
+.emptySearch {
+   position: absolute;
+   right: 6.5rem;
+   z-index: 1;
+   background-color: transparent;
+   border: none;
+
+   img {
+      padding: 5px;
+   }
+}
+
+.emptySearch:hover {
+   background-color: transparent;
+}
+
+.bouton.active.focus, .bouton.active:focus,
+.bouton.focus, .bouton:active.focus,
+.bouton:active:focus, .bouton:focus {
+   outline: none;
+   box-shadow: none;
 }
 
 .filter {
@@ -99,14 +136,14 @@ main{
 
 
 @media screen and (min-width: 992px) {
-    .leaflet-control-zoom{
-        display: inline;
-    }
+   .leaflet-control-zoom{
+      display: inline;
+   }
 
-    main{
-        align-items: start;
-        .searchbar{
+   main{
+      align-items: start;
+      .searchbar{
          width: 35%;
-        }
-    }
+      }
+   }
 }
