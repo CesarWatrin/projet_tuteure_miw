@@ -1,0 +1,15 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/*!********************************!*\
+  !*** ./resources/js/favori.js ***!
+  \********************************/
+eval("var heart_fav = document.getElementById('heart_fav');\nvar card_btn = document.getElementsByClassName('card_btn')[0];\ncard_btn.addEventListener('click', addToFav);\n\nfunction addToFav() {\n  if (heart_fav.getAttribute('xlink:href') === 'images/sprite.svg#heart_empty') {\n    heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_full');\n  } else {\n    heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_empty');\n  }\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvZmF2b3JpLmpzP2RkODMiXSwibmFtZXMiOlsiaGVhcnRfZmF2IiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCIsImNhcmRfYnRuIiwiZ2V0RWxlbWVudHNCeUNsYXNzTmFtZSIsImFkZEV2ZW50TGlzdGVuZXIiLCJhZGRUb0ZhdiIsImdldEF0dHJpYnV0ZSIsInNldEF0dHJpYnV0ZSJdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSUEsU0FBUyxHQUFHQyxRQUFRLENBQUNDLGNBQVQsQ0FBd0IsV0FBeEIsQ0FBaEI7QUFDQSxJQUFJQyxRQUFRLEdBQUdGLFFBQVEsQ0FBQ0csc0JBQVQsQ0FBZ0MsVUFBaEMsRUFBNEMsQ0FBNUMsQ0FBZjtBQUVBRCxRQUFRLENBQUNFLGdCQUFULENBQTBCLE9BQTFCLEVBQW1DQyxRQUFuQzs7QUFFQSxTQUFTQSxRQUFULEdBQW9CO0FBQ2pCLE1BQUlOLFNBQVMsQ0FBQ08sWUFBVixDQUF1QixZQUF2QixNQUF5QywrQkFBN0MsRUFBOEU7QUFDM0VQLElBQUFBLFNBQVMsQ0FBQ1EsWUFBVixDQUF1QixZQUF2QixFQUFxQyw4QkFBckM7QUFDRixHQUZELE1BRU87QUFDSlIsSUFBQUEsU0FBUyxDQUFDUSxZQUFWLENBQXVCLFlBQXZCLEVBQXFDLCtCQUFyQztBQUNGO0FBQ0giLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgaGVhcnRfZmF2ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2hlYXJ0X2ZhdicpO1xyXG52YXIgY2FyZF9idG4gPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5Q2xhc3NOYW1lKCdjYXJkX2J0bicpWzBdO1xyXG5cclxuY2FyZF9idG4uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBhZGRUb0Zhdik7XHJcblxyXG5mdW5jdGlvbiBhZGRUb0ZhdigpIHtcclxuICAgaWYgKGhlYXJ0X2Zhdi5nZXRBdHRyaWJ1dGUoJ3hsaW5rOmhyZWYnKSA9PT0gJ2ltYWdlcy9zcHJpdGUuc3ZnI2hlYXJ0X2VtcHR5Jykge1xyXG4gICAgICBoZWFydF9mYXYuc2V0QXR0cmlidXRlKCd4bGluazpocmVmJywgJ2ltYWdlcy9zcHJpdGUuc3ZnI2hlYXJ0X2Z1bGwnKVxyXG4gICB9IGVsc2Uge1xyXG4gICAgICBoZWFydF9mYXYuc2V0QXR0cmlidXRlKCd4bGluazpocmVmJywgJ2ltYWdlcy9zcHJpdGUuc3ZnI2hlYXJ0X2VtcHR5JylcclxuICAgfVxyXG59XHJcbiJdLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvZmF2b3JpLmpzLmpzIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/js/favori.js\n");
+/******/ })()
+;
