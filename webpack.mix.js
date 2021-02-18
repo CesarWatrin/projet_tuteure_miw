@@ -30,3 +30,5 @@ mix.sass('resources/sass/footer.scss', 'public/css').sourceMaps();
 mix.sass('resources/sass/index.scss', 'public/css').sourceMaps();
 
 mix.sass('resources/sass/account.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/dashboard.scss', 'public/css').sourceMaps();

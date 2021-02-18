@@ -1,0 +1,64 @@
+@import 'variables';
+
+body{
+    background-color: $bg_blue;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .dashboard{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+}
+
+.dashboard{
+    .dashboard_bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.shops{
+    margin-top: 25px;
+    border-radius: 15px;
+    background-color: $white;
+    height: 50px;
+    border: 0;
+    width: 300px;
+    margin-bottom: 25px;
+    color: $dark_blue;
+    font-family: "Yeseva One";
+}
+
+.data_time{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $white;
+    height: 50px;
+    border-radius: 15px;
+    width: 300px;
+    p{
+        margin: 0;
+        color: $light_blue;
+        font-family: "Yeseva One";
+    }
+}
+
+.rewards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;justify-content: end;
+    width: 95%;
+    background-color: red;
+}
