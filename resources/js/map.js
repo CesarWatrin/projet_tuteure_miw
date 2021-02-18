@@ -3,7 +3,15 @@ import 'leaflet.markercluster';
 let carte = L.map('map', {center: [46.3630104, 2.9846608],zoom: 5, attributionControl : false, zoomControl: false});
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(carte);
 L.control.zoom({position:'bottomright'}).addTo(carte);
-let markers = L.markerClusterGroup().addTo(carte);
+let markers = L.markerClusterGroup({
+    iconCreateFunction: function(cluster) {
+        return L.divIcon({
+            html: cluster.getChildCount(),
+            className: 'mycluster',
+            iconSize: null
+        });
+    }
+}).addTo(carte);
 
 //pour les tests :
 carte.setView([44.544606, 6.077989], 14, { animation: true });
@@ -36,6 +44,12 @@ function switchFilter() {
       filter_cancel.src = 'images/filter.svg';
    }
 }
+
+var bouton_emptySearch = document.getElementsByClassName('emptySearch')[0];
+bouton_emptySearch.addEventListener('click',() => {
+   inputSearch.value = '';
+   autocomplete.innerHTML = '';
+});
 
 function distance(lat1, lon1, lat2, lon2, unit) {
    if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -86,6 +100,48 @@ function formatTel(ndt) {
    return newTel;
 }
 
+var markerRestaurant = L.icon({
+   iconUrl: 'images/icon_cat/restaurant@2x.png',
+   iconRetinaUrl: 'images/icon_cat/restaurant@3x.png',
+   iconSize:     [25, 35]
+});
+
+var markerMagasin = L.icon({
+   iconUrl: 'images/icon_cat/magasin@2x.png',
+   iconRetinaUrl: 'images/icon_cat/magasin@3x.png',
+   iconSize:     [25, 35]
+});
+
+var markerBoucherie = L.icon({
+   iconUrl: 'images/icon_cat/boucherie@2x.png',
+   iconRetinaUrl: 'images/icon_cat/boucherie@3x.png',
+   iconSize:     [25, 35]
+});
+
+var markerFruits_legumes = L.icon({
+   iconUrl: 'images/icon_cat/fruits_legumes@2x.png',
+   iconRetinaUrl: 'images/icon_cat/fruits_legumes@3x.png',
+   iconSize:     [25, 35]
+});
+
+var markerDebit_boissons = L.icon({
+   iconUrl: 'images/icon_cat/debit_boissons@2x.png',
+   iconRetinaUrl: 'images/icon_cat/debit_boissons@3x.png',
+   iconSize:     [25, 35]
+});
+
+var markerMagasin_vetements = L.icon({
+   iconUrl: 'images/icon_cat/magasin_vetements@2x.png',
+   iconRetinaUrl: 'images/icon_cat/magasin_vetements@3x.png',
+   iconSize:     [25, 35]
+});
+
+var markerCulture = L.icon({
+   iconUrl: 'images/icon_cat/culture@2x.png',
+   iconRetinaUrl: 'images/icon_cat/culture@3x.png',
+   iconSize:     [25, 35]
+});
+
 async function nearStores(coord) {
 
    markers.clearLayers();
@@ -100,15 +156,77 @@ async function nearStores(coord) {
    console.log(stores);
 
    stores.forEach((store) => {
-      var marker = L.marker([store.lat, store.lon], {icon: markerStore}).bindTooltip(
-         store.name
-         ,{
-            permanent: false,
-            offset: L.point(0, -16),
-            direction: 'top',
-            opacity: 0.8
-         }
-      );
+      if (store.category_id == 1) {
+         var marker = L.marker([store.lat, store.lon], {icon: markerRestaurant}).bindTooltip(
+            store.name
+            ,{
+               permanent: false,
+               offset: L.point(0, -16),
+               direction: 'top',
+               opacity: 0.8
+            }
+         );
+      } else if (store.category_id == 2) {
+         var marker = L.marker([store.lat, store.lon], {icon: markerMagasin}).bindTooltip(
+            store.name
+            ,{
+               permanent: false,
+               offset: L.point(0, -16),
+               direction: 'top',
+               opacity: 0.8
+            }
+         );
+      } else if (store.category_id == 3) {
+         var marker = L.marker([store.lat, store.lon], {icon: markerBoucherie}).bindTooltip(
+            store.name
+            ,{
+               permanent: false,
+               offset: L.point(0, -16),
+               direction: 'top',
+               opacity: 0.8
+            }
+         );
+      } else if (store.category_id == 4) {
+         var marker = L.marker([store.lat, store.lon], {icon: markerFruits_legumes}).bindTooltip(
+            store.name
+            ,{
+               permanent: false,
+               offset: L.point(0, -16),
+               direction: 'top',
+               opacity: 0.8
+            }
+         );
+      } else if (store.category_id == 5) {
+         var marker = L.marker([store.lat, store.lon], {icon: markerDebit_boissons}).bindTooltip(
+            store.name
+            ,{
+               permanent: false,
+               offset: L.point(0, -16),
+               direction: 'top',
+               opacity: 0.8
+            }
+         );
+      } else if (store.category_id == 6) {
+         var marker = L.marker([store.lat, store.lon], {icon: markerMagasin_vetements}).bindTooltip(
+            store.name
+            ,{
+               permanent: false,
+               offset: L.point(0, -16),
+               direction: 'top',
+               opacity: 0.8
+            }
+         );
+      } else if (store.category_id == 7) {
+         var marker = L.marker([store.lat, store.lon], {icon: markerCulture}).bindTooltip(
+            store.name
+            ,{
+               permanent: false,
+               offset: L.point(0, -16),
+               direction: 'top',
+               opacity: 0.8
+            }
+         );
+      }
 
       marker.addEventListener('click', () => {
          var store_name = document.getElementById('store_name');
@@ -195,20 +313,17 @@ function setAdresse(elem) {
 window.setAdresse = setAdresse;
 
 var markerSearch = L.icon({
-   iconUrl: 'images/markerSearch.png',
-   iconSize:     [24, 35]
+   iconUrl: 'images/icon_cat/recherche@2x.png',
+   iconRetinaUrl: 'images/icon_cat/recherche@3x.png',
+   iconSize:     [25, 35]
 });
 
 var searchLayer = L.marker([0, 0], {icon: markerSearch});
 
-var markerStore = L.icon({
-   iconUrl: 'images/markerStore.png',
-   iconSize:     [24, 35]
-});
-
 var markerPosition = L.icon({
-   iconUrl: 'images/markerPosition.png',
-   iconSize:     [20, 20]
+   iconUrl: 'images/icon_cat/position@2x.png',
+   iconRetinaUrl: 'images/icon_cat/position@3x.png',
+   iconSize:     [25, 35]
 });
 
 function recherche() {
@@ -221,7 +336,15 @@ function recherche() {
             var lat = data.features[0].geometry.coordinates[0];
             var lon = data.features[0].geometry.coordinates[1];
             carte.setView([lon, lat], 14, { animation: true });
-            searchLayer = L.marker([lon, lat], {icon: markerSearch}).addTo(carte);
+            searchLayer = L.marker([lon, lat], {icon: markerSearch}).bindTooltip(
+               data.features[0].properties.label
+               ,{
+                  permanent: false,
+                  offset: L.point(0, -16),
+                  direction: 'top',
+                  opacity: 0.8
+               }
+            ).addTo(carte);
             nearStores([lat,lon]);
          },
          error: function(data) {

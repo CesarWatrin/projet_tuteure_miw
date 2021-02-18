@@ -73,6 +73,48 @@
     right: calc((40% - 451px)/2);
   }
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #020b5d;
+  border: 0px none #ffffff;
+  border-radius: 51px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #031296;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #6978fc;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 * {
   font-family: Nunito, sans-serif;
 }
@@ -148,6 +190,48 @@
     right: calc((40% - 451px)/2);
   }
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #020b5d;
+  border: 0px none #ffffff;
+  border-radius: 51px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #031296;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #6978fc;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -245,8 +329,13 @@
 .popup .popup_header {
   width: 100%;
 }
+.popup .card {
+  height: 100%;
+}
 .popup .popup_info {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .popup .popup_body {
   display: flex;
@@ -258,7 +347,7 @@
   overflow-y: auto;
 }
 .popup .popup_contact {
-  margin-bottom: 120px;
+  padding-bottom: 120px;
 }
 .popup .popup_buttons {
   position: fixed;
@@ -394,6 +483,19 @@
   line-height: 30px;
 }
 
+.mycluster {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  background-color: rgba(2, 11, 93, 0.8);
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: -20px;
+  margin-left: -20px;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -450,6 +552,29 @@ main {
 }
 .searchbar .champRecherche input {
   width: 100%;
+  font-size: 15px;
+}
+
+.emptySearch {
+  position: absolute;
+  right: 6.5rem;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+}
+.emptySearch img {
+  padding: 5px;
+}
+
+.emptySearch:hover {
+  background-color: transparent;
+}
+
+.bouton.active.focus, .bouton.active:focus,
+.bouton.focus, .bouton:active.focus,
+.bouton:active:focus, .bouton:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .filter {

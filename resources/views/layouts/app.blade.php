@@ -91,7 +91,11 @@
                 <span>______</span>
             </div>
             <div>
+                @if(Auth::user())
                <span>Mon compte</span>
+                @else
+                <span>Connexion</span>
+                @endif
             </div>
          </div>
       </div>

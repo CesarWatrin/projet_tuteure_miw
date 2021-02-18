@@ -1,5 +1,18 @@
 @import 'global', 'store_card','popup', 'markercluster';
 
+.mycluster {
+   height: 30px;
+   width: 30px;
+   border-radius: 10px;
+   background-color: rgba(2,11,93,0.8);
+   color: white;
+   text-align: center;
+   font-size: 18px;
+   line-height: 30px;
+   margin-top: -20px;
+   margin-left: -20px;
+}
+
 main{
    display: flex;
    flex-direction: column;
@@ -59,9 +72,32 @@ main{
 
       input {
          width: 100%;
+         font-size: 15px;
       }
    }
+}
 
+.emptySearch {
+   position: absolute;
+   right: 6.5rem;
+   z-index: 1;
+   background-color: transparent;
+   border: none;
+
+   img {
+      padding: 5px;
+   }
+}
+
+.emptySearch:hover {
+   background-color: transparent;
+}
+
+.bouton.active.focus, .bouton.active:focus,
+.bouton.focus, .bouton:active.focus,
+.bouton:active:focus, .bouton:focus {
+   outline: none;
+   box-shadow: none;
 }
 
 .filter {

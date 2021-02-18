@@ -160,7 +160,7 @@
 
             </div>
 
-            <div id="suite_form" style="display: none">
+            <div id="suite_form">
 
             <div class="input_row">
 {{--                <label for="surname">{{ __('Surname') }}</label>--}}
@@ -241,8 +241,9 @@
             </div>
 
             </div>
+            <p class="ou">— Vous avez déjà un compte ? —</p>
+            <a href="{{ route('login') }}" class="button bbleu">Se connecter</a>
         </form>
-
 
 
 
