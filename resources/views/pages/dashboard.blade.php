@@ -91,7 +91,7 @@
             </div>
         </div>
         <form>
-            <div class="infos_general">
+            <div class="infos_general active">
                 <div class="infos_left">
                     <input type="text" placeholder="Nom">
                     <input type="tel" placeholder="Numéro de Téléphone">
@@ -117,14 +117,26 @@
 
             <div class="infos_complementary">
                 <div class="infos_left">
-                    <input type="" placeholder="Categorie">
-                    <input placeholder="Sous Catégorie">
-                    <input placeholder="Livraison">
-                    <input placeholder="Condition Livraison">
-                    <input placeholder="Horraires">
+                    <select>
+                        <option>--Catégorie--</option>
+                    </select>
+                    <select>
+                        <option>--Sous-Catégorie--</option>
+                    </select>
+                    <div>
+                        <label for="delivery_cat">Livraison : </label>
+                        <div id="delivery_cat">
+                            <input type="radio" id="oui" name="delivery" value="oui">
+                            <label for="oui">Oui</label><br>
+                            <input type="radio" id="non" name="delivery" value="non">
+                            <label for="non">Non</label><br>
+                        </div>
+                    </div>
+                    <textarea placeholder="Condition livraison"></textarea>
+                    <textarea placeholder="Horraire"></textarea>
                 </div>
                 <div class="infos_right">
-                    <input placeholder="Catalogue">
+                    <textarea placeholder="Catalogue"></textarea>
                 </div>
             </div>
 
@@ -133,7 +145,5 @@
         </form>
     </div>
 </div>
-
-
 
 @endsection
