@@ -128,4 +128,7 @@
      <script src="{{ asset('js/map.js') }}" defer></script>
    @endif
    <script src="{{ asset('js/favori.js') }}"></script>
+
+@stack('scripts')
+
 </html>
