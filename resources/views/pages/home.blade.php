@@ -12,11 +12,11 @@
             <img class="main_illustration" src="images/main_illustration.svg"/>
             <div class="flex_container">
                 <h1 class="accroche">Ventes<br>à emporter ?<span>C'est ici.</span></h1>
-                <form>
+                <form method="get" action="{{ route('map') }}">
                     <button class="bouton recherche">
                         <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
                     </button>
-                    <input type="text" class="champ" placeholder="Essayez un nom de ville..."/>
+                    <input type="text" class="champ" name="q" placeholder="Essayez un nom de ville..."/>
                 </form>
                 <span class="separateur">— ou —</span>
                 <button class="bouton geoloc">

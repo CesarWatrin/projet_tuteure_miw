@@ -83,3 +83,14 @@
    </div>
 </div>
 @endsection
+
+@isset($search)
+    @push('scripts')
+        <script>
+            window.onload = () => {
+                document.getElementById('inputSearch').value = '{{ $search }}';
+                document.getElementById('buttonSearch').click();
+            }
+        </script>
+    @endpush
+@endisset
