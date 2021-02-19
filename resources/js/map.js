@@ -282,6 +282,9 @@ buttonSearch.addEventListener('click', recherche);
 
 let inputSearch = document.getElementById('inputSearch');
 inputSearch.addEventListener('input', chargeVilles);
+inputSearch.addEventListener('keyup', (e) => {
+    if(e.code === 'Enter') recherche()
+});
 inputSearch.addEventListener('click', () => {
    popup.class= 'popup';
    switchFilter();

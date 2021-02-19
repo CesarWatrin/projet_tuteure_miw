@@ -2,7 +2,6 @@
 
 @push('styles')
 <link href="{{ asset('css/map.css') }}" rel="stylesheet">
-<link href="{{asset('')}}">
 @endpush
 
 @section('content')
@@ -87,8 +86,8 @@
 @isset($search)
     @push('scripts')
         <script>
+            document.getElementById('inputSearch').value = '{{ $search }}';
             window.onload = () => {
-                document.getElementById('inputSearch').value = '{{ $search }}';
                 document.getElementById('buttonSearch').click();
             }
         </script>
