@@ -227,3 +227,6 @@ body {
     margin-right: 10px;
   }
 }
+.formulaireEdit label {
+  display: block;
+}

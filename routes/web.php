@@ -25,10 +25,12 @@ Route::get('/favoris', 'FavorisController@home')->name('favoris');
 
 
 Route::get('/account', 'AccountController@home')->name('account');
+Route::get('/account/edit', 'AccountController@edit')->name('account_edit');
+Route::post('/account/update', 'AccountController@update')->name('account_update');
 
 Route::get('/store/add', 'ManagerController@storeAdd')->name('store_add');
 
 // routes API
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');
 
-Route::get('/dashboard', 'AccountController@dashboard')->name('account');
+Route::get('/dashboard', 'AccountController@dashboard')->name('dashboard');
