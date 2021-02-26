@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rating;
+use App\Models\Store;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -41,5 +43,37 @@ class AccountController extends Controller
 
     public function dashboard() {
         return view('pages.dashboard');
+    }
+
+    public function commentscode() {
+        return view ('pages.commentscode_input');
+    }
+
+    public function rateStore(Request $request) {
+        $this->validate($request, [
+            'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
+        ]);
+
+        $store = Store::all()->where('comments_code', $request->input('comments_code'))->first();
+
+        return view('pages.rating_add', ['store' => $store]);
+
+    }
+
+    public function postRating(Request $request) {
+        $this->validate($request, [
+            'store_id' => ['required', 'exists:stores,id'],
+            'rating' => ['required', 'integer', 'in:1,2,3,4,5'],
+            'comment' => 'nullable'
+        ]);
+
+        $rating = new Rating();
+        $rating->user_id = Auth::id();
+        $rating->store_id = $request->input('store_id');
+        $rating->rating = $request->input('rating');
+        $rating->comment = $request->input('comment');
+        $rating->save();
+
+        return redirect()->route('dashboard')->with('success', 'Avis ajouté avec succès.');
     }
 }

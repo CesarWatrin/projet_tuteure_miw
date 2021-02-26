@@ -16,7 +16,7 @@
                     <button class="bouton recherche">
                         <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
                     </button>
-                    <input type="text" class="champ" name="q" placeholder="Essayez un nom de ville..."/>
+                    <input type="text" class="input" name="q" placeholder="Essayez un nom de ville..."/>
                 </form>
                 <span class="separateur">— ou —</span>
                 <button class="bouton geoloc">

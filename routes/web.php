@@ -28,6 +28,10 @@ Route::get('/account', 'AccountController@home')->name('account');
 Route::get('/account/edit', 'AccountController@edit')->name('account_edit');
 Route::post('/account/update', 'AccountController@update')->name('account_update');
 
+Route::get('/ratings/findstore', 'AccountController@commentscode')->name('commentscode_input');
+Route::get('/ratings/add', 'AccountController@rateStore')->name('rate_store');
+Route::post('/ratings/post', 'AccountController@postRating')->name('rating_post');
+
 Route::get('/store/add', 'ManagerController@storeAdd')->name('store_add');
 
 // routes API

@@ -11,7 +11,7 @@
          <svg class="icon"><use xlink:href="images/sprite.svg#loupe"></use></svg>
       </button>
       <div class="champRecherche">
-         <input type="text" class="champ " id="inputSearch" placeholder="Rechercher sur la carte"/>
+         <input type="text" class="input" id="inputSearch" placeholder="Rechercher sur la carte"/>
          <div id="autocomplete"></div>
       </div>
    </div>
