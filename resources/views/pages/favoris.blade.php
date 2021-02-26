@@ -18,3 +18,7 @@
 </div>
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/favori.js') }}"></script>
+@endpush
