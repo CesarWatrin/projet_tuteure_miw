@@ -114,6 +114,8 @@
                        name="password_confirmation" required autocomplete="new-password">
             </div>
 
+                <!-- TODO checkbox d'acceptation des CGU -->
+
             <div>
                 <button type="submit" class="button brouge">
                     S'inscrire

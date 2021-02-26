@@ -49,14 +49,20 @@ class AccountController extends Controller
         return view ('pages.commentscode_input');
     }
 
-    public function rateStore(Request $request) {
-        $this->validate($request, [
-            'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
-        ]);
+    public function rateStore(Request $request, $comments_code = null) {
+        // TODO rediriger vers la modification si le code d'un commerce déjà noté est entré
+        $rating = null;
+        if(is_null($comments_code)) {
+            $this->validate($request, [
+                'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
+            ]);
+            $store = Store::all()->where('comments_code', $request->input('comments_code'))->first();
+        } else {
+            $store = Store::all()->where('comments_code', $comments_code)->first();
+            $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $store->id)->first();
+        }
 
-        $store = Store::all()->where('comments_code', $request->input('comments_code'))->first();
-
-        return view('pages.rating_add', ['store' => $store]);
+        return view('pages.rating_add', ['store' => $store, 'rating' => $rating]);
 
     }
 
@@ -67,13 +73,18 @@ class AccountController extends Controller
             'comment' => 'nullable'
         ]);
 
-        $rating = new Rating();
-        $rating->user_id = Auth::id();
-        $rating->store_id = $request->input('store_id');
+        $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $request->input('store_id'))->first();
+
+        if(is_null($rating)) {
+            $rating = new Rating();
+            $rating->user_id = Auth::id();
+            $rating->store_id = $request->input('store_id');
+        }
         $rating->rating = $request->input('rating');
         $rating->comment = $request->input('comment');
+
         $rating->save();
 
-        return redirect()->route('dashboard')->with('success', 'Avis ajouté avec succès.');
+        return redirect()->route('dashboard')->with('success', 'Avis posté avec succès.');
     }
 }
