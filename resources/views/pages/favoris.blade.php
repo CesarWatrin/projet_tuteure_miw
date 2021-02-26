@@ -1,5 +1,9 @@
 @extends ('layouts.app')
 
+@push('styles')
+    <link href="{{ asset('css/favoris.css') }}" rel="stylesheet">
+@endpush
+
 @section ('content')
 
 <div class="favoris_header">

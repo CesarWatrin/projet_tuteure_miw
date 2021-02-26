@@ -17,7 +17,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/favoris.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/account.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
@@ -101,13 +100,13 @@
                 <p>Retrouvez-nous</p>
                 <div class="social_media">
                      <div>
-                        <a href="#"><svg class="big_icon"><use xlink:href="images/sprite.svg#share"></use></svg></a>
+                        <a href="#"><svg class="big_icon"><use xlink:href="../images/sprite.svg#share"></use></svg></a>
                      </div>
                      <div>
-                        <a href="#"><svg class="fb_icon"><use xlink:href="images/sprite.svg#facebook"></use></svg></a>
+                        <a href="#"><svg class="fb_icon"><use xlink:href="../images/sprite.svg#facebook"></use></svg></a>
                      </div>
                      <div>
-                        <a href="#"><svg class="big_icon"><use xlink:href="images/sprite.svg#instagram"></use></svg></a>
+                        <a href="#"><svg class="big_icon"><use xlink:href="../images/sprite.svg#instagram"></use></svg></a>
                      </div>
                 </div>
                 <p>Plan du site</p>
