@@ -336,6 +336,7 @@ input:active:focus, input:focus {
 }
 .user .info .titre {
   font-family: "Yeseva One", cursive;
+  font-size: 2rem;
 }
 .user .info .imgUser {
   width: 200px;
@@ -347,7 +348,7 @@ input:active:focus, input:focus {
   border-radius: 200px;
 }
 .user .info p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 10px;
   word-wrap: break-word;
   color: #020B5D;
@@ -366,8 +367,12 @@ input:active:focus, input:focus {
   width: 100%;
   display: flex;
   margin-top: 20px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
+}
+.user .modout .d-none {
+  display: none;
 }
 
 @media screen and (min-width: 769px) {
@@ -385,5 +390,11 @@ input:active:focus, input:focus {
   }
   .user #logout {
     margin-left: 20px;
+  }
+  .user .info .titre {
+    font-size: 2.5rem;
+  }
+  .user .info p {
+    font-size: 2.2rem;
   }
 }

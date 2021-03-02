@@ -19,6 +19,14 @@ class AccountController extends Controller
         return view('pages.account', ['user' => Auth::user()]);
     }
 
+    public function stores(){
+        return view('pages.stores', ['user' => Auth::user()]);
+    }
+
+    public function dashboard(){
+        return view('pages.dashboard');
+    }
+
     public function edit() {
         return view('pages.account_edit', ['user' => Auth::user()]);
     }
@@ -39,10 +47,6 @@ class AccountController extends Controller
         Auth::user()->save();
 
         return redirect()->route('account')->with('success', 'Profil modifié avec succès.');
-    }
-
-    public function dashboard() {
-        return view('pages.dashboard');
     }
 
     public function commentscode() {
