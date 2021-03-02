@@ -34,3 +34,7 @@ mix.sass('resources/sass/index.scss', 'public/css').sourceMaps();
 mix.sass('resources/sass/account.scss', 'public/css').sourceMaps();
 
 mix.sass('resources/sass/stores.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/stores_add.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/dashboard.scss', 'public/css').sourceMaps();

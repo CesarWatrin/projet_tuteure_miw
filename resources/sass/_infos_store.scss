@@ -1,0 +1,54 @@
+.info_shop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .infos_header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.infos_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    svg{
+        height: 40px;
+        width: 40px;
+        color: $dark_blue;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+form{
+    .infos_general{
+        display: none;
+    }
+    .infos_localisation{
+        display: none;
+    }
+    .infos_complementary{
+        display: none;
+    }
+}

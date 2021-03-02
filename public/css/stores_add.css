@@ -1,0 +1,9 @@
+.add-store {
+  background-color: chartreuse;
+  height: 1000px;
+}
+.add-store .input-row {
+  display: flex;
+  background-color: brown;
+  flex-direction: column;
+}

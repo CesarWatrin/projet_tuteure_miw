@@ -19,4 +19,7 @@ class AccountController extends Controller
     public function stores(){
         return view('pages.stores', ['user' => Auth::user()]);
     }
+    public function dashboard(){
+        return view('pages.dashboard');
+    }
 }
