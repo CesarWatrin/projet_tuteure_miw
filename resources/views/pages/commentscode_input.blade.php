@@ -31,7 +31,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="bouton_form brouge">
+        <button type="submit" class="bouton_form brouge bsubmit">
             Valider
         </button>
 

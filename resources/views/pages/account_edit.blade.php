@@ -56,6 +56,7 @@
                 @enderror
             </div>
 
+        @if($user->role->id != 1)
             <div class="input_row" id="phone_row">
 
                 <label for="phonenumber">Nº de téléphone</label>
@@ -69,9 +70,10 @@
                 </span>
                 @enderror
             </div>
+        @endif
 
             <div>
-                <button type="submit" class="bouton_form brouge">
+                <button type="submit" class="bouton_form brouge bsubmit">
                     Modifier
                 </button>
             </div>

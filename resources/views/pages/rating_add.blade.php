@@ -57,7 +57,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="bouton_form brouge">
+        <button type="submit" class="bouton_form brouge bsubmit">
             @if(!$rating) Envoyer @else Modifier @endif
         </button>
 
