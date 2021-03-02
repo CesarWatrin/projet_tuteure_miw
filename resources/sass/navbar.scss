@@ -108,6 +108,10 @@ $corner: 16px;
        color: $color;
        transition: position 0.2s;
 
+       .onglet div:first-of-type span {
+           color: transparent;
+       }
+
        .onglet:hover div:first-of-type span {
            color: $color;
        }
