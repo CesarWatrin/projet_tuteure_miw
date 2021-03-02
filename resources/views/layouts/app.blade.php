@@ -127,5 +127,7 @@
    @if (Route::current()->uri === 'map')
      <script src="{{ asset('js/map.js') }}" defer></script>
    @endif
-   <script src="{{ asset('js/favori.js') }}"></script>
+   @if (Route::current()->uri === 'favoris' || Route::current()->uri === 'map')
+      <script src="{{ asset('js/favori.js') }}"></script>
+   @endif
 </html>

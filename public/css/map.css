@@ -309,6 +309,9 @@ input:active:focus, input:focus {
   align-items: center;
   width: 100%;
 }
+.card .id_store {
+  display: none;
+}
 
 .text {
   display: flex;

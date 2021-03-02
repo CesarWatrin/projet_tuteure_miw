@@ -240,6 +240,7 @@ async function nearStores(coord) {
          var store_mail = document.getElementById('store_mail');
          var store_website = document.getElementById('store_website');
          var delivery_check = document.getElementById('delivery_check');
+         var store_id = document.getElementById('store_id');
 
          var dist = distance(lat, lon, store.lat, store.lon, 'K');
          dist = dist.toFixed(1);
@@ -264,6 +265,27 @@ async function nearStores(coord) {
          store_tel.textContent = phonenumber;
          store_mail.textContent = store.email;
          store_website.href = store.website;
+         store_id.textContent = store.id;
+
+         var macyofavoris = localStorage.getItem('macyofavoris');
+         var heart_fav = document.getElementById('heart_fav');
+         var exist = 0;
+         if (macyofavoris !== null) {
+            macyofavoris = [macyofavoris];
+            macyofavoris = macyofavoris[0].split([',']);
+            for (var i = 0; i < macyofavoris.length; i++) {
+               if (macyofavoris[i] == store.id) {
+                  exist++;
+               }
+            }
+            if (exist !== 0) {
+               heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_full');
+            } else {
+               heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_empty');
+            }
+         } else {
+            heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_empty');
+         }
 
          if (popup.classList[1] === undefined) {
             popup.classList.value = 'popup active';
@@ -283,7 +305,7 @@ buttonSearch.addEventListener('click', recherche);
 let inputSearch = document.getElementById('inputSearch');
 inputSearch.addEventListener('input', chargeVilles);
 inputSearch.addEventListener('click', () => {
-   popup.class= 'popup';
+   popup.classList.value = 'popup';
    switchFilter();
 });
 
@@ -374,3 +396,11 @@ function userPosition() {
    }
 }
 userPosition();
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var lat = url.searchParams.get("lat");
+var lon = url.searchParams.get("lon");
+if (lat !== null && lon !== null) {
+   carte.setView([lat, lon], 20, { animation: true });
+}
