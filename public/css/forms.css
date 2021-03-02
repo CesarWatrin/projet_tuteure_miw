@@ -126,7 +126,7 @@ label {
   min-width: 8rem;
 }
 
-.button {
+.bouton_form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,7 +140,7 @@ label {
   border: none;
   transition: 0.2s;
 }
-.button:hover {
+.bouton_form:hover {
   text-decoration: none;
 }
 
