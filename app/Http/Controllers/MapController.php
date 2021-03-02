@@ -9,10 +9,12 @@ use function PHPUnit\Framework\throwException;
 class MapController extends Controller
 {
 
-    public function home() {
+    public function home(Request $request) {
         //dd($this->getDistanceBetweenPointsNew(44.545061, 6.063290, 44.533836, 6.043525, 'kilometers'));
-
-        return view('pages.map');
+        if($request->has('q'))
+            return view('pages.map', ['search' => $request->input('q')]);
+        else
+            return view('pages.map');
     }
 
     public function getStores(Request $request) {

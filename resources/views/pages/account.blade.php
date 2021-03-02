@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@push('styles')
+    <link href="{{ asset('css/account.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 <div class="user">
 <img class="waves" src="images/sky_wave.svg">
 
   <div class="modout">
 
-    <a href="#" id="modif">
+    <a href="{{ route('account_edit') }}" id="modif">
 
     <svg xmlns="http://www.w3.org/2000/svg" class="edit" width="18.001" height="20" viewBox="0 0 28.001 30">
       <g id="Expanded" transform="translate(-2 0)">

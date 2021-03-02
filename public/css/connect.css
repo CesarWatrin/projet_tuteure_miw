@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap);
 body {
   background-color: #eaeffc;
 }
@@ -43,6 +42,7 @@ body {
 }
 .connect .formulaireConnect .inputText {
   width: 80%;
+  max-width: 500px;
   margin: 5px auto;
   height: 50px;
   font-size: 1rem;
@@ -109,6 +109,7 @@ body {
   height: 60px;
   font-size: 1rem;
   width: 70%;
+  max-width: 450px;
   border-radius: 15px;
   border: none;
   transition: 0.2s;
@@ -196,13 +197,13 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-  .connect mulaireConnect .inputText {
+  .connect .formulaireConnect .inputText {
     max-width: 500px;
     margin-top: 10px;
     font-size: 1.2rem;
     color: #475BF5;
   }
-  .connect mulaireConnect .button {
+  .connect .formulaireConnect .button {
     margin: 0 auto;
     height: 60px;
     font-size: 1.2rem;
@@ -210,19 +211,22 @@ body {
     border-radius: 15px;
     border: none;
   }
-  .connect mulaireConnect .bbleu {
+  .connect .formulaireConnect .bbleu {
     background-color: #020b5d;
     color: white;
   }
-  .connect mulaireConnect .brouge {
+  .connect .formulaireConnect .brouge {
     margin-top: 20px;
   }
-  .connect mulaireConnect .bgoogle {
+  .connect .formulaireConnect .bgoogle {
     margin-top: 10px;
   }
-  .connect mulaireConnect .logoGoogle {
+  .connect .formulaireConnect .logoGoogle {
     width: 30px;
     height: 30px;
     margin-right: 10px;
   }
+}
+.formulaireEdit label {
+  display: block;
 }

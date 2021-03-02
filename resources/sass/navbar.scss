@@ -103,9 +103,36 @@ $corner: 16px;
       top: 20px;
       right: 20px;
 
-      .onglet {
+       position: absolute;
+       background-color: transparent;
+       color: $color;
+       transition: position 0.2s;
+
+       .onglet:hover div:first-of-type span {
+           color: $color;
+       }
+
+       .currentPage div:first-of-type span {
+           color: $color;
+       }
+
+       .onglet {
          width: initial;
          padding: 5px;
       }
    }
+
+    .navbar_blue {
+        position: fixed;
+        background-color: $color;
+        color: white;
+
+        .onglet:hover div:first-of-type span {
+            color: white;
+        }
+
+        .currentPage div:first-of-type span {
+            color: white;
+        }
+    }
 }

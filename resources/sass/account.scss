@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import 'global';
 .user{
     display: flex;
     flex-direction: column;
@@ -34,7 +35,7 @@
         margin-left: 5px;
         vertical-align: middle;
     }
-    
+
     .info{
         margin-top: 60px;
         display: flex;
@@ -90,7 +91,7 @@
 }
 
 @media screen and (min-width: 769px){
-    
+
     .user{
         width: 100%;
 
@@ -108,11 +109,11 @@
         }
 
         #logout{
-            
+
             margin-left: 20px;
         }
     }
 
-    
-    
+
+
 }
