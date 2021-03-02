@@ -75,9 +75,34 @@
     left: auto;
     top: 20px;
     right: 20px;
+    position: absolute;
+    background-color: transparent;
+    color: #020B5D;
+    transition: position 0.2s;
+  }
+  .navbar .onglet div:first-of-type span {
+    color: transparent;
+  }
+  .navbar .onglet:hover div:first-of-type span {
+    color: #020B5D;
+  }
+  .navbar .currentPage div:first-of-type span {
+    color: #020B5D;
   }
   .navbar .onglet {
     width: initial;
     padding: 5px;
+  }
+
+  .navbar_blue {
+    position: fixed;
+    background-color: #020B5D;
+    color: white;
+  }
+  .navbar_blue .onglet:hover div:first-of-type span {
+    color: white;
+  }
+  .navbar_blue .currentPage div:first-of-type span {
+    color: white;
   }
 }

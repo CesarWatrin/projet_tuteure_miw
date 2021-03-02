@@ -21,7 +21,9 @@ mix.js('resources/js/map.js', 'public/js')
 
 mix.js('resources/js/favori.js', 'public/js').sourceMaps();
 
-mix.sass('resources/sass/navbar.scss', 'public/css').sourceMaps();
+mix.js('resources/js/navbar.js', 'public/js')
+.sass('resources/sass/navbar.scss', 'public/css')
+.sourceMaps();
 
 mix.sass('resources/sass/connect.scss', 'public/css').sourceMaps();
 
@@ -38,3 +40,5 @@ mix.sass('resources/sass/stores.scss', 'public/css').sourceMaps();
 mix.sass('resources/sass/stores_add.scss', 'public/css').sourceMaps();
 
 mix.sass('resources/sass/dashboard.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/ratings.scss', 'public/css').sourceMaps();

@@ -4,37 +4,26 @@
    </div>
    <div class="infos_store">
       <div class="text">
-         <h3 id="store_name">SPAR Gap</h3>
+         <h3 id="store_name" class="store_name"></h3>
          <div class="distance">
-            <!--<img src="images/cursor.svg" alt="position">-->
             <svg class="small_icon"><use xlink:href="images/sprite.svg#cursor"></use></svg>
-            <p id="store_distance">&nbsp;à 3.2km</p>
+            <p id="store_distance" class="store_distance">&nbsp;</p>
          </div>
          <div class="note">
-            <!--<img src="images/star.svg" alt="etoile">-->
             <svg class="small_icon"><use xlink:href="images/sprite.svg#star"></use></svg>
-            <p id="store_score">&nbsp;4.5/5</p>
+            <p id="store_score" class="store_score">&nbsp;</p>
+         </div>
+         <div class="id_store">
+            <p id="store_id" class="store_id"></p>
+            <p class="store_lat"></p>
+            <p class="store_lon"></p>
          </div>
       </div>
       <div class="icons">
-         @if (Route::current()->uri === 'map')
-            <div class="card_btn">
-               <svg class="icon"><use id="heart_fav" xlink:href="images/sprite.svg#heart_empty"></use></svg>
-               <span>Favori</span>
-            </div>
-         @endif
-         @if (Route::current()->uri === '/')
-            <div class="card_btn">
-               <svg class="icon"><use id="heart_fav" xlink:href="images/sprite.svg#heart_empty"></use></svg>
-               <span>Favori</span>
-            </div>
-         @endif
-         @if (Route::current()->uri === 'favoris')
-            <div class="card_btn">
-               <svg class="icon"><use id="heart_fav" xlink:href="images/sprite.svg#heart_full"></use></svg>
-               <span>Favori</span>
-           </div>
-         @endif
+         <div class="card_btn">
+            <svg class="icon"><use id="heart_fav" xlink:href="images/sprite.svg#heart_full"></use></svg>
+            <span>Favori</span>
+         </div>
       </div>
    </div>
 </div>

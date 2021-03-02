@@ -17,7 +17,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/favoris.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/account.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stores.css') }}" rel="stylesheet">
@@ -32,14 +31,14 @@
 </head>
 <body>
     <div id="app">
-      <div class="navbar">
+      <div class="navbar" id="navbar">
          @if (Route::current()->uri === '/')
             <div class="onglet currentPage" onclick="location.href='{{ url('/') }}';">
          @else
             <div class="onglet" onclick="location.href='{{ url('/') }}';">
          @endif
             <div>
-                <svg><use xlink:href="../images/sprite.svg#accueil"></use></svg>
+                <svg><use xlink:href="{{ asset('images/sprite.svg#accueil') }}"></use></svg>
                <span>______</span>
             </div>
             <div>
@@ -52,7 +51,7 @@
             <div class="onglet" onclick="location.href='{{ route('map') }}';">
          @endif
             <div>
-                <svg><use xlink:href="../images/sprite.svg#carte"></use></svg>
+                <svg><use xlink:href="{{ asset('images/sprite.svg#carte') }}"></use></svg>
                 <span>______</span>
             </div>
             <div>
@@ -65,7 +64,7 @@
             <div class="onglet" onclick="location.href='{{ route('favoris') }}';">
          @endif
             <div>
-                <svg><use xlink:href="../images/sprite.svg#favoris"></use></svg>
+                <svg><use xlink:href="{{ asset('images/sprite.svg#favoris') }}"></use></svg>
                 <span>______</span>
             </div>
             <div>
@@ -78,7 +77,7 @@
             <div class="onglet" onclick="location.href='{{ route('login') }}';">
          @endif
             <div>
-                <svg><use xlink:href="../images/sprite.svg#mon_compte"></use></svg>
+                <svg><use xlink:href="{{ asset('images/sprite.svg#mon_compte') }}"></use></svg>
                 <span>______</span>
             </div>
             <div>
@@ -97,19 +96,19 @@
         @if (Route::current()->uri !== 'map')
            <footer>
               <div class="wave">
-                <img src="../images/footer.svg" alt="footer_wave">
+                <img src="{{ asset('images/footer.svg') }}" alt="footer_wave">
               </div>
               <div class="content_footer">
                 <p>Retrouvez-nous</p>
                 <div class="social_media">
                      <div>
-                        <a href="#"><svg class="big_icon"><use xlink:href="images/sprite.svg#share"></use></svg></a>
+                        <a href="#"><svg class="big_icon"><use xlink:href="{{ asset('images/sprite.svg#share') }}"></use></svg></a>
                      </div>
                      <div>
-                        <a href="#"><svg class="fb_icon"><use xlink:href="images/sprite.svg#facebook"></use></svg></a>
+                        <a href="#"><svg class="fb_icon"><use xlink:href="{{ asset('images/sprite.svg#facebook') }}"></use></svg></a>
                      </div>
                      <div>
-                        <a href="#"><svg class="big_icon"><use xlink:href="images/sprite.svg#instagram"></use></svg></a>
+                        <a href="#"><svg class="big_icon"><use xlink:href="{{ asset('images/sprite.svg#instagram') }}"></use></svg></a>
                      </div>
                 </div>
                 <p>Plan du site</p>
@@ -126,8 +125,8 @@
    <!-- Scripts -->
    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="Nzhw9TVU"></script>
    <script src="{{ asset('js/app.js') }}" defer></script>
-   @if (Route::current()->uri === 'map')
-     <script src="{{ asset('js/map.js') }}" defer></script>
-   @endif
-   <script src="{{ asset('js/favori.js') }}"></script>
+   <script src="{{ asset('js/navbar.js') }}" defer></script>
+
+@stack('scripts')
+
 </html>
