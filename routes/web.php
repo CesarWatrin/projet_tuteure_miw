@@ -31,4 +31,6 @@ Route::get('/store/add', 'ManagerController@storeAdd')->name('store_add');
 // routes API
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');
 
-Route::get('/dashboard', 'AccountController@dashboard')->name('account');
+//Route::get('/dashboard', 'ManagerController@dashboard')->name('account');
+
+Route::get('/dashboard/{store_id}', 'ManagerController@dashboard')->name('dashboard');

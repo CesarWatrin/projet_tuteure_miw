@@ -3,6 +3,7 @@
 
 @push('styles')
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
 @endpush
 
 
@@ -10,11 +11,13 @@
 <div class="container">
     <div class="dashboard">
             <div class="dashboard_bar">
-                <select class="shops">
-                    <option>-- Choix du magasin --</option>
+                <select class="shops" onchange="changeStore()">
+                    @foreach($stores as $store)
+                        <option value="{{$store->id}}">{{$store->name}}</option>
+                    @endforeach
                 </select>
                 <div class="data_time">
-                    <p>Semaine</p>
+                    <p class="active_data">Semaine</p>
                     <p>Mois</p>
                     <p>Année</p>
                 </div>
@@ -85,65 +88,115 @@
                 <h2>Votre Commerce</h2>
             </div>
             <div class="infos_categorie">
-                <p>Général</p>
+                <p class="active_categorie">Général</p>
                 <p>Localisation</p>
                 <p>Complément</p>
             </div>
         </div>
         <form>
-            <div class="infos_general active">
+            <div class="infos_general infos_active">
                 <div class="infos_left">
-                    <input type="text" placeholder="Nom">
-                    <input type="tel" placeholder="Numéro de Téléphone">
-                    <input type="email" placeholder="Mail">
-                    <input type="text" placeholder="Site Web">
+                    <input type="text" placeholder="Nom" name="name" value="{{isset($store_info[0]) ? $store_info[0]->name: ""}}">
+                    <input type="tel" placeholder="Numéro de Téléphone" name="phonenumber" value="{{isset($store_info[0]) ? $store_info[0]->phonenumber: ""}}">
+                    <input type="email" placeholder="Mail" name="email">
+                    <input type="text" placeholder="Site Web" name="website">
                 </div>
                 <div class="infos_right">
-                    <textarea placeholder="Description"></textarea>
+                    <textarea placeholder="Description" name="description"></textarea>
                 </div>
             </div>
 
             <div class="infos_localisation">
                 <div class="infos_left">
-                    <input type="text" placeholder="Adresse">
-                    <input type="text" placeholder="Complément d'adresse">
-                    <input type="text" placeholder="Ville">
+                    <input type="text" placeholder="Adresse" name="adresse1">
+                    <input type="text" placeholder="Complément d'adresse" name="adresse2">
+                    <input type="text" placeholder="Ville" name="city_id">
                 </div>
                 <div class="infos_right">
-                    <input type="number" placeholder="Latitude">
-                    <input type="number" placeholder="Longitude">
+                    <input type="number" placeholder="Latitude" name="lat" disabled>
+                    <input type="number" placeholder="Longitude" name="long" disabled>
                 </div>
             </div>
 
             <div class="infos_complementary">
                 <div class="infos_left">
-                    <select>
+                    <select name="category_id">
                         <option>--Catégorie--</option>
                     </select>
-                    <select>
+                    <select name="subcategory_id">
                         <option>--Sous-Catégorie--</option>
                     </select>
-                    <div>
+                    <div class="delivery">
                         <label for="delivery_cat">Livraison : </label>
-                        <div id="delivery_cat">
-                            <input type="radio" id="oui" name="delivery" value="oui">
-                            <label for="oui">Oui</label><br>
-                            <input type="radio" id="non" name="delivery" value="non">
-                            <label for="non">Non</label><br>
+                        <div class="delivery_cat" id="delivery_cat">
+                            <div class="oui">
+                                <input type="radio" id="oui" name="delivery" value="oui">
+                                <label for="oui">Oui</label>
+                            </div>
+                            <div class="non">
+                                <input type="radio" id="non" name="delivery" value="non">
+                                <label for="non">Non</label>
+                            </div>
                         </div>
                     </div>
-                    <textarea placeholder="Condition livraison"></textarea>
-                    <textarea placeholder="Horraire"></textarea>
+                    <textarea placeholder="Condition livraison" name="delivery_conditions"></textarea>
+                    <textarea placeholder="Horraire" name="opening_hours"></textarea>
                 </div>
                 <div class="infos_right">
                     <textarea placeholder="Catalogue"></textarea>
                 </div>
             </div>
+            <div class="infos_buttons">
+                <input class="submit" type="submit" value="Sauvegarder">
+                <input class="reset" type="reset" value="Annuler">
+            </div>
 
-            <input type="submit" value="Sauvegarder">
-            <input type="reset" value="Annuler">
         </form>
     </div>
 </div>
+<script>
+    function resetClassnameInfo(){
+        let formDiv = document.getElementsByTagName('form')[0].children;
+        formDiv[0].className = "infos_general";
+        formDiv[1].className = "infos_localisation";
+        formDiv[2].className = "infos_complementary";
+    }
 
+    function resetClassnameCategorie(){
+        let navShop = document.getElementsByClassName('infos_categorie')[0].getElementsByTagName('p');
+        for (let i = 0; i < navShop.length ; i++) {
+            navShop[i].className = "";
+        }
+    }
+
+    let navShop = document.getElementsByClassName('infos_categorie')[0].getElementsByTagName('p');
+    console.log(navShop);
+    console.log(navShop[0]);
+    console.log(navShop[0].className);
+    for (let i = 0; i < navShop.length; i++) {
+        navShop[i].addEventListener("click", function(){
+            resetClassnameInfo();
+            resetClassnameCategorie();
+            navShop[i].className = "active_categorie";
+            let formDiv = document.getElementsByTagName('form')[0].children;
+            formDiv[i].className += " infos_active";
+        });
+    }
+
+
+
+
+    //selectStore.addEventListener("onchange");
+
+    function changeStore(){
+        let selectStore = document.getElementsByClassName('shops')[0];
+        console.log(selectStore);
+        console.log(selectStore.value);
+        let url = "{{ route('dashboard', ':id_store') }}";
+        url = url.replace(':id_store', selectStore.value);
+        document.location.href=url;
+    }
+
+</script>
 @endsection
+
