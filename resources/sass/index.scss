@@ -6,16 +6,6 @@
     padding: 0 2.25rem;
     font-family: Nunito, sans-serif;
 
-    .corp {
-        display: block;
-        width: 100%;
-        padding: 1.5rem 0;
-        color: $dark_blue;
-        font-family: "Yeseva One", serif;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
     .header_content {
         display: flex;
         flex-direction: column;
@@ -33,7 +23,7 @@
         align-items: center;
     }
 
-    .accroche, form, .champ {
+    .accroche, form, .input {
         width: 100%;
     }
 
@@ -103,10 +93,6 @@
 
         .header_content {
             margin-bottom: -6rem;
-        }
-
-        .corp {
-            text-align: left;
         }
 
         .flex_container {

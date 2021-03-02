@@ -64,7 +64,7 @@ class RegisterController extends Controller
             'role' => ['required', 'int', 'exists:roles,id'],
             'surname' => ['required', 'string', 'min:2', 'max:255'],
             'firstname' => ['required', 'string', 'min:2', 'max:255'],
-            'phonenumber' => ['required', 'digits:10'],
+            'phonenumber' => ['required_unless:role,1', 'exclude_if:role,1', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);

@@ -282,6 +282,9 @@ buttonSearch.addEventListener('click', recherche);
 
 let inputSearch = document.getElementById('inputSearch');
 inputSearch.addEventListener('input', chargeVilles);
+inputSearch.addEventListener('keyup', (e) => {
+    if(e.code === 'Enter') recherche()
+});
 inputSearch.addEventListener('click', () => {
    popup.class= 'popup';
    switchFilter();
@@ -338,6 +341,7 @@ function recherche() {
    autocomplete.innerHTML = '';
    carte.removeLayer(searchLayer);
    if (inputSearch.value != '') {
+       window.history.replaceState({id: 'search'}, 'Carte | MAC-YO', '/map?q='+inputSearch.value);
       $.ajax({
          url: "https://api-adresse.data.gouv.fr/search/?q="+inputSearch.value+"&limit=1",
          success: function(data) {
