@@ -4,7 +4,6 @@ body {
 
 .connect {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -13,6 +12,7 @@ body {
 }
 .connect .formulaire {
   width: 100%;
+  padding: 1rem;
 }
 .connect .titreImg {
   font-family: "Yeseva One", cursive;
@@ -34,37 +34,7 @@ body {
   text-align: center;
 }
 .connect .formulaireConnect {
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  margin-top: 10px;
-  padding-bottom: 60px;
-}
-.connect .formulaireConnect .inputText {
-  width: 80%;
-  max-width: 500px;
-  margin: 5px auto;
-  height: 50px;
-  font-size: 1rem;
-  border: solid #475BF5 1px;
-  border-radius: 15px;
-  color: #475BF5;
-  padding: 0 20px;
-  box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
-}
-.connect .formulaireConnect .inputText::-moz-placeholder {
-  color: #96b4f4;
-}
-.connect .formulaireConnect .inputText:-ms-input-placeholder {
-  color: #96b4f4;
-}
-.connect .formulaireConnect .inputText::placeholder {
-  color: #96b4f4;
-}
-.connect .formulaireConnect .input_error {
-  display: block;
-  color: #e4534b;
-  margin-bottom: 0.5rem;
 }
 .connect .formulaireConnect .roles_row {
   display: flex;
@@ -101,40 +71,6 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
 }
-.connect .formulaireConnect .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  height: 60px;
-  font-size: 1rem;
-  width: 70%;
-  max-width: 450px;
-  border-radius: 15px;
-  border: none;
-  transition: 0.2s;
-}
-.connect .formulaireConnect .button:hover {
-  text-decoration: none;
-}
-.connect .formulaireConnect .bbleu {
-  background-color: #020b5d;
-  box-shadow: 0 2px 9px 0 rgba(2, 11, 93, 0.2);
-  color: white;
-}
-.connect .formulaireConnect .bbleu:hover {
-  box-shadow: 0 2px 9px 0 rgba(2, 11, 93, 0.4);
-}
-.connect .formulaireConnect .brouge {
-  background-color: #e4534b;
-  box-shadow: 0 2px 9px 0 rgba(228, 83, 75, 0.2);
-  color: white;
-  margin-top: 20px;
-}
-.connect .formulaireConnect .brouge:hover {
-  box-shadow: 0 2px 9px 0 rgba(228, 83, 75, 0.4);
-  cursor: pointer;
-}
 .connect .formulaireConnect .bgoogle {
   background-color: white;
   color: #020b5d;
@@ -150,14 +86,6 @@ body {
   font-size: 1rem;
   margin-top: 10px;
 }
-.connect .footer {
-  background-color: darkblue;
-  height: 50px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  color: white;
-}
 
 @media screen and (min-width: 768px) {
   .head {
@@ -167,16 +95,9 @@ body {
   }
 
   .connect {
-    padding-top: 50px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-  .connect .footer {
-    top: 0;
-    background-color: #00000000;
-    color: #020b5d;
-    text-align: right;
   }
   .connect .titreImg {
     display: none;
@@ -186,7 +107,6 @@ body {
     font-family: "Yeseva One", cursive;
     color: #020b5d;
     text-align: center;
-    margin-top: 60px;
     font-size: 4rem;
   }
   .connect .imagebvn {
@@ -197,27 +117,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-  .connect .formulaireConnect .inputText {
-    max-width: 500px;
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #475BF5;
-  }
-  .connect .formulaireConnect .button {
-    margin: 0 auto;
-    height: 60px;
-    font-size: 1.2rem;
-    width: 50%;
-    border-radius: 15px;
-    border: none;
-  }
-  .connect .formulaireConnect .bbleu {
-    background-color: #020b5d;
-    color: white;
-  }
-  .connect .formulaireConnect .brouge {
-    margin-top: 20px;
-  }
   .connect .formulaireConnect .bgoogle {
     margin-top: 10px;
   }
@@ -226,7 +125,4 @@ body {
     height: 30px;
     margin-right: 10px;
   }
-}
-.formulaireEdit label {
-  display: block;
 }

@@ -8,7 +8,7 @@
     margin: 0 auto;
     font-family: 'Nunito', sans-serif;
 
-
+    
     .waves
     {
         position: absolute;
@@ -46,6 +46,7 @@
 
         .titre{
             font-family: 'Yeseva One', cursive;
+            font-size: 2rem;
         }
         .imgUser{
             width: 200px;
@@ -58,7 +59,7 @@
         }
 
         p{
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-top: 10px;
             word-wrap: break-word;
             color: #020B5D;
@@ -70,7 +71,6 @@
             }
         }
         .orange{
-
             color: #E4534B;
         }
         .separation{
@@ -84,8 +84,13 @@
         width: 100%;
         display: flex;
         margin-top: 20px;
+        padding: 0 20px;
         display: flex;
         justify-content: space-between;
+
+        .d-none{
+            display: none;
+        }
 
     }
 }
@@ -111,6 +116,15 @@
         #logout{
 
             margin-left: 20px;
+        }
+        .info{
+            .titre{
+
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 2.2rem;
+            }
         }
     }
 
