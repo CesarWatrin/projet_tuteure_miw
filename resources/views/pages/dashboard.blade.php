@@ -10,18 +10,19 @@
 @section ('content')
 <div class="container">
     <div class="dashboard">
-            <div class="dashboard_bar">
+        {{--<a href="{{ route('stores') }}">Stores</a>--}}
+            <!--<div class="dashboard_bar">
                 <select class="shops" onchange="changeStore()">
-                    @foreach($stores as $store)
+                    {{--@foreach($stores as $store)
                         <option value="{{$store->id}}">{{$store->name}}</option>
-                    @endforeach
+                    @endforeach--}}
                 </select>
                 <div class="data_time">
                     <p class="active_data">Semaine</p>
                     <p>Mois</p>
                     <p>Année</p>
                 </div>
-            </div>
+            </div>-->
 
             <div class="rewards">
                 <div class="categorie_reward reward">
@@ -183,9 +184,6 @@
         });
     }
 
-
-
-
     //selectStore.addEventListener("onchange");
 
     function changeStore(){
@@ -193,7 +191,10 @@
         console.log(selectStore);
         console.log(selectStore.value);
         let url = "{{ route('dashboard', ':id_store') }}";
+        console.log(url);
+        console.log("ok");
         url = url.replace(':id_store', selectStore.value);
+        //url = url.replace('?', '/');
         document.location.href=url;
     }
 

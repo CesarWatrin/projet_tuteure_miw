@@ -22,10 +22,15 @@ class ManagerController extends Controller
         return view('pages.dashboard', ['stores' => $stores]);
     }*/
 
-    public function dashboard($storeId){
+    /*public function dashboard($storeId){
         $manager_id = Auth::user()->id;
         $stores = Store::where('manager_id', '=', $manager_id)->get();
         $store_info = Store::where('id', '=', $storeId)->get();
         return view('pages.dashboard', ['stores' => $stores, 'store_info' => $store_info]);
+    }*/
+
+    public function dashboard($storeId){
+        $store = Store::where('id', '=', $storeId)->get();
+        return view('pages.dashboard', ['store' => $store]);
     }
 }
