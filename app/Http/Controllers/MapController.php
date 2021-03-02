@@ -37,8 +37,17 @@ class MapController extends Controller
             //dd($stores_near);
 
             return $stores_near;
+        } else if ($request->has('ids')) {
+           $ids = $request->input('ids');
+           $ids = explode(',', $ids);
+           $array_ids = array();
+           foreach ($ids as $id) {
+              $stores = Store::with('city')->where('id', $id)->get();
+              array_push($array_ids, $stores[0]);
+           }
+           return $array_ids;
         } else {
-            throw new \Exception('lat et/ou lon ne sont pas définis');
+            throw new \Exception('lat et/ou lon et/ou id ne sont pas définis');
         }
 
     }

@@ -80,6 +80,9 @@
     color: #020B5D;
     transition: position 0.2s;
   }
+  .navbar .onglet div:first-of-type span {
+    color: transparent;
+  }
   .navbar .onglet:hover div:first-of-type span {
     color: #020B5D;
   }

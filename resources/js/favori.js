@@ -1,12 +1,116 @@
 var heart_fav = document.getElementById('heart_fav');
-var card_btn = document.getElementsByClassName('card_btn')[0];
+var card_btn = document.getElementsByClassName('card_btn');
 
-card_btn.addEventListener('click', addToFav);
+for (var i = 0; i < card_btn.length; i++) {
+   card_btn[i].addEventListener('click', addToFav);
+}
 
-function addToFav() {
-   if (heart_fav.getAttribute('xlink:href') === 'images/sprite.svg#heart_empty') {
-      heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_full')
+function addToFav(event) {
+   var id = heart_fav.parentNode.parentNode.parentNode.parentNode.children[0].children[3].textContent;
+   var exist = addStorage(id.trim());
+   if (exist === 0) {
+      heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_full');
    } else {
-      heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_empty')
+      removeStorage(id);
+      heart_fav.setAttribute('xlink:href', 'images/sprite.svg#heart_empty');
+   }
+}
+
+function removeStorage(id) {
+   var macyofavoris = localStorage.getItem('macyofavoris');
+   macyofavoris = [macyofavoris];
+   macyofavoris = macyofavoris[0].split([',']);
+   var index = macyofavoris.indexOf(id.trim());
+   if (index > -1) {
+      macyofavoris.splice(index, 1);
+      localStorage.setItem('macyofavoris', macyofavoris);
+   }
+}
+
+function addStorage(id) {
+   var macyofavoris = localStorage.getItem('macyofavoris');
+   var exist = 0;
+   if (macyofavoris !== null && macyofavoris.length !== 0) {
+      macyofavoris = [macyofavoris];
+      macyofavoris = macyofavoris[0].split([',']);
+      for (var i = 0; i < macyofavoris.length; i++) {
+         if (macyofavoris[i] === id) {
+            exist++;
+         }
+      }
+      if (exist === 0) {
+         macyofavoris.push(id);
+      }
+      localStorage.setItem('macyofavoris', macyofavoris);
+   } else {
+      localStorage.setItem('macyofavoris', [id]);
+   }
+   return exist;
+}
+
+/////////////////////////////////page Favoris//////////////////////////////////////////
+
+async function setFav() {
+   let response = await fetch('store_card');
+   let contenu = await response.text();
+   var macyofavoris = localStorage.getItem('macyofavoris');
+   if (macyofavoris !== null && macyofavoris.length !== 0) {
+      macyofavoris = [macyofavoris];
+      macyofavoris = macyofavoris[0].split([',']);
+      for (var i = 0; i < macyofavoris.length; i++) {
+         list_favoris[0].innerHTML += contenu;
+      }
+      getStoresById(macyofavoris);
+   }
+}
+
+var list_favoris = document.getElementsByClassName('list_favoris');
+
+if (list_favoris.length !== 0) { //si on est sur la page favoris
+   setFav();
+}
+
+async function getStoresById(ids) {
+   let response = await fetch(`${window.location.origin}/api/stores?ids=${ids}`);
+   let stores = await response.json();
+   console.log(stores);
+   var img_store = document.getElementsByClassName('img_store');
+   var store_name = document.getElementsByClassName('store_name');
+   var store_distance = document.getElementsByClassName('store_distance');
+   var store_score = document.getElementsByClassName('store_score');
+   var store_id = document.getElementsByClassName('store_id');
+   var store_lat = document.getElementsByClassName('store_lat');
+   var store_lon = document.getElementsByClassName('store_lon');
+
+   for (var i = 0; i < store_name.length; i++) {
+      store_name[i].textContent = stores[i].name;
+      store_distance[i].textContent = '\u00a0' + stores[i].city.name;
+      store_score[i].textContent = '\u00a04/5';
+      store_id[i].textContent = stores[i].id;
+      store_lat[i].textContent = stores[i].lat;
+      store_lon[i].textContent = stores[i].lon;
+   }
+   for (var i = 0; i < card_btn.length; i++) {
+      card_btn[i].addEventListener('click', removeFav);
+      img_store[i].addEventListener('click', () => {
+         var id = event.target.parentNode.parentNode.children[1].children[0].children[3].children[0].textContent;
+         var lat = event.target.parentNode.parentNode.children[1].children[0].children[3].children[1].textContent;
+         var lon = event.target.parentNode.parentNode.children[1].children[0].children[3].children[2].textContent;
+         console.log(id,lat,lon);
+         window.location.href = window.location.origin + '/map?lat=' + lat + '&lon=' + lon;
+      });
+   }
+}
+
+function removeFav(event) {
+   var id = event.target.parentNode.parentNode.parentNode.parentNode.children[0].children[3].children[0].textContent;
+   console.log(id);
+   var exist = addStorage(id.trim());
+   if (exist === 0) {
+      event.target.setAttribute('xlink:href', 'images/sprite.svg#heart_full');
+   } else {
+      removeStorage(id);
+      event.target.setAttribute('xlink:href', 'images/sprite.svg#heart_empty');
+      document.location.reload();
    }
 }

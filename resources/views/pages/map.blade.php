@@ -93,3 +93,8 @@
         </script>
     @endpush
 @endisset
+
+@push('scripts')
+   <script src="{{ asset('js/favori.js') }}"></script>
+   <script src="{{ asset('js/map.js') }}"></script>
+@endpush

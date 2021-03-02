@@ -44,3 +44,4 @@ Route::get('/dashboard/{store_id}', 'ManagerController@dashboard')->name('dashbo
 
 Route::get('/dashboard', 'AccountController@dashboard')->name('dashboard');
 
+Route::get('/store_card', 'Store_cardController@home')->name('store_card');

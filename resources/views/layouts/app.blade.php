@@ -123,9 +123,6 @@
    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="Nzhw9TVU"></script>
    <script src="{{ asset('js/app.js') }}" defer></script>
    <script src="{{ asset('js/navbar.js') }}" defer></script>
-   @if (Route::current()->uri === 'map')
-     <script src="{{ asset('js/map.js') }}" defer></script>
-   @endif
 
 @stack('scripts')
 
