@@ -33,7 +33,9 @@ Route::get('/ratings/add', 'AccountController@rateStore')->name('rate_store');
 Route::post('/ratings/post', 'AccountController@postRating')->name('rating_post');
 Route::get('/ratings/edit/{comments_code}', 'AccountController@rateStore')->name('rating_edit');
 
-Route::get('/store/add', 'ManagerController@storeAdd')->name('store_add');
+Route::get('/stores', 'AccountController@stores')->name('stores');
+
+Route::get('/stores/add', 'ManagerController@storesAdd')->name('stores_add');
 
 // routes API
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');

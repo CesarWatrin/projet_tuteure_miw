@@ -15,8 +15,8 @@ class ManagerController extends Controller
         $this->middleware('manager');
     }
 
-    public function storeAdd() {
-        return view('pages.manager.store_add');
+    public function storesAdd() {
+        return view('pages.manager.stores_add');
     }
 
     /*public function dashboard() {

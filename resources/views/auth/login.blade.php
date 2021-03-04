@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @include('layouts.container_corp')
+
 <div class="connect">
   <div class="head">
 
@@ -12,12 +15,16 @@
   </div>
   <div class="formulaire">
     <h1 class="titreForm">Bienvenue</h1>
-    <form method="POST" action="{{ route('login') }}" class="formulaireConnect">
+    <form method="POST" action="{{ route('login') }}" class="formulaireConnect form_center">
         @csrf
-        <input type="email" id="email" class="inputText" placeholder="Adresse e-mail"
-               name="email" value="{{ old('email') }}" autocomplete="email" autofocus required>
-        <input type="password" id="password" class="inputText" placeholder="Mot de passe"
-               name="password" required autocomplete="current-password" required>
+        <div class="input_row">
+            <input type="email" id="email" class="input" placeholder="Adresse e-mail"
+                   name="email" value="{{ old('email') }}" autocomplete="email" autofocus required>
+        </div>
+        <div class="input_row">
+            <input type="password" id="password" class="input" placeholder="Mot de passe"
+                   name="password" required autocomplete="current-password" required>
+        </div>
 
         @error('email')
         <span class="input_error">
@@ -30,19 +37,12 @@
                 </span>
         @enderror
 
-      <button type="submit" class="button brouge" >Se connecter</button>
-      <button type="button" class="button bgoogle"><svg class="logoGoogle"><use xlink:href="../images/sprite.svg#google"></use></svg>Continuer avec Google</button>
+      <button type="submit" class="bouton_form brouge bsubmit" >Se connecter</button>
+      <button type="button" class="bouton_form bgoogle"><svg class="logoGoogle"><use xlink:href="../images/sprite.svg#google"></use></svg>Continuer avec Google</button>
       <p class="ou">— ou —</p>
-      <a href="{{ route('register') }}" class="button bbleu">S'inscrire</a>
+      <a href="{{ route('register') }}" class="bouton_form bbleu">S'inscrire</a>
     </form>
   </div>
 
-
-  <!-- <div class="footer">
-
-    <footer>
-      'tite navbar sympatoche'
-    </footer>
-  </div> -->
 </div>
 @endsection

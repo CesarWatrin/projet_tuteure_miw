@@ -19,6 +19,14 @@ class AccountController extends Controller
         return view('pages.account', ['user' => Auth::user()]);
     }
 
+    public function stores(){
+        return view('pages.stores', ['user' => Auth::user()]);
+    }
+
+    public function dashboard(){
+        return view('pages.dashboard');
+    }
+
     public function edit() {
         return view('pages.account_edit', ['user' => Auth::user()]);
     }
@@ -41,10 +49,6 @@ class AccountController extends Controller
         return redirect()->route('account')->with('success', 'Profil modifié avec succès.');
     }
 
-    public function dashboard() {
-        return view('pages.dashboard');
-    }
-
     public function commentscode() {
         return view ('pages.commentscode_input');
     }
@@ -52,16 +56,11 @@ class AccountController extends Controller
     public function rateStore(Request $request, $comments_code = null) {
         // TODO rediriger vers la modification si le code d'un commerce déjà noté est entré
         $rating = null;
-        if(is_null($comments_code)) {
-            $this->validate($request, [
-                'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
-            ]);
-            $store = Store::all()->where('comments_code', $request->input('comments_code'))->first();
-        } else {
-            $store = Store::all()->where('comments_code', $comments_code)->first();
-            $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $store->id)->first();
-        }
-
+        $this->validate($request, [
+            'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
+        ]);
+        $store = Store::all()->where('comments_code', $request->input('comments_code'))->first();
+        $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $store->id)->first();
         return view('pages.rating_add', ['store' => $store, 'rating' => $rating]);
 
     }
