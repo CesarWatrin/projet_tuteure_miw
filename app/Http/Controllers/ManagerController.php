@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Rating;
 use App\Models\Store;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +34,18 @@ class ManagerController extends Controller
 
     public function dashboard($storeId){
         $store = Store::where('id', '=', $storeId)->get();
-        return view('pages.dashboard', ['store' => $store]);
+        $categories = Category::all();
+        $subCategories = Subcategory::all();
+        $comments = Rating::where('store_id', '=', $storeId)->get();
+        //$avg = Rating::where('store_id', '=', $storeId)->get();
+        $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
+        return view('pages.dashboard', ['store' => $store, 'categories' => $categories, 'subCategories' => $subCategories, 'comments' => $comments, 'avg' => $avg]);
+    }
+
+    public function modify_store(Request $request){
+       //$store_data = Store::$request->([
+
+
+        return back();
     }
 }
