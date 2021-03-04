@@ -44,7 +44,7 @@
          <p>Trouvez les commerces proposant la vente à emporter près de chez vous.</p>
       </div>
    </div>
-   <div class="etape_link_1">
+   <div class="etape etape_link_1">
       <img src="images/trait_index.svg" alt="trait">
    </div>
    <div class="etape">
@@ -55,7 +55,7 @@
          <img src="images/illustration_index_2.svg" alt="illustration_2">
       </div>
    </div>
-   <div class="etape_link_2">
+   <div class="etape etape_link_2">
       <img src="images/trait_index.svg" alt="trait">
    </div>
    <div class="etape">
@@ -68,12 +68,12 @@
    </div>
 </div>
 
-<div class="accroche_index">
+<div class="accroche_index ai2">
    <p>Les commerces populaires à proximité</p>
 </div>
 
 <div class="carousel_index">
-   @for($i = 0; $i < 3; $i++)
+   @for($i = 0; $i < 4; $i++)
       @include('layouts.store_card')
    @endfor
 </div>
