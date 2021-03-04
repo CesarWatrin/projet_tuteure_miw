@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import 'global';
 
+body {
+    background-color: rgba($bg_blue, 0.5);
+}
+
 .titre {
     margin-block-end: 0;
     margin-bottom: 0;

@@ -315,3 +315,7 @@ body {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+body {
+  background-color: #eaeffc;
+}

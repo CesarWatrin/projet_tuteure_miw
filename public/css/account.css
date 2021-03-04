@@ -318,6 +318,10 @@ body {
   background: transparent;
 }
 
+body {
+  background-color: rgba(234, 239, 252, 0.5);
+}
+
 .titre {
   -webkit-margin-after: 0;
           margin-block-end: 0;
