@@ -1,116 +1,295 @@
 @import 'global';
+@import 'store_card';
 
 .index_header {
-    width: 100%;
-    background-color: $bg_blue;
-    padding: 0 2.25rem;
-    font-family: Nunito, sans-serif;
+   width: 100%;
+   background-color: $bg_blue;
+   padding: 0 2.25rem;
+   font-family: Nunito, sans-serif;
 
-    .header_content {
-        display: flex;
-        flex-direction: column;
-    }
+   .header_content {
+      display: flex;
+      flex-direction: column;
+   }
 
-    .main_illustration {
-        width: 100%;
-        position: relative;
-        left: calc(-25% - 2.25rem);
-    }
+   .main_illustration {
+      width: 100%;
+      position: relative;
+      left: calc(-25% - 2.25rem);
+   }
 
-    .flex_container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+   .flex_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
 
-    .accroche, form, .input {
-        width: 100%;
-    }
+   .accroche, form, .input {
+      width: 100%;
+   }
 
-    .accroche {
-        padding: 1.5rem 0;
-        color: $normal_blue;
-        font-family: "Yeseva One", serif;
-        font-size: 2.25rem;
-        font-weight: normal;
-        text-align: right;
-        line-height: 1;
+   .accroche {
+      padding: 1.5rem 0;
+      color: $normal_blue;
+      font-family: "Yeseva One", serif;
+      font-size: 2.25rem;
+      font-weight: normal;
+      text-align: right;
+      line-height: 1;
 
-        span {
-            font-family: inherit;
-            display: block;
-            color: $dark_blue;
-        }
-    }
+      span {
+         font-family: inherit;
+         display: block;
+         color: $dark_blue;
+      }
+   }
 
-    .separateur {
-        margin: 0.5em 0;
-        color: $normal_blue;
-    }
+   .separateur {
+      margin: 0.5em 0;
+      color: $normal_blue;
+   }
 
-    .geoloc {
-        width: initial;
-        padding: 0.75rem 1rem;
-    }
+   .geoloc {
+      width: initial;
+      padding: 0.75rem 1rem;
+   }
 
-    .geoloc svg {
-        margin-left: 0.75rem;
-    }
+   .geoloc svg {
+      margin-left: 0.75rem;
+   }
+}
+
+.accroche_index {
+   text-align: center;
+   margin: 30px 0;
+
+   p {
+      font-family: $yeseva;
+      font-size: 36px;
+      color: $dark_blue;
+   }
+}
+
+.explications {
+   display: flex;
+   flex-direction: column;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.etape {
+   display: flex;
+   flex-direction: row;
+   padding: 0 30px;
+   max-width: 550px;
+   margin: 0 auto;
+
+   p {
+      color: $normal_blue;
+      margin: 0;
+   }
+}
+
+.etape_img {
+   width: 50%;
+   padding: 15px;
+   display: flex;
+   align-items: center;
+}
+
+.etape_text {
+   width: 50%;
+   display: flex;
+   align-items: center;
+   text-align: center;
+}
+
+.etape_link_1 {
+
+   img {
+      padding: 10px 100px;
+   }
+}
+
+.etape_link_2 {
+
+   img {
+      padding: 10px 100px;
+      transform: rotateY(180deg);
+   }
+}
+
+.commerces {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.categorie {
+   display: flex;
+   flex-direction: column;
+   width: 150px;
+   padding: 15px;
+}
+
+.cat_img {
+   width: 100%;
+   display: flex;
+
+   img, a {
+      margin: 5px auto;
+      width: 80px;
+      transition: 0.2s;
+   }
+
+   a:hover {
+      transform: rotateY(180deg);
+   }
+}
+
+.cat_text {
+   text-align: center;
+
+   p {
+      color: $dark_blue;
+      margin: 0;
+   }
+}
+
+.carousel_index {
+   display: flex;
+   flex-direction: row;
+   overflow-x: scroll;
+   margin-left: 10px;
+   max-width: 1085px;
+   margin: 0 auto;
+
+   .card {
+      min-width: 270px;
+   }
+
+   // &::-webkit-scrollbar {
+   //    display: none;
+   // }
+}
+
+.plus {
+   width: 223px;
+   margin: 30px auto;
+}
+
+.plus:hover {
+   background-color: white;
 }
 
 @media screen and (min-width: 768px) {
 
-    .index_header {
+   .index_header {
 
-        .header_content {
-            flex-direction: row;
-            align-items: center;
-            position: relative;
-            width: 122.5%;
-            right: 22.5%;
-        }
+      .header_content {
+         flex-direction: row;
+         align-items: center;
+         position: relative;
+         width: 122.5%;
+         right: 22.5%;
+      }
 
-        .main_illustration {
-            width: 60%;
-            position: initial;
-        }
+      .main_illustration {
+         width: 60%;
+         position: initial;
+      }
 
-        .flex_container {
-            width: 40%;
-        }
+      .flex_container {
+         width: 40%;
+      }
 
-        .accroche {
-            font-size: 3rem;
-            text-align: center;
-        }
-    }
-
+      .accroche {
+         font-size: 3rem;
+         text-align: center;
+      }
+   }
 }
 
 @media screen and (min-width: 992px) {
 
-    .index_header {
+   .index_header {
 
-        .header_content {
-            margin-bottom: -6rem;
-        }
+      .header_content {
+         margin-bottom: -6rem;
+      }
 
-        .flex_container {
-            width: 451px;
-            margin: 0 auto;
-        }
+      .flex_container {
+         width: 451px;
+         margin: 0 auto;
+      }
 
-    }
+   }
 
+   .accroche_index {
+      text-align: left;
+      margin: 0 0 50px 100px;
+
+      p {
+         font-size: 46px;
+      }
+   }
+
+   .ai2 {
+      margin: 80px 0 50px 100px;
+   }
+
+   .explications {
+      flex-direction: row;
+   }
+
+   .etape {
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      padding: 0;
+   }
+
+   .etape_text {
+      font-size: 20px;
+   }
+
+   .etape:nth-child(3) {
+
+      .etape_text {
+         order: 2;
+      }
+   }
+
+   .etape_link_1 {
+      display: none;
+   }
+
+   .etape_link_2 {
+      display: none;
+   }
+
+   .cat_text {
+
+      p {
+         font-size: 20px;
+      }
+   }
+
+   .plus {
+      font-size: 20px;
+      width: 300px;
+   }
 }
 
 @media screen and (min-width: 1200px) {
 
-    .index_header {
+   .index_header {
 
-        .accroche {
-            font-size: 3.5rem;
-        }
+      .accroche {
+         font-size: 3.5rem;
+      }
 
-    }
+   }
 }

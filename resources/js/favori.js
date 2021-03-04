@@ -57,6 +57,7 @@ async function setFav() {
    if (macyofavoris !== null && macyofavoris.length !== 0) {
       macyofavoris = [macyofavoris];
       macyofavoris = macyofavoris[0].split([',']);
+      list_favoris[0].innerHTML = '';
       for (var i = 0; i < macyofavoris.length; i++) {
          list_favoris[0].innerHTML += contenu;
       }

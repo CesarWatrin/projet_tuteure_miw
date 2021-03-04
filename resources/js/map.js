@@ -411,4 +411,5 @@ var lat = url.searchParams.get("lat");
 var lon = url.searchParams.get("lon");
 if (lat !== null && lon !== null) {
    carte.setView([lat, lon], 20, { animation: true });
+   nearStores([lon, lat]);
 }
