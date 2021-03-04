@@ -819,7 +819,7 @@ body {
 .cat_img img, .cat_img a {
   margin: 5px auto;
   width: 80px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 .cat_img a:hover {
   transform: rotateY(180deg);
