@@ -37,6 +37,17 @@
     margin: 0 auto 2rem auto;
 }
 
+.sous_titre {
+    font-family: "Yeseva One", cursive;
+    font-size: 1.75rem;
+    line-height: 1;
+    font-weight: normal;
+    text-align: center;
+    color: $dark_blue;
+    margin: 0 auto 2rem auto;
+    display: block;
+}
+
 .texte {
     text-align: center;
     width: 80%;
@@ -59,6 +70,10 @@
     width: 36px;
     height: 36px;
     fill: currentColor;
+}
+
+.with_label {
+    margin-right: .25rem;
 }
 
 .fb_icon {

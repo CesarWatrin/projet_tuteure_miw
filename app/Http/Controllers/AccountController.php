@@ -16,7 +16,11 @@ class AccountController extends Controller
     }
 
     public function home() {
-        return view('pages.account', ['user' => Auth::user()]);
+        $ratings = null;
+        if(!Auth::user()->is_manager()) {
+            $ratings = Rating::all()->where('user_id', Auth::id());
+        }
+        return view('pages.account', ['user' => Auth::user(), 'ratings' => $ratings]);
     }
 
     public function stores(){
@@ -53,8 +57,7 @@ class AccountController extends Controller
         return view ('pages.commentscode_input');
     }
 
-    public function rateStore(Request $request, $comments_code = null) {
-        // TODO rediriger vers la modification si le code d'un commerce déjà noté est entré
+    public function rateStore(Request $request) {
         $rating = null;
         $this->validate($request, [
             'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
@@ -84,6 +87,16 @@ class AccountController extends Controller
 
         $rating->save();
 
-        return redirect()->route('dashboard')->with('success', 'Avis posté avec succès.');
+        return redirect()->route('account')->with('success', 'Avis posté avec succès.');
+    }
+
+    public function deleteRating(Request $request) {
+        $this->validate($request, [
+            'user_id' => ['required', 'exists:users,id'],
+            'store_id' => ['required', 'exists:stores,id'],
+        ]);
+        $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $request->input('store_id'))->first();
+        $rating->delete();
+        return redirect()->route('account')->with('success', 'Avis supprimé avec succès.');
     }
 }
