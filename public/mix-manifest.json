@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/map.js": "/js/map.js",
+    "/js/tile.stamen.js": "/js/tile.stamen.js",
     "/js/favori.js": "/js/favori.js",
     "/js/navbar.js": "/js/navbar.js",
     "/css/app.css": "/css/app.css",
@@ -11,6 +12,8 @@
     "/css/map.css": "/css/map.css",
     "/css/ratings.css": "/css/ratings.css",
     "/css/dashboard.css": "/css/dashboard.css",
+    "/css/stores_add.css": "/css/stores_add.css",
+    "/css/stores.css": "/css/stores.css",
     "/css/index.css": "/css/index.css",
     "/css/footer.css": "/css/footer.css"
 }

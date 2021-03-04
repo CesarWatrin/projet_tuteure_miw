@@ -19,6 +19,8 @@ mix.js('resources/js/map.js', 'public/js')
 .sass('resources/sass/map.scss', 'public/css')
 .sourceMaps();
 
+mix.js('resources/js/tile.stamen.js', 'public/js').sourceMaps();
+
 mix.js('resources/js/favori.js', 'public/js').sourceMaps();
 
 mix.js('resources/js/navbar.js', 'public/js')
