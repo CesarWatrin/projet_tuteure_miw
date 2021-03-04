@@ -119,6 +119,45 @@
    }
 }
 
+.commerces {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.categorie {
+   display: flex;
+   flex-direction: column;
+   width: 150px;
+   padding: 15px;
+}
+
+.cat_img {
+   width: 100%;
+   display: flex;
+
+   img, a {
+      margin: 5px auto;
+      width: 80px;
+      transition: 0.3s;
+   }
+
+   a:hover {
+      transform: rotateY(180deg);
+   }
+}
+
+.cat_text {
+   text-align: center;
+
+   p {
+      color: $dark_blue;
+      margin: 0;
+   }
+}
+
 .carousel_index {
    display: flex;
    flex-direction: row;
@@ -229,6 +268,13 @@
 
    .etape_link_2 {
       display: none;
+   }
+
+   .cat_text {
+
+      p {
+         font-size: 20px;
+      }
    }
 
    .plus {

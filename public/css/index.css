@@ -620,7 +620,7 @@ body {
   cursor: pointer;
 }
 .card .img_store:hover {
-  filter: blur(1px);
+  filter: drop-shadow(0px 4px 4px grey);
 }
 .card .infos_store {
   display: flex;
@@ -797,6 +797,42 @@ body {
   transform: rotateY(180deg);
 }
 
+.commerces {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categorie {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 15px;
+}
+
+.cat_img {
+  width: 100%;
+  display: flex;
+}
+.cat_img img, .cat_img a {
+  margin: 5px auto;
+  width: 80px;
+  transition: 0.3s;
+}
+.cat_img a:hover {
+  transform: rotateY(180deg);
+}
+
+.cat_text {
+  text-align: center;
+}
+.cat_text p {
+  color: #020b5d;
+  margin: 0;
+}
+
 .carousel_index {
   display: flex;
   flex-direction: row;
@@ -884,6 +920,10 @@ body {
 
   .etape_link_2 {
     display: none;
+  }
+
+  .cat_text p {
+    font-size: 20px;
   }
 
   .plus {

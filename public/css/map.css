@@ -620,7 +620,7 @@ body {
   cursor: pointer;
 }
 .card .img_store:hover {
-  filter: blur(1px);
+  filter: drop-shadow(0px 4px 4px grey);
 }
 .card .infos_store {
   display: flex;
