@@ -17,7 +17,9 @@ class ManagerController extends Controller
     }
 
     public function storesAdd() {
-        return view('pages.manager.stores_add');
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+        return view('pages.manager.stores_add',["categories" => $categories, "subcategories" => $subcategories]);
     }
 
     /*public function dashboard() {
