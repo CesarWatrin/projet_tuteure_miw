@@ -52,6 +52,10 @@ class User extends Authenticatable
         return $this->role->id === 2; // 2 = "Commerçant" dans la bdd
     }
 
+    public function is_admin() {
+        return $this->role->id === 3; // 3 = "Modérateur" dans la bdd
+    }
+
     public function stores() {
         return $this->hasMany(Store::class, 'manager_id');
     }
