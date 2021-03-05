@@ -31,7 +31,7 @@ Route::post('/account/update', 'AccountController@update')->name('account_update
 Route::get('/ratings/findstore', 'AccountController@commentscode')->name('commentscode_input');
 Route::get('/ratings/add', 'AccountController@rateStore')->name('rate_store');
 Route::post('/ratings/post', 'AccountController@postRating')->name('rating_post');
-Route::get('/ratings/edit/{comments_code}', 'AccountController@rateStore')->name('rating_edit');
+Route::post('/ratings/delete', 'AccountController@deleteRating')->name('rating_delete');
 
 Route::get('/stores', 'AccountController@stores')->name('stores');
 

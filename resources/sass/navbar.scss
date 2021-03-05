@@ -12,7 +12,7 @@ $corner: 16px;
    position: fixed;
    bottom: 0;
    left: 0;
-   z-index: 1;
+   z-index: 100;
 
    .onglet {
       display: flex;

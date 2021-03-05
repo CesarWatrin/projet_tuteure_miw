@@ -5,6 +5,9 @@
 @endpush
 
 @section('content')
+
+    @include('layouts.container_corp')
+
 <div class="connect">
     <div class="head">
 
@@ -50,7 +53,7 @@
 
             <div class="input_row">
 
-                <input id="surname" name="surname" type="text" class="inputText" placeholder="Nom de famille"
+                <input id="surname" name="surname" type="text" class="input" placeholder="Nom de famille"
                        value="{{ old('surname') }}" required autocomplete="family-name" autofocus>
 
                 @error('surname')
@@ -62,7 +65,7 @@
 
             <div class="input_row">
 
-                <input id="firstname" name="firstname" type="text" class="inputText" placeholder="Prénom"
+                <input id="firstname" name="firstname" type="text" class="input" placeholder="Prénom"
                        value="{{ old('firstname') }}" required autocomplete="given-name">
 
                 @error('firstname')
@@ -74,7 +77,7 @@
 
             <div class="input_row">
 
-                <input id="email" name="email" type="email" class="inputText" placeholder="Adresse e-mail"
+                <input id="email" name="email" type="email" class="input" placeholder="Adresse e-mail"
                        value="{{ old('email') }}" required autocomplete="email">
 
                 @error('email')
@@ -86,7 +89,7 @@
 
             <div class="input_row" id="phone_row">
 
-                <input id="phonenumber" name="phonenumber" type="phonenumber" class="inputText" placeholder="Nº de téléphone"
+                <input id="phonenumber" name="phonenumber" type="phonenumber" class="input" placeholder="Nº de téléphone"
                        value="{{ old('phonenumber') }}" autocomplete="tel">
 
                 @error('phonenumber')
@@ -98,7 +101,7 @@
 
             <div class="input_row">
 
-                <input id="password" type="password" class="inputText" placeholder="Mot de passe"
+                <input id="password" type="password" class="input" placeholder="Mot de passe"
                        name="password" required autocomplete="new-password">
 
                 @error('password')
@@ -110,21 +113,21 @@
 
             <div class="input_row">
 
-                <input id="password_confirmation" type="password"  class="inputText" placeholder="Confirmation du mot de passe"
+                <input id="password_confirmation" type="password"  class="input" placeholder="Confirmation du mot de passe"
                        name="password_confirmation" required autocomplete="new-password">
             </div>
 
                 <!-- TODO checkbox d'acceptation des CGU -->
 
             <div>
-                <button type="submit" class="button brouge">
+                <button type="submit" class="bouton_form brouge">
                     S'inscrire
                 </button>
             </div>
 
             </div>
             <p class="ou">— Vous avez déjà un compte ? —</p>
-            <a href="{{ route('login') }}" class="button bbleu">Se connecter</a>
+            <a href="{{ route('login') }}" class="bouton_form bbleu">Se connecter</a>
         </form>
 
     </div>

@@ -1,194 +1,114 @@
 @import 'variables';
 
 body {
-   background-color: $bg-blue;
+    background-color: $bg-blue;
 }
 
-.connect{
-   width: 100%;
-    min-height: 100vh;
-   display: flex;
-   flex-direction: column;
+.connect {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
-   .head {
-      width: 100%;
-   }
+    .head {
+        width: 100%;
+    }
 
-   .formulaire {
-      width: 100%;
-   }
+    .formulaire {
+        width: 100%;
+        padding: 1rem;
+    }
 
-   .titreImg{
-      font-family: 'Yeseva One', cursive;
-      color: $dark-blue;
-      text-align: center;
-      margin-top: 10px;
-      font-size: 2.5rem;
-   }
-   .titreForm{
-      display: none;
-   }
+    .titreImg {
+        font-family: 'Yeseva One', cursive;
+        color: $dark-blue;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 2.5rem;
+    }
 
-   .imagebvn{
-      width: 200px;
-      height: 200px;
-      clip-path: circle();
-   }
+    .titreForm {
+        display: none;
+    }
 
-   .centre{
-      text-align: center;
+    .imagebvn {
+        width: 200px;
+        height: 200px;
+        clip-path: circle();
+    }
 
-   }
+    .centre {
+        text-align: center;
 
-   .formulaireConnect{
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-       margin-top: 10px;
-      padding-bottom: 60px;
+    }
 
+    .formulaireConnect {
+        text-align: center;
 
-      .inputText{
-         width: 80%;
-          max-width: 500px;
-         margin: 5px auto;
-         height: 50px;
-         font-size: 1rem;
-         border: solid $normal-blue 1px;
-         border-radius: 15px;
-         color: $normal-blue;
-         padding: 0 20px;
-         box-shadow: 0 2px 9px 0 rgba($light-blue, 0.2);
-      }
-      .inputText::placeholder{
-         color: $light-blue;
+        .roles_row {
+            display: flex;
+            flex-direction: column;
 
-      }
+            .role_button {
+                width: 80%;
+                max-width: 500px;
+                margin: 0 auto;
+            }
 
-       .input_error {
-           display: block;
-           color: $dark-red;
-           margin-bottom: .5rem;
-       }
+            .role_radio {
+                display: none;
+            }
 
-       .roles_row {
-           display: flex;
-           flex-direction: column;
-           .role_button {
-               width: 80%;
-               max-width: 500px;
-               margin: 0 auto;
-               //background-color: $normal-red;
-           }
-           .role_radio {
-               display: none;
-           }
-           .role_radio:checked ~ .role_label {
-               color: white;
-               background-color: $normal-blue;
-           }
-           .role_label {
-               width: 100%;
-               display: flex;
-               flex-direction: column;
-               justify-content: center;
-               align-items: center;
-               font-size: 1rem;
-               margin-bottom: 5px;
-               border: solid $normal-blue 1px;
-               border-radius: 15px;
-               color: $normal-blue;
-               background-color: $white;
-               padding: 5px 20px;
-               box-shadow: 0 2px 9px 0 rgba($light-blue, 0.2);
-           }
-           .role_titre {
-               font-size: 1.2rem;
-               font-weight: bold;
-           }
-       }
+            .role_radio:checked ~ .role_label {
+                color: white;
+                background-color: $normal-blue;
+            }
 
-      .button{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-         margin: 0 auto;
-         height: 60px;
-         font-size: 1rem;
-         width: 70%;
-          max-width: 450px;
-          border-radius: 15px;
-         border: none;
-          transition: 0.2s;
+            .role_label {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                margin-bottom: 5px;
+                border: solid $normal-blue 1px;
+                border-radius: 15px;
+                color: $normal-blue;
+                background-color: $white;
+                padding: 5px 20px;
+                box-shadow: 0 2px 9px 0 rgba($light-blue, 0.2);
+            }
 
-          &:hover {
-              text-decoration: none;
+            .role_titre {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        }
 
-          }
+        .bgoogle {
+            background-color: white;
+            color: $dark-blue;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
 
-      }
-      .bbleu {
-          background-color: $dark-blue;
-          box-shadow: 0 2px 9px 0 rgb($dark-blue, 0.2);
-          color: white;
-          // margin-top: 10px;
+        .logoGoogle {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
 
-          &:hover {
-              box-shadow: 0 2px 9px 0 rgb($dark-blue, 0.4);
+        .ou {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
 
-          }
-      }
-
-      .brouge{
-         background-color: $dark-red;
-          box-shadow: 0 2px 9px 0 rgba($dark-red, 0.2);
-          color: white;
-         margin-top: 20px;
-
-          &:hover {
-              box-shadow: 0 2px 9px 0 rgba($dark-red, 0.4);
-              cursor: pointer;
-          }
-
-      }
-      .bgoogle
-      {
-         background-color: white;
-         color:  $dark-blue;
-         margin-top: 10px;
-         font-size: 1rem;
-      }
-
-      .logoGoogle
-      {
-         width: 30px;
-         height: 30px;
-         margin-right: 10px;
-      }
-      .ou{
-         font-size: 1rem;
-         margin-top: 10px;
-      }
-
-   }
-
-   .footer{
-      background-color: darkblue;
-      height: 50px;
-      width: 100%;
-      position: fixed;
-      bottom: 0;
-      color: white;
-   }
-
-
+    }
 
 }
 
 
-
-
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 
     .head {
         display: flex;
@@ -196,86 +116,43 @@ body {
         justify-content: center;
     }
 
-   .connect
-   {
-      padding-top: 50px;
-      flex-direction: row;
-      justify-content: center;
-       align-items: center;
+    .connect {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
 
-      .footer{
-         top:0;
-         background-color: #00000000;
-         color: $dark-blue;
-         text-align: right;
-      }
-      .titreImg{
-         display: none;
-      }
-      .titreForm{
-         display: block;
-         font-family: 'Yeseva One', cursive;
-         color: $dark-blue;
-         text-align: center;
-         margin-top: 60px;
-         font-size: 4rem;
-      }
+        .titreImg {
+            display: none;
+        }
 
-      .imagebvn{
-         width: 30vw;
-         height: 30vw;
-          position: absolute;
-          left: 10%;
-          top: 50%;
-          transform: translateY(-50%);
-      }
+        .titreForm {
+            display: block;
+            font-family: 'Yeseva One', cursive;
+            color: $dark-blue;
+            text-align: center;
+            font-size: 4rem;
+        }
 
-      .formulaireConnect{
+        .imagebvn {
+            width: 30vw;
+            height: 30vw;
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
+        .formulaireConnect {
 
-         .inputText{
-            //width: 60%;
-             max-width: 500px;
-            margin-top: 10px;
-            font-size: 1.2rem;
-            color: $normal-blue;
-         }
+            .bgoogle {
+                margin-top: 10px;
+            }
 
-         .button{
-            margin: 0 auto;
-            height: 60px;
-            font-size: 1.2rem;
-            width: 50%;
-            border-radius: 15px;
-            border: none;
-         }
-         .bbleu{
-            background-color: $dark-blue;
-            color: white;
-            // margin-top: 10px;
-         }
-         .brouge{
-            margin-top: 20px;
-         }
-         .bgoogle
-         {
-            margin-top: 10px;
-         }
-
-         .logoGoogle
-         {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-         }
-      }
-   }
-}
-
-.formulaireEdit {
-
-    label {
-        display: block;
+            .logoGoogle {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+        }
     }
-
 }
