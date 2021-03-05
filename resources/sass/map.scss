@@ -132,10 +132,10 @@ main{
    width: calc(100% + 3.5rem);
    background-color: rgba(71,91,245,0.2);
    border-radius: 16px;
-   
+
    .selects {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       flex-wrap: wrap;
 
       select {
@@ -152,6 +152,13 @@ main{
          padding: 0;
          margin: 5px;
       }
+
+      #area_search {
+         width: 230px;
+         margin: 0 auto;
+         margin-bottom: 5px;
+      }
+
    }
 }
 

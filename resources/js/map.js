@@ -77,11 +77,15 @@ function openFilters() {
    <select id="select_subcat" name="sous-catégorie">
    <option value="0">Sous-catégorie</option>
    </select>
+   <br>
+   <br>
+   <button class="bouton" id="area_search">Rechercher dans cette zone</button>
    </div>
    `;
 
    var select_cat = document.getElementById('select_cat');
    var select_subcat = document.getElementById('select_subcat');
+   var area_search = document.getElementById('area_search');
    var validFilter = document.getElementById('validFilter');
    select_cat.addEventListener('change', () => {
       if (select_cat.value == 1) {
@@ -117,6 +121,9 @@ function openFilters() {
       }
    });
    select_subcat.addEventListener('change', () => {
+      nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
+   });
+   area_search.addEventListener('click', () => {
       nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
    });
 }

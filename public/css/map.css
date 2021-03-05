@@ -1060,7 +1060,7 @@ main {
 }
 #filter .selects {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
 }
 #filter .selects select {
@@ -1075,6 +1075,11 @@ main {
   width: 70px;
   padding: 0;
   margin: 5px;
+}
+#filter .selects #area_search {
+  width: 230px;
+  margin: 0 auto;
+  margin-bottom: 5px;
 }
 
 @media screen and (min-width: 992px) {
