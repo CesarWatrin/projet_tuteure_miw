@@ -49,6 +49,10 @@
   color: #96b4f4;
   font-family: "Yeseva One";
 }
+.data_time .active_data {
+  color: #020b5d;
+  border-bottom: solid 3px #e4534b;
+}
 
 .rewards {
   display: flex;
@@ -239,12 +243,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 50px;
 }
 .info_shop .infos_header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .info_shop form {
   display: flex;
@@ -258,21 +264,171 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 .infos_title svg {
   height: 40px;
   width: 40px;
   color: #020b5d;
 }
+.infos_title h2 {
+  color: #020b5d;
+  font-family: "Yeseva One";
+  font-size: 30px;
+}
 
-form .infos_general {
+.infos_categorie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #FFFFFF;
+  height: 50px;
+  width: 300px;
+  border-radius: 15px;
+  margin-top: 25px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+}
+.infos_categorie p {
+  margin: 0;
+  color: #96b4f4;
+  font-family: "Yeseva One";
+}
+.infos_categorie .active_categorie {
+  color: #020b5d;
+  border-bottom: solid 3px #e4534b;
+}
+
+.infos_general, .infos_complementary, .infos_localisation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  position: absolute;
+  transform: translateX(-150%);
+  transition: 1s ease-in-out;
+}
+.infos_general .infos_left, .infos_complementary .infos_left, .infos_localisation .infos_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infos_general .infos_left input, .infos_complementary .infos_left input, .infos_localisation .infos_left input {
+  height: 50px;
+  width: 300px;
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+.infos_general .infos_left input::-moz-placeholder, .infos_complementary .infos_left input::-moz-placeholder, .infos_localisation .infos_left input::-moz-placeholder {
+  color: #020b5d;
+  font-family: "Nunito";
+}
+.infos_general .infos_left input:-ms-input-placeholder, .infos_complementary .infos_left input:-ms-input-placeholder, .infos_localisation .infos_left input:-ms-input-placeholder {
+  color: #020b5d;
+  font-family: "Nunito";
+}
+.infos_general .infos_left input::placeholder, .infos_complementary .infos_left input::placeholder, .infos_localisation .infos_left input::placeholder {
+  color: #020b5d;
+  font-family: "Nunito";
+}
+
+.infos_general textarea, .infos_complementary textarea {
+  height: 350px;
+  width: 300px;
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.infos_general textarea::-moz-placeholder, .infos_complementary textarea::-moz-placeholder {
+  color: #020b5d;
+  font-family: "Nunito";
+}
+.infos_general textarea:-ms-input-placeholder, .infos_complementary textarea:-ms-input-placeholder {
+  color: #020b5d;
+  font-family: "Nunito";
+}
+.infos_general textarea::placeholder, .infos_complementary textarea::placeholder {
+  color: #020b5d;
+  font-family: "Nunito";
+}
+
+.infos_localisation .infos_right {
   display: none;
 }
-form .infos_localisation {
-  display: none;
+
+.infos_complementary select {
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  height: 50px;
+  border: 0;
+  width: 250px;
+  margin-bottom: 25px;
+  color: #020b5d;
+  font-family: "Nunito";
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
 }
-form .infos_complementary {
-  display: none;
+.infos_complementary .delivery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.infos_complementary .delivery .delivery_cat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100px;
+}
+.infos_complementary .delivery .delivery_cat .oui, .infos_complementary .delivery .delivery_cat .non {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 75px;
+}
+.infos_complementary .delivery .delivery_cat .oui input, .infos_complementary .delivery .delivery_cat .non input {
+  height: auto;
+  width: auto;
+  box-shadow: none;
+}
+
+.infos_active {
+  position: relative;
+  transform: translateX(0%);
+  transition: 1s ease-in-out;
+}
+
+.infos_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}
+.infos_buttons input {
+  width: 125px;
+  height: 50px;
+  border: 0;
+  border-radius: 15px;
+  color: #FFFFFF;
+  font-family: Nunito;
+}
+.infos_buttons .reset {
+  background-color: #e4534b;
+}
+.infos_buttons .submit {
+  background-color: #020b5d;
 }
 
 body {

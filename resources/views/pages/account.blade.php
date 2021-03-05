@@ -62,11 +62,13 @@
                             <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
                             {{ $rating->rating }}/5
                         </span>
+                            @if($rating->comment)
                             <div class="r_comment">
                                 <svg class="big_icon quote"><use xlink:href="{{ asset('images/sprite.svg#quote') }}" </svg>
                                 <p>{{ $rating->comment }}</p>
                                 <svg class="big_icon quote qright"><use xlink:href="{{ asset('images/sprite.svg#quote') }}" </svg>
                             </div>
+                            @endif
                             <div class="r_action">
                                 <a href="{{ route('rate_store', ['comments_code' => $rating->store->comments_code]) }}" class="r_edit">
                                     <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#edit"></use></svg>
