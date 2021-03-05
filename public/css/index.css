@@ -841,6 +841,9 @@ body {
   width: 150px;
   padding: 15px;
 }
+.categorie:hover p {
+  font-weight: bold;
+}
 
 .cat_img {
   width: 100%;
@@ -850,9 +853,6 @@ body {
   margin: 5px auto;
   width: 80px;
   transition: 0.2s;
-}
-.cat_img a:hover {
-  transform: rotateY(180deg);
 }
 
 .cat_text {
