@@ -94,7 +94,7 @@
         </main>
 
         @if (Route::current()->uri !== 'map')
-           <footer>
+           <!-- <footer>
               <div class="wave">
                 <img src="{{ asset('images/footer.svg') }}" alt="footer_wave">
               </div>
@@ -117,7 +117,7 @@
                   <p>Copyright © 2021 MAC-YO Corp.<br>Tous droits réservés.</p>
                 </div>
               </div>
-           </footer>
+           </footer> -->
         @endif
 
     </div>
