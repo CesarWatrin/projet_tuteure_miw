@@ -1,11 +1,7 @@
 import 'leaflet.markercluster';
 
 let carte = L.map('map', {center: [46.3630104, 2.9846608],zoom: 5, /*attributionControl : false,*/ zoomControl: false});
-//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(carte);
-carte.addLayer(new L.StamenTileLayer('toner-lite', {
-    detectRetina: true,
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
-}));
+L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(carte);
 L.control.zoom({position:'bottomright'}).addTo(carte);
 let markers = L.markerClusterGroup({
     iconCreateFunction: function(cluster) {
