@@ -18,7 +18,6 @@
     <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/account.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stores.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stores_add.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
@@ -71,7 +70,7 @@
                <span>Favoris</span>
             </div>
          </div>
-         @if (Route::current()->uri === 'login')
+         @if (Route::current()->uri === 'login' || Route::current()->uri === 'register' || Route::current()->uri === 'account')
             <div class="onglet currentPage" onclick="location.href='{{ route('login') }}';">
          @else
             <div class="onglet" onclick="location.href='{{ route('login') }}';">

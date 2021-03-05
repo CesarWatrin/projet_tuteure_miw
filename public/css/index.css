@@ -199,6 +199,17 @@ body {
   margin: 0 auto 2rem auto;
 }
 
+.sous_titre {
+  font-family: "Yeseva One", cursive;
+  font-size: 1.75rem;
+  line-height: 1;
+  font-weight: normal;
+  text-align: center;
+  color: #020b5d;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
 .texte {
   text-align: center;
   width: 80%;
@@ -220,6 +231,10 @@ body {
   width: 36px;
   height: 36px;
   fill: currentColor;
+}
+
+.with_label {
+  margin-right: 0.25rem;
 }
 
 .fb_icon {
@@ -502,6 +517,17 @@ body {
   margin: 0 auto 2rem auto;
 }
 
+.sous_titre {
+  font-family: "Yeseva One", cursive;
+  font-size: 1.75rem;
+  line-height: 1;
+  font-weight: normal;
+  text-align: center;
+  color: #020b5d;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
 .texte {
   text-align: center;
   width: 80%;
@@ -523,6 +549,10 @@ body {
   width: 36px;
   height: 36px;
   fill: currentColor;
+}
+
+.with_label {
+  margin-right: 0.25rem;
 }
 
 .fb_icon {
@@ -620,7 +650,7 @@ body {
   cursor: pointer;
 }
 .card .img_store:hover {
-  filter: blur(1px);
+  filter: drop-shadow(0px 4px 4px grey);
 }
 .card .infos_store {
   display: flex;
@@ -758,12 +788,16 @@ body {
 .explications {
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .etape {
   display: flex;
   flex-direction: row;
   padding: 0 30px;
+  max-width: 550px;
+  margin: 0 auto;
 }
 .etape p {
   color: #475BF5;
@@ -781,6 +815,7 @@ body {
   width: 50%;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .etape_link_1 img {
@@ -792,22 +827,57 @@ body {
   transform: rotateY(180deg);
 }
 
+.commerces {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categorie {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 15px;
+}
+.categorie:hover p {
+  font-weight: bold;
+}
+
+.cat_img {
+  width: 100%;
+  display: flex;
+}
+.cat_img img, .cat_img a {
+  margin: 5px auto;
+  width: 80px;
+  transition: 0.2s;
+}
+
+.cat_text {
+  text-align: center;
+}
+.cat_text p {
+  color: #020b5d;
+  margin: 0;
+}
+
 .carousel_index {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
   margin-left: 10px;
+  max-width: 1085px;
+  margin: 0 auto;
 }
 .carousel_index .card {
   min-width: 270px;
 }
-.carousel_index::-webkit-scrollbar {
-  display: none;
-}
 
 .plus {
   width: 223px;
-  margin: 15px auto;
+  margin: 30px auto;
 }
 
 .plus:hover {
@@ -841,6 +911,54 @@ body {
   .index_header .flex_container {
     width: 451px;
     margin: 0 auto;
+  }
+
+  .accroche_index {
+    text-align: left;
+    margin: 0 0 50px 100px;
+  }
+  .accroche_index p {
+    font-size: 46px;
+  }
+
+  .ai2 {
+    margin: 80px 0 50px 100px;
+  }
+
+  .explications {
+    flex-direction: row;
+  }
+
+  .etape {
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 0;
+  }
+
+  .etape_text {
+    font-size: 20px;
+  }
+
+  .etape:nth-child(3) .etape_text {
+    order: 2;
+  }
+
+  .etape_link_1 {
+    display: none;
+  }
+
+  .etape_link_2 {
+    display: none;
+  }
+
+  .cat_text p {
+    font-size: 20px;
+  }
+
+  .plus {
+    font-size: 20px;
+    width: 300px;
   }
 }
 @media screen and (min-width: 1200px) {

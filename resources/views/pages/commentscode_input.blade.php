@@ -10,12 +10,11 @@
     </div>
     <div class="container_center">
 
-    <a class="back_link" href="{{ route('dashboard') }}"><i class="fas fa-chevron-left"></i> Retour au tableau de bord</a>
+    <a class="back_link" href="{{ route('account') }}"><i class="fas fa-chevron-left"></i> Retour à Mon compte</a>
     <h1 class="titre">Laisser un avis</h1>
     <p class="texte">Lors du retrait de votre achat, le commerçant vous a donné un code permettant de laisser un avis sur notre plateforme.</p>
 
     <form class="form_center" method="GET" action="{{ route('rate_store') }}">
-        @csrf
 
         <div class="input_row">
 
