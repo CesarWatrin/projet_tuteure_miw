@@ -40,6 +40,10 @@ Route::get('/stores/add', 'ManagerController@storesAdd')->name('stores_add');
 // routes API
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');
 
+//Route::get('/dashboard', 'ManagerController@dashboard')->name('account');
+
+Route::get('/dashboard/{store_id}', 'ManagerController@dashboard')->name('dashboard');
+
 Route::get('/dashboard', 'AccountController@dashboard')->name('dashboard');
 
 Route::get('/store_card', 'Store_cardController@home')->name('store_card');

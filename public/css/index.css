@@ -140,6 +140,11 @@ label {
   margin-top: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .inputText {
+    font-size: 1.2rem;
+  }
+}
 button.active.focus, button.active:focus,
 button.focus, button:active.focus,
 button:active:focus, button:focus {
@@ -154,11 +159,13 @@ input:active:focus, input:focus {
   box-shadow: none;
 }
 
-@media screen and (min-width: 768px) {
-  .inputText {
-    font-size: 1.2rem;
-  }
+select.active.focus, select.active:focus,
+select.focus, select:active.focus,
+select:active:focus, select:focus {
+  outline: none;
+  box-shadow: none;
 }
+
 * {
   font-family: Nunito, sans-serif;
 }
@@ -458,6 +465,11 @@ label {
   margin-top: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .inputText {
+    font-size: 1.2rem;
+  }
+}
 button.active.focus, button.active:focus,
 button.focus, button:active.focus,
 button:active:focus, button:focus {
@@ -472,11 +484,13 @@ input:active:focus, input:focus {
   box-shadow: none;
 }
 
-@media screen and (min-width: 768px) {
-  .inputText {
-    font-size: 1.2rem;
-  }
+select.active.focus, select.active:focus,
+select.focus, select:active.focus,
+select:active:focus, select:focus {
+  outline: none;
+  box-shadow: none;
 }
+
 * {
   font-family: Nunito, sans-serif;
 }

@@ -150,20 +150,6 @@ label {
     margin-top: 2rem;
 }
 
-button.active.focus, button.active:focus,
-button.focus, button:active.focus,
-button:active:focus, button:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-input.active.focus, input.active:focus,
-input.focus, input:active.focus,
-input:active:focus, input:focus {
-    outline: none;
-    box-shadow: none;
-}
-
 @media screen and (min-width: 768px) {
 
     .inputText {
