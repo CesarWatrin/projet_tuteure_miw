@@ -8,8 +8,6 @@ use App\Models\Store;
 use App\Models\Subcategory;
 use App\Models\View;
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Subcategory;
 use Illuminate\Support\Facades\Auth;
 
 class ManagerController extends Controller
