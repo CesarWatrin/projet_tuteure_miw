@@ -1,8 +1,29 @@
-<svg id="placeholder" xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32">
-  <path id="Shape" d="M12,0A12.012,12.012,0,0,0,0,12c0,8.318,10.832,19.246,11.292,19.708a1,1,0,0,0,1.416,0C13.168,31.246,24,20.318,24,12A12.012,12.012,0,0,0,12,0Z" fill="#50e3c2"/>
-  <g id="_022-hanger" data-name="022-hanger" transform="translate(4 4.5)">
-    <path id="Shape-2" data-name="Shape" d="M.5,8A.5.5,0,0,1,0,7.5v-1a.5.5,0,0,1,.188-.391l7.5-6a.5.5,0,0,1,.625,0l7.5,6A.5.5,0,0,1,16,6.5v1a.5.5,0,0,1-.5.5Z" transform="translate(0 5.5)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.1"/>
-    <path id="Shape-3" data-name="Shape" d="M2.5,0A2.5,2.5,0,0,0,0,2.5a.5.5,0,0,0,1,0A1.5,1.5,0,1,1,2.5,4a.5.5,0,0,0,0,1,2.5,2.5,0,0,0,0-5Z" transform="translate(5.5)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.1"/>
-    <path id="Shape-4" data-name="Shape" d="M.5,0A.5.5,0,0,0,0,.5v1a.5.5,0,0,0,1,0V.5A.5.5,0,0,0,.5,0Z" transform="translate(7.5 4)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.1"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="35px" viewBox="0 0 25 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>magasin_vetements</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="12.5" cy="33.5" rx="6.5" ry="1"></ellipse>
+        <filter x="-11.5%" y="-75.0%" width="123.1%" height="250.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="magasin_vetements">
+            <g id="Oval-2" fill="black" fill-opacity="1">
+                <use filter="url(#filter-2)" xlink:href="#path-1"></use>
+            </g>
+            <g id="placeholder" transform="translate(0.500000, 1.500000)" fill-rule="nonzero">
+                <path d="M12,0 C5.382,0 0,5.382 0,12 C0,20.318 10.832,31.246 11.292,31.708 C11.488,31.902 11.744,32 12,32 C12.256,32 12.512,31.902 12.708,31.708 C13.168,31.246 24,20.318 24,12 C24,5.382 18.618,0 12,0 Z" id="Shape" fill="#50E3C2"></path>
+                <g id="022-hanger" transform="translate(4.000000, 4.500000)" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.1">
+                    <path d="M15.813,11.6095 L8.313,5.6095 C8.129,5.4635 7.871,5.4635 7.688,5.6095 L0.188,11.6095 C0.069,11.7045 0,11.8485 0,12.0005 L0,13.0005 C0,13.2765 0.224,13.5005 0.5,13.5005 L15.5,13.5005 C15.776,13.5005 16,13.2765 16,13.0005 L16,12.0005 C16,11.8485 15.931,11.7045 15.813,11.6095 Z M15,12.5005 L1,12.5005 L1,12.2405 L8,6.6405 L15,12.2405 L15,12.5005 Z" id="Shape"></path>
+                    <path d="M8,0 C6.622,0 5.5,1.122 5.5,2.5 C5.5,2.776 5.724,3 6,3 C6.276,3 6.5,2.776 6.5,2.5 C6.5,1.673 7.173,1 8,1 C8.827,1 9.5,1.673 9.5,2.5 C9.5,3.327 8.827,4 8,4 C7.724,4 7.5,4.224 7.5,4.5 C7.5,4.776 7.724,5 8,5 C9.379,5 10.5,3.878 10.5,2.5 C10.5,1.122 9.379,0 8,0 Z" id="Shape"></path>
+                    <path d="M8,4 C7.724,4 7.5,4.224 7.5,4.5 L7.5,5.5 C7.5,5.776 7.724,6 8,6 C8.276,6 8.5,5.776 8.5,5.5 L8.5,4.5 C8.5,4.224 8.276,4 8,4 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>
