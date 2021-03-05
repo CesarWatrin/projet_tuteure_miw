@@ -137,9 +137,11 @@ function switchFilter() {
 }
 
 var bouton_emptySearch = document.getElementsByClassName('emptySearch')[0];
+bouton_emptySearch.style.display = 'none';
 bouton_emptySearch.addEventListener('click',() => {
    inputSearch.value = '';
    autocomplete.innerHTML = '';
+   bouton_emptySearch.style.display = 'none';
 });
 
 function distance(lat1, lon1, lat2, lon2, unit) {
@@ -415,6 +417,7 @@ let autocomplete = document.getElementById('autocomplete');
 
 function chargeVilles() {
    if (inputSearch.value.replace(/\s+/, '').length) {
+      bouton_emptySearch.style.display = '';
       $.ajax({
          url: "https://api-adresse.data.gouv.fr/search/?q="+inputSearch.value+"&limit=10",
          success: function(data) {
@@ -425,6 +428,7 @@ function chargeVilles() {
          }
       });
    } else {
+      bouton_emptySearch.style.display = 'none';
       autocomplete.innerHTML = '';
    }
 }
