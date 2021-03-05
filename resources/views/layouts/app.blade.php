@@ -19,12 +19,9 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/account.css') }}" rel="stylesheet">
-<<<<<<< HEAD
-=======
     <link href="{{ asset('css/stores.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stores_add.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
->>>>>>> 52f766c0c41d62f0c45d2c5877e5ef0fc2b15fdf
 
 @stack('styles')
 

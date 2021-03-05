@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Rating;
 use App\Models\Store;
 use App\Models\Subcategory;
+use App\Models\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,15 +38,38 @@ class ManagerController extends Controller
         $categories = Category::all();
         $subCategories = Subcategory::all();
         $comments = Rating::where('store_id', '=', $storeId)->get();
-        //$avg = Rating::where('store_id', '=', $storeId)->get();
+        $views = View::where('store_id', '=', $storeId)->count();
         $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
-        return view('pages.dashboard', ['store' => $store, 'categories' => $categories, 'subCategories' => $subCategories, 'comments' => $comments, 'avg' => $avg]);
+
+
+        $shops = Store::where('category_id', '=', $store[0]->category_id)->get();
+        $shops_avg = [];
+        foreach ($shops as $shop){
+            $shop_avg = Rating::where('store_id', '=', $shop->id)->avg('rating');
+            if ($shop_avg != null){
+                array_push($shops_avg, $shop_avg);
+            }
+
+        }
+        rsort($shops_avg);
+        $rank_c = array_search($avg, $shops_avg)+1;
+
+        $shops = Store::where('subcategory_id', '=', $store[0]->subcategory_id)->get();
+        $shops_avg = [];
+        foreach ($shops as $shop){
+            $shop_avg = Rating::where('store_id', '=', $shop->id)->avg('rating');
+            if ($shop_avg != null){
+                array_push($shops_avg, $shop_avg);
+            }
+
+        }
+        rsort($shops_avg);
+        $rank_sc = array_search($avg, $shops_avg)+1;
+        return view('pages.dashboard', ['store' => $store, 'categories' => $categories, 'subCategories' => $subCategories, 'comments' => $comments, 'avg' => $avg, 'views' => $views, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc]);
     }
 
     public function modify_store(Request $request){
-       //$store_data = Store::$request->([
-
-
+       $store_data = Store::$request->update([]);
         return back();
     }
 }

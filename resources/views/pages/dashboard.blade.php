@@ -11,7 +11,7 @@
     <h1>{{$store[0]->name}}</h1>
 <div class="container">
     <div class="dashboard">
-        {{--<a href="{{ route('stores') }}">Stores</a>--}}
+        <a href="{{ route('stores') }}">Vos Magasins</a>
             <!--<div class="dashboard_bar">
                 <select class="shops" onchange="changeStore()">
                     {{--@foreach($stores as $store)
@@ -27,21 +27,15 @@
 
             <div class="rewards">
                 <div class="categorie_reward reward">
-                    <p>n°1</p>
-                    <p>Categorie</p>
+                    <p>n°{{$rank_c}}</p>
+                    <p>{{$store[0]->category_id}}Categorie</p>
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
                 </div>
                 <div class="subcategorie_reward reward">
-                    <p>n°1</p>
-                    <p>Categorie</p>
+                    <p>n°{{$rank_sc}}</p>
+                    <p>{{$store[0]->category_id}}Categorie</p>
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
                 </div>
-            </div>
-
-            <div class="top_product">
-                <h2>Votre top Produit</h2>
-                <h3>Nom produit</h3>
-                <img>
             </div>
         </div>
 
@@ -80,10 +74,9 @@
                                 @else
                                     <p>{{$comment->comment}}</p>
                                 @endif
-                                <p>{{$comment->rating}}</p>
                             </div>
                             <div class="comment_actions">
-                                <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
+                                <p>{{$comment->rating}}</p>
                                 <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
                             </div>
                         </div>
@@ -105,6 +98,7 @@
                 <p>Complément</p>
             </div>
         </div>
+
         <form action="{{-- route('modify_shop') --}}" method="GET">
             <div class="infos_general infos_active">
                 <div class="infos_left">
@@ -210,6 +204,13 @@
         });
     }
 
+    function getCateggoryName(){
+        return null;
+    }
+
+    function getSubCategoryName(){
+        return null;
+    }
     /*function changeStore(){
         let selectStore = document.getElementsByClassName('shops')[0];
         console.log(selectStore);
