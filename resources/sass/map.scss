@@ -125,7 +125,35 @@ main{
    }
 }
 
+#filter {
+   position: absolute;
+   top: 0;
+   z-index: -1;
+   width: calc(100% + 3.5rem);
+   background-color: rgba(71,91,245,0.2);
+   border-radius: 16px;
+   
+   .selects {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
 
+      select {
+         width: 200px;
+         padding: 8px;
+         border-radius: 16px;
+         margin: 5px;
+         border: 1px solid $normal_blue;
+         color: $normal_blue;
+      }
+
+      button {
+         width: 70px;
+         padding: 0;
+         margin: 5px;
+      }
+   }
+}
 
 @media screen and (min-width: 992px) {
    .leaflet-control-zoom{
