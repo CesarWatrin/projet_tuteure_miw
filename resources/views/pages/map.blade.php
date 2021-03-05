@@ -13,6 +13,7 @@
       <div class="champRecherche">
          <input type="text" class="input" id="inputSearch" placeholder="Rechercher sur la carte"/>
          <div id="autocomplete"></div>
+         <div id="filter"></div>
       </div>
    </div>
    <button class="bouton filter">
