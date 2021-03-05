@@ -18,7 +18,6 @@
     <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/account.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stores.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stores_add.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
@@ -28,6 +27,7 @@
 <!-- Importation de LeafLet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="{{ asset('js/tile.stamen.js') }}"></script>
 </head>
 <body>
     <div id="app">
@@ -71,7 +71,7 @@
                <span>Favoris</span>
             </div>
          </div>
-         @if (Route::current()->uri === 'login')
+         @if (Route::current()->uri === 'login' || Route::current()->uri === 'register' || Route::current()->uri === 'account')
             <div class="onglet currentPage" onclick="location.href='{{ route('login') }}';">
          @else
             <div class="onglet" onclick="location.href='{{ route('login') }}';">

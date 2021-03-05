@@ -10,7 +10,7 @@
 
     <div class="container_center">
 
-        <a class="back_link" href="{{ route('dashboard') }}"><i class="fas fa-chevron-left"></i> Retour au tableau de bord</a>
+        <a class="back_link" href="{{ route('account') }}"><i class="fas fa-chevron-left"></i> Retour à Mon compte</a>
     <h1 class="titre">@if(!$rating)Laisser un avis à @else Modifier l'avis laissé à @endif {{ $store->name }}</h1>
     @if(!$rating)
             <p class="texte">Mauvais commerce ? <a href="{{ route('commentscode_input') }}">Saisir un autre code</a></p>

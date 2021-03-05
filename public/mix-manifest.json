@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/map.js": "/js/map.js",
+    "/js/tile.stamen.js": "/js/tile.stamen.js",
     "/js/favori.js": "/js/favori.js",
     "/js/navbar.js": "/js/navbar.js",
     "/css/app.css": "/css/app.css",
