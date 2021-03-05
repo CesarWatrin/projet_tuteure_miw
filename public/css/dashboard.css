@@ -10,8 +10,35 @@
   justify-content: center;
   align-items: center;
   width: 90%;
+  margin-top: 25px;
 }
 
+.dashboard .header_dashboard {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard .header_dashboard h1 {
+  font-family: Nunito;
+  color: #020b5d;
+}
+.dashboard .header_dashboard a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #020b5d;
+  border: 2px solid #020b5d;
+  color: #FFFFFF;
+  border-radius: 15px;
+  width: 150px;
+  height: 40px;
+}
+.dashboard .header_dashboard a:hover {
+  background-color: #96b4f4;
+}
 .dashboard .dashboard_bar {
   display: flex;
   flex-direction: column;

@@ -8,10 +8,14 @@
 
 
 @section ('content')
-    <h1>{{$store[0]->name}}</h1>
+
 <div class="container">
     <div class="dashboard">
-        <a href="{{ route('stores') }}">Vos Magasins</a>
+        <div class="header_dashboard">
+            <h1>{{$store[0]->name}}</h1>
+            <a href="{{ route('stores') }}"><- Vos Magasins</a>
+        </div>
+
             <!--<div class="dashboard_bar">
                 <select class="shops" onchange="changeStore()">
                     {{--@foreach($stores as $store)
@@ -28,12 +32,20 @@
             <div class="rewards">
                 <div class="categorie_reward reward">
                     <p>n°{{$rank_c}}</p>
-                    <p>{{$store[0]->category_id}}Categorie</p>
+                        @foreach($categories as $category)
+                            @if($category->id == $store[0]->category_id)
+                                <p>{{$category->name}}</p>
+                            @endif
+                        @endforeach
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
                 </div>
                 <div class="subcategorie_reward reward">
                     <p>n°{{$rank_sc}}</p>
-                    <p>{{$store[0]->category_id}}Categorie</p>
+                    @foreach($subCategories as $subCategory)
+                        @if($subCategory->id == $store[0]->subcategory_id)
+                            <p>{{$subCategory->name}}</p>
+                        @endif
+                    @endforeach
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
                 </div>
             </div>

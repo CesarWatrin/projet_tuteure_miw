@@ -9,10 +9,39 @@
         justify-content: center;
         align-items: center;
         width: 90%;
+        margin-top: 25px;
     }
 }
 
 .dashboard{
+    .header_dashboard{
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1{
+            font-family: Nunito;
+            color: $dark_blue;
+
+        }
+        a{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: $dark_blue;
+            border: 2px solid $dark_blue;
+            color: $white;
+            border-radius: 15px;
+            width: 150px;
+            height: 40px;
+        }
+        a:hover{
+            background-color: $light_blue;
+        }
+    }
+
     .dashboard_bar{
         display: flex;
         flex-direction: column;
