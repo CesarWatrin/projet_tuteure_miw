@@ -182,13 +182,23 @@ body {
 }
 
 .corp {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   width: 100%;
   padding: 1.5rem 0;
   color: #020b5d;
   font-family: "Yeseva One", serif;
   font-size: 1.5rem;
-  text-align: center;
+}
+.corp:hover {
+  color: #020b5d;
+}
+
+.logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: 0.5rem;
 }
 
 .back_link {
@@ -274,7 +284,10 @@ body {
   }
 
   .corp {
-    text-align: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    justify-content: flex-start;
   }
 
   .recherche {
@@ -507,13 +520,23 @@ body {
 }
 
 .corp {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   width: 100%;
   padding: 1.5rem 0;
   color: #020b5d;
   font-family: "Yeseva One", serif;
   font-size: 1.5rem;
-  text-align: center;
+}
+.corp:hover {
+  color: #020b5d;
+}
+
+.logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: 0.5rem;
 }
 
 .back_link {
@@ -599,7 +622,10 @@ body {
   }
 
   .corp {
-    text-align: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    justify-content: flex-start;
   }
 
   .recherche {

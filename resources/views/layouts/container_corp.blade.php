@@ -1,3 +1,6 @@
 <div class="container_corp">
-    <span class="corp">MAC-YO Corp.</span>
+    <a href="{{ route('home') }}" class="corp">
+        <img class="logo" src="{{ asset('images/logo.svg') }}"/>
+        MAC-YO Corp.
+    </a>
 </div>
