@@ -57,7 +57,10 @@
                 <div class="ratings">
                     @foreach($ratings as $rating)
                         <div class="rating">
-                            <span class="r_store_name">{{ $rating->store->name }}</span>
+                            <div>
+                                <span class="r_store_name">{{ $rating->store->name }}</span>
+                                <span>{{ $rating->store->city->name }}</span>
+                            </div>
                             <span class="r_rating">
                             <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
                             {{ $rating->rating }}/5
