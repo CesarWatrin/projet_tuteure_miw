@@ -13,10 +13,6 @@ let markers = L.markerClusterGroup({
    }
 }).addTo(carte);
 
-//pour les tests :
-carte.setView([44.544606, 6.077989], 14, { animation: true });
-nearStores([6.077989, 44.544606]);
-
 var popup = document.getElementsByClassName('popup')[0];
 
 carte.addEventListener('click', () => {
@@ -343,12 +339,30 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var delivery_check = document.getElementById('delivery_check');
          var store_id = document.getElementById('store_id');
 
+         var moy = 0;
+         if (store.ratings.length !== 0) {
+            for (var i = 0; i < store.ratings.length; i++) {
+               moy += parseInt(store.ratings[i].rating);
+            }
+            moy = moy/store.ratings.length;
+         } else {
+            moy = -1;
+         }
+
          var dist = distance(lat, lon, store.lat, store.lon, 'K');
          dist = dist.toFixed(1);
 
          store_name.textContent = store.name;
          store_distance.textContent = '\u00a0à ' + dist + 'km';
-         store_score.textContent = '\u00a04/5';
+         if (moy !== -1) {
+            if (Number.isInteger(moy)) {
+               store_score.textContent = '\u00a0' + moy.toFixed(0) + '/5';
+            } else {
+               store_score.textContent = '\u00a0' + moy.toFixed(1) + '/5';
+            }
+         } else {
+            store_score.textContent = '\u00a0 Aucune note';
+         }
          if ((store.city.zip).length < 5) {
             store.city.zip = '0' + store.city.zip;
          }
@@ -514,4 +528,8 @@ var lon = url.searchParams.get("lon");
 if (lat !== null && lon !== null) {
    carte.setView([lat, lon], 20, { animation: true });
    nearStores([lon, lat]);
+} else {
+   //coordonnées de Gap :
+   carte.setView([44.544606, 6.077989], 14, { animation: true });
+   nearStores([6.077989, 44.544606]);
 }

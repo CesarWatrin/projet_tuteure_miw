@@ -86,7 +86,24 @@ async function getStoresById(ids) {
    for (var i = 0; i < store_name.length; i++) {
       store_name[i].textContent = stores[i].name;
       store_distance[i].textContent = '\u00a0' + stores[i].city.name;
-      store_score[i].textContent = '\u00a04/5';
+      var moy = 0;
+      if (stores[i].ratings.length !== 0) {
+         for (var j = 0; j < stores[i].ratings.length; j++) {
+            moy += parseInt(stores[i].ratings[j].rating);
+         }
+         moy = moy/stores[i].ratings.length;
+      } else {
+         moy = -1;
+      }
+      if (moy !== -1) {
+         if (Number.isInteger(moy)) {
+            store_score[i].textContent = '\u00a0' + moy.toFixed(0) + '/5';
+         } else {
+            store_score[i].textContent = '\u00a0' + moy.toFixed(1) + '/5';
+         }
+      } else {
+         store_score[i].textContent = '\u00a0 Aucune note';
+      }
       store_id[i].textContent = stores[i].id;
       store_lat[i].textContent = stores[i].lat;
       store_lon[i].textContent = stores[i].lon;
@@ -105,7 +122,6 @@ async function getStoresById(ids) {
 
 function removeFav(event) {
    var id = event.target.parentNode.parentNode.parentNode.parentNode.children[0].children[3].children[0].textContent;
-   console.log(id);
    var exist = addStorage(id.trim());
    if (exist === 0) {
       event.target.setAttribute('xlink:href', 'images/sprite.svg#heart_full');
