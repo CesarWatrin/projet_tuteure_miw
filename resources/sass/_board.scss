@@ -105,8 +105,10 @@
             color: $white;
             font-family: "Yeseva One";
             margin: 0;
+            text-align: center;
         }
         p:first-child{
+            padding-top: 5px;
             font-size: 35px;
         }
         p:nth-child(2n){
@@ -266,4 +268,39 @@
             height: 50%;
         }
     }
+}
+
+@media (min-width: 576px) {
+.rewards{
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+    .data_shop{
+        width: 80%;
+        .data{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
 }

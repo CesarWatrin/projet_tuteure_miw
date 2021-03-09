@@ -34,7 +34,7 @@
                     <p>n°{{$rank_c}}</p>
                         @foreach($categories as $category)
                             @if($category->id == $store[0]->category_id)
-                                <p>{{$category->name}}</p>
+                                <p>{{ucfirst($category->name)}}</p>
                             @endif
                         @endforeach
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
@@ -43,7 +43,7 @@
                     <p>n°{{$rank_sc}}</p>
                     @foreach($subCategories as $subCategory)
                         @if($subCategory->id == $store[0]->subcategory_id)
-                            <p>{{$subCategory->name}}</p>
+                            <p>{{ucfirst($subCategory->name)}}</p>
                         @endif
                     @endforeach
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
