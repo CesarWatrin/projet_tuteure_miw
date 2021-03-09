@@ -13,6 +13,7 @@ $corner: 16px;
    bottom: 0;
    left: 0;
    z-index: 100;
+    padding-bottom: env(safe-area-inset-bottom); // padding pour barre de navigation iPhone borderless
 
    .onglet {
       display: flex;
@@ -102,6 +103,7 @@ $corner: 16px;
       left: auto;
       top: 20px;
       right: 20px;
+       padding-bottom: 0; // suppression du padding pour barre de navigation iPhone borderless
 
        position: absolute;
        background-color: transparent;
