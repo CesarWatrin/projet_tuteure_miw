@@ -19,6 +19,22 @@ label {
   width: 100%;
 }
 
+.cgu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cgu #cgu {
+  width: initial;
+}
+.cgu label {
+  margin-left: 1rem;
+}
+.cgu a, .cgu a:hover {
+  color: #020b5d;
+}
+
 .input {
   width: 100%;
   max-width: 500px;
@@ -266,6 +282,16 @@ body {
   padding: 0.75rem;
   width: 3rem;
   height: 3rem;
+}
+
+.mentions_legales {
+  padding: 0 2.25rem;
+  max-width: 992px;
+  margin: 0 auto 2rem auto;
+}
+.mentions_legales ul {
+  list-style-position: inside;
+  padding: 0;
 }
 
 @media screen and (min-width: 768px) {

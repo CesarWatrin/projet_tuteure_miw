@@ -117,7 +117,20 @@
                        name="password_confirmation" required autocomplete="new-password">
             </div>
 
-                <!-- TODO checkbox d'acceptation des CGU -->
+            <div class="input_row">
+
+                <div class="cgu">
+                    <input id="cgu" type="checkbox"  class="input" name="cgu" required>
+                    <label for="cgu">J'ai lu et j'accepte les <a href="{{ route('legal') }}">Conditions générales d'utilisation</a>.</label>
+                </div>
+
+                @error('cgu')
+                <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+
+            </div>
 
             <div>
                 <button type="submit" class="bouton_form brouge">

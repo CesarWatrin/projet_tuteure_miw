@@ -117,7 +117,7 @@
                      </div>
                 </div>
                 <p>Plan du site</p>
-                <p class="ml">Mentions légales</p>
+                  <p class="ml"><a href="{{ route('legal') }}">Mentions légales</a></p>
                 <div class="copyright">
                   <p>Copyright © 2021 MAC-YO Corp.<br>Tous droits réservés.</p>
                 </div>
