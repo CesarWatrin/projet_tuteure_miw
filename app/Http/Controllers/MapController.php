@@ -23,7 +23,7 @@ class MapController extends Controller
       //dd(urlencode($request->input('lat')));
       if($request->has(['lat', 'lon', 'cat', 'subcat'])) {
 
-         $stores = Store::with('city')->with('ratings')->where('category_id', $request->input('cat'))->where('subcategory_id', $request->input('subcat'))->get();
+         $stores = Store::with('city')->with('ratings.user')->where('category_id', $request->input('cat'))->where('subcategory_id', $request->input('subcat'))->get();
          $stores_near = [];
          foreach($stores as $store) {
             if($this->distance($store->lat, $store->lon, $request->input('lat'), $request->input('lon'), 'kilometers') < 10) {
@@ -34,7 +34,7 @@ class MapController extends Controller
 
       } else if($request->has(['lat', 'lon', 'cat'])) {
 
-         $stores = Store::with('city')->with('ratings')->where('category_id', $request->input('cat'))->get();
+         $stores = Store::with('city')->with('ratings.user')->where('category_id', $request->input('cat'))->get();
 
          $stores_near = [];
          foreach($stores as $store) {
@@ -45,7 +45,7 @@ class MapController extends Controller
          return $stores_near;
 
       } else if($request->has(['lat', 'lon'])) {
-         $stores = Store::with('city')->with('ratings')
+         $stores = Store::with('city')->with('ratings.user')
          //->where('( 6371 * acos( cos(radians('.$request->input('lat').')) * cos(radians(lat)) * cos(radians(lon) - radians('.$request->input('lon').')) + sin(radians('.$request->input('lat').')) * sin(radians(lat)) ) )', '<', 10)
          ->get();
 
@@ -64,7 +64,7 @@ class MapController extends Controller
          $ids = explode(',', $ids);
          $array_ids = array();
          foreach ($ids as $id) {
-            $stores = Store::with('city')->with('ratings')->where('id', $id)->get();
+            $stores = Store::with('city')->with('ratings.user')->where('id', $id)->get();
             array_push($array_ids, $stores[0]);
          }
          return $array_ids;
