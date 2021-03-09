@@ -75,14 +75,14 @@
          <div>
             <div class="ratings">
                <div class="rating">
-                   <span class="r_store_name">MAcdo</span>
+                   <span class="r_store_name">César</span>
                    <span class="r_rating">
                    <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
                    4/5
                    </span>
                    <div class="r_comment">
                       <svg class="big_icon quote"><use xlink:href="{{ asset('images/sprite.svg#quote') }}" </svg>
-                      <p>Pas ouf</p>
+                      <p>Bon rapport qualité/prix</p>
                       <svg class="big_icon quote qright"><use xlink:href="{{ asset('images/sprite.svg#quote') }}" </svg>
                    </div>
                </div>
