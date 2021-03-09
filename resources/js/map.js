@@ -338,6 +338,38 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var store_website = document.getElementById('store_website');
          var delivery_check = document.getElementById('delivery_check');
          var store_id = document.getElementById('store_id');
+         var store_comments = document.getElementById('store_comments');
+
+         store_comments.innerHTML = '';
+         for (var i = 0; i < store.ratings.length; i++) {
+            if (store.ratings[i].comment !== null) {
+               store_comments.innerHTML += `
+                  <div class="rating">
+                      <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                      <span class="r_rating">
+                      <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                      <p>${store.ratings[i].rating}/5</p>
+                      </span>
+                      <div class="r_comment">
+                         <svg class="big_icon quote"><use xlink:href="images/sprite.svg#quote" </svg>
+                         <p>${store.ratings[i].comment}</p>
+                         <svg class="big_icon quote qright"><use xlink:href="images/sprite.svg#quote" </svg>
+                      </div>
+                  </div>
+               `;
+            } else {
+               store_comments.innerHTML += `
+                  <div class="rating" style="height:50px;">
+                      <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                      <span class="r_rating">
+                      <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                      <p>${store.ratings[i].rating}/5</p>
+                      </span>
+                      <div class="r_comment"></div>
+                  </div>
+               `;
+            }
+         }
 
          var moy = 0;
          if (store.ratings.length !== 0) {
