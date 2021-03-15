@@ -169,8 +169,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 150px;
-        height: 150px;
+        width: 165px;
+        height: 165px;
         border-radius: 15px;
         box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
         p{
@@ -182,7 +182,7 @@
     }
     .data_visitors{
         background-color: $light_blue;
-        margin-right:25px;
+        margin-right:5%;
         margin-bottom: 25px;
         p{
             color: $white;
@@ -190,11 +190,11 @@
     }
     .data_avg{
         background-color: $white;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
     .data_delivery{
         background-color: $white;
-        margin-right: 25px;
+        margin-right: 5%;
     }
     .data_followers{
         background-color: $light_red;
@@ -271,28 +271,39 @@
 }
 
 @media (min-width: 576px) {
-.rewards{
-    flex-direction: row;
-    justify-content: space-evenly;
-}
+    .rewards{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
     .data_shop{
+        margin-top: 0;
         width: 80%;
-        .data{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .data {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    .container_comments{
+        width: 80%;
+        .comments{
             justify-content: center;
-            width: 150px;
-            height: 150px;
-            border-radius: 15px;
-            box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+            width: 85%;
+        }
     }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
+    .rewards{
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        .reward{
+            align-self: normal;
+        }
+    }
 }
 
 // Large devices (desktops, 992px and up)

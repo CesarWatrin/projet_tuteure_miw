@@ -165,8 +165,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 150px;
+  width: 165px;
+  height: 165px;
   border-radius: 15px;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
 }
@@ -178,7 +178,7 @@
 }
 .data_shop .data_visitors {
   background-color: #96b4f4;
-  margin-right: 25px;
+  margin-right: 5%;
   margin-bottom: 25px;
 }
 .data_shop .data_visitors p {
@@ -186,11 +186,11 @@
 }
 .data_shop .data_avg {
   background-color: #FFFFFF;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .data_shop .data_delivery {
   background-color: #FFFFFF;
-  margin-right: 25px;
+  margin-right: 5%;
 }
 .data_shop .data_followers {
   background-color: #feb3b1;
@@ -273,45 +273,30 @@
   }
 
   .data_shop {
+    margin-top: 0;
     width: 80%;
   }
   .data_shop .data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 200px;
+    height: 200px;
+  }
+
+  .container_comments {
+    width: 80%;
+  }
+  .container_comments .comments {
     justify-content: center;
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+    width: 85%;
   }
-  .data_shop .data p {
-    margin: 0;
-    font-family: "Yeseva One";
-    font-size: 20px;
-    color: #020b5d;
+}
+@media (min-width: 768px) {
+  .rewards {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
   }
-  .data_shop .data_visitors {
-    background-color: #96b4f4;
-    margin-right: 25px;
-    margin-bottom: 25px;
-  }
-  .data_shop .data_visitors p {
-    color: #FFFFFF;
-  }
-  .data_shop .data_avg {
-    background-color: #FFFFFF;
-    margin-bottom: 25px;
-  }
-  .data_shop .data_delivery {
-    background-color: #FFFFFF;
-    margin-right: 25px;
-  }
-  .data_shop .data_followers {
-    background-color: #feb3b1;
-  }
-  .data_shop .data_followers p {
-    color: #FFFFFF;
+  .rewards .reward {
+    align-self: normal;
   }
 }
 .info_shop {
