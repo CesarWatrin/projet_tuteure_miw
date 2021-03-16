@@ -12,3 +12,5 @@
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('user?role=3') }}'><i class='nav-icon la la-user'></i> Moderators</a></li>
     </ul>
 </li>--}}
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('rating') }}'><i class='nav-icon la la-star-o'></i> Ratings</a></li>
