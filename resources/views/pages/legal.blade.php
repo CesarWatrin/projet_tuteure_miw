@@ -16,10 +16,10 @@
 
         <h3>1. Présentation du service proposé</h3>
 
-        <p>[nomdusite] a pour but de vous présenter les différents commerces inscrits sur la plateforme et proposant la vente à emporter, autour de votre position ou d'une adresse postale.
+        <p>MAC-YO Corp. a pour but de vous présenter les différents commerces inscrits sur la plateforme et proposant la vente à emporter, autour de votre position ou d'une adresse postale.
             <br/>Chaque commerce fournit le catalogue des produits disponibles ainsi que des informations pratiques (numéro de téléphone, horaires d'ouverture, etc.) et la liste des avis laissés par la communauté.
             <br/>Lorsqu'il se rend chez un commerçant, l'utilisateur reçoit un code lui permettant de laisser à son tour une note et un commentaire pour le commerce.</p>
-        <p>[nomdusite] est conçu par MM. Anthony Brochier, César Watrin, Maxime Didier et Yohan Salamone, quatre étudiants en Licence Professionnelle Mobilité - Internet et Web, dans le cadre de leur projet tuteuré. Le projet tuteuré est supervisé par le responsable de la licence, M. Roland Grosso.</p>
+        <p>MAC-YO Corp. est conçu par MM. Anthony Brochier, César Watrin, Maxime Didier et Yohan Salamone, quatre étudiants en Licence Professionnelle Mobilité - Internet et Web, dans le cadre de leur projet tuteuré. Le projet tuteuré est supervisé par le responsable de la licence, M. Roland Grosso.</p>
 
         <h3>2. Les droits et obligations de chaque profil utilisateur</h3>
 
@@ -47,7 +47,7 @@
 
         <h3>3. Les droits et obligations de l’éditeur</h3>
 
-        <ul>[nomdusite], en sa qualité d'éditeur, se réserve les droits suivants concernant la plateforme :
+        <ul>MAC-YO Corp., en sa qualité d'éditeur, se réserve les droits suivants concernant la plateforme :
             <li>le droit d’utiliser un module de géolocalisation afin de proposer une expérience utilisateur personnalisée (la position de l’utilisateur n'étant ni enregistrée ni transmise) ;</li>
             <li>le droit récolter des données anonymes concernant la consultation du site internet et des différents commerces, dans l'objectif d'élaborer des statistiques ;</li>
             <li>le droit de connaître l’identité (nom, prénom) de ses utilisateurs, ainsi que des informations complémentaires au sujet de ses utilisateurs (adresse e-mail).</li>
@@ -63,16 +63,16 @@
 
         <h3>4. Conditions d'utilisation de l'espace Avis</h3>
 
-        <p>L’espace Avis est réservé aux personnes ayant un compte utilisateur chez [nomdusite] et ayant déjà visité le commerce en question. Pour s’en assurer, le commerce délivrera lors de la visite un code permettant de le noté ultérieurement.</p>
+        <p>L’espace Avis est réservé aux personnes ayant un compte utilisateur chez MAC-YO Corp. et ayant déjà visité le commerce en question. Pour s’en assurer, le commerce délivrera lors de la visite un code permettant de le noté ultérieurement.</p>
         <ul>
             Dans ce cadre, le Client est invité à compléter les catégories suivantes :
             <li>un avis en caractère libre ;</li>
             <li>une note globale ;</li>
             <li>une adresse e-mail valide et personnelle.</li>
         </ul>
-        <p>[nomdusite] se réserve le droit de modérer l’espace “Avis”, et de censurer des commentaires injurieux, et l’auteur du commentaire pourrait se voir accusé de diffamation par le commerce.</p>
+        <p>MAC-YO Corp. se réserve le droit de modérer l’espace “Avis”, et de censurer des commentaires injurieux, et l’auteur du commentaire pourrait se voir accusé de diffamation par le commerce.</p>
         <p>Tout avis ne correspondant pas aux critères ci-dessus ne pourra être publié.</p>
-        <p>Utilisateurs et commerces peuvent également signaler un avis qu’ils jugent problématique pour un examen par la modération de [nomdusite]</p>
+        <p>Utilisateurs et commerces peuvent également signaler un avis qu’ils jugent problématique pour un examen par la modération de MAC-YO Corp.</p>
 
         <h3>5. Politique vis-à-vis des hyperliens</h3>
 
