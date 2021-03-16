@@ -126,6 +126,17 @@ body {
     height: 3rem;
 }
 
+.mentions_legales {
+    padding: 0 2.25rem;
+    max-width: 992px;
+    margin: 0 auto 2rem auto;
+
+    ul {
+        list-style-position: inside;
+        padding: 0;
+    }
+}
+
 @media screen and (min-width: 768px) {
 
     .container_center {

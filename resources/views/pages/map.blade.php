@@ -69,6 +69,12 @@
             <span><i class="fas fa-globe"></i> </span>
             <span><a id="store_website" target="_blank" href="https://cesarwatrin.fr">Accéder au site web</a></span>
          </div>
+         <div>
+            <h4>Commentaires</h4>
+         </div>
+         <div>
+            <div class="ratings" id="store_comments"></div>
+         </div>
       </div>
    </div>
    <div class="popup_buttons">

@@ -21,6 +21,22 @@ label {
     width: 100%;
 }
 
+.cgu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    #cgu {
+        width: initial;
+    }
+    label {
+        margin-left: 1rem;
+    }
+    a, a:hover {
+        color: $dark_blue;
+    }
+}
+
 .input {
     width: 100%;
     max-width: 500px;

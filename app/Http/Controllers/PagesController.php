@@ -11,4 +11,8 @@ class PagesController extends Controller
             'name' => 'MAC-YO'
         ]);
     }
+
+    public function legal() {
+        return view('pages.legal');
+    }
 }

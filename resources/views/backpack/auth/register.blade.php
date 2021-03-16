@@ -1,7 +1,5 @@
 @extends(backpack_view('layouts.plain'))
 
-{{ $errors }}
-
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
@@ -12,7 +10,7 @@
                         {!! csrf_field() !!}
 
                         <div class="form-group">
-                            <label class="control-label" for="surname">{{ trans('backpack::base.surname') }}</label>
+                            <label class="control-label" for="surname">{{ trans('macyo_custom.surname') }}</label>
 
                             <div>
                                 <input type="text" class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname" id="surname" value="{{ old('surname') }}">
@@ -26,7 +24,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label" for="firstname">{{ trans('backpack::base.firstname') }}</label>
+                            <label class="control-label" for="firstname">{{ trans('macyo_custom.firstname') }}</label>
 
                             <div>
                                 <input type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" id="firstname" value="{{ old('firstname') }}">
@@ -54,7 +52,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label" for="phonenumber">{{ trans('backpack::base.phonenumber') }}</label>
+                            <label class="control-label" for="phonenumber">{{ trans('macyo_custom.phonenumber') }}</label>
 
                             <div>
                                 <input type="text" class="form-control{{ $errors->has('phonenumber') ? ' is-invalid' : '' }}" name="phonenumber" id="phonenumber" value="{{ old('phonenumber') }}">
