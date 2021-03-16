@@ -37,12 +37,8 @@ class ManagerController extends Controller
 
     public function dashboard($storeId){
         $store = Store::where('id', '=', $storeId)->get();
-        $categories = Category::all();
-        $subCategories = Subcategory::all();
         $comments = Rating::where('store_id', '=', $storeId)->get();
-        $views = View::where('store_id', '=', $storeId)->count();
         $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
-
 
         $shops = Store::where('category_id', '=', $store[0]->category_id)->get();
         $shops_avg = [];
@@ -67,7 +63,7 @@ class ManagerController extends Controller
         }
         rsort($shops_avg);
         $rank_sc = array_search($avg, $shops_avg)+1;
-        return view('pages.dashboard', ['store' => $store, 'categories' => $categories, 'subCategories' => $subCategories, 'comments' => $comments, 'avg' => $avg, 'views' => $views, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc]);
+        return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc]);
     }
 
     public function modify_store(Request $request){

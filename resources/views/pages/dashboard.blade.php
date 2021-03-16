@@ -8,7 +8,6 @@
 
 
 @section ('content')
-
 <div class="container">
     <div class="dashboard">
         <div class="header_dashboard">
@@ -30,20 +29,12 @@
             <div class="rewards">
                 <div class="categorie_reward reward">
                     <p>n°{{$rank_c}}</p>
-                        @foreach($categories as $category)
-                            @if($category->id == $store[0]->category_id)
-                                <p>{{ucfirst($category->name)}}</p>
-                            @endif
-                        @endforeach
+                    <p>{{ucfirst($store[0]->category->name)}}</p>
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
                 </div>
                 <div class="subcategorie_reward reward">
                     <p>n°{{$rank_sc}}</p>
-                    @foreach($subCategories as $subCategory)
-                        @if($subCategory->id == $store[0]->subcategory_id)
-                            <p>{{ucfirst($subCategory->name)}}</p>
-                        @endif
-                    @endforeach
+                    <p>{{ucfirst($store[0]->subcategory->name)}}</p>
                     <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
                 </div>
             </div>
@@ -52,7 +43,7 @@
 
         <div class="data_shop">
             <div class="data data_visitors">
-                <p>6854694</p>
+                <p>{{sizeof($store[0]->views_all)}}</p>
                 <p>visiteurs</p>
             </div>
             <div class="data data_avg">
@@ -60,8 +51,8 @@
                 <p>Moyenne</p>
             </div>
             <div class="data data_delivery">
-                <p>5654</p>
-                <p>commandes</p>
+                <p>{{sizeof($store[0]->ratings)}}</p>
+                <p>Avis</p>
             </div>
             <div class="data data_followers">
                 <p>5464</p>
@@ -136,7 +127,7 @@
 
             <div class="infos_complementary">
                 <div class="infos_left">
-                    <select name="category_id">
+                {{--<select name="category_id">
                         @if(isset($store))
                             <option value="{{$store[0]->category_id}}">{{$categories[$store[0]->category_id - 1]->name}}</option>
                         @else
@@ -159,7 +150,7 @@
                                     <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
                                 @endif
                             @endforeach
-                    </select>
+                    </select>--}}
                     <div class="delivery">
                         <label for="delivery_cat">Livraison : </label>
                         <div class="delivery_cat" id="delivery_cat">
@@ -232,7 +223,6 @@
         //url = url.replace('?', '/');
         document.location.href=url;
     }*/
-
 </script>
 @endsection
 
