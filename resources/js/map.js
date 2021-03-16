@@ -340,36 +340,52 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var store_id = document.getElementById('store_id');
          var store_comments = document.getElementById('store_comments');
 
-          addView(store.id);
+         var store_img = document.getElementById('store_img');
+         var src_img = 'images/stores/store_' + store.id.toString() + '/commerce.jpg';
+         if (imageExists(src_img)) {
+            store_img.src = src_img;
+         } else {
+            src_img = 'images/stores/store_default/commercenotfound.jpg';
+            store_img.src = src_img;
+         }
 
-          store_comments.innerHTML = '';
+         function imageExists(image_url){
+            var http = new XMLHttpRequest();
+            http.open('HEAD', image_url, false);
+            http.send();
+            return http.status != 404;
+         }
+
+         addView(store.id);
+
+         store_comments.innerHTML = '';
          if (store.ratings.length !== 0) {
             for (var i = 0; i < store.ratings.length; i++) {
                if (store.ratings[i].comment !== null) {
                   store_comments.innerHTML += `
-                     <div class="rating">
-                         <span class="r_store_name">${store.ratings[i].user.firstname}</span>
-                         <span class="r_rating">
-                         <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
-                         <p>${store.ratings[i].rating}/5</p>
-                         </span>
-                         <div class="r_comment">
-                            <svg class="big_icon quote"><use xlink:href="images/sprite.svg#quote" </svg>
-                            <p>${store.ratings[i].comment}</p>
-                            <svg class="big_icon quote qright"><use xlink:href="images/sprite.svg#quote" </svg>
-                         </div>
-                     </div>
+                  <div class="rating">
+                  <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                  <span class="r_rating">
+                  <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                  <p>${store.ratings[i].rating}/5</p>
+                  </span>
+                  <div class="r_comment">
+                  <svg class="big_icon quote"><use xlink:href="images/sprite.svg#quote" </svg>
+                  <p>${store.ratings[i].comment}</p>
+                  <svg class="big_icon quote qright"><use xlink:href="images/sprite.svg#quote" </svg>
+                  </div>
+                  </div>
                   `;
                } else {
                   store_comments.innerHTML += `
-                     <div class="rating" style="height:50px;">
-                         <span class="r_store_name">${store.ratings[i].user.firstname}</span>
-                         <span class="r_rating">
-                         <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
-                         <p>${store.ratings[i].rating}/5</p>
-                         </span>
-                         <div class="r_comment"></div>
-                     </div>
+                  <div class="rating" style="height:50px;">
+                  <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                  <span class="r_rating">
+                  <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                  <p>${store.ratings[i].rating}/5</p>
+                  </span>
+                  <div class="r_comment"></div>
+                  </div>
                   `;
                }
             }
@@ -447,6 +463,9 @@ async function nearStores(coord, cat = 0, subcat = 0) {
 
          var popup_gmaps = document.getElementById('popup_gmaps');
          popup_gmaps.href = 'https://www.google.com/maps/search/?api=1&query='+store.name+'+'+store.city.name;
+
+         var popup_catalogue = document.getElementById('popup_catalogue');
+         popup_catalogue.href = `${window.location.origin}/catalogue/${store.id}`;
       });
       marker.addTo(markers);
    });
@@ -573,7 +592,6 @@ if (lat !== null && lon !== null) {
 }
 
 async function addView(store_id) {
-    console.log(store_id);
     await fetch(`${window.location.origin}/api/view/add`, {
         method: 'POST',
         headers: {

@@ -36,6 +36,7 @@ Route::post('/ratings/delete', 'AccountController@deleteRating')->name('rating_d
 Route::get('/stores', 'AccountController@stores')->name('stores');
 
 Route::get('/stores/add', 'ManagerController@storesAdd')->name('stores_add');
+Route::post('/stores/add', 'ManagerController@storePost')->name('store_post');
 
 // routes API
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');
@@ -50,3 +51,5 @@ Route::get('/dashboard', 'AccountController@dashboard')->name('dashboard');
 Route::get('/store_card', 'Store_cardController@home')->name('store_card');
 
 Route::get('/legal', 'PagesController@legal')->name('legal');
+
+Route::get('/catalogue/{store_id}', 'CatalogueController@catalogue')->name('catalogue');

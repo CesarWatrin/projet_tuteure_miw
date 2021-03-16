@@ -25,6 +25,10 @@ mix.js('resources/js/navbar.js', 'public/js')
 .sass('resources/sass/navbar.scss', 'public/css')
 .sourceMaps();
 
+mix.js('resources/js/catalogue.js', 'public/js')
+.sass('resources/sass/catalogue.scss', 'public/css')
+.sourceMaps();
+
 mix.sass('resources/sass/connect.scss', 'public/css').sourceMaps();
 
 mix.sass('resources/sass/favoris.scss', 'public/css').sourceMaps();

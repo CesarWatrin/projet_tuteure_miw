@@ -78,7 +78,7 @@
       </div>
    </div>
    <div class="popup_buttons">
-      <a href="#">
+      <a id="popup_catalogue" href="{{ route('catalogue', 0) }}">
          <svg class="icon"><use xlink:href="images/sprite.svg#catalogue"></use></svg>
          <p>Catalogue</p>
       </a>
