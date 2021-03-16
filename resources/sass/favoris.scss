@@ -1,6 +1,11 @@
 @import 'global';
 @import 'store_card';
 
+footer {
+   position: relative;
+   padding-top: 50vh;
+}
+
 .favoris_header {
    width: 100%;
    font-family: "Yeseva One";
