@@ -1223,3 +1223,21 @@ footer {
     flex-wrap: wrap;
   }
 }
+.titre {
+  margin-bottom: 10px;
+}
+
+.sub_title {
+  text-align: center;
+  font-family: "Yeseva One", serif;
+  font-size: 25px;
+}
+
+.sub_title::before, .sub_title::after {
+  content: " ~ ";
+  font-weight: bold;
+}
+
+#store_link:hover {
+  color: #020b5d;
+}

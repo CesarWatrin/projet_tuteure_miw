@@ -17,6 +17,7 @@
    background-color: rgba(234,239,252, 0.85);
    color: $dark_blue;
    font-size: 17px;
+   backdrop-filter: blur(2px);
 
    .popup_header {
       width: 100%;

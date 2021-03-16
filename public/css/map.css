@@ -842,6 +842,8 @@ body {
   background-color: rgba(234, 239, 252, 0.85);
   color: #020b5d;
   font-size: 17px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 .popup .popup_header {
   width: 100%;
@@ -1190,6 +1192,8 @@ main {
   width: calc(100% + 3.5rem);
   background-color: rgba(71, 91, 245, 0.2);
   border-radius: 16px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 #autocomplete p:first-child {
   margin-top: 60px;
@@ -1201,6 +1205,7 @@ main {
   color: #020B5D;
   padding: 10px 10px 10px 10px;
   margin: 0;
+  font-weight: bold;
 }
 #autocomplete p:hover {
   background-color: rgba(255, 255, 255, 0.8);
@@ -1214,6 +1219,8 @@ main {
   width: calc(100% + 3.5rem);
   background-color: rgba(71, 91, 245, 0.2);
   border-radius: 16px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 #filter .selects {
   display: flex;

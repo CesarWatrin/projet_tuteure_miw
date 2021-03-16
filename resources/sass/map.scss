@@ -104,6 +104,7 @@ main{
    width: calc(100% + 3.5rem);
    background-color: rgba(71,91,245,0.2);
    border-radius: 16px;
+   backdrop-filter: blur(3px);
 
    p:first-child {
       margin-top: 60px;
@@ -117,6 +118,7 @@ main{
       color: #020B5D;
       padding: 10px 10px 10px 10px;
       margin: 0;
+      font-weight: bold;
    }
 
    p:hover {
@@ -132,6 +134,7 @@ main{
    width: calc(100% + 3.5rem);
    background-color: rgba(71,91,245,0.2);
    border-radius: 16px;
+   backdrop-filter: blur(3px);
 
    .selects {
       display: flex;
