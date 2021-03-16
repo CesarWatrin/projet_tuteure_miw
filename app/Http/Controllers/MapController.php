@@ -69,6 +69,9 @@ class MapController extends Controller
             array_push($array_ids, $stores[0]);
          }
          return $array_ids;
+      } else if ($request->has('id')) {
+         $store = Store::with('city')->where('id', $request->input('id'))->first();
+         return $store;
       } else {
          throw new \Exception('lat et/ou lon et/ou id ne sont pas définis');
       }

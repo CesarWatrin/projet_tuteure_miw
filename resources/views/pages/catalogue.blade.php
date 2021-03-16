@@ -10,7 +10,8 @@
 
    <div class="favoris_header">
       <img class="sky_wave" src="../images/sky_wave.svg" alt="wave">
-      <h1 class="titre">Catalogue</h1>
+      <a id="store_link" href="#"><h1 id="titre" class="titre"></h1><a>
+      <p class="sub_title">Catalogue</p>
    </div>
 
 @endsection

@@ -1,2 +1,21 @@
 @import 'global';
 @import 'favoris';
+
+.titre {
+   margin-bottom: 10px;
+}
+
+.sub_title {
+   text-align: center;
+   font-family: $yeseva;
+   font-size: 25px;
+}
+
+.sub_title::before, .sub_title::after {
+   content: ' ~ ';
+   font-weight: bold;
+}
+
+#store_link:hover {
+   color: $dark_blue;
+}
