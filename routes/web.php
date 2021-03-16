@@ -40,6 +40,7 @@ Route::post('/stores/add', 'ManagerController@storePost')->name('store_post');
 
 // routes API
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');
+Route::post('/api/view/add', 'MapController@addView')->name('addView');
 
 //Route::get('/dashboard', 'ManagerController@dashboard')->name('account');
 

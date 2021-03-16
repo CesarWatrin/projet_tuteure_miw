@@ -741,6 +741,11 @@ body {
   height: auto;
   cursor: pointer;
 }
+.card .img_store img {
+  width: 250px;
+  height: 178.68px;
+  border-radius: 16px;
+}
 .card .img_store:hover {
   filter: drop-shadow(0px 4px 4px grey);
 }

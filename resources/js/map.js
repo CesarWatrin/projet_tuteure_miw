@@ -324,7 +324,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          );
       }
 
-      marker.addEventListener('click', () => {
+      marker.addEventListener('mousedown', () => {
          closeFilter();
          var store_name = document.getElementById('store_name');
          var store_distance = document.getElementById('store_distance');
@@ -340,34 +340,56 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var store_id = document.getElementById('store_id');
          var store_comments = document.getElementById('store_comments');
 
+         var store_img = document.getElementById('store_img');
+         var src_img = 'images/stores/store_' + store.id.toString() + '/commerce.jpg';
+         testImage(src_img);
+
+         function testImage(url) {
+            var tester = new Image();
+            tester.onload = imageFound;
+            tester.onerror = imageNotFound;
+            tester.src = url;
+         }
+
+         function imageFound() {
+            store_img.src = src_img;
+         }
+
+         function imageNotFound() {
+            src_img = 'images/stores/store_default/commercenotfound.jpg';
+            store_img.src = src_img;
+         }
+
+         addView(store.id);
+
          store_comments.innerHTML = '';
          if (store.ratings.length !== 0) {
             for (var i = 0; i < store.ratings.length; i++) {
                if (store.ratings[i].comment !== null) {
                   store_comments.innerHTML += `
-                     <div class="rating">
-                         <span class="r_store_name">${store.ratings[i].user.firstname}</span>
-                         <span class="r_rating">
-                         <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
-                         <p>${store.ratings[i].rating}/5</p>
-                         </span>
-                         <div class="r_comment">
-                            <svg class="big_icon quote"><use xlink:href="images/sprite.svg#quote" </svg>
-                            <p>${store.ratings[i].comment}</p>
-                            <svg class="big_icon quote qright"><use xlink:href="images/sprite.svg#quote" </svg>
-                         </div>
-                     </div>
+                  <div class="rating">
+                  <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                  <span class="r_rating">
+                  <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                  <p>${store.ratings[i].rating}/5</p>
+                  </span>
+                  <div class="r_comment">
+                  <svg class="big_icon quote"><use xlink:href="images/sprite.svg#quote" </svg>
+                  <p>${store.ratings[i].comment}</p>
+                  <svg class="big_icon quote qright"><use xlink:href="images/sprite.svg#quote" </svg>
+                  </div>
+                  </div>
                   `;
                } else {
                   store_comments.innerHTML += `
-                     <div class="rating" style="height:50px;">
-                         <span class="r_store_name">${store.ratings[i].user.firstname}</span>
-                         <span class="r_rating">
-                         <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
-                         <p>${store.ratings[i].rating}/5</p>
-                         </span>
-                         <div class="r_comment"></div>
-                     </div>
+                  <div class="rating" style="height:50px;">
+                  <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                  <span class="r_rating">
+                  <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                  <p>${store.ratings[i].rating}/5</p>
+                  </span>
+                  <div class="r_comment"></div>
+                  </div>
                   `;
                }
             }
@@ -568,4 +590,17 @@ if (lat !== null && lon !== null) {
    //coordonnées de Gap :
    carte.setView([44.544606, 6.077989], 14, { animation: true });
    nearStores([6.077989, 44.544606]);
+}
+
+async function addView(store_id) {
+    console.log(store_id);
+    await fetch(`${window.location.origin}/api/view/add`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        body: JSON.stringify({store_id: store_id})
+    });
 }
