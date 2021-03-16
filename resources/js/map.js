@@ -324,7 +324,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          );
       }
 
-      marker.addEventListener('click', () => {
+      marker.addEventListener('mousedown', () => {
          closeFilter();
          var store_name = document.getElementById('store_name');
          var store_distance = document.getElementById('store_distance');
@@ -340,7 +340,9 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var store_id = document.getElementById('store_id');
          var store_comments = document.getElementById('store_comments');
 
-         store_comments.innerHTML = '';
+          addView(store.id);
+
+          store_comments.innerHTML = '';
          if (store.ratings.length !== 0) {
             for (var i = 0; i < store.ratings.length; i++) {
                if (store.ratings[i].comment !== null) {
@@ -568,4 +570,17 @@ if (lat !== null && lon !== null) {
    //coordonnées de Gap :
    carte.setView([44.544606, 6.077989], 14, { animation: true });
    nearStores([6.077989, 44.544606]);
+}
+
+async function addView(store_id) {
+    console.log(store_id);
+    await fetch(`${window.location.origin}/api/view/add`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        body: JSON.stringify({store_id: store_id})
+    });
 }
