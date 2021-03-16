@@ -60,6 +60,10 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'cgu.required' => 'Vous devez avoir lu et accepté les CGU.'
+        ];
+
         return Validator::make($data, [
             'role' => ['required', 'int', 'exists:roles,id'],
             'surname' => ['required', 'string', 'min:2', 'max:255'],
@@ -67,7 +71,8 @@ class RegisterController extends Controller
             'phonenumber' => ['required_unless:role,1', 'exclude_if:role,1', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'cgu' => ['required']
+        ], $messages);
     }
 
     /**

@@ -4,18 +4,14 @@ let carte = L.map('map', {center: [46.3630104, 2.9846608],zoom: 5, /*attribution
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(carte);
 L.control.zoom({position:'bottomright'}).addTo(carte);
 let markers = L.markerClusterGroup({
-    iconCreateFunction: function(cluster) {
-        return L.divIcon({
-            html: cluster.getChildCount(),
-            className: 'mycluster',
-            iconSize: null
-        });
-    }
+   iconCreateFunction: function(cluster) {
+      return L.divIcon({
+         html: cluster.getChildCount(),
+         className: 'mycluster',
+         iconSize: null
+      });
+   }
 }).addTo(carte);
-
-//pour les tests :
-carte.setView([44.544606, 6.077989], 14, { animation: true });
-nearStores([6.077989, 44.544606]);
 
 var popup = document.getElementsByClassName('popup')[0];
 
@@ -30,12 +26,103 @@ carte.addEventListener('click', () => {
 var bouton_filter = document.getElementsByClassName('filter')[0];
 var filter_cancel = document.getElementById('filter_cancel');
 
+var filterOpen = false;
+
 bouton_filter.addEventListener('click', () => {
    if (filter_cancel.getAttribute('xlink:href') == 'images/sprite.svg#filter_cancel') {
       popup.classList.value = 'popup';
+   } else {
+      if (filterOpen) {
+         closeFilter();
+      } else {
+         openFilters();
+      }
    }
    switchFilter();
 });
+
+function closeFilter() {
+   var filter = document.getElementById('filter');
+   bouton_filter.style.backgroundColor = '#475BF5';
+   bouton_filter.style.color = '#eaeffc';
+   filter.innerHTML = '';
+   filterOpen = false;
+}
+
+function openFilters() {
+   bouton_filter.style.backgroundColor = '#eaeffc';
+   bouton_filter.style.color = '#475BF5';
+   filterOpen = true;
+   var autocomplete = document.getElementById('autocomplete');
+   autocomplete.innerHTML = '';
+   var filter = document.getElementById('filter');
+   filter.innerHTML = `
+   <br>
+   <br>
+   <div class="selects">
+   <select id="select_cat" name="catégorie">
+   <option value="0">Catégorie</option>
+   <option value="1">Restaurant</option>
+   <option value="2">Magasin</option>
+   <option value="3">Boucherie</option>
+   <option value="4">Fruits et légumes</option>
+   <option value="5">Débit de boissons</option>
+   <option value="6">Magasin de vêtements</option>
+   <option value="7">Culture</option>
+   </select>
+   <select id="select_subcat" name="sous-catégorie">
+   <option value="0">Sous-catégorie</option>
+   </select>
+   <br>
+   <br>
+   <button class="bouton" id="area_search">Rechercher dans cette zone</button>
+   </div>
+   `;
+
+   var select_cat = document.getElementById('select_cat');
+   var select_subcat = document.getElementById('select_subcat');
+   var area_search = document.getElementById('area_search');
+   var validFilter = document.getElementById('validFilter');
+   select_cat.addEventListener('change', () => {
+      if (select_cat.value == 1) {
+         select_subcat.innerHTML = `
+         <option value="0">Sous-catégorie</option>
+         <option value="1">Rapide</option>
+         <option value="2">Traditionnel</option>
+         <option value="3">Asiatique</option>
+         `;
+      } else if (select_cat.value == 2) {
+         select_subcat.innerHTML = `
+         <option value="0">Sous-catégorie</option>
+         <option value="4">Épicerie</option>
+         <option value="5">Supermarché</option>
+         <option value="6">Proximité</option>
+         `;
+      } else if (select_cat.value == 3) {
+         select_subcat.innerHTML = `
+         <option value="0">Sous-catégorie</option>
+         <option value="7">Traditionnel</option>
+         <option value="8">Halal</option>
+         <option value="9">Casher</option>
+         `;
+      } else {
+         select_subcat.innerHTML = `
+         <option value="0">Sous-catégorie</option>
+         `;
+      }
+      if (select_cat.value != 0) {
+         nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
+      } else {
+         nearStores([carte.getCenter().lng, carte.getCenter().lat]);
+      }
+   });
+   select_subcat.addEventListener('change', () => {
+      nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
+   });
+   area_search.addEventListener('click', () => {
+      nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
+   });
+}
 
 function switchFilter() {
    if (popup.classList[1] === 'active') {
@@ -46,9 +133,11 @@ function switchFilter() {
 }
 
 var bouton_emptySearch = document.getElementsByClassName('emptySearch')[0];
+bouton_emptySearch.style.display = 'none';
 bouton_emptySearch.addEventListener('click',() => {
    inputSearch.value = '';
    autocomplete.innerHTML = '';
+   bouton_emptySearch.style.display = 'none';
 });
 
 function distance(lat1, lon1, lat2, lon2, unit) {
@@ -142,16 +231,23 @@ var markerCulture = L.icon({
    iconSize:     [25, 35]
 });
 
-async function nearStores(coord) {
+async function nearStores(coord, cat = 0, subcat = 0) {
 
    markers.clearLayers();
 
    let lat = coord[1];
    let lon = coord[0];
 
-
-   let response = await fetch(`${window.location.origin}/api/stores?lat=${lat}&lon=${lon}`);
-   let stores = await response.json();
+   if (cat !== 0 && subcat === 0) {
+      var response = await fetch(`${window.location.origin}/api/stores?lat=${lat}&lon=${lon}&cat=${cat}`);
+      var stores = await response.json();
+   } else if (cat !== 0 && subcat !== 0) {
+      var response = await fetch(`${window.location.origin}/api/stores?lat=${lat}&lon=${lon}&cat=${cat}&subcat=${subcat}`);
+      var stores = await response.json();
+   } else {
+      var response = await fetch(`${window.location.origin}/api/stores?lat=${lat}&lon=${lon}`);
+      var stores = await response.json();
+   }
 
    console.log(stores);
 
@@ -229,6 +325,7 @@ async function nearStores(coord) {
       }
 
       marker.addEventListener('click', () => {
+         closeFilter();
          var store_name = document.getElementById('store_name');
          var store_distance = document.getElementById('store_distance');
          var store_score = document.getElementById('store_score');
@@ -241,13 +338,67 @@ async function nearStores(coord) {
          var store_website = document.getElementById('store_website');
          var delivery_check = document.getElementById('delivery_check');
          var store_id = document.getElementById('store_id');
+         var store_comments = document.getElementById('store_comments');
+
+         store_comments.innerHTML = '';
+         if (store.ratings.length !== 0) {
+            for (var i = 0; i < store.ratings.length; i++) {
+               if (store.ratings[i].comment !== null) {
+                  store_comments.innerHTML += `
+                     <div class="rating">
+                         <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                         <span class="r_rating">
+                         <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                         <p>${store.ratings[i].rating}/5</p>
+                         </span>
+                         <div class="r_comment">
+                            <svg class="big_icon quote"><use xlink:href="images/sprite.svg#quote" </svg>
+                            <p>${store.ratings[i].comment}</p>
+                            <svg class="big_icon quote qright"><use xlink:href="images/sprite.svg#quote" </svg>
+                         </div>
+                     </div>
+                  `;
+               } else {
+                  store_comments.innerHTML += `
+                     <div class="rating" style="height:50px;">
+                         <span class="r_store_name">${store.ratings[i].user.firstname}</span>
+                         <span class="r_rating">
+                         <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
+                         <p>${store.ratings[i].rating}/5</p>
+                         </span>
+                         <div class="r_comment"></div>
+                     </div>
+                  `;
+               }
+            }
+         } else {
+            store_comments.innerHTML = '<span>Ce commerce n\'a aucun commentaire</span>';
+         }
+
+         var moy = 0;
+         if (store.ratings.length !== 0) {
+            for (var i = 0; i < store.ratings.length; i++) {
+               moy += parseInt(store.ratings[i].rating);
+            }
+            moy = moy/store.ratings.length;
+         } else {
+            moy = -1;
+         }
 
          var dist = distance(lat, lon, store.lat, store.lon, 'K');
          dist = dist.toFixed(1);
 
          store_name.textContent = store.name;
          store_distance.textContent = '\u00a0à ' + dist + 'km';
-         store_score.textContent = '\u00a04/5';
+         if (moy !== -1) {
+            if (Number.isInteger(moy)) {
+               store_score.textContent = '\u00a0' + moy.toFixed(0) + '/5';
+            } else {
+               store_score.textContent = '\u00a0' + moy.toFixed(1) + '/5';
+            }
+         } else {
+            store_score.textContent = '\u00a0 Aucune note';
+         }
          if ((store.city.zip).length < 5) {
             store.city.zip = '0' + store.city.zip;
          }
@@ -305,7 +456,7 @@ buttonSearch.addEventListener('click', recherche);
 let inputSearch = document.getElementById('inputSearch');
 inputSearch.addEventListener('input', chargeVilles);
 inputSearch.addEventListener('keyup', (e) => {
-    if(e.code === 'Enter') recherche()
+   if(e.code === 'Enter') recherche()
 });
 inputSearch.addEventListener('click', () => {
    popup.classList.value = 'popup';
@@ -316,6 +467,7 @@ let autocomplete = document.getElementById('autocomplete');
 
 function chargeVilles() {
    if (inputSearch.value.replace(/\s+/, '').length) {
+      bouton_emptySearch.style.display = '';
       $.ajax({
          url: "https://api-adresse.data.gouv.fr/search/?q="+inputSearch.value+"&limit=10",
          success: function(data) {
@@ -326,6 +478,7 @@ function chargeVilles() {
          }
       });
    } else {
+      bouton_emptySearch.style.display = 'none';
       autocomplete.innerHTML = '';
    }
 }
@@ -335,6 +488,7 @@ function recupVilles(adresse) {
    for (var i = 0; i < adresse.length; i++) {
       option += '<p onclick="setAdresse(this);">'+adresse[i].properties.label+'</p>';
    }
+   closeFilter();
    autocomplete.innerHTML = option;
 }
 
@@ -363,23 +517,25 @@ function recherche() {
    autocomplete.innerHTML = '';
    carte.removeLayer(searchLayer);
    if (inputSearch.value != '') {
-       window.history.replaceState({id: 'search'}, 'Carte | MAC-YO', '/map?q='+inputSearch.value);
+      window.history.replaceState({id: 'search'}, 'Carte | MAC-YO', '/map?q='+inputSearch.value);
       $.ajax({
          url: "https://api-adresse.data.gouv.fr/search/?q="+inputSearch.value+"&limit=1",
          success: function(data) {
-            var lat = data.features[0].geometry.coordinates[0];
-            var lon = data.features[0].geometry.coordinates[1];
-            carte.setView([lon, lat], 14, { animation: true });
-            searchLayer = L.marker([lon, lat], {icon: markerSearch}).bindTooltip(
-               data.features[0].properties.label
-               ,{
-                  permanent: false,
-                  offset: L.point(0, -16),
-                  direction: 'top',
-                  opacity: 0.8
-               }
-            ).addTo(carte);
-            nearStores([lat,lon]);
+            if (data.features.length !== 0) {
+               var lat = data.features[0].geometry.coordinates[0];
+               var lon = data.features[0].geometry.coordinates[1];
+               carte.setView([lon, lat], 14, { animation: true });
+               searchLayer = L.marker([lon, lat], {icon: markerSearch}).bindTooltip(
+                  data.features[0].properties.label
+                  ,{
+                     permanent: false,
+                     offset: L.point(0, -16),
+                     direction: 'top',
+                     opacity: 0.8
+                  }
+               ).addTo(carte);
+               nearStores([lat,lon]);
+            }
          },
          error: function(data) {
             console.log('error when search');
@@ -408,4 +564,8 @@ var lon = url.searchParams.get("lon");
 if (lat !== null && lon !== null) {
    carte.setView([lat, lon], 20, { animation: true });
    nearStores([lon, lat]);
+} else {
+   //coordonnées de Gap :
+   carte.setView([44.544606, 6.077989], 14, { animation: true });
+   nearStores([6.077989, 44.544606]);
 }

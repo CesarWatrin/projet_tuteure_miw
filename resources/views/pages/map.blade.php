@@ -13,6 +13,7 @@
       <div class="champRecherche">
          <input type="text" class="input" id="inputSearch" placeholder="Rechercher sur la carte"/>
          <div id="autocomplete"></div>
+         <div id="filter"></div>
       </div>
    </div>
    <button class="bouton filter">
@@ -67,6 +68,12 @@
          <div>
             <span><i class="fas fa-globe"></i> </span>
             <span><a id="store_website" target="_blank" href="https://cesarwatrin.fr">Accéder au site web</a></span>
+         </div>
+         <div>
+            <h4>Commentaires</h4>
+         </div>
+         <div>
+            <div class="ratings" id="store_comments"></div>
          </div>
       </div>
    </div>

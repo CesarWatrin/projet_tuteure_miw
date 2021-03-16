@@ -21,6 +21,22 @@ label {
     width: 100%;
 }
 
+.cgu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    #cgu {
+        width: initial;
+    }
+    label {
+        margin-left: 1rem;
+    }
+    a, a:hover {
+        color: $dark_blue;
+    }
+}
+
 .input {
     width: 100%;
     max-width: 500px;
@@ -148,20 +164,6 @@ label {
 
 .bsubmit {
     margin-top: 2rem;
-}
-
-button.active.focus, button.active:focus,
-button.focus, button:active.focus,
-button:active:focus, button:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-input.active.focus, input.active:focus,
-input.focus, input:active.focus,
-input:active:focus, input:focus {
-    outline: none;
-    box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {

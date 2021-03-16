@@ -17,7 +17,7 @@ Route::get('/', 'PagesController@home')->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/map', 'MapController@home')->name('map');
 
@@ -47,3 +47,5 @@ Route::get('/dashboard/{store_id}', 'ManagerController@dashboard')->name('dashbo
 Route::get('/dashboard', 'AccountController@dashboard')->name('dashboard');
 
 Route::get('/store_card', 'Store_cardController@home')->name('store_card');
+
+Route::get('/legal', 'PagesController@legal')->name('legal');

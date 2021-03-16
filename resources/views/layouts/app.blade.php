@@ -24,7 +24,13 @@
 
 @stack('styles')
 
-<!-- Importation de LeafLet -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Importation de LeafLet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 </head>
@@ -93,7 +99,7 @@
         </main>
 
         @if (Route::current()->uri !== 'map')
-           <!-- <footer>
+           <footer>
               <div class="wave">
                 <img src="{{ asset('images/footer.svg') }}" alt="footer_wave">
               </div>
@@ -111,12 +117,12 @@
                      </div>
                 </div>
                 <p>Plan du site</p>
-                <p class="ml">Mentions légales</p>
+                  <p class="ml"><a href="{{ route('legal') }}">Mentions légales</a></p>
                 <div class="copyright">
                   <p>Copyright © 2021 MAC-YO Corp.<br>Tous droits réservés.</p>
                 </div>
               </div>
-           </footer> -->
+           </footer>
         @endif
 
     </div>

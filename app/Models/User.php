@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory, Notifiable;
 
     /**
@@ -48,8 +49,16 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function is_basic() {
+        return $this->role->id === 1; // 1 = "Utilisateur" dans la bdd
+    }
+
     public function is_manager() {
         return $this->role->id === 2; // 2 = "Commerçant" dans la bdd
+    }
+
+    public function is_admin() {
+        return $this->role->id === 3; // 3 = "Modérateur" dans la bdd
     }
 
     public function stores() {

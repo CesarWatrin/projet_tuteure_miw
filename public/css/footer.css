@@ -19,6 +19,22 @@ label {
   width: 100%;
 }
 
+.cgu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.cgu #cgu {
+  width: initial;
+}
+.cgu label {
+  margin-left: 1rem;
+}
+.cgu a, .cgu a:hover {
+  color: #020b5d;
+}
+
 .input {
   width: 100%;
   max-width: 500px;
@@ -140,6 +156,11 @@ label {
   margin-top: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .inputText {
+    font-size: 1.2rem;
+  }
+}
 button.active.focus, button.active:focus,
 button.focus, button:active.focus,
 button:active:focus, button:focus {
@@ -154,11 +175,13 @@ input:active:focus, input:focus {
   box-shadow: none;
 }
 
-@media screen and (min-width: 768px) {
-  .inputText {
-    font-size: 1.2rem;
-  }
+select.active.focus, select.active:focus,
+select.focus, select:active.focus,
+select:active:focus, select:focus {
+  outline: none;
+  box-shadow: none;
 }
+
 * {
   font-family: Nunito, sans-serif;
 }
@@ -175,13 +198,23 @@ body {
 }
 
 .corp {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   width: 100%;
   padding: 1.5rem 0;
   color: #020b5d;
   font-family: "Yeseva One", serif;
   font-size: 1.5rem;
-  text-align: center;
+}
+.corp:hover {
+  color: #020b5d;
+}
+
+.logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: 0.5rem;
 }
 
 .back_link {
@@ -251,6 +284,16 @@ body {
   height: 3rem;
 }
 
+.mentions_legales {
+  padding: 0 2.25rem;
+  max-width: 992px;
+  margin: 0 auto 2rem auto;
+}
+.mentions_legales ul {
+  list-style-position: inside;
+  padding: 0;
+}
+
 @media screen and (min-width: 768px) {
   .container_center {
     padding-bottom: 1rem;
@@ -267,7 +310,10 @@ body {
   }
 
   .corp {
-    text-align: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    justify-content: flex-start;
   }
 
   .recherche {
@@ -333,6 +379,9 @@ footer {
 .content_footer p:first-child {
   font-size: 36px;
   font-family: "Yeseva One", cursive;
+}
+.content_footer a {
+  color: inherit;
 }
 
 .social_media {
