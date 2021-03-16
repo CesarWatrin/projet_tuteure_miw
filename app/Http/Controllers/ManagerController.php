@@ -35,6 +35,26 @@ class ManagerController extends Controller
         return view('pages.dashboard', ['stores' => $stores, 'store_info' => $store_info]);
     }*/
 
+
+    public function storePost(Request $request)
+    {
+        // var_dump($request);
+        $this->validate($request, [
+            'name' => ['required', 'string', 'min:2', 'max:255'],
+            'category_id' => ['required', 'string','min:1','max:1','exists:categories,category_id'],
+            'subcategory_id' => ['required', 'string','min:1','max:1','exists:subcategories,subcategory_id'],
+            'phonenumber' => ['required', 'digits:10'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'ville' => ['requiered','string','max:255'],
+            'address1' => ['requiered','string','min:1','max:255'],
+            'address2' => ['nullable','string','min:1','max:255'],
+            'description' => ['requiered','string','min:1'],
+            // 'photo' => ['requiered','string','min:1'],
+            // 'd' => ['requiered','string','min:1'],
+        
+            ]);
+    }
+
     public function dashboard($storeId){
         $store = Store::where('id', '=', $storeId)->get();
         $categories = Category::all();

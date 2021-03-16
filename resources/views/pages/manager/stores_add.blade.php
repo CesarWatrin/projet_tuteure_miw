@@ -9,7 +9,9 @@
 
 <div class="add-store">
     <h1>Ajouter un magasin</h1>
-    <form>
+    <form method="post" action="{{route('store_post')}}">
+
+    @csrf
         <div class="input-row">
             <label for="name"> Nom du commerce <span class="orange_requiered">*</span></label>
             <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name" onfocusout="verifyName(this.value)" autofocus required>
@@ -67,7 +69,6 @@
             @enderror
         </div>
 
-<!-- A FAIRE EN FONCTION DE LA BDD -->
         <div class="input-row">
             <label for="ville">Ville <span class="orange_requiered">*</span></label>
             <input type="text" id="city_Id" class="input-store" placeholder="Ville" name="ville"  onfocusout="verifyVille(this.value)" required>
@@ -78,10 +79,9 @@
             @enderror
         </div>
 
-<!-- A FAIRE EN FONCTION DE LA BDD -->
 
         <div class="input-row">
-            <label for="adresse1">Adresse <span class="orange_requiered">*</span></label>
+            <label for="address1">Adresse <span class="orange_requiered">*</span></label>
             <input type="text" id="address1" class="input-store" placeholder="Adresse" name="address1"  onfocusout="verifyAdresse1(this.value)" required>
             @error('address1')
                 <span class="input_error">
@@ -91,9 +91,9 @@
         </div>
 
         <div class="input-row">
-            <label for="adresse2">Complement d'adresse</label>
-            <input type="text" id="adresse2" class="input-store" placeholder="Complement d'adresse"  onfocusout="verifyAdresse2(this.value)" name="adresse2" >
-            @error('adresse2')
+            <label for="address2">Complement d'adresse</label>
+            <input type="text" id="address2" class="input-store" placeholder="Complement d'adresse"  onfocusout="verifyAdresse2(this.value)" name="address2" >
+            @error('address2')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -101,7 +101,7 @@
         </div>
 
         <div class="input-row">
-            <label for="description">Description <span class="orange_requiered">*</span></label>
+            <label for="description">Catalogue de Produits <span class="orange_requiered">*</span></label>
             <textarea class="form-control" id="description"  onfocusout="verifyDesc()"  name="description"></textarea>
             @error('description')
                 <span class="input_error">
@@ -109,6 +109,17 @@
                 </span>
             @enderror
         </div>
+
+        <div class="input-file">
+            <label for="description">Photo du magasin <span class="orange_requiered">*</span></label>
+            <input type="file" id="photo" name="photo"  required>
+            @error('photo')
+                <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        
         
         <div class="input-row">
             <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
@@ -168,11 +179,7 @@
             <input type="text" id="delivery_conditions" class="input-store" placeholder="Conditions de livraison" name="delivery_conditions">
         </div>
 
-        <button type="submit" class="validate">Ajouter le commerce</button>
-
-
-
-
+        <input type="submit" class="bouton_form brouge bsubmit" value="Ajouter le commerce">
 
     </form>
 </div>
@@ -181,6 +188,7 @@
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
 CKEDITOR.replace( 'description' );
+
 
 
     let subcategories = {!! $subcategories !!}
