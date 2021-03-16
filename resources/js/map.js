@@ -324,7 +324,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          );
       }
 
-      marker.addEventListener('click', () => {
+      marker.addEventListener('mousedown', () => {
          closeFilter();
          var store_name = document.getElementById('store_name');
          var store_distance = document.getElementById('store_distance');
@@ -342,7 +342,6 @@ async function nearStores(coord, cat = 0, subcat = 0) {
 
          var store_img = document.getElementById('store_img');
          var src_img = 'images/stores/store_' + store.id.toString() + '/commerce.jpg';
-         console.log(src_img);
          testImage(src_img);
 
          function testImage(url) {
@@ -360,6 +359,8 @@ async function nearStores(coord, cat = 0, subcat = 0) {
             src_img = 'images/stores/store_default/commercenotfound.jpg';
             store_img.src = src_img;
          }
+
+         addView(store.id);
 
          store_comments.innerHTML = '';
          if (store.ratings.length !== 0) {
@@ -589,4 +590,17 @@ if (lat !== null && lon !== null) {
    //coordonnées de Gap :
    carte.setView([44.544606, 6.077989], 14, { animation: true });
    nearStores([6.077989, 44.544606]);
+}
+
+async function addView(store_id) {
+    console.log(store_id);
+    await fetch(`${window.location.origin}/api/view/add`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        body: JSON.stringify({store_id: store_id})
+    });
 }

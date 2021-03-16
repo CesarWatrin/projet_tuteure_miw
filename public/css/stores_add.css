@@ -1,5 +1,5 @@
 .add-store {
-  height: 1200px;
+  height: 1800px;
 }
 .add-store h1 {
   font-family: "Yeseva One", cursive;
@@ -7,6 +7,22 @@
   text-align: center;
   margin-top: 10px;
   font-size: 2rem;
+}
+.add-store .validate {
+  background-color: #e4534b;
+  width: 80%;
+  max-width: 500px;
+  height: 50px;
+  box-shadow: 0 2px 9px 0 rgba(228, 83, 75, 0.2);
+  font-size: 1rem;
+  border-radius: 15px;
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 .add-store .input-row {
   display: flex;
@@ -18,6 +34,7 @@
 }
 .add-store .input-row p {
   color: #475BF5;
+  margin-bottom: 2px;
 }
 .add-store .input-row input, .add-store .input-row textarea, .add-store .input-row select {
   width: 80%;
@@ -38,6 +55,15 @@
   color: #96B4F4;
 }
 .add-store .input-row input::placeholder {
+  color: #96B4F4;
+}
+.add-store .input-row textarea::-moz-placeholder {
+  color: #96B4F4;
+}
+.add-store .input-row textarea:-ms-input-placeholder {
+  color: #96B4F4;
+}
+.add-store .input-row textarea::placeholder {
   color: #96B4F4;
 }
 .add-store .input-row .cke_chrome {
