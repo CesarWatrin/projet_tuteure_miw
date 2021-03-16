@@ -20,12 +20,15 @@ class CreateStoresTable extends Migration
             $table->string('name')->index();
             $table->string('address1');
             $table->string('address2')->nullable();
+            $table->string('zip', 5);
+            $table->string('city');
             $table->float('lat', 9, 6);
             $table->float('lon', 9, 6);
             $table->string('phonenumber');
             $table->string('email');
             $table->string('siret');
-            $table->mediumText('description');
+            $table->text('description');
+            $table->mediumText('catalog');
             $table->boolean('delivery');
             $table->text('delivery_conditions')->nullable();
             $table->enum('state', ['1', '2' ,'3', '4']);
@@ -37,7 +40,6 @@ class CreateStoresTable extends Migration
             $table->string('website')->nullable();
             $table->text('opening_hours')->nullable();
 
-            $table->foreignId('city_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->foreignId('subcategory_id')->constrained();
             $table->foreignId('manager_id')->constrained('users');
