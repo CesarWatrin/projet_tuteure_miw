@@ -823,6 +823,11 @@ body {
   height: 2.2rem;
 }
 
+footer {
+  position: relative;
+  padding-top: 50vh;
+}
+
 .favoris_header {
   width: 100%;
   font-family: "Yeseva One";

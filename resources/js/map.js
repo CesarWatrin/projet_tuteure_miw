@@ -342,22 +342,18 @@ async function nearStores(coord, cat = 0, subcat = 0) {
 
          var store_img = document.getElementById('store_img');
          var src_img = 'images/stores/store_' + store.id.toString() + '/commerce.jpg';
-         testImage(src_img);
-
-         function testImage(url) {
-            var tester = new Image();
-            tester.onload = imageFound;
-            tester.onerror = imageNotFound;
-            tester.src = url;
-         }
-
-         function imageFound() {
+         if (imageExists(src_img)) {
             store_img.src = src_img;
-         }
-
-         function imageNotFound() {
+         } else {
             src_img = 'images/stores/store_default/commercenotfound.jpg';
             store_img.src = src_img;
+         }
+
+         function imageExists(image_url){
+            var http = new XMLHttpRequest();
+            http.open('HEAD', image_url, false);
+            http.send();
+            return http.status != 404;
          }
 
          addView(store.id);
@@ -467,6 +463,9 @@ async function nearStores(coord, cat = 0, subcat = 0) {
 
          var popup_gmaps = document.getElementById('popup_gmaps');
          popup_gmaps.href = 'https://www.google.com/maps/search/?api=1&query='+store.name+'+'+store.city.name;
+
+         var popup_catalogue = document.getElementById('popup_catalogue');
+         popup_catalogue.href = `${window.location.origin}/catalogue/${store.id}`;
       });
       marker.addTo(markers);
    });
@@ -593,7 +592,6 @@ if (lat !== null && lon !== null) {
 }
 
 async function addView(store_id) {
-    console.log(store_id);
     await fetch(`${window.location.origin}/api/view/add`, {
         method: 'POST',
         headers: {

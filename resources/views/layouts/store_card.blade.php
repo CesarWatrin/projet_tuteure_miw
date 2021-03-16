@@ -1,6 +1,6 @@
 <div class="card">
    <div class="img_store">
-      <img id="store_img" src="images/commerce.png">
+      <img id="store_img" class="store_img" src="images/stores/store_default/commercenotfound.jpg">
    </div>
    <div class="infos_store">
       <div class="text">
