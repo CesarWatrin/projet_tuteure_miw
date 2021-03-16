@@ -1,7 +1,26 @@
 @import 'variables';
+@import 'global';
+
+
 .add-store{
 
-    height: 1800px;
+    // height: 1800px;
+
+
+    .input-file{
+      display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 40px;
+        input{
+          margin-top: 10px;
+        }
+    }
+
+    .orange_requiered{
+      color: #E4534B;
+
+    }
 
     h1
     {
@@ -72,10 +91,7 @@
           box-shadow: 0 2px 9px 0 rgba(#475BF5, 0.2);
         }
 
-        .orange_requiered{
-          color: #E4534B;
-
-        }
+        
         
         textarea{
           height: 100px;
