@@ -62,26 +62,26 @@ INSERT INTO `favorites` (`user_id`, `store_id`, `created_at`, `updated_at`) VALU
 (123459, 2, NULL, NULL),
 (123459, 5, NULL, NULL);
 
-INSERT INTO `ratings` (`id`, `user_id`, `store_id`, `rating`, `comment`, `created_at`, `updated_at`) VALUES
-(1, 123456, 1, '5', NULL, NULL, NULL),
-(2, 123456, 2, '5', 'Les tacos sont délicieux !', NULL, NULL),
-(3, 123456, 3, '3', 'Bien mangé, mais le service était trop long.', NULL, NULL),
-(4, 123456, 7, '4', NULL, NULL, NULL),
-(5, 123457, 1, '5', NULL, NULL, NULL),
-(6, 123457, 4, '1', 'Une honte!!!', NULL, NULL),
-(7, 123457, 5, '5', 'Bien mieux que l\'autre restau chinois de la ville', NULL, NULL),
-(8, 123458, 2, '4', NULL, NULL, NULL),
-(9, 123458, 7, '4', NULL, NULL, NULL),
-(10, 123458, 8, '4', NULL, NULL, NULL),
-(11, 123459, 2, '5', 'Très bon rapport qualité/prix.', NULL, NULL),
-(12, 123459, 4, '5', 'J\'ai apprécié mon repas, personnel serviable.', NULL, NULL),
-(13, 123459, 6, '4', 'Rien à dire, tout est super.', NULL, NULL),
-(14, 123459, 8, '2', 'J\'ai attendu 1h avant de me faire servir !!', NULL, NULL),
-(15, 123466, 1, '3', 'D\'habitude on y mange bien, mais la dernière fois les frites étaient froides... Dommage.', '2021-02-26 14:11:56', '2021-03-04 14:40:07'),
-(16, 123466, 2, '5', NULL, '2021-03-04 15:07:11', '2021-03-05 08:25:07'),
-(17, 123466, 3, '5', 'C\'était vraiment super !!', '2021-03-04 20:58:00', '2021-03-04 20:58:00'),
-(18, 123466, 4, '4', 'Le service était un peu long mais le personnel très agréable : je recommande.', '2021-03-04 20:58:24', '2021-03-04 20:58:24'),
-(19, 123466, 5, '2', 'Nous avons été très mal reçus !', '2021-03-04 20:58:42', '2021-03-04 20:58:42');
+INSERT INTO `ratings` (`id`, `user_id`, `store_id`, `rating`, `comment`, `reported`, `created_at`, `updated_at`) VALUES
+(1, 123456, 1, '5', NULL, '0', NULL, NULL),
+(2, 123456, 2, '5', 'Les tacos sont délicieux !', '0', NULL, NULL),
+(3, 123456, 3, '3', 'Bien mangé, mais le service était trop long.', '0', NULL, NULL),
+(4, 123456, 7, '4', NULL, '0', NULL, NULL),
+(5, 123457, 1, '5', NULL, '0', NULL, NULL),
+(6, 123457, 4, '1', 'Une honte!!!', '1', NULL, NULL),
+(7, 123457, 5, '5', 'Bien mieux que l\'autre restau chinois de la ville', '0', NULL, NULL),
+(8, 123458, 2, '4', NULL, '0', NULL, NULL),
+(9, 123458, 7, '4', NULL, '0', NULL, NULL),
+(10, 123458, 8, '4', NULL, '0', NULL, NULL),
+(11, 123459, 2, '5', 'Très bon rapport qualité/prix.', '0', NULL, NULL),
+(12, 123459, 4, '5', 'J\'ai apprécié mon repas, personnel serviable.', '0', NULL, NULL),
+(13, 123459, 6, '4', 'Rien à dire, tout est super.', '0', NULL, NULL),
+(14, 123459, 8, '2', 'J\'ai attendu 1h avant de me faire servir !!', '1', NULL, NULL),
+(15, 123466, 1, '3', 'D\'habitude on y mange bien, mais la dernière fois les frites étaient froides... Dommage.', '0', '2021-02-26 14:11:56', '2021-03-04 14:40:07'),
+(16, 123466, 2, '5', NULL, '0', '2021-03-04 15:07:11', '2021-03-05 08:25:07'),
+(17, 123466, 3, '5', 'C\'était vraiment super !!', '0', '2021-03-04 20:58:00', '2021-03-04 20:58:00'),
+(18, 123466, 4, '4', 'Le service était un peu long mais le personnel très agréable : je recommande.', '0', '2021-03-04 20:58:24', '2021-03-04 20:58:24'),
+(19, 123466, 5, '2', 'Nous avons été très mal reçus !', '1', '2021-03-04 20:58:42', '2021-03-04 20:58:42');
 
 
 

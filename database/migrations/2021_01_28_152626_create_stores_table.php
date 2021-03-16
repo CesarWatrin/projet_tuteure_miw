@@ -40,6 +40,8 @@ class CreateStoresTable extends Migration
             $table->string('website')->nullable();
             $table->text('opening_hours')->nullable();
 
+            $table->integer('favorite_number')->default(0);
+
             $table->foreignId('category_id')->constrained();
             $table->foreignId('subcategory_id')->constrained();
             $table->foreignId('manager_id')->constrained('users');
