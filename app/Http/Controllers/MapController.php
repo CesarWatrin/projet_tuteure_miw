@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Store;
+use App\Models\View;
 use Illuminate\Http\Request;
 use function PHPUnit\Framework\throwException;
 
@@ -86,6 +87,17 @@ class MapController extends Controller
          $distance = $distance * 1.609344;
       }
       return (round($distance, 1));
+   }
+
+   public function addView(Request $request)
+   {
+       $store_id = $request['store_id'];
+       if(Store::find($store_id)) {
+           $view = new View();
+           $view->store_id = $store_id;
+           return $view->save();
+       }
+       return null;
    }
 
 }
