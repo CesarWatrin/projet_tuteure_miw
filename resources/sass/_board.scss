@@ -183,7 +183,7 @@
     .data_visitors{
         background-color: $light_blue;
         margin-right:5%;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         p{
             color: $white;
         }
@@ -195,9 +195,11 @@
     .data_delivery{
         background-color: $white;
         margin-right: 5%;
+        margin-bottom: 20px;
     }
     .data_followers{
         background-color: $light_red;
+        margin-bottom: 20px;
         p{
             color: $white;
         }
@@ -282,6 +284,8 @@
         .data {
             width: 200px;
             height: 200px;
+            margin: 0;
+            margin-bottom: 15px;
         }
     }
 
@@ -313,5 +317,41 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+    .container{
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        margin: 0 auto;
+        margin-top: 100px;
+        width: 90%;
+        height: 860px;
+        .dashboard{
+            margin: 0;
+            width: 25%;
+            height: 860px;
+            justify-content: space-evenly;
+            .rewards{
+                height: 100%;
+                width: auto;
+                justify-content: space-evenly;
+            }
+        }
+    }
 
+    h1{font-size: 50px}
+
+    .data_shop{
+        margin-top: 0;
+        width: 25%;
+        .data {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    .container_comments{
+        margin: 0;
+        width: 50%;
+        height: 860px;
+    }
 }

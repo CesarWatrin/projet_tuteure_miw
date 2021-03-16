@@ -179,7 +179,7 @@
 .data_shop .data_visitors {
   background-color: #96b4f4;
   margin-right: 5%;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .data_shop .data_visitors p {
   color: #FFFFFF;
@@ -191,9 +191,11 @@
 .data_shop .data_delivery {
   background-color: #FFFFFF;
   margin-right: 5%;
+  margin-bottom: 20px;
 }
 .data_shop .data_followers {
   background-color: #feb3b1;
+  margin-bottom: 20px;
 }
 .data_shop .data_followers p {
   color: #FFFFFF;
@@ -279,6 +281,8 @@
   .data_shop .data {
     width: 200px;
     height: 200px;
+    margin: 0;
+    margin-bottom: 15px;
   }
 
   .container_comments {
@@ -297,6 +301,47 @@
   }
   .rewards .reward {
     align-self: normal;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 90%;
+    height: 860px;
+  }
+  .container .dashboard {
+    margin: 0;
+    width: 25%;
+    height: 860px;
+    justify-content: space-evenly;
+  }
+  .container .dashboard .rewards {
+    height: 100%;
+    width: auto;
+    justify-content: space-evenly;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .data_shop {
+    margin-top: 0;
+    width: 25%;
+  }
+  .data_shop .data {
+    width: 200px;
+    height: 200px;
+  }
+
+  .container_comments {
+    margin: 0;
+    width: 50%;
+    height: 860px;
   }
 }
 .info_shop {

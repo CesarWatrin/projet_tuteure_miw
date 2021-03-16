@@ -15,7 +15,6 @@
             <h1>{{$store[0]->name}}</h1>
             <a href="{{ route('stores') }}"><- Vos Magasins</a>
         </div>
-
             <!--<div class="dashboard_bar">
                 <select class="shops" onchange="changeStore()">
                     {{--@foreach($stores as $store)
@@ -28,7 +27,6 @@
                     <p>Année</p>
                 </div>
             </div>-->
-
             <div class="rewards">
                 <div class="categorie_reward reward">
                     <p>n°{{$rank_c}}</p>
