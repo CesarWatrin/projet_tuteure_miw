@@ -12,10 +12,10 @@
     <form>
         <div class="input-row">
             <label for="name"> Nom du commerce <span class="orange_requiered">*</span></label>
-            <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name" onkeyup="verifyName(this.value)" autofocus required>
+            <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name" onfocusout="verifyName(this.value)" autofocus required>
             @error('name')
                 <span class="input_error">
-                    <strong>{{ $message }}</strong>
+                    <strong>{{ $message }}</strong>7
                 </span>
             @enderror
         </div>
@@ -49,7 +49,7 @@
 
         <div class="input-row">
             <label for="email">Adresse Email <span class="orange_requiered">*</span></label>
-            <input type="email" id="email" class="input-store" placeholder="Adresse Email" name="email" required>
+            <input type="email" id="email" class="input-store" placeholder="Adresse Email" name="email" onfocusout="verifyEmail(this.value)" required>
             @error('email')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
 
         <div class="input-row">
             <label for="phonenumber">Téléphone <span class="orange_requiered">*</span></label>
-            <input type="phone" id="phonenumber" class="input-store" placeholder="Numéro de Téléphone" name="phonenumber" required>
+            <input type="phone" id="phonenumber" class="input-store" placeholder="Numéro de Téléphone" name="phonenumber" onfocusout="verifyPhone(this.value)" required>
             @error('phonenumber')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
 <!-- A FAIRE EN FONCTION DE LA BDD -->
         <div class="input-row">
             <label for="ville">Ville <span class="orange_requiered">*</span></label>
-            <input type="text" id="ville" class="input-store" placeholder="Ville" name="ville" required>
+            <input type="text" id="city_Id" class="input-store" placeholder="Ville" name="ville"  onfocusout="verifyVille(this.value)" required>
             @error('ville')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -82,8 +82,8 @@
 
         <div class="input-row">
             <label for="adresse1">Adresse <span class="orange_requiered">*</span></label>
-            <input type="text" id="adresse1" class="input-store" placeholder="Adresse" name="adresse1" required>
-            @error('adresse1')
+            <input type="text" id="address1" class="input-store" placeholder="Adresse" name="address1"  onfocusout="verifyAdresse1(this.value)" required>
+            @error('address1')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -91,8 +91,8 @@
         </div>
 
         <div class="input-row">
-            <label for="adresse2">Complement d'adresse <span class="orange_requiered">*</span></label>
-            <input type="text" id="adresse2" class="input-store" placeholder="Complement d'adresse" name="adresse2" >
+            <label for="adresse2">Complement d'adresse</label>
+            <input type="text" id="adresse2" class="input-store" placeholder="Complement d'adresse"  onfocusout="verifyAdresse2(this.value)" name="adresse2" >
             @error('adresse2')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -102,7 +102,7 @@
 
         <div class="input-row">
             <label for="description">Description <span class="orange_requiered">*</span></label>
-            <textarea class="form-control" id="description-desc" name="description"></textarea>
+            <textarea class="form-control" id="description"  onfocusout="verifyDesc()"  name="description"></textarea>
             @error('description')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -112,7 +112,7 @@
         
         <div class="input-row">
             <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
-            <textarea class="input-store" id="opening_hours" name="opening_hours" placeholder="Horaires d'ouverture"></textarea>
+            <textarea class="input-store" id="opening_hours" name="opening_hours"  onfocusout="verifyHoraires(this.value)"  placeholder="Horaires d'ouverture"></textarea>
             @error('opening_hours')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -122,7 +122,7 @@
         
         <div class="input-row">
             <label for="siret">Numéro de Siret <span class="orange_requiered">*</span></label>
-            <input type="text" id="siret" class="input-store" placeholder="Numero de Siret" name="siret" required>
+            <input type="text" id="siret" class="input-store" placeholder="Numero de Siret" name="siret"  onfocusout="verifySiret(this.value)"  required>
             @error('siret')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -132,7 +132,7 @@
 
         <div class="input-row">
             <label for="website">Site Web</label>
-            <input type="text" id="website" class="input-store" placeholder="adresse" name="website" required>
+            <input type="text" id="website" class="input-store" placeholder="Url du site web" name="website"  onfocusout="verifyWeb(this.value)" required>
             @error('website')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -144,14 +144,14 @@
             <p>Livraison <span class="orange_requiered">*</span></p>
 
             <div class="livraison_button">
-                <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"/>
-                <label for="delivery" class="livraison_label" onclick="this.checked ? this.style.backgroundColor = 'blue' : this.style.backgroundColor = 'white'">
+                <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1" onclick="ischecked(this)"/>
+                <label for="deliveryOui" class="livraison_label">
                     <span class="livraison_titre">Oui</span>
                 </label>
             </div>
             <div class="livraison_button">
                 <input type="radio" name="delivery" class="livraison_radio" id="deliveryNon" value="0"/>
-                <label for="delivery" class="livraison_label" onclick="">
+                <label for="deliveryNon" class="livraison_label">
                     <span class="livraison_titre">Non</span>
                 </label>
             </div>
@@ -167,6 +167,8 @@
             <label for="delivery_conditions">Conditions de livraison</label>
             <input type="text" id="delivery_conditions" class="input-store" placeholder="Conditions de livraison" name="delivery_conditions">
         </div>
+
+        <button type="submit" class="validate">Ajouter le commerce</button>
 
 
 
@@ -200,13 +202,12 @@ CKEDITOR.replace( 'description' );
     }
 
     let name = document.getElementById('name');
-    let city = document.getElementById('cityId');
+    let city = document.getElementById('city_Id');
     let address1 = document.getElementById('address1');
     let address2 = document.getElementById('address2');
     let phonenumber = document.getElementById('phonenumber');
     let email = document.getElementById('email');
     let siret = document.getElementById('siret');
-    let description = document.getElementById('description');
     let delivery = document.getElementById('delivery');
     let delivery_conditions = document.getElementById('delivery_conditions');
     let website = document.getElementById('website');
@@ -214,81 +215,174 @@ CKEDITOR.replace( 'description' );
     let category_id = document.getElementById('category_id');
     let subcategory_id = document.getElementById('subcategory_id');
 
+
+    let nameValid = false 
+    let cityValid = false
+    let address1Valid = false 
+    let address2Valid = false 
+    let phonenumberValid = false 
+    let emailValid = false 
+    let siretValid = false 
+    let descriptionValid = false 
+    let deliveryValid = false
+    let delivery_conditionsValid = false 
+    let websiteValid = false 
+    let opening_hoursValid = false 
+    let category_idValid = false 
+    let subcategory_idValid = false 
+
+    //lancer chaque fonction avec valeur par defaut
+
     function verifyName(content)
     {
-        return 
-    }
-
-    function verifyCat(content)
-    {
-        return 
-    }
-
-    function verifySubCat(content)
-    {
-        return 
+        if(content.replace(/\s+/, '').length >= 2)
+        {
+            nameValid = true
+            name.style.borderColor = "#475BF5"
+            name.style.color = "#475BF5"
+        }
+        else{
+            nameValid = false
+            name.style.borderColor = "red"
+            name.style.color = "red"
+            name.setAttribute('title','Le nom du commerce doit comporter au minimum 2 caracteres.')
+            
+        }
+        console.log(nameValid)
+        validateForm()
     }
 
     function verifyEmail(content)
     {
-        return 
+        var patt = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g;
+        if(patt.test(content))
+        {
+            emailValid = true
+            email.style.borderColor = "#475BF5"
+            email.style.color = "#475BF5"
+            console.log(content)
+        }
+        else{
+            emailValid = false
+            email.style.borderColor = "red"
+            email.style.color = "red"
+            email.setAttribute('title','Veuillez de saisir une adresse email valide.')
+            console.log()
+        }
+        console.log(content)
+        
     }
 
     function verifyPhone(content)
     {
-        return 
+        var patt = /^[0-9]{10}$/g;
+        if(patt.test(content))
+        {
+            phonenumberValid = true
+            phonenumber.style.borderColor = "#475BF5"
+            phonenumber.style.color = "#475BF5"
+            console.log(content)
+        }
+        else{
+            phonenumberValid = false
+            phonenumber.style.borderColor = "red"
+            phonenumber.style.color = "red"
+            phonenumber.setAttribute('title','Veuillez de saisir un numéro de téléphone valide.')
+            console.log()
+        }
+        console.log(content)
     }
 
     function verifyVille(content)
     {
-        return 
+        if(content.replace(/\s+/, '').length != 0)
+        {
+            cityValid = true
+            city.style.borderColor = "#475BF5"
+            city.style.color = "#475BF5"
+        }
+        else{
+            cityValid = false
+            city.style.borderColor = "red"
+            city.style.color = "red"
+        }
+        console.log(content)
     }
 
     function verifyAdresse1(content)
     {
-        return 
-    }
-
-    function verifyAdresse2(content)
-    {
-        return 
-    }
-
-    function verifyDesc(content)
-    {
-        return 
+        if(content.replace(/\s+/, '').length !=0)
+        {
+            address1Valid = true
+            address1.style.borderColor = "#475BF5"
+            address1.style.color = "#475BF5"
+        }
+        else{
+            address1Valid = false
+            address1.style.borderColor = "red"
+            address1.style.color = "red"
+        }
+        console.log(content) 
     }
 
     function verifyHoraires(content)
     {
-        return 
+        if(content.replace(/\s+/, '').length !=0)
+        {
+            opening_hoursValid = true
+            opening_hours.style.borderColor = "#475BF5"
+            opening_hours.style.color = "#475BF5"
+        }
+        else{
+            opening_hoursValid = false
+            opening_hours.style.borderColor = "red"
+            opening_hours.style.color = "red"
+        }
     }
 
     
     function verifySiret(content)
     {
-        return 
+        var patt = /^[0-9]{14}$/g;
+        if(patt.test(content))
+        {
+            siretValid = true
+            siret.style.borderColor = "#475BF5"
+            siret.style.color = "#475BF5"
+        }
+        else{
+            siretValid = false
+            siret.style.borderColor = "red"
+            siret.style.color = "red"
+            siret.setAttribute('title','Veuillez de saisir un numéro de Siret valide.')
+        } 
     }
     
     function verifyWeb(content)
     {
-        return 
+        var patt = /^(https?:\/\/)?(www\.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)|(https?:\/\/)?(www\.)?(?!ww)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/g
+        if(patt.test(content) || content.replace(/\s+/, '').length == 0)
+        {
+            websiteValid = true
+            website.style.borderColor = "#475BF5"
+            website.style.color = "#475BF5"
+        }
+        else{
+            websiteValid = false
+            website.style.borderColor = "red"
+            website.style.color = "red"
+            phonenumber.setAttribute('title','Veuillez de saisir une Url valide.')
+        }
     }
 
-    function verifyLivraison(content)
+
+    function validateForm()
     {
-        return 
+        if(nameValid && emailValid && phonenumberValid && cityValid && address1Valid && opening_hoursValid && siretValid && websiteValid)
+        {
+            
+        }
     }
-    
-    function verifyConditions(content)
-    {
-        return 
-    }
-
-
-
-
-
 
 </script>
 @endsection
