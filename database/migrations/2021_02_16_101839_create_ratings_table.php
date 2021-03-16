@@ -14,9 +14,9 @@ class CreateRatingsTable extends Migration
     public function up()
     {
         Schema::create('ratings', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('store_id')->constrained();
-            $table->primary(['user_id', 'store_id']);
             $table->enum('rating', [1, 2, 3, 4, 5]);
             $table->text('comment')->nullable();
             $table->timestamps();
