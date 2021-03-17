@@ -197,11 +197,11 @@
     </form>
 </div>
 
-
+@push('script')
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
-CKEDITOR.replace( 'catalog' );
 
+CKEDITOR.replace( 'catalog' );
 
 
     let subcategories = {!! $subcategories !!}
@@ -224,7 +224,7 @@ CKEDITOR.replace( 'catalog' );
 
     let name = document.getElementById('name');
     let city = document.getElementById('city_Id');
-    let description = document.getElementById('description')
+    let description = document.getElementById('description');
     let address1 = document.getElementById('address1');
     let address2 = document.getElementById('address2');
     let phonenumber = document.getElementById('phonenumber');
@@ -253,8 +253,6 @@ CKEDITOR.replace( 'catalog' );
     let category_idValid = false 
     let subcategory_idValid = false 
 
-    //lancer chaque fonction avec valeur par defaut
-
     function verifyName(content)
     {
         if(content.replace(/\s+/, '').length >= 2)
@@ -271,24 +269,6 @@ CKEDITOR.replace( 'catalog' );
             
         }
         console.log(nameValid)
-        validateForm()
-    }
-
-    function verifyDesc(content)
-    {
-        if(content.replace(/\s+/, '').length >= 5)
-        {
-            descriptionValid = true
-            description.style.borderColor = "#475BF5"
-            description.style.color = "#475BF5"
-        }
-        else{
-            descriptionValid = false
-            description.style.borderColor = "red"
-            description.style.color = "red"
-            description.setAttribute('title','La description du commerce doit comporter au minimum 5 caracteres.')
-            
-        }
         validateForm()
     }
 
@@ -367,7 +347,7 @@ CKEDITOR.replace( 'catalog' );
         getCoords();
     }
 
-    function verifyHoraires(content)
+    function verifyDesc(content)
     {
         if(content.replace(/\s+/, '').length !=0)
         {
@@ -458,4 +438,5 @@ CKEDITOR.replace( 'catalog' );
     }
 
 </script>
+@endpush
 @endsection

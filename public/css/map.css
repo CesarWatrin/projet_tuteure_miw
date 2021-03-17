@@ -1245,6 +1245,21 @@ main {
   margin: 0 auto;
   margin-bottom: 5px;
 }
+#filter .selects .area_search_locate {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+#filter .selects .area_search_locate button {
+  margin: 0;
+}
+#filter .selects .area_search_locate button:first-child {
+  margin-right: 10px;
+}
+#filter .selects .area_search_locate button:last-child {
+  margin-left: 10px;
+  width: 50px;
+}
 
 @media screen and (min-width: 992px) {
   .leaflet-control-zoom {
