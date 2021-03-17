@@ -4,6 +4,7 @@ return [
 
     'surname' => 'Surname',
     'firstname' => 'First name',
-    'phonenumber' => 'Phone number'
+    'phonenumber' => 'Phone number',
+    'role' => 'Role'
 
 ];

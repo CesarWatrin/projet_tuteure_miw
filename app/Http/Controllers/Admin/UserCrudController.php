@@ -33,7 +33,7 @@ class UserCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\User::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/user');
-        CRUD::setEntityNameStrings('user', 'users');
+        CRUD::setEntityNameStrings(trans('macyo_custom.user'), trans('macyo_custom.users'));
     }
 
     /**
@@ -58,36 +58,39 @@ class UserCrudController extends CrudController
          */
 
         $this->crud->addColumn([
-            'name' => 'surname'
+            'name' => 'surname',
+            'label' => trans('macyo_custom.surname')
         ]);
 
         $this->crud->addColumn([
             'name' => 'firstname',
-            'label' => 'First name'
+            'label' => trans('macyo_custom.firstname')
         ]);
 
         $this->crud->addColumn([
             'name' => 'email',
             'type' => 'email',
-            'label' => 'Email address'
+            'label' => trans('backpack::base.email_address')
         ]);
 
         $this->crud->addColumn([
             'name' => 'phonenumber',
             'type' => 'phone',
-            'label' => 'Phone number'
+            'label' => trans('macyo_custom.phonenumber')
         ]);
 
         $this->crud->addColumn([
             'name' => 'role',
             'type' => 'relationship',
+            'label' => trans('macyo_custom.role'),
             'entity'    => 'role',
             'attribute' => 'name'
         ]);
 
         $this->crud->addFilter([
             'name'  => 'role',
-            'type'  => 'dropdown'
+            'type'  => 'dropdown',
+            'label' => trans('macyo_custom.role')
         ], function () {
             return \App\Models\Role::all()->pluck('name', 'id')->all();
         }, function ($value) { // if the filter is active
@@ -120,31 +123,38 @@ class UserCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number']));
          */
 
-        $this->crud->addField('surname');
+        $this->crud->addField([
+            'name' => 'surname',
+            'label' => trans('macyo_custom.surname')
+        ]);
         $this->crud->addField([
             'name' => 'firstname',
-            'label' => 'First name',
+            'label' => trans('macyo_custom.firstname'),
             'type' => 'text'
         ]);
         $this->crud->addField([
             'name' => 'email',
-            'label' => 'Email address',
+            'label' => trans('backpack::base.email_address'),
             'type' => 'email'
         ]);
         $this->crud->addField([
             'name' => 'phonenumber',
-            'label' => 'Phone number',
+            'label' => trans('macyo_custom.phonenumber'),
             'type' => 'text',
             'attributes' => ['maxlength' => '10']
         ]);
         $this->crud->addField([
             'name' => 'role_id',
-            'label' => 'Role',
+            'label' => trans('macyo_custom.role'),
             'type' => 'select2',
             'entity' => 'role',
             'attribute' => 'name'
         ]);
-        $this->crud->addField('password');
+        $this->crud->addField([
+            'name' => 'password',
+            'label' => trans('backpack::base.password'),
+            'type' => 'password'
+        ]);
     }
 
     /**

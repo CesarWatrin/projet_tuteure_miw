@@ -1,6 +1,6 @@
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> Users</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('user') }}'><i class='nav-icon la la-user'></i> {{ trans('macyo_custom.users') }}</a></li>
 
 
 {{--<li class="nav-item nav-dropdown">
@@ -13,4 +13,4 @@
     </ul>
 </li>--}}
 
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('rating') }}'><i class='nav-icon la la-star-o'></i> Ratings</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('rating') }}'><i class='nav-icon la la-star-o'></i> {{ trans('macyo_custom.ratings') }}</a></li>

@@ -211,6 +211,7 @@ body {
 }
 .corp:hover {
   color: #020b5d;
+  text-decoration: none;
 }
 
 .logo {
