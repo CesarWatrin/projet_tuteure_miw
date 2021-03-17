@@ -77,8 +77,11 @@
                                 @endif
                             </div>
                             <div class="comment_actions">
-                                <p>{{$comment->rating}}</p>
-                                <svg><use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use></svg>
+                                <div class="rating_note">
+                                    <p>{{$comment->rating}} </p>
+                                    <svg class="icon"><use xlink:href="{{asset("images/sprite.svg#star")}}"></use></svg>
+                                </div>
+                                <svg><use xlink:href="{{asset("images/sprite.svg#report")}}"></use></svg>
                             </div>
                         </div>
                     @endforeach
@@ -196,7 +199,7 @@
 
     let navShop = document.getElementsByClassName('infos_categorie')[0].getElementsByTagName('p');
     for (let i = 0; i < navShop.length; i++) {
-        navShop[i].addEventListener("click", function(){
+        navShop[i].addEventListener("click", function () {
             resetClassnameInfo();
             resetClassnameCategorie();
             navShop[i].className = "active_categorie";
@@ -204,25 +207,5 @@
             formDiv[i].className += " infos_active";
         });
     }
-
-    function getCateggoryName(){
-        return null;
-    }
-
-    function getSubCategoryName(){
-        return null;
-    }
-    /*function changeStore(){
-        let selectStore = document.getElementsByClassName('shops')[0];
-        console.log(selectStore);
-        console.log(selectStore.value);
-        let url = "{{-- route('dashboard', ':id_store') --}}";
-        console.log(url);
-        console.log("ok");
-        url = url.replace(':id_store', selectStore.value);
-        //url = url.replace('?', '/');
-        document.location.href=url;
-    }*/
 </script>
 @endsection
-
