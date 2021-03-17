@@ -28,7 +28,7 @@ class CreateStoresTable extends Migration
             $table->string('email');
             $table->string('siret');
             $table->text('description');
-            $table->mediumText('catalog');
+            $table->mediumText('catalog')->nullable();
             $table->boolean('delivery');
             $table->text('delivery_conditions')->nullable();
             $table->enum('state', ['1', '2' ,'3', '4']);
