@@ -11,6 +11,6 @@ async function getStore(id) {
    var store = await response.json();
    console.log(store);
 
-   titre.textContent = store.name + ' à ' + store.city.name;
+   titre.textContent = store.name + ' à ' + store.city;
    store_link.href = window.location.origin + '/map?lat=' + store.lat + '&lon=' + store.lon;
 }
