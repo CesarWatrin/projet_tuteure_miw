@@ -417,10 +417,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          } else {
             store_score.textContent = '\u00a0 Aucune note';
          }
-         if ((store.city.zip).length < 5) {
-            store.city.zip = '0' + store.city.zip;
-         }
-         store_address.textContent = store.address1 + ', ' + store.city.zip + ' ' + store.city.name;
+         store_address.textContent = store.address1 + ', ' + store.zip + ' ' + store.city;
          if (store.delivery === 1) {
             delivery_check.classList.value  = 'fas fa-check';
             store_delivery.textContent = 'Livraison possible';
@@ -462,7 +459,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          switchFilter();
 
          var popup_gmaps = document.getElementById('popup_gmaps');
-         popup_gmaps.href = 'https://www.google.com/maps/search/?api=1&query='+store.name+'+'+store.city.name;
+         popup_gmaps.href = 'https://www.google.com/maps/search/?api=1&query='+store.name+'+'+store.city;
 
          var popup_catalogue = document.getElementById('popup_catalogue');
          popup_catalogue.href = `${window.location.origin}/catalogue/${store.id}`;

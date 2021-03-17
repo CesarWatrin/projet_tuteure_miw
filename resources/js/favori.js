@@ -93,7 +93,7 @@ async function getStoresById(ids) {
 
    for (var i = 0; i < store_name.length; i++) {
       store_name[i].textContent = stores[i].name;
-      store_distance[i].textContent = '\u00a0' + stores[i].city.name;
+      store_distance[i].textContent = '\u00a0' + stores[i].city;
       var moy = 0;
       if (stores[i].ratings.length !== 0) {
          for (var j = 0; j < stores[i].ratings.length; j++) {
