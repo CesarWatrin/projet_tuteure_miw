@@ -59,7 +59,7 @@
                         <div class="rating">
                             <div>
                                 <span class="r_store_name">{{ $rating->store->name }}</span>
-                                <span>{{ $rating->store->city->name }}</span>
+                                <span>{{ $rating->store->city }}</span>
                             </div>
                             <span class="r_rating">
                             <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>

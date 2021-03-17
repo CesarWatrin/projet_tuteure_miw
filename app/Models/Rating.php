@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rating extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
-    protected $primaryKey = ['user_id', 'store_id'];
-    public $incrementing = false;
+    protected $fillable = [
+        'user_id',
+        'store_id',
+        'rating',
+        'comment',
+        'reported'
+    ];
 
     public function user() {
         return $this->belongsTo(User::class);
@@ -18,12 +24,5 @@ class Rating extends Model
 
     public function store() {
         return $this->belongsTo(Store::class);
-    }
-
-    // surcharge de la méthode pour prendre en compte la clé primaire composée
-    protected function setKeysForSaveQuery($query)
-    {
-        return $query->where('user_id', $this->getAttribute('user_id'))
-            ->where('store_id', $this->getAttribute('store_id'));
     }
 }

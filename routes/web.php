@@ -51,3 +51,5 @@ Route::get('/dashboard', 'AccountController@dashboard')->name('dashboard');
 Route::get('/store_card', 'Store_cardController@home')->name('store_card');
 
 Route::get('/legal', 'PagesController@legal')->name('legal');
+
+Route::get('/catalogue/{store_id}', 'CatalogueController@catalogue')->name('catalogue');

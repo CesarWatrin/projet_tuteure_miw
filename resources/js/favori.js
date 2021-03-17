@@ -82,10 +82,18 @@ async function getStoresById(ids) {
    var store_id = document.getElementsByClassName('store_id');
    var store_lat = document.getElementsByClassName('store_lat');
    var store_lon = document.getElementsByClassName('store_lon');
+   var store_img = document.getElementsByClassName('store_img');
+
+   function imageExists(image_url){
+      var http = new XMLHttpRequest();
+      http.open('HEAD', image_url, false);
+      http.send();
+      return http.status != 404;
+   }
 
    for (var i = 0; i < store_name.length; i++) {
       store_name[i].textContent = stores[i].name;
-      store_distance[i].textContent = '\u00a0' + stores[i].city.name;
+      store_distance[i].textContent = '\u00a0' + stores[i].city;
       var moy = 0;
       if (stores[i].ratings.length !== 0) {
          for (var j = 0; j < stores[i].ratings.length; j++) {
@@ -107,7 +115,15 @@ async function getStoresById(ids) {
       store_id[i].textContent = stores[i].id;
       store_lat[i].textContent = stores[i].lat;
       store_lon[i].textContent = stores[i].lon;
+      var src_img = 'images/stores/store_' + stores[i].id.toString() + '/commerce.jpg';
+      if (imageExists(src_img)) {
+         store_img[i].src = src_img;
+      } else {
+         src_img = 'images/stores/store_default/commercenotfound.jpg';
+         store_img[i].src = src_img;
+      }
    }
+
    for (var i = 0; i < card_btn.length; i++) {
       card_btn[i].addEventListener('click', removeFav);
       img_store[i].addEventListener('click', () => {
