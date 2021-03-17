@@ -88,6 +88,7 @@ function openFilters() {
       if ("geolocation" in navigator) {
          navigator.geolocation.getCurrentPosition(function(position) {
             carte.flyTo([position.coords.latitude, position.coords.longitude]);
+            nearStores([position.coords.longitude, position.coords.latitude]);
          });
       } else {
          alert('Votre géolocalisation est indisponible');
