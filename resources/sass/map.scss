@@ -162,6 +162,24 @@ main{
          margin-bottom: 5px;
       }
 
+      .area_search_locate {
+         display: flex;
+         flex-wrap: wrap;
+         margin: 5px;
+
+         button {
+            margin: 0;
+         }
+
+         button:first-child {
+            margin-right: 10px;
+         }
+
+         button:last-child {
+            margin-left: 10px;
+            width: 50px;
+         }
+      }
    }
 }
 
