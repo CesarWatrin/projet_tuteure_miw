@@ -459,7 +459,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          switchFilter();
 
          var popup_gmaps = document.getElementById('popup_gmaps');
-         popup_gmaps.href = 'https://www.google.com/maps/search/?api=1&query='+store.name+'+'+store.city.name;
+         popup_gmaps.href = 'https://www.google.com/maps/search/?api=1&query='+store.name+'+'+store.city;
 
          var popup_catalogue = document.getElementById('popup_catalogue');
          popup_catalogue.href = `${window.location.origin}/catalogue/${store.id}`;
