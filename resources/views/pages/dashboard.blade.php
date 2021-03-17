@@ -20,11 +20,6 @@
                         <option value="{{$store->id}}">{{$store->name}}</option>
                     @endforeach--}}
                 </select>
-                <div class="data_time">
-                    <p class="active_data">Semaine</p>
-                    <p>Mois</p>
-                    <p>Année</p>
-                </div>
             </div>-->
             <div class="rewards">
                 <div class="categorie_reward reward">
@@ -44,7 +39,7 @@
         <div class="data_shop">
             <div class="data data_visitors">
                 <p>{{sizeof($store[0]->views_all)}}</p>
-                <p>visiteurs</p>
+                <p>Visiteurs</p>
             </div>
             <div class="data data_avg">
                 <p>{{round($avg, 1)}}</p>
@@ -55,8 +50,8 @@
                 <p>Avis</p>
             </div>
             <div class="data data_followers">
-                <p>5464</p>
-                <p>abonnés</p>
+                <p>{{sizeof($store[0]->favorited_by)}}</p>
+                <p>Abonnés</p>
             </div>
         </div>
 
