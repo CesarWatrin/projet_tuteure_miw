@@ -38,31 +38,36 @@ class ManagerController extends Controller
 
     public function storePost(Request $request)
     {
-        // var_dump($request);
+        //  var_dump($request);
         $this->validate($request, [
             'name' => ['required', 'string', 'min:2', 'max:191'],
-            'category_id' => ['required', 'string','min:1','max:1','exists:categories,category_id'],
-            'subcategory_id' => ['required', 'string','min:1','max:1','exists:subcategories,subcategory_id'],
+            'category_id' => ['required', 'string','min:1','max:1','exists:categories,id'],
+            'subcategory_id' => ['required', 'string','min:1','max:1','exists:subcategories,id'],
             'phonenumber' => ['required', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:191'],
-            'ville' => ['requiered','string','max:191'],
-            'address1' => ['requiered','string','min:1','max:191'],
+            'ville' => ['required','string','max:191'],
+            'address1' => ['required','string','min:1','max:191'],
             'address2' => ['nullable','string','min:1','max:191'],
-            'description' => ['requiered','string','min:1'],
-            // 'photo' => ['requiered','string','min:1'],
+            'description' => ['required','string','min:1'],
             'opening_hours' => ['nullable','string','min:1'],
-            'siret' => ['requiered','string','digits:14'],
-            'website' => ['nullable','string','url','max:191'],
-            'delivery' => ['requiered','boolean'],
-            'delivery_conditions' => ['nullable','string',]
+            'siret' => ['required','string','digits:14'],
+            'website' => ['nullable','string','max:191'],
+            'delivery' => ['required','boolean'],
+            'delivery_conditions' => ['nullable','string']
             ]);
 
-            //importer image
+            $request->file('photo')->storeAs('./IMAGEU', 'imagetest2.jpg');
+
+
+            // var_dump(parse_url($url));
+
+            //importer image /////////
+
+            
             //creer comment-code
             //modifier city
             //RE SET LES NULLABLES
-            //calculer coord
-            
+
     }
 
     public function dashboard($storeId){

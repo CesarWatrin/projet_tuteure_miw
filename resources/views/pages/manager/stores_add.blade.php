@@ -9,7 +9,7 @@
 
 <div class="add-store">
     <h1>Ajouter un magasin</h1>
-    <form method="post" action="{{route('store_post')}}">
+    <form method="post" action="{{route('store_post')}}" enctype="multipart/form-data">
 
     @csrf
         <div class="input-row">
@@ -17,7 +17,7 @@
             <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name" onfocusout="verifyName(this.value)" autofocus required>
             @error('name')
                 <span class="input_error">
-                    <strong>{{ $message }}</strong>7
+                    <strong>{{ $message }}</strong>
                 </span>
             @enderror
         </div>
@@ -43,6 +43,16 @@
                 <option disabled selected>Sous-Catégorie du commerce</option>
             </select>
             @error('subcategory_id')
+                <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
+        <div class="input-row">
+            <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
+            <textarea class="input-store" id="opening_hours" name="opening_hours"  onfocusout="verifyHoraires(this.value)"  placeholder="Horaires d'ouverture"></textarea>
+            @error('opening_hours')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -112,7 +122,7 @@
 
         <div class="input-file">
             <label for="description">Photo du magasin <span class="orange_requiered">*</span></label>
-            <input type="file" id="photo" name="photo"  required>
+            <input type="file" id="photo" name="photo" accept="image/png, image/jpeg" required>
             @error('photo')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -121,6 +131,9 @@
         </div>
         
         
+        
+
+
         <div class="input-row">
             <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
             <textarea class="input-store" id="opening_hours" name="opening_hours"  onfocusout="verifyHoraires(this.value)"  placeholder="Horaires d'ouverture"></textarea>
@@ -180,6 +193,9 @@
         </div>
 
         <input type="submit" class="bouton_form brouge bsubmit" value="Ajouter le commerce">
+
+        <input type="hidden" id="lat" name="lat" />
+        <input type="hidden" id="long" name="long" />
 
     </form>
 </div>
@@ -315,6 +331,7 @@ CKEDITOR.replace( 'description' );
             city.style.color = "red"
         }
         console.log(content)
+        getCoords()
     }
 
     function verifyAdresse1(content)
@@ -330,7 +347,8 @@ CKEDITOR.replace( 'description' );
             address1.style.borderColor = "red"
             address1.style.color = "red"
         }
-        console.log(content) 
+        console.log(content)
+        getCoords();
     }
 
     function verifyHoraires(content)
@@ -384,8 +402,24 @@ CKEDITOR.replace( 'description' );
     }
 
 
+    async function getCoords()
+    {
+        let url = "https://api-adresse.data.gouv.fr/search/?q="+address1.value+"+"+city.value;
+        console.log(encodeURI(url))
+        const res = await fetch(url);
+        const adresse = await res.json();
+        console.log(adresse.features[0].geometry.coordinates);
+        let long = adresse.features[0].geometry.coordinates[0];
+        let lat = adresse.features[0].geometry.coordinates[1];
+        document.getElementById('lat').value = lat;
+        document.getElementById('long').value = long;
+
+        console.log("la long: "+long+" la lat "+lat)        
+    }
+
     function validateForm()
     {
+        getCoord();
         if(nameValid && emailValid && phonenumberValid && cityValid && address1Valid && opening_hoursValid && siretValid && websiteValid)
         {
             
