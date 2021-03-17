@@ -19,6 +19,7 @@ class CreateRatingsTable extends Migration
             $table->foreignId('store_id')->constrained();
             $table->enum('rating', [1, 2, 3, 4, 5]);
             $table->text('comment')->nullable();
+            $table->boolean('reported')->default(false);
             $table->timestamps();
         });
     }

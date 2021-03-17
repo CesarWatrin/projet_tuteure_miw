@@ -28,7 +28,7 @@ class CreateStoresTable extends Migration
             $table->string('email');
             $table->string('siret');
             $table->text('description');
-            $table->mediumText('catalog');
+            $table->mediumText('catalog')->nullable();
             $table->boolean('delivery');
             $table->text('delivery_conditions')->nullable();
             $table->enum('state', ['1', '2' ,'3', '4']);
@@ -39,6 +39,8 @@ class CreateStoresTable extends Migration
             $table->string('comments_code');
             $table->string('website')->nullable();
             $table->text('opening_hours')->nullable();
+
+            $table->integer('favorite_number')->default(0);
 
             $table->foreignId('category_id')->constrained();
             $table->foreignId('subcategory_id')->constrained();
