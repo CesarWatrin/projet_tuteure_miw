@@ -57,8 +57,8 @@ function openFilters() {
    autocomplete.innerHTML = '';
    var filter = document.getElementById('filter');
    filter.innerHTML = `
-   <br>
-   <br>
+   <br/>
+   <br/>
    <div class="selects">
    <select id="select_cat" name="catégorie">
    <option value="0">Catégorie</option>
@@ -73,11 +73,27 @@ function openFilters() {
    <select id="select_subcat" name="sous-catégorie">
    <option value="0">Sous-catégorie</option>
    </select>
-   <br>
-   <br>
+   <br/>
+   <br/>
+   <div class="area_search_locate">
    <button class="bouton" id="area_search">Rechercher dans cette zone</button>
+   <button id="flyTo" class="bouton"><svg class="icon"><use xlink:href="images/sprite.svg#geoloc"></use></svg></button>
+   </div>
    </div>
    `;
+
+   var flyTo = document.getElementById('flyTo');
+
+   flyTo.addEventListener('click', () => {
+      if ("geolocation" in navigator) {
+         navigator.geolocation.getCurrentPosition(function(position) {
+            carte.flyTo([position.coords.latitude, position.coords.longitude]);
+            nearStores([position.coords.longitude, position.coords.latitude]);
+         });
+      } else {
+         alert('Votre géolocalisation est indisponible');
+      }
+   });
 
    var select_cat = document.getElementById('select_cat');
    var select_subcat = document.getElementById('select_subcat');
@@ -565,7 +581,7 @@ function recherche() {
 function userPosition() {
    if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function(position) {
-         L.marker([position.coords.latitude, position.coords.longitude], {icon: markerPosition}).addTo(markers);
+         L.marker([position.coords.latitude, position.coords.longitude], {icon: markerPosition}).addTo(carte);
          // carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
       });
    } else {

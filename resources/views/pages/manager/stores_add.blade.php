@@ -9,7 +9,7 @@
 
 <div class="add-store">
     <h1>Ajouter un magasin</h1>
-    <form method="post" action="{{route('store_post')}}">
+    <form method="post" action="{{route('store_post')}}" enctype="multipart/form-data">
 
     @csrf
         <div class="input-row">
@@ -17,7 +17,7 @@
             <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name" onfocusout="verifyName(this.value)" autofocus required>
             @error('name')
                 <span class="input_error">
-                    <strong>{{ $message }}</strong>7
+                    <strong>{{ $message }}</strong>
                 </span>
             @enderror
         </div>
@@ -43,6 +43,16 @@
                 <option disabled selected>Sous-Catégorie du commerce</option>
             </select>
             @error('subcategory_id')
+                <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
+        <div class="input-row">
+            <label for="description">Description <span class="orange_requiered">*</span></label>
+            <textarea class="input-store" id="description" name="description"  onfocusout="verifyDesc(this.value)"  placeholder="Description du commerce"></textarea>
+            @error('description')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -101,9 +111,9 @@
         </div>
 
         <div class="input-row">
-            <label for="description">Catalogue de Produits <span class="orange_requiered">*</span></label>
-            <textarea class="form-control" id="description"  onfocusout="verifyDesc()"  name="description"></textarea>
-            @error('description')
+            <label for="catalog">Catalogue de Produits</label>
+            <textarea class="form-control" id="catalog"  name="catalog"></textarea>
+            @error('catalog')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -111,16 +121,16 @@
         </div>
 
         <div class="input-file">
-            <label for="description">Photo du magasin <span class="orange_requiered">*</span></label>
-            <input type="file" id="photo" name="photo"  required>
+            <label for="photo">Photo du magasin <span class="orange_requiered">*</span></label>
+            <input type="file" id="photo" name="photo" accept="image/png, image/jpeg" required>
             @error('photo')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
         </div>
-        
-        
+
+
         <div class="input-row">
             <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
             <textarea class="input-store" id="opening_hours" name="opening_hours"  onfocusout="verifyHoraires(this.value)"  placeholder="Horaires d'ouverture"></textarea>
@@ -181,13 +191,16 @@
 
         <input type="submit" class="bouton_form brouge bsubmit" value="Ajouter le commerce">
 
+        <input type="hidden" id="lat" name="lat" />
+        <input type="hidden" id="long" name="long" />
+
     </form>
 </div>
 
 
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
-CKEDITOR.replace( 'description' );
+CKEDITOR.replace( 'catalog' );
 
 
 
@@ -211,6 +224,7 @@ CKEDITOR.replace( 'description' );
 
     let name = document.getElementById('name');
     let city = document.getElementById('city_Id');
+    let description = document.getElementById('description')
     let address1 = document.getElementById('address1');
     let address2 = document.getElementById('address2');
     let phonenumber = document.getElementById('phonenumber');
@@ -257,6 +271,24 @@ CKEDITOR.replace( 'description' );
             
         }
         console.log(nameValid)
+        validateForm()
+    }
+
+    function verifyDesc(content)
+    {
+        if(content.replace(/\s+/, '').length >= 5)
+        {
+            descriptionValid = true
+            description.style.borderColor = "#475BF5"
+            description.style.color = "#475BF5"
+        }
+        else{
+            descriptionValid = false
+            description.style.borderColor = "red"
+            description.style.color = "red"
+            description.setAttribute('title','La description du commerce doit comporter au minimum 5 caracteres.')
+            
+        }
         validateForm()
     }
 
@@ -315,6 +347,7 @@ CKEDITOR.replace( 'description' );
             city.style.color = "red"
         }
         console.log(content)
+        getCoords()
     }
 
     function verifyAdresse1(content)
@@ -330,21 +363,22 @@ CKEDITOR.replace( 'description' );
             address1.style.borderColor = "red"
             address1.style.color = "red"
         }
-        console.log(content) 
+        console.log(content)
+        getCoords();
     }
 
     function verifyHoraires(content)
     {
         if(content.replace(/\s+/, '').length !=0)
         {
-            opening_hoursValid = true
-            opening_hours.style.borderColor = "#475BF5"
-            opening_hours.style.color = "#475BF5"
+            descriptionValid = true
+            description.style.borderColor = "#475BF5"
+            description.style.color = "#475BF5"
         }
         else{
-            opening_hoursValid = false
-            opening_hours.style.borderColor = "red"
-            opening_hours.style.color = "red"
+            descriptionValid = false
+            description.style.borderColor = "red"
+            description.style.color = "red"
         }
     }
 
@@ -383,9 +417,40 @@ CKEDITOR.replace( 'description' );
         }
     }
 
+    function verifyHoraires(content)
+    {
+        if(content.replace(/\s+/, '').length !=0)
+        {
+            opening_hoursValid = true
+            opening_hours.style.borderColor = "#475BF5"
+            opening_hours.style.color = "#475BF5"
+        }
+        else{
+            opening_hoursValid = false
+            opening_hours.style.borderColor = "red"
+            opening_hours.style.color = "red"
+        }
+    }
+
+
+    async function getCoords()
+    {
+        let url = "https://api-adresse.data.gouv.fr/search/?q="+address1.value+"+"+city.value;
+        console.log(encodeURI(url))
+        const res = await fetch(url);
+        const adresse = await res.json();
+        console.log(adresse.features[0].geometry.coordinates);
+        let long = adresse.features[0].geometry.coordinates[0];
+        let lat = adresse.features[0].geometry.coordinates[1];
+        document.getElementById('lat').value = lat;
+        document.getElementById('long').value = long;
+
+        console.log("la long: "+long+" la lat "+lat)        
+    }
 
     function validateForm()
     {
+        // getCoords();
         if(nameValid && emailValid && phonenumberValid && cityValid && address1Valid && opening_hoursValid && siretValid && websiteValid)
         {
             
