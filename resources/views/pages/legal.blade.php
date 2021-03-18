@@ -87,10 +87,23 @@
 
     </div>
 
-    {{-- <h2 class="sous_titre">Crédits images</h2>
+    <h2 class="sous_titre">Crédits images</h2>
     <div class="mentions_legales">
 
-    </div> --}}
+        <p>Illustrations :
+            <a href="https://www.freepik.com/vectorjuice">vectorjuice</a> sur Freepik et
+            <a href="https://storyset.com/people">Freepik</a> sur Storyset
+        </p>
+        <p>Icônes :
+            <a href="https://www.flaticon.com/authors/freepik">Freepik</a>,
+            <a href="https://www.flaticon.com/authors/pixel-perfect">Pixel perfect</a>,
+            <a href="https://www.flaticon.com/authors/kiranshastry">Kiranshastry</a> et
+            <a href="https://www.flaticon.com/authors/becris">Becris</a>
+            sur Flaticon
+        </p>
+        <p>Les photos des commerces appartiennent à leur responsable.</p>
+
+    </div>
 
 @endsection
 
