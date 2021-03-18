@@ -105,6 +105,7 @@ main{
    background-color: rgba(71,91,245,0.2);
    border-radius: 16px;
    backdrop-filter: blur(3px);
+   -webkit-backdrop-filter: blur(3px);
 
    p:first-child {
       margin-top: 60px;
@@ -135,6 +136,7 @@ main{
    background-color: rgba(71,91,245,0.2);
    border-radius: 16px;
    backdrop-filter: blur(3px);
+   -webkit-backdrop-filter: blur(3px);
 
    .selects {
       display: flex;

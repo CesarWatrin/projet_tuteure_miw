@@ -17,7 +17,7 @@ class AccountController extends Controller
 
     public function home() {
         $ratings = null;
-        if(!Auth::user()->is_manager()) {
+        if(Auth::user()->is_basic()) {
             $ratings = Rating::all()->where('user_id', Auth::id());
         }
         return view('pages.account', ['user' => Auth::user(), 'ratings' => $ratings]);

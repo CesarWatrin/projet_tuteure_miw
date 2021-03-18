@@ -118,6 +118,7 @@
                 </div>
                 <p>Plan du site</p>
                   <p class="ml"><a href="{{ route('legal') }}">Mentions légales</a></p>
+                  <p class="ml"><a href="{{ route('backpack.auth.login') }}">Portail de modération</a></p>
                 <div class="copyright">
                   <p>Copyright © 2021 MAC-YO Corp.<br>Tous droits réservés.</p>
                 </div>

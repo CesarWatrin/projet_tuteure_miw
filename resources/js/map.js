@@ -88,6 +88,7 @@ function openFilters() {
       if ("geolocation" in navigator) {
          navigator.geolocation.getCurrentPosition(function(position) {
             carte.flyTo([position.coords.latitude, position.coords.longitude]);
+            nearStores([position.coords.longitude, position.coords.latitude]);
          });
       } else {
          alert('Votre géolocalisation est indisponible');
@@ -356,11 +357,11 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var store_comments = document.getElementById('store_comments');
 
          var store_img = document.getElementById('store_img');
-         var src_img = 'images/stores/store_' + store.id.toString() + '/commerce.jpg';
+         var src_img = '/storage/images/store_' + store.id.toString() + '/commerce.jpg';
          if (imageExists(src_img)) {
             store_img.src = src_img;
          } else {
-            src_img = 'images/stores/store_default/commercenotfound.jpg';
+            src_img = '/storage/images/store_default/commercenotfound.jpg';
             store_img.src = src_img;
          }
 

@@ -115,11 +115,11 @@ async function getStoresById(ids) {
       store_id[i].textContent = stores[i].id;
       store_lat[i].textContent = stores[i].lat;
       store_lon[i].textContent = stores[i].lon;
-      var src_img = 'images/stores/store_' + stores[i].id.toString() + '/commerce.jpg';
+      var src_img = '/storage/images/store_' + stores[i].id.toString() + '/commerce.jpg';
       if (imageExists(src_img)) {
          store_img[i].src = src_img;
       } else {
-         src_img = 'images/stores/store_default/commercenotfound.jpg';
+         src_img = '/storage/images/store_default/commercenotfound.jpg';
          store_img[i].src = src_img;
       }
    }

@@ -18,6 +18,7 @@
    color: $dark_blue;
    font-size: 17px;
    backdrop-filter: blur(2px);
+   -webkit-backdrop-filter: blur(2px);
 
    .popup_header {
       width: 100%;
@@ -113,6 +114,14 @@
 
 .active {
    transform: translateY(0);
+}
+
+.ratings::-webkit-scrollbar {
+   width: 0px;
+}
+
+.ratings {
+   border-radius: 10px;
 }
 
 @media screen and (min-width: 576px) {

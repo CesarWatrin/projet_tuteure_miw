@@ -209,6 +209,7 @@ body {
 }
 .corp:hover {
   color: #020b5d;
+  text-decoration: none;
 }
 
 .logo {
@@ -573,6 +574,7 @@ body {
 }
 .corp:hover {
   color: #020b5d;
+  text-decoration: none;
 }
 
 .logo {
@@ -842,8 +844,8 @@ body {
   background-color: rgba(234, 239, 252, 0.85);
   color: #020b5d;
   font-size: 17px;
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
 }
 .popup .popup_header {
   width: 100%;
@@ -926,6 +928,14 @@ body {
 
 .active {
   transform: translateY(0);
+}
+
+.ratings::-webkit-scrollbar {
+  width: 0px;
+}
+
+.ratings {
+  border-radius: 10px;
 }
 
 @media screen and (min-width: 576px) {
@@ -1192,8 +1202,8 @@ main {
   width: calc(100% + 3.5rem);
   background-color: rgba(71, 91, 245, 0.2);
   border-radius: 16px;
+  backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
 }
 #autocomplete p:first-child {
   margin-top: 60px;
@@ -1219,8 +1229,8 @@ main {
   width: calc(100% + 3.5rem);
   background-color: rgba(71, 91, 245, 0.2);
   border-radius: 16px;
+  backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
 }
 #filter .selects {
   display: flex;
