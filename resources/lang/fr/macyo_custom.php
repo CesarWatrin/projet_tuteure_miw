@@ -2,6 +2,9 @@
 
 return [
 
+    'back_to_site' => 'Retour au site',
+    'admin_portal' => 'Panneau d\'administration MAC-YO',
+
     'user' => 'Utilisateur',
     'users' => 'Utilisateurs',
     'surname' => 'Nom',
