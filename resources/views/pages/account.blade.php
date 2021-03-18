@@ -37,7 +37,8 @@
 
             <div class="info">
                 <div class="imgUser">
-                    <img src="images/user.jpg"/>
+{{--                    <img src="images/user.jpg"/>--}}
+                    <div class="initiales">{{ strtoupper(substr($user->firstname, 0, 1).substr($user->surname, 0, 1)) }}</div>
                 </div>
 
                 <p class="name">{{ $user->firstname }}<span class="orange">{{ $user->surname }}</span></p>
