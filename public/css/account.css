@@ -124,6 +124,7 @@ label {
   color: #475BF5;
   background-color: #eaeffc;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .bouton_form {
