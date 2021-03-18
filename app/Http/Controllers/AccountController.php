@@ -36,12 +36,24 @@ class AccountController extends Controller
     }
 
     public function update(Request $request) {
+
+        $messages = [
+            'phonenumber.required_unless' => 'Le champ nº de téléphone est obligatoire.'
+        ];
+
+        $attributes = [
+            'surname' => 'nom de famille',
+            'firstname' => 'prénom',
+            'phonenumber' => 'nº de téléphone',
+            'email' => 'adresse e-mail',
+        ];
+
         $this->validate($request, [
             'surname' => ['required', 'string', 'min:2', 'max:255'],
             'firstname' => ['required', 'string', 'min:2', 'max:255'],
             'phonenumber' => ['required_unless:role,1', 'exclude_if:role,1', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.Auth::user()->id ],
-        ]);
+        ], $messages, $attributes);
 
         Auth::user()->surname = $request->input('surname');
         Auth::user()->firstname = $request->input('firstname');
@@ -59,9 +71,15 @@ class AccountController extends Controller
 
     public function rateStore(Request $request) {
         $rating = null;
+        $messages = [
+            'comments_code.required' => 'Ce champ est requis.',
+            'comments_code.min' => 'Le code doit faire 10 caractères.',
+            'comments_code.max' => 'Le code doit faire 10 caractères.',
+            'comments_code.exists' => 'Le code ne correspond à aucun commerce.'
+        ];
         $this->validate($request, [
             'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
-        ]);
+        ], $messages);
         $store = Store::all()->where('comments_code', $request->input('comments_code'))->first();
         $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $store->id)->first();
         return view('pages.rating_add', ['store' => $store, 'rating' => $rating]);
@@ -69,11 +87,14 @@ class AccountController extends Controller
     }
 
     public function postRating(Request $request) {
+        $attributes = [
+            'rating' => 'note',
+        ];
         $this->validate($request, [
             'store_id' => ['required', 'exists:stores,id'],
             'rating' => ['required', 'integer', 'in:1,2,3,4,5'],
             'comment' => 'nullable'
-        ]);
+        ], [], $attributes);
 
         $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $request->input('store_id'))->first();
 

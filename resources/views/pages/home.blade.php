@@ -22,10 +22,10 @@
             <input type="text" class="input" name="q" placeholder="Essayez un nom de ville..."/>
          </form>
          <span class="separateur">— ou —</span>
-         <button class="bouton geoloc">
+         <a href="{{ route('map') }}" class="bouton geoloc">
             Autour de moi
             <svg class="icon"><use xlink:href="images/sprite.svg#geoloc"></use></svg>
-         </button>
+         </a>
       </div>
    </div>
 </header>

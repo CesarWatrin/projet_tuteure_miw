@@ -38,7 +38,7 @@ class ManagerController extends Controller
 
     public function storePost(Request $request)
     {
-        //  var_dump($request);
+        var_dump($request);
         $this->validate($request, [
             'name' => ['required', 'string', 'min:2', 'max:191'],
             'category_id' => ['required', 'string','min:1','max:1','exists:categories,id'],
@@ -46,9 +46,11 @@ class ManagerController extends Controller
             'phonenumber' => ['required', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:191'],
             'ville' => ['required','string','max:191'],
+            'zip' => ['required','string','max:5','min:2'],
             'address1' => ['required','string','min:1','max:191'],
             'address2' => ['nullable','string','min:1','max:191'],
             'description' => ['required','string','min:1'],
+            'catalog' => ['nullable','string'],
             'opening_hours' => ['nullable','string','min:1'],
             'siret' => ['required','string','digits:14'],
             'website' => ['nullable','string','max:191'],
@@ -56,19 +58,44 @@ class ManagerController extends Controller
             'delivery_conditions' => ['nullable','string']
             ]);
 
-            $request->file('photo')->storeAs('./IMAGEU', 'imagetest2.jpg');
-
-
-            // var_dump(parse_url($url));
-
-            //importer image /////////
-
             
-            //creer comment-code
-            //modifier city
-            //RE SET LES NULLABLES
+            $last_store = Store::orderBy('id','desc')->first();
+            $newId = $last_store->id+1;
+            $store = new Store();
+            
+            
+            
+            $store->id = $newId;
+            $store->name = $request->input('name');
+            $store->address1 = $request->input('address1');
+            $store->address2 = $request->input('address2');
+            $store->zip = $request->input('zip');
+            $store->city = $request->input('ville');
+            $store->lat = $request->input('lat');
+            $store->lon = $request->input('long');
+            $store->phonenumber = $request->input('phonenumber');
+            $store->email = $request->input('email');
+            $store->siret = $request->input('siret');
+            $store->description = $request->input('description');
+            $store->catalog = $request->input('catalog');
+            $store->delivery = $request->input('delivery');
+            $store->delivery_conditions = $request->input('delivery_conditions');
+            $store->state = "2";
+            $nom = $request->input('name');
+            $commentCode=substr(md5($nom),1,6)."-".$newId;
+            $store->comments_code = $commentCode;
+            $store->website = $request->input('website');
+            $store->opening_hours = $request->input('opening_hours');
+            $store->category_id = $request->input('category_id');
+            $store->subcategory_id = $request->input('subcategory_id');
+            $store->manager_id = Auth::id();
+            
+            $request->file('photo')->storeAs('./images/store_'.$newId, 'commerce.jpg');
+    
+            $store->save();
 
-    }
+
+        }
 
     public function dashboard($storeId){
         $store = Store::where('id', '=', $storeId)->get();

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\RatingRequest;
+use App\Models\Rating;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Illuminate\Http\Request;
 
 /**
  * Class RatingCrudController
@@ -29,6 +31,8 @@ class RatingCrudController extends CrudController
         CRUD::setModel(\App\Models\Rating::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/rating');
         CRUD::setEntityNameStrings(trans('macyo_custom.rating'), trans('macyo_custom.ratings'));
+
+        $this->crud->addColumn('id');
 
         $this->crud->addColumn([
             'name' => 'user',
@@ -81,37 +85,20 @@ class RatingCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-//        CRUD::column('user_id');
-//        CRUD::column('store_id');
-//        CRUD::column('rating');
-//        CRUD::column('comment');
-
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
-         */
-
-        /*$this->crud->addColumn([
-            'name' => 'surname'
-        ]);
-
-        $this->crud->addColumn([
-            'name' => 'firstname',
-            'label' => 'First name'
-        ]);*/
 
         $this->crud->addFilter([
             'name'  => 'reported',
             'type'  => 'simple',
-            'label' => 'Reported ratings only'
+            'label' => trans('macyo_custom.reported_only'),
         ],
         false,
         function ($value) { // if the filter is active
             $this->crud->addClause('where', 'reported', '!=', $value);
         });
 
-        $this->crud->orderBy('reported', 'desc');
+        //$this->crud->orderBy('reported', 'desc');
+
+        $this->crud->addButton('line', 'remove_report', 'view', 'crud::buttons.remove_report', 'end');
 
     }
 
@@ -125,16 +112,6 @@ class RatingCrudController extends CrudController
     {
         CRUD::setValidation(RatingRequest::class);
 
-//        CRUD::field('user_id');
-//        CRUD::field('store_id');
-//        CRUD::field('rating');
-//        CRUD::field('comment');
-
-        /**
-         * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
-         */
     }
 
     /**
@@ -155,6 +132,13 @@ class RatingCrudController extends CrudController
         $content = $this->traitShow($id);
 
         return $content;
+    }
+
+    public function removeReport(Request $request) {
+        $id = $request->input('id');
+        $rating = Rating::find($id);
+        $rating->reported = false;
+        return $rating->save();
     }
 
 }

@@ -74,6 +74,14 @@ label {
   display: block;
   color: #e4534b;
   margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.input_success {
+  display: block;
+  color: #475BF5;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .rate {
@@ -114,6 +122,7 @@ label {
   color: #475BF5;
   background-color: #eaeffc;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .bouton_form {

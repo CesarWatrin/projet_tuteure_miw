@@ -72,6 +72,13 @@ label {
     display: block;
     color: $dark-red;
     margin-bottom: .5rem;
+    text-align: center;
+}
+.input_success {
+    display: block;
+    color: $normal_blue;
+    margin-bottom: .5rem;
+    text-align: center;
 }
 
 .rate {
@@ -117,6 +124,7 @@ label {
         color: $normal_blue;
         background-color: $bg_blue;
         cursor: pointer;
+        text-decoration: none;
     }
 }
 

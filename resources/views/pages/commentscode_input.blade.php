@@ -5,9 +5,9 @@
 @endpush
 
 @section('content')
-    <div class="container_corp">
-        <span class="corp">MAC-YO Corp.</span>
-    </div>
+
+    @include('layouts.container_corp')
+
     <div class="container_center">
 
     <a class="back_link" href="{{ route('account') }}"><i class="fas fa-chevron-left"></i> Retour à Mon compte</a>
