@@ -71,7 +71,7 @@
 
         <div class="input-row">
             <label for="phonenumber">Téléphone <span class="orange_requiered">*</span></label>
-            <input type="phone" id="phonenumber" class="input-store" placeholder="Numéro de Téléphone" name="phonenumber" onfocusout="verifyPhone(this.value)" required>
+            <input type="phone" id="phonenumber" maxlength="10" class="input-store" placeholder="Numéro de Téléphone" name="phonenumber" onfocusout="verifyPhone(this.value)" required>
             @error('phonenumber')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -91,6 +91,17 @@
 
 
         <div class="input-row">
+            <label for="zip">Code Postal <span class="orange_requiered">*</span></label>
+            <input type="text" id="zip" maxlength="5" class="input-store" placeholder="Code Postal" name="zip"  onfocusout="verifyZip(this.value)" required>
+            @error('zip')
+                <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
+
+        <div class="input-row">
             <label for="address1">Adresse <span class="orange_requiered">*</span></label>
             <input type="text" id="address1" class="input-store" placeholder="Adresse" name="address1"  onfocusout="verifyAdresse1(this.value)" required>
             @error('address1')
@@ -102,7 +113,7 @@
 
         <div class="input-row">
             <label for="address2">Complement d'adresse</label>
-            <input type="text" id="address2" class="input-store" placeholder="Complement d'adresse"  onfocusout="verifyAdresse2(this.value)" name="address2" >
+            <input type="text" id="address2" class="input-store" placeholder="Complement d'adresse" name="address2" >
             @error('address2')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -132,8 +143,8 @@
 
 
         <div class="input-row">
-            <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
-            <textarea class="input-store" id="opening_hours" name="opening_hours"  onfocusout="verifyHoraires(this.value)"  placeholder="Horaires d'ouverture"></textarea>
+            <label for="opening_hours">Horaires</label>
+            <textarea class="input-store" id="opening_hours" name="opening_hours"   placeholder="Horaires d'ouverture"></textarea>
             @error('opening_hours')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -236,6 +247,7 @@ CKEDITOR.replace( 'catalog' );
     let opening_hours = document.getElementById('opening_hours');
     let category_id = document.getElementById('category_id');
     let subcategory_id = document.getElementById('subcategory_id');
+    let zip = document.getElementById('zip');
 
 
     let nameValid = false 
@@ -252,6 +264,7 @@ CKEDITOR.replace( 'catalog' );
     let opening_hoursValid = false 
     let category_idValid = false 
     let subcategory_idValid = false 
+    let zipValid = false
 
     //lancer chaque fonction avec valeur par defaut
 
@@ -327,7 +340,7 @@ CKEDITOR.replace( 'catalog' );
             phonenumberValid = false
             phonenumber.style.borderColor = "red"
             phonenumber.style.color = "red"
-            phonenumber.setAttribute('title','Veuillez de saisir un numéro de téléphone valide.')
+            phonenumber.setAttribute('title','Veuillez de saisir un numéro de téléphone valide. Format: 0102030405')
             console.log()
         }
         console.log(content)
@@ -367,20 +380,6 @@ CKEDITOR.replace( 'catalog' );
         getCoords();
     }
 
-    function verifyHoraires(content)
-    {
-        if(content.replace(/\s+/, '').length !=0)
-        {
-            descriptionValid = true
-            description.style.borderColor = "#475BF5"
-            description.style.color = "#475BF5"
-        }
-        else{
-            descriptionValid = false
-            description.style.borderColor = "red"
-            description.style.color = "red"
-        }
-    }
 
     
     function verifySiret(content)
@@ -416,20 +415,23 @@ CKEDITOR.replace( 'catalog' );
             phonenumber.setAttribute('title','Veuillez de saisir une Url valide.')
         }
     }
-
-    function verifyHoraires(content)
+    
+    function verifyZip(content)
     {
-        if(content.replace(/\s+/, '').length !=0)
+        if(content.replace(/\s+/, '').length <= 5 && content.replace(/\s+/, '').length > 0)
         {
-            opening_hoursValid = true
-            opening_hours.style.borderColor = "#475BF5"
-            opening_hours.style.color = "#475BF5"
+            zipValid = true
+            zip.style.borderColor = "#475BF5"
+            zip.style.color = "#475BF5"
         }
         else{
-            opening_hoursValid = false
-            opening_hours.style.borderColor = "red"
-            opening_hours.style.color = "red"
+            zipValid = false
+            zip.style.borderColor = "red"
+            zip.style.color = "red"
+            zip.setAttribute('title','Veuillez saisir un code postal valide.')
+            
         }
+        validateForm()
     }
 
 
@@ -450,7 +452,8 @@ CKEDITOR.replace( 'catalog' );
 
     function validateForm()
     {
-        // getCoords();
+        
+        //rajouter code postal et desc et cat
         if(nameValid && emailValid && phonenumberValid && cityValid && address1Valid && opening_hoursValid && siretValid && websiteValid)
         {
             
