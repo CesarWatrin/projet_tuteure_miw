@@ -38,7 +38,6 @@ class ManagerController extends Controller
 
     public function storePost(Request $request)
     {
-        var_dump($request);
         $this->validate($request, [
             'name' => ['required', 'string', 'min:2', 'max:191'],
             'category_id' => ['required', 'string','min:1','max:1','exists:categories,id'],
@@ -93,6 +92,8 @@ class ManagerController extends Controller
             $request->file('photo')->storeAs('./images/store_'.$newId, 'commerce.jpg');
     
             $store->save();
+
+            return redirect()->route('stores');
 
 
         }
