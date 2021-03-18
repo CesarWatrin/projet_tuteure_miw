@@ -63,7 +63,7 @@ class ManagerController extends Controller
 
             //importer image /////////
 
-            
+
             //creer comment-code
             //modifier city
             //RE SET LES NULLABLES
@@ -74,7 +74,8 @@ class ManagerController extends Controller
         $store = Store::where('id', '=', $storeId)->get();
         $comments = Rating::where('store_id', '=', $storeId)->get();
         $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
-
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
         $shops = Store::where('category_id', '=', $store[0]->category_id)->get();
         $shops_avg = [];
         foreach ($shops as $shop){
@@ -98,7 +99,7 @@ class ManagerController extends Controller
         }
         rsort($shops_avg);
         $rank_sc = array_search($avg, $shops_avg)+1;
-        return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc]);
+        return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc, "categories" => $categories, "subcategories" => $subcategories]);
     }
 
     public function modify_store(Request $request){
