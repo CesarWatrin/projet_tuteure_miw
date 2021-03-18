@@ -17,6 +17,7 @@
         use Illuminate\Support\Carbon;
         use \App\Models\User;
         use \App\Models\Store;
+        use \App\Models\Rating;
 
         $inscritsCeMois = User::all()->where('created_at', '>', Carbon::today()->firstOfMonth() )->count();
         $inscrits = User::all()->count();
@@ -40,12 +41,24 @@
             'hint'        => $commerces.' enregistrés au total.',
         ];
 
+        $avisCeMois = Rating::all()->where('created_at', '>', Carbon::today()->firstOfMonth() )->count();
+        $avis = Rating::all()->count();
+
+        $widgetNbAvis = [
+            'type'        => 'progress',
+            'class'       => 'card text-black bg-white mb-2',
+            'value'       => $avisCeMois,
+            'description' => 'Avis enregistrés ce mois-ci.',
+            'hint'        => $avis.' enregistrés au total.',
+        ];
+
         Widget::add()->to('after_content')
              ->type('div')
              ->class('row col-md-12 mt-4')
              ->content([
                    $widgetNbInscrits,
-                   $widgetNbCommerces
+                   $widgetNbCommerces,
+                   $widgetNbAvis
         ]);
 
     @endphp
