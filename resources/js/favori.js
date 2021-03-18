@@ -24,6 +24,7 @@ function removeStorage(id) {
    if (index > -1) {
       macyofavoris.splice(index, 1);
       localStorage.setItem('macyofavoris', macyofavoris);
+      fetch(`${window.location.origin}/store/removeFavorite?id=${id.trim()}`);
    }
 }
 
@@ -40,10 +41,12 @@ function addStorage(id) {
       }
       if (exist === 0) {
          macyofavoris.push(id);
+         fetch(`${window.location.origin}/store/addFavorite?id=${id}`);
       }
       localStorage.setItem('macyofavoris', macyofavoris);
    } else {
       localStorage.setItem('macyofavoris', [id]);
+      fetch(`${window.location.origin}/store/addFavorite?id=${id}`);
    }
    return exist;
 }
@@ -61,7 +64,11 @@ async function setFav() {
       for (var i = 0; i < macyofavoris.length; i++) {
          list_favoris[0].innerHTML += contenu;
       }
-      getStoresById(macyofavoris);
+      getStoresById(macyofavoris)
+         .catch(() => {
+            list_favoris[0].innerHTML = '<strong>Une erreur est survenue dans la récupération de vos favoris</strong>';
+            localStorage.removeItem('macyofavoris');
+         });
    }
 }
 
@@ -130,7 +137,6 @@ async function getStoresById(ids) {
          var id = event.target.parentNode.parentNode.children[1].children[0].children[3].children[0].textContent;
          var lat = event.target.parentNode.parentNode.children[1].children[0].children[3].children[1].textContent;
          var lon = event.target.parentNode.parentNode.children[1].children[0].children[3].children[2].textContent;
-         console.log(id,lat,lon);
          window.location.href = window.location.origin + '/map?lat=' + lat + '&lon=' + lon;
       });
    }

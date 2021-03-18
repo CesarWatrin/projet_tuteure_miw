@@ -53,3 +53,6 @@ Route::get('/store_card', 'Store_cardController@home')->name('store_card');
 Route::get('/legal', 'PagesController@legal')->name('legal');
 
 Route::get('/catalogue/{store_id}', 'CatalogueController@catalogue')->name('catalogue');
+
+Route::get('/store/addFavorite', 'StoreController@addFavorite')->name('addFavorite');
+Route::get('/store/removeFavorite', 'StoreController@removeFavorite')->name('removeFavorite');
