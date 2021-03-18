@@ -28,17 +28,17 @@ class RatingCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Rating::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/rating');
-        CRUD::setEntityNameStrings('rating', 'ratings');
+        CRUD::setEntityNameStrings(trans('macyo_custom.rating'), trans('macyo_custom.ratings'));
 
         $this->crud->addColumn([
             'name' => 'user',
-            'label' => 'First name',
+            'label' => trans('macyo_custom.firstname'),
             'type' => 'relationship',
             'attribute' => 'firstname',
         ]);
         $this->crud->addColumn([
             'name' => 'user',
-            'label' => 'Surname',
+            'label' => trans('macyo_custom.surname'),
             'type' => 'relationship',
             'attribute' => 'surname',
             'key' => 'user_surname'
@@ -46,21 +46,25 @@ class RatingCrudController extends CrudController
 
         $this->crud->addColumn([
             'name' => 'store',
+            'label' => trans('macyo_custom.store'),
             'type' => 'relationship',
             'attribute' => 'name',
         ]);
 
         $this->crud->addColumn([
             'name' => 'rating',
+            'label' => trans('macyo_custom.rating_value'),
             'suffix' => '/5'
         ]);
 
         $this->crud->addColumn([
             'name' => 'comment',
+            'label' => trans('macyo_custom.comment'),
         ]);
 
         $this->crud->addColumn([
             'name' => 'reported',
+            'label' => trans('macyo_custom.reported'),
             'type' => 'boolean'
         ]);
 
