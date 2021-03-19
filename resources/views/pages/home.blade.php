@@ -22,10 +22,10 @@
             <input type="text" class="input" name="q" placeholder="Essayez un nom de ville..."/>
          </form>
          <span class="separateur">— ou —</span>
-         <button class="bouton geoloc">
+         <a href="{{ route('map') }}" class="bouton geoloc">
             Autour de moi
             <svg class="icon"><use xlink:href="images/sprite.svg#geoloc"></use></svg>
-         </button>
+         </a>
       </div>
    </div>
 </header>
@@ -138,14 +138,14 @@
    <p>Les commerces populaires à proximité</p>
 </div>
 
-<div class="carousel_index">
-   @for($i = 0; $i < 4; $i++)
-      @include('layouts.store_card')
-   @endfor
-</div>
+<div class="carousel_index"></div>
 
 <form method="get" action="{{ route('map') }}">
    <button class="bouton plus">Voir plus de commerces</button>
 </form>
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/index.js') }}"></script>
+@endpush

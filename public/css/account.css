@@ -76,6 +76,14 @@ label {
   display: block;
   color: #e4534b;
   margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.input_success {
+  display: block;
+  color: #475BF5;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .rate {
@@ -116,6 +124,7 @@ label {
   color: #475BF5;
   background-color: #eaeffc;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .bouton_form {
@@ -492,6 +501,18 @@ body {
 }
 .user .info .imgUser img {
   width: 100%;
+}
+.user .info .imgUser .initiales {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #475BF5;
+  color: white;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  padding-left: 0.5rem;
 }
 .user .info p {
   color: #020b5d;

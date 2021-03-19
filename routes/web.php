@@ -17,6 +17,9 @@ Route::get('/', 'PagesController@home')->name('home');
 
 Auth::routes();
 
+Route::get('auth/google', 'GoogleController@redirectToGoogle')->name('redirect_to_goggle');
+Route::get('auth/google/callback', 'GoogleController@handleGoogleCallback')->name('handle_google_callback');
+
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/map', 'MapController@home')->name('map');
@@ -52,3 +55,7 @@ Route::get('/store_card', 'Store_cardController@home')->name('store_card');
 Route::get('/legal', 'PagesController@legal')->name('legal');
 
 Route::get('/catalogue/{store_id}', 'CatalogueController@catalogue')->name('catalogue');
+
+Route::get('/store/addFavorite', 'StoreController@addFavorite')->name('addFavorite');
+Route::get('/store/removeFavorite', 'StoreController@removeFavorite')->name('removeFavorite');
+Route::get('/store/randomNearStores', 'StoreController@randomNearStores')->name('randomNearStores');

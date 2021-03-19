@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 
     @include('layouts.container_corp')
@@ -37,8 +41,17 @@
                 </span>
         @enderror
 
+        @if (Route::has('password.request'))
+            <a class="btn btn-link" href="{{ route('password.request') }}">
+                Mot de passe oublié ?
+            </a>
+        @endif
+
       <button type="submit" class="bouton_form brouge bsubmit" >Se connecter</button>
-      <button type="button" class="bouton_form bgoogle"><svg class="logoGoogle"><use xlink:href="../images/sprite.svg#google"></use></svg>Continuer avec Google</button>
+      <a href="{{ route('redirect_to_goggle') }}" type="button" class="bouton_form bgoogle">
+          <svg class="logoGoogle"><use xlink:href="../images/sprite.svg#google"></use></svg>
+          Continuer avec Google
+      </a>
       <p class="ou">— ou —</p>
       <a href="{{ route('register') }}" class="bouton_form bbleu">S'inscrire</a>
     </form>

@@ -56,13 +56,13 @@
                 @enderror
             </div>
 
-        @if($user->role->id != 1)
+        @if(!$user->is_basic())
             <div class="input_row" id="phone_row">
 
                 <label for="phonenumber">Nº de téléphone</label>
                 <input id="phonenumber" name="phonenumber" type="phonenumber" class="input"
                        @if(old('phonenumber')) value="{{ old('phonenumber') }}" @else value="{{ $user->phonenumber }}" @endif
-                       autocomplete="tel">
+                       required autocomplete="tel">
 
                 @error('phonenumber')
                 <span class="input_error">

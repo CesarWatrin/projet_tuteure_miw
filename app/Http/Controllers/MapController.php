@@ -24,7 +24,7 @@ class MapController extends Controller
       //dd(urlencode($request->input('lat')));
       if($request->has(['lat', 'lon', 'cat', 'subcat'])) {
 
-         $stores = Store::with('ratings.user')->where('category_id', $request->input('cat'))->where('subcategory_id', $request->input('subcat'))->get();
+         $stores = Store::with('ratings.user')->where('state', '>=', 3)->where('category_id', $request->input('cat'))->where('subcategory_id', $request->input('subcat'))->get();
          $stores_near = [];
          foreach($stores as $store) {
             if($this->distance($store->lat, $store->lon, $request->input('lat'), $request->input('lon'), 'kilometers') < 10) {
@@ -35,7 +35,7 @@ class MapController extends Controller
 
       } else if($request->has(['lat', 'lon', 'cat'])) {
 
-         $stores = Store::with('ratings.user')->where('category_id', $request->input('cat'))->get();
+         $stores = Store::with('ratings.user')->where('state', '>=', 3)->where('category_id', $request->input('cat'))->get();
 
          $stores_near = [];
          foreach($stores as $store) {
@@ -46,9 +46,7 @@ class MapController extends Controller
          return $stores_near;
 
       } else if($request->has(['lat', 'lon'])) {
-         $stores = Store::with('ratings.user')
-         //->where('( 6371 * acos( cos(radians('.$request->input('lat').')) * cos(radians(lat)) * cos(radians(lon) - radians('.$request->input('lon').')) + sin(radians('.$request->input('lat').')) * sin(radians(lat)) ) )', '<', 10)
-         ->get();
+         $stores = Store::with('ratings.user')->where('state', '>=', 3)->get();
 
          $stores_near = [];
          foreach($stores as $store) {
@@ -57,15 +55,13 @@ class MapController extends Controller
             }
          }
 
-         //dd($stores_near);
-
          return $stores_near;
       } else if ($request->has('ids')) {
          $ids = $request->input('ids');
          $ids = explode(',', $ids);
          $array_ids = array();
          foreach ($ids as $id) {
-            $stores = Store::with('ratings.user')->where('id', $id)->get();
+            $stores = Store::with('ratings.user')->where('state', '>=', 3)->where('id', $id)->get();
             array_push($array_ids, $stores[0]);
          }
          return $array_ids;
@@ -78,6 +74,9 @@ class MapController extends Controller
    }
 
    public function distance($latitude1, $longitude1, $latitude2, $longitude2, $unit = 'miles') {
+      if ($latitude1 == $latitude2 && $longitude1 == $longitude2) {
+         return 0;
+      }
       $theta = $longitude1 - $longitude2;
       $distance = (sin(deg2rad($latitude1)) * sin(deg2rad($latitude2))) + (cos(deg2rad($latitude1)) * cos(deg2rad($latitude2)) * cos(deg2rad($theta)));
       $distance = acos($distance);

@@ -12,6 +12,8 @@ Route::post('admin/register', 'App\Http\Controllers\Admin\Auth\RegisterControlle
 Route::get('admin/edit-account-info', 'App\Http\Controllers\Admin\MyAccountController@getAccountInfoForm')->middleware('web')->name('backpack.account.info');
 Route::post('admin/edit-account-info', 'App\Http\Controllers\Admin\MyAccountController@postAccountInfoForm')->middleware('web')->name('backpack.account.info.store');
 
+Route::post('admin/rating/{id}/removereport', 'App\Http\Controllers\Admin\RatingCrudController@removeReport')->middleware('web')->name('macyo_custom.removereport');
+
 Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => array_merge(
