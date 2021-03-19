@@ -89,9 +89,11 @@ function openFilters() {
          navigator.geolocation.getCurrentPosition(function(position) {
             carte.flyTo([position.coords.latitude, position.coords.longitude]);
             nearStores([position.coords.longitude, position.coords.latitude]);
+         }, () => {
+            alert('Votre géolocalisation est indisponible. Veuillez l\'activer dans les paramètres de votre navigateur.');
          });
       } else {
-         alert('Votre géolocalisation est indisponible');
+         alert('Votre géolocalisation est indisponible. Veuillez l\'activer dans les paramètres de votre navigateur.');
       }
    });
 
@@ -582,11 +584,17 @@ function userPosition() {
    if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function(position) {
          L.marker([position.coords.latitude, position.coords.longitude], {icon: markerPosition}).addTo(carte);
-         // carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
+         carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
+         nearStores([position.coords.longitude, position.coords.latitude]);
+      }, () => {
+         console.log('Votre géolocalisation est indisponible');
+         //coordonnées de Gap :
+         carte.setView([44.544606, 6.077989], 14, { animation: true });
+         nearStores([6.077989, 44.544606]);
       });
    } else {
       /* la géolocalisation n'est pas disponible */
-      alert('Votre géolocalisation est indisponible');
+      console.log('Votre géolocalisation est indisponible');
    }
 }
 userPosition();
@@ -598,10 +606,6 @@ var lon = url.searchParams.get("lon");
 if (lat !== null && lon !== null) {
    carte.setView([lat, lon], 20, { animation: true });
    nearStores([lon, lat]);
-} else {
-   //coordonnées de Gap :
-   carte.setView([44.544606, 6.077989], 14, { animation: true });
-   nearStores([6.077989, 44.544606]);
 }
 
 async function addView(store_id) {

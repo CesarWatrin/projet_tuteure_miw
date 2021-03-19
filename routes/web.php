@@ -59,3 +59,4 @@ Route::get('/catalogue/{store_id}', 'CatalogueController@catalogue')->name('cata
 
 Route::get('/store/addFavorite', 'StoreController@addFavorite')->name('addFavorite');
 Route::get('/store/removeFavorite', 'StoreController@removeFavorite')->name('removeFavorite');
+Route::get('/store/randomNearStores', 'StoreController@randomNearStores')->name('randomNearStores');
