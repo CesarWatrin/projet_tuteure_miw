@@ -24,7 +24,7 @@ class MapController extends Controller
       //dd(urlencode($request->input('lat')));
       if($request->has(['lat', 'lon', 'cat', 'subcat'])) {
 
-         $stores = Store::with('ratings.user')->where('category_id', $request->input('cat'))->where('subcategory_id', $request->input('subcat'))->get();
+         $stores = Store::with('ratings.user')->where('state', '>=', 3)->where('category_id', $request->input('cat'))->where('subcategory_id', $request->input('subcat'))->get();
          $stores_near = [];
          foreach($stores as $store) {
             if($this->distance($store->lat, $store->lon, $request->input('lat'), $request->input('lon'), 'kilometers') < 10) {
@@ -35,7 +35,7 @@ class MapController extends Controller
 
       } else if($request->has(['lat', 'lon', 'cat'])) {
 
-         $stores = Store::with('ratings.user')->where('category_id', $request->input('cat'))->get();
+         $stores = Store::with('ratings.user')->where('state', '>=', 3)->where('category_id', $request->input('cat'))->get();
 
          $stores_near = [];
          foreach($stores as $store) {
@@ -46,7 +46,7 @@ class MapController extends Controller
          return $stores_near;
 
       } else if($request->has(['lat', 'lon'])) {
-         $stores = Store::with('ratings.user')->get();
+         $stores = Store::with('ratings.user')->where('state', '>=', 3)->get();
 
          $stores_near = [];
          foreach($stores as $store) {
@@ -61,7 +61,7 @@ class MapController extends Controller
          $ids = explode(',', $ids);
          $array_ids = array();
          foreach ($ids as $id) {
-            $stores = Store::with('ratings.user')->where('id', $id)->get();
+            $stores = Store::with('ratings.user')->where('state', '>=', 3)->where('id', $id)->get();
             array_push($array_ids, $stores[0]);
          }
          return $array_ids;

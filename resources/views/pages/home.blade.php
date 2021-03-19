@@ -138,14 +138,14 @@
    <p>Les commerces populaires à proximité</p>
 </div>
 
-<div class="carousel_index">
-   @for($i = 0; $i < 4; $i++)
-      @include('layouts.store_card')
-   @endfor
-</div>
+<div class="carousel_index"></div>
 
 <form method="get" action="{{ route('map') }}">
    <button class="bouton plus">Voir plus de commerces</button>
 </form>
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/index.js') }}"></script>
+@endpush
