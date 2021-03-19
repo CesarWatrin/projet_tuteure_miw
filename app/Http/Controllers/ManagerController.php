@@ -22,20 +22,6 @@ class ManagerController extends Controller
         return view('pages.manager.stores_add',["categories" => $categories, "subcategories" => $subcategories]);
     }
 
-    /*public function dashboard() {
-        $manager_id = Auth::user()->id;
-        $stores = Store::where('manager_id', '=', $manager_id)->get();
-        return view('pages.dashboard', ['stores' => $stores]);
-    }*/
-
-    /*public function dashboard($storeId){
-        $manager_id = Auth::user()->id;
-        $stores = Store::where('manager_id', '=', $manager_id)->get();
-        $store_info = Store::where('id', '=', $storeId)->get();
-        return view('pages.dashboard', ['stores' => $stores, 'store_info' => $store_info]);
-    }*/
-
-
     public function storePost(Request $request)
     {
         //  var_dump($request);
@@ -102,8 +88,34 @@ class ManagerController extends Controller
         return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc, "categories" => $categories, "subcategories" => $subcategories]);
     }
 
-    public function modify_store(Request $request){
-       $store_data = Store::$request->update([]);
+    public function storeUpdate($id, Request $request)
+    {
+        $store = Store::where('id', '=', $id)->get();
+
+
+
+        $store->name = $request->input('name');
+        /*$store->phonenumber = $request->input('phonenumber');
+        $store->email = $request->input('email');
+        $store->website = $request->input('website');
+        $store->description = $request->input('description');
+
+        $store->ville = $request->input('ville');
+        $store->adrress1 = $request->input('address1');
+        $store->adrress2 = $request->input('address2');
+        $store->delivery = $request->input('delivery');
+        $store->delivery_conditions = $request->input('delivery_conditions');
+
+        $store->category_id = $request->input('category_id');
+        $store->subcategory_id = $request->input('subcategory_id');
+        $store->opening_hours = $request->input('opening_hours');
+        $store->siret = $request->input('siret');
+        $store->catalog = $request->input('catalog');*/
+
+
+        // !!!!! changement de code postal pas encore fait
+
+        $store->save();
         return back();
     }
 }
