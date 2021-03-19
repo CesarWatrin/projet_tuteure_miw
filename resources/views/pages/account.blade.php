@@ -93,6 +93,12 @@
                         </div>
                     @endforeach
                 </div>
+                @elseif(Auth::user()->is_manager())
+                <div class="infoCommerces">
+                    <span class="sous_titre">Mes commerces</span>
+                    <p class="infoGestion">Visualiser la liste des commerces et leur état d'activation, modifier les informations de ses commerces, ajouter un nouveau commerce, etc...</p>
+                    <a class="bouton_form brouge" href="{{ route('stores') }}">Gestion des commerces</a>
+                </div>
             @endif
         </div>
 
