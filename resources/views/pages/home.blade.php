@@ -138,7 +138,9 @@
    <p>Les commerces populaires à proximité</p>
 </div>
 
-<div class="carousel_index"></div>
+<div class="carousel_index">
+   <p class="nocom">Il n'y a aucun commerce à proximité de votre localisation</p>
+</div>
 
 <form method="get" action="{{ route('map') }}">
    <button class="bouton plus">Voir plus de commerces</button>
@@ -147,5 +149,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/index.js') }}"></script>
+   <script src="{{ asset('js/index.js') }}"></script>
 @endpush

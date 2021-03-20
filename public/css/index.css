@@ -992,6 +992,10 @@ body {
 .carousel_index .card {
   min-width: 270px;
 }
+.carousel_index .nocom {
+  width: 100%;
+  text-align: center;
+}
 
 .plus {
   width: 223px;
@@ -1077,6 +1081,10 @@ body {
   .plus {
     font-size: 20px;
     width: 300px;
+  }
+
+  .carousel_index .nocom {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
