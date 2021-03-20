@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-    <link href="{{ asset('css/register.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/connect.css') }}" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -154,10 +154,10 @@
             let radioUser = document.getElementById('Utilisateur');
             if(!radioUser.checked) {
                 document.getElementById('phone_row').style.display = 'block';
-                document.getElementById('phonenumber').setAttributeNode('required');
+                document.getElementById('phonenumber').setAttribute('required', 'true');
             } else {
                 document.getElementById('phone_row').style.display = 'none';
-                document.getElementById('phonenumber').removeAttributeNode('required');
+                document.getElementById('phonenumber').removeAttribute('required');
             }
         }
 

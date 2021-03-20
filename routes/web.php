@@ -17,6 +17,10 @@ Route::get('/', 'PagesController@home')->name('home');
 
 Auth::routes();
 
+Route::get('auth/google', 'GoogleController@redirectToGoogle')->name('redirect_to_goggle');
+Route::get('auth/google/callback', 'GoogleController@handleGoogleCallback')->name('handle_google_callback');
+Route::post('auth/google/register', 'GoogleController@registerWithGoogle')->name('register_with_google');
+
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/map', 'MapController@home')->name('map');
