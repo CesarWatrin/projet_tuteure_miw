@@ -12,6 +12,7 @@
       <img class="sky_wave" src="../images/sky_wave.svg" alt="wave">
       <a id="store_link" href="#"><h1 id="titre" class="titre"></h1><a>
       <p class="sub_title">Catalogue</p>
+      <div class="ckeditor_container">Ce magasin n'a aucun contenu dans son catalogue.</div>
    </div>
 
 @endsection
