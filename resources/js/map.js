@@ -97,6 +97,9 @@ function openFilters() {
       }
    });
 
+   var url_string = window.location.href;
+   var url = new URL(url_string);
+
    var select_cat = document.getElementById('select_cat');
    var select_subcat = document.getElementById('select_subcat');
    var area_search = document.getElementById('area_search');
@@ -129,8 +132,10 @@ function openFilters() {
          `;
       }
       if (select_cat.value != 0) {
+         window.history.replaceState({id: 'search'}, 'Carte | MAC-YO', '/map?cat='+select_cat.value);
          nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
       } else {
+         window.history.replaceState({id: 'search'}, 'Carte | MAC-YO', '/map');
          nearStores([carte.getCenter().lng, carte.getCenter().lat]);
       }
    });
@@ -140,6 +145,10 @@ function openFilters() {
    area_search.addEventListener('click', () => {
       nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
    });
+   var cat = url.searchParams.get("cat");
+   if (cat != null) {
+      select_cat.value = cat;
+   }
 }
 
 function switchFilter() {
@@ -585,12 +594,12 @@ function userPosition() {
       navigator.geolocation.getCurrentPosition(function(position) {
          L.marker([position.coords.latitude, position.coords.longitude], {icon: markerPosition}).addTo(carte);
          carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
-         nearStores([position.coords.longitude, position.coords.latitude]);
+         withParams(position.coords.latitude, position.coords.longitude);
       }, () => {
          console.log('Votre géolocalisation est indisponible');
          //coordonnées de Gap :
          carte.setView([44.544606, 6.077989], 14, { animation: true });
-         nearStores([6.077989, 44.544606]);
+         withParams(44.544606, 6.077989);
       });
    } else {
       /* la géolocalisation n'est pas disponible */
@@ -599,13 +608,20 @@ function userPosition() {
 }
 userPosition();
 
-var url_string = window.location.href;
-var url = new URL(url_string);
-var lat = url.searchParams.get("lat");
-var lon = url.searchParams.get("lon");
-if (lat !== null && lon !== null) {
-   carte.setView([lat, lon], 20, { animation: true });
-   nearStores([lon, lat]);
+function withParams(latitude, longitude) {
+   var url_string = window.location.href;
+   var url = new URL(url_string);
+   var lat = url.searchParams.get("lat");
+   var lon = url.searchParams.get("lon");
+   var cat = url.searchParams.get("cat");
+   if (lat !== null && lon !== null) {
+      carte.setView([lat, lon], 20, { animation: true });
+      nearStores([lon, lat]);
+   } else if (cat !== null) {
+      nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(cat));
+   } else {
+      nearStores([longitude, latitude]);
+   }
 }
 
 async function addView(store_id) {
