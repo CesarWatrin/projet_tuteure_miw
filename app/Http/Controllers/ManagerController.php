@@ -43,13 +43,13 @@ class ManagerController extends Controller
             'delivery_conditions' => ['nullable','string']
             ]);
 
-            
+
             $last_store = Store::orderBy('id','desc')->first();
             $newId = $last_store->id+1;
             $store = new Store();
-            
-            
-            
+
+
+
             $store->id = $newId;
             $store->name = $request->input('name');
             $store->address1 = $request->input('address1');
@@ -74,21 +74,12 @@ class ManagerController extends Controller
             $store->category_id = $request->input('category_id');
             $store->subcategory_id = $request->input('subcategory_id');
             $store->manager_id = Auth::id();
-            
+
             $request->file('photo')->storeAs('./images/store_'.$newId, 'commerce.jpg');
-    
+
             $store->save();
 
             return redirect()->route('stores');
-
-<<<<<<< HEAD
-
-            //creer comment-code
-            //modifier city
-            //RE SET LES NULLABLES
-=======
->>>>>>> e5677f39bf76632aa08a40f946d27b6ead254198
-
         }
 
     public function dashboard($storeId){
@@ -125,19 +116,38 @@ class ManagerController extends Controller
 
     public function storeUpdate($id, Request $request)
     {
-        $store = Store::where('id', '=', $id)->get();
+        $this->validate($request, [
+            'name' => ['required', 'string', 'min:2', 'max:191'],
+            'category_id' => ['required', 'string','min:1','max:1','exists:categories,id'],
+            'subcategory_id' => ['required', 'string','min:1','max:1','exists:subcategories,id'],
+            'phonenumber' => ['required', 'digits:10'],
+            'email' => ['required', 'string', 'email', 'max:191'],
+            'ville' => ['required','string','max:191'],
+            //'zip' => ['required','string','max:5','min:2'],
+            'address1' => ['required','string','min:1','max:191'],
+            'address2' => ['nullable','string','min:1','max:191'],
+            'description' => ['required','string','min:1'],
+            'catalog' => ['nullable','string'],
+            'opening_hours' => ['nullable','string','min:1'],
+            'siret' => ['required','string','digits:14'],
+            'website' => ['nullable','string','max:191'],
+            'delivery' => ['required','boolean'],
+            'delivery_conditions' => ['nullable','string']
+        ]);
 
+        $store = Store::where('id', '=', $id)->first();
 
+        $store->state = 3;
 
         $store->name = $request->input('name');
-        /*$store->phonenumber = $request->input('phonenumber');
+        $store->phonenumber = $request->input('phonenumber');
         $store->email = $request->input('email');
         $store->website = $request->input('website');
         $store->description = $request->input('description');
 
-        $store->ville = $request->input('ville');
-        $store->adrress1 = $request->input('address1');
-        $store->adrress2 = $request->input('address2');
+        $store->city = $request->input('ville');
+        $store->address1 = $request->input('address1');
+        $store->address2 = $request->input('address2');
         $store->delivery = $request->input('delivery');
         $store->delivery_conditions = $request->input('delivery_conditions');
 
@@ -145,7 +155,7 @@ class ManagerController extends Controller
         $store->subcategory_id = $request->input('subcategory_id');
         $store->opening_hours = $request->input('opening_hours');
         $store->siret = $request->input('siret');
-        $store->catalog = $request->input('catalog');*/
+        $store->catalog = $request->input('catalog');
 
 
         // !!!!! changement de code postal pas encore fait

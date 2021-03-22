@@ -39,7 +39,6 @@
             </div>
         </div>
 
-
         <div class="data_shop">
             <div class="data data_visitors">
                 <p>{{sizeof($store[0]->views_all)}}</p>
@@ -94,274 +93,302 @@
                 @endif
             </div>
         </div>
-    </div>
 
-    <div class="info_shop">
-        <div class="infos_header">
-            <div class="infos_title">
-                <svg>
-                    <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
-                </svg>
-                <h2>Votre Commerce</h2>
-            </div>
-            <div class="infos_categorie">
-                <p class="active_categorie">Général</p>
-                <p>Localisation</p>
-                <p>Complément</p>
-            </div>
-        </div>
-
-        <form method="post" action="{{route('store_update', ['id' => $store[0]->id])}}" enctype="multipart/form-data">
-            @csrf
-            <div class="infos_general infos_active">
-                <div class="infos_left">
-                    <div class="input-row">
-                        <label for="name"> Nom du commerce <span class="orange_requiered">*</span></label>
-                        <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name"
-                               onfocusout="verifyName(this.value)" value="{{isset($store) ? $store[0]->name: ""}}"
-                               required>
-                        @error('name')
-                        <span class="input_error">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="input-row">
-                        <label for="phonenumber">Téléphone <span class="orange_requiered">*</span></label>
-                        <input type="phone" id="phonenumber" class="input-store" placeholder="Numéro de Téléphone"
-                               name="phonenumber" onfocusout="verifyPhone(this.value)"
-                               value="{{isset($store) ? $store[0]->phonenumber: ""}}" required>
-                        @error('phonenumber')
-                        <span class="input_error">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="input-row">
-                        <label for="email">Adresse Email <span class="orange_requiered">*</span></label>
-                        <input type="email" id="email" class="input-store" placeholder="Adresse Email" name="email"
-                               onfocusout="verifyEmail(this.value)" value="{{isset($store) ? $store[0]->email: ""}}"
-                               required>
-                        @error('email')
-                        <span class="input_error">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="input-row">
-                        <label for="website">Site Web</label>
-                        <input type="text" id="website" class="input-store" placeholder="Url du site web" name="website"
-                               onfocusout="verifyWeb(this.value)" value="{{isset($store) ? $store[0]->website: ""}}"
-                               required>
-                        @error('website')
-                        <span class="input_error">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-
+        <div class="info_shop">
+            <div class="infos_header">
+                <div class="infos_title">
+                    <svg>
+                        <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
+                    </svg>
+                    <h2>Votre Commerce</h2>
                 </div>
-                <div class="infos_left">
-                    <div class="input-row">
-                        <label for="description">Description <span class="orange_requiered">*</span></label>
-                        <textarea class="input-store" id="description" name="description"
-                                  onfocusout="verifyDesc(this.value)"
-                                  placeholder="Description du commerce">{{isset($store) ? $store[0]->description: ""}}</textarea>
-                        @error('description')
-                        <span class="input_error">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
+                <button>Voir votre commerce</button>
+                <div class="infos_categorie">
+                    <p class="active_categorie">Général</p>
+                    <p>Localisation</p>
+                    <p>Complément</p>
                 </div>
             </div>
 
-            <div class="infos_localisation">
-                <div class="infos_left">
-                    <div class="input-row">
-                        <label for="ville">Ville <span class="orange_requiered">*</span></label>
-                        <input type="text" id="city_Id" class="input-store" placeholder="Ville" name="ville"
-                               onfocusout="verifyVille(this.value)" value="{{isset($store) ? $store[0]->city: ""}}"
-                               required>
-                        @error('ville')
-                        <span class="input_error">
+            <form method="post" action="{{route('store_update', ['id' => $store[0]->id])}}" enctype="multipart/form-data">
+                @csrf
+                <div class="infos_general infos_active">
+                    <div class="infos_left">
+                        <div class="input-row">
+                            <label for="name"> Nom du commerce <span class="orange_requiered">*</span></label>
+                            <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name"
+                                   onfocusout="verifyName(this.value)" value="{{isset($store) ? $store[0]->name: ""}}"
+                                   required>
+                            @error('name')
+                            <span class="input_error">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="phonenumber">Téléphone <span class="orange_requiered">*</span></label>
+                            <input type="phone" id="phonenumber" class="input-store" placeholder="Numéro de Téléphone"
+                                   name="phonenumber" onfocusout="verifyPhone(this.value)"
+                                   value="{{isset($store) ? $store[0]->phonenumber: ""}}" required>
+                            @error('phonenumber')
+                            <span class="input_error">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="email">Adresse Email <span class="orange_requiered">*</span></label>
+                            <input type="email" id="email" class="input-store" placeholder="Adresse Email" name="email"
+                                   onfocusout="verifyEmail(this.value)" value="{{isset($store) ? $store[0]->email: ""}}"
+                                   required>
+                            @error('email')
+                            <span class="input_error">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="website">Site Web</label>
+                            <input type="text" id="website" class="input-store" placeholder="Url du site web" name="website"
+                                   onfocusout="verifyWeb(this.value)" value="{{isset($store) ? $store[0]->website: ""}}"
+                                   required>
+                            @error('website')
+                            <span class="input_error">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
+                            @enderror
+                        </div>
+
                     </div>
-                    <div class="input-row">
-                        <label for="address1">Adresse <span class="orange_requiered">*</span></label>
-                        <input type="text" id="address1" class="input-store" placeholder="Adresse" name="address1"
-                               onfocusout="verifyAdresse1(this.value)"
-                               value="{{isset($store) ? $store[0]->address1: ""}}"
-                               required>
-                        @error('address1')
-                        <span class="input_error">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="input-row">
-                        <label for="address2">Complement d'adresse</label>
-                        <input type="text" id="address2" class="input-store" placeholder="Complement d'adresse"
-                               onfocusout="verifyAdresse2(this.value)"
-                               value="{{isset($store) ? $store[0]->address2: ""}}"
-                               name="address2">
-                        @error('address2')
-                        <span class="input_error">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
+                    <div class="infos_left">
+                        <div class="input-row">
+                            <label for="description">Description <span class="orange_requiered">*</span></label>
+                            <textarea class="input-store" id="description" name="description"
+                                      onfocusout="verifyDesc(this.value)"
+                                      placeholder="Description du commerce">{{isset($store) ? $store[0]->description: ""}}</textarea>
+                            @error('description')
+                            <span class="input_error">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
                     </div>
                 </div>
-                <div class="infos_right">
-                    <div class="input-row">
-                        <p>Livraison <span class="orange_requiered">*</span></p>
-                        @if(isset($store) && $store[0]->delivery)
-                            <div class="livraison_button">
-                                <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"
-                                       onclick="ischecked(this)"/>
-                                <label for="deliveryOui" class="livraison_label">
-                                    <span class="livraison_titre">Oui</span>
-                                </label>
-                            </div>
-                            <div class="livraison_button">
-                                <input type="radio" name="delivery" class="livraison_radio" id="deliveryNon" value="0"
-                                       checked/>
-                                <label for="deliveryNon" class="livraison_label">
-                                    <span class="livraison_titre">Non</span>
-                                </label>
-                            </div>
-                        @elseif(isset($store) && !$store[0]->delivery)
-                            <div class="livraison_button">
-                                <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"
-                                       onclick="ischecked(this)" checked/>
-                                <label for="deliveryOui" class="livraison_label">
-                                    <span class="livraison_titre">Oui</span>
-                                </label>
-                            </div>
-                            <div class="livraison_button">
-                                <input type="radio" name="delivery" class="livraison_radio" id="deliveryNon" value="0"/>
-                                <label for="deliveryNon" class="livraison_label">
-                                    <span class="livraison_titre">Non</span>
-                                </label>
-                            </div>
-                        @else
-                            <div class="livraison_button">
-                                <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"
-                                       onclick="ischecked(this)"/>
-                                <label for="deliveryOui" class="livraison_label">
-                                    <span class="livraison_titre">Oui</span>
-                                </label>
-                            </div>
-                            <div class="livraison_button">
-                                <input type="radio" name="delivery" class="livraison_radio" id="deliveryNon" value="0"/>
-                                <label for="deliveryNon" class="livraison_label">
-                                    <span class="livraison_titre">Non</span>
-                                </label>
-                            </div>
-                        @endif
-                        @error('delivery')
-                        <span class="input_error">
+
+                <div class="infos_localisation">
+                    <div class="infos_left">
+                        <div class="input-row">
+                            <label for="ville">Ville <span class="orange_requiered">*</span></label>
+                            <input type="text" id="city_Id" class="input-store" placeholder="Ville" name="ville"
+                                   onfocusout="verifyVille(this.value)" value="{{isset($store) ? $store[0]->city: ""}}"
+                                   required>
+                            @error('ville')
+                            <span class="input_error">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="address1">Adresse <span class="orange_requiered">*</span></label>
+                            <input type="text" id="address1" class="input-store" placeholder="Adresse" name="address1"
+                                   onfocusout="verifyAdresse1(this.value)"
+                                   value="{{isset($store) ? $store[0]->address1: ""}}"
+                                   required>
+                            @error('address1')
+                            <span class="input_error">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="address2">Complement d'adresse</label>
+                            <input type="text" id="address2" class="input-store" placeholder="Complement d'adresse"
+                                   onfocusout="verifyAdresse2(this.value)"
+                                   value="{{isset($store) ? $store[0]->address2: ""}}"
+                                   name="address2">
+                            @error('address2')
+                            <span class="input_error">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="infos_right">
+                        <div class="input-row">
+                            <p>Livraison <span class="orange_requiered">*</span></p>
+                            @if(isset($store) && $store[0]->delivery)
+                                <div class="livraison_button">
+                                    <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"
+                                           onclick="ischecked(this)"/>
+                                    <label for="deliveryOui" class="livraison_label">
+                                        <span class="livraison_titre">Oui</span>
+                                    </label>
+                                </div>
+                                <div class="livraison_button">
+                                    <input type="radio" name="delivery" class="livraison_radio" id="deliveryNon" value="0"
+                                           checked/>
+                                    <label for="deliveryNon" class="livraison_label">
+                                        <span class="livraison_titre">Non</span>
+                                    </label>
+                                </div>
+                            @elseif(isset($store) && !$store[0]->delivery)
+                                <div class="livraison_button">
+                                    <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"
+                                           onclick="ischecked(this)" checked/>
+                                    <label for="deliveryOui" class="livraison_label">
+                                        <span class="livraison_titre">Oui</span>
+                                    </label>
+                                </div>
+                                <div class="livraison_button">
+                                    <input type="radio" name="delivery" class="livraison_radio" id="deliveryNon" value="0"/>
+                                    <label for="deliveryNon" class="livraison_label">
+                                        <span class="livraison_titre">Non</span>
+                                    </label>
+                                </div>
+                            @else
+                                <div class="livraison_button">
+                                    <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"
+                                           onclick="ischecked(this)"/>
+                                    <label for="deliveryOui" class="livraison_label">
+                                        <span class="livraison_titre">Oui</span>
+                                    </label>
+                                </div>
+                                <div class="livraison_button">
+                                    <input type="radio" name="delivery" class="livraison_radio" id="deliveryNon" value="0"/>
+                                    <label for="deliveryNon" class="livraison_label">
+                                        <span class="livraison_titre">Non</span>
+                                    </label>
+                                </div>
+                            @endif
+                            @error('delivery')
+                            <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
-                        @enderror
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="delivery_conditions">Conditions de livraison</label>
+                            <input type="text" id="delivery_conditions" class="input-store"
+                                   placeholder="Conditions de livraison"
+                                   name="delivery_conditions"
+                                   value="{{isset($store) ? $store[0]->delivery_conditions: ""}}">
+                        </div>
+                        <input type="hidden" id="lat" name="lat"/>
+                        <input type="hidden" id="long" name="long"/>
                     </div>
-                    <div class="input-row">
-                        <label for="delivery_conditions">Conditions de livraison</label>
-                        <input type="text" id="delivery_conditions" class="input-store"
-                               placeholder="Conditions de livraison"
-                               name="delivery_conditions"
-                               value="{{isset($store) ? $store[0]->delivery_conditions: ""}}">
-                    </div>
-                    <input type="hidden" id="lat" name="lat"/>
-                    <input type="hidden" id="long" name="long"/>
                 </div>
-            </div>
 
-            <div class="infos_complementary">
-                <div class="infos_left">
-                    <div class="input-row">
-                        <label for="category_id">Catégorie <span class="orange_requiered">*</span></label>
-                        <select name="category_id" id="category_id" class="cat" onChange="toggleCat(this.value)">
-                            @if(isset($store))
-                                <option value="{{$store[0]->category_id}}">{{$store[0]->category->name}}</option>
-                            @else
-                            <option disabled selected>Catégorie du commerce</option>
-                            @endif
-                            @foreach($categories as $category)
+                <div class="infos_complementary">
+                    <div class="infos_left">
+                        <div class="input-row">
+                            <label for="category_id">Catégorie <span class="orange_requiered">*</span></label>
+                            <select name="category_id" id="category_id" class="cat" onChange="toggleCat(this.value)">
+                                @if(isset($store))
+                                    <option value="{{$store[0]->category_id}}">{{$store[0]->category->name}}</option>
+                                @else
+                                    <option disabled selected>Catégorie du commerce</option>
+                                @endif
+                                @foreach($categories as $category)
                                     @if($category->id != $store[0]->category_id)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endif
-                            @endforeach
-                        </select>
-                        @error('category_id')
-                        <span class="input_error">
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                            <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
-                        @enderror
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="subcategory_id">Sous-catégorie <span class="orange_requiered">*</span></label>
+                            <select name="subcategory_id" id="subcategory_id" class="cat">
+                                @if(isset($store))
+                                    <option value="{{$store[0]->subcategory_id}}">{{$store[0]->subcategory->name}}</option>
+                                @else
+                                    <option disabled selected>Sous-Catégorie du commerce</option>
+                                @endif
+                            </select>
+                            @error('subcategory_id')
+                            <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
+                            <textarea class="input-store" id="opening_hours" name="opening_hours"
+                                      onfocusout="verifyHoraires(this.value)"
+                                      placeholder="Horaires d'ouverture">{{isset($store) ? $store[0]->opening_hours: ""}}</textarea>
+                            @error('opening_hours')
+                            <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+                            @enderror
+                        </div>
+                        <div class="input-row">
+                            <label for="siret">Numéro de Siret <span class="orange_requiered">*</span></label>
+                            <input type="text" id="siret" class="input-store" placeholder="Numero de Siret" name="siret"
+                                   onfocusout="verifySiret(this.value)" value="{{isset($store) ? $store[0]->siret: ""}}"
+                                   required>
+                            @error('siret')
+                            <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="input-row">
-                        <label for="subcategory_id">Sous-catégorie <span class="orange_requiered">*</span></label>
-                        <select name="subcategory_id" id="subcategory_id" class="cat">
-                            @if(isset($store))
-                                <option value="{{$store[0]->subcategory_id}}">{{$store[0]->subcategory->name}}</option>
-                            @else
-                            <option disabled selected>Sous-Catégorie du commerce</option>
-                            @endif
-                        </select>
-                        @error('subcategory_id')
-                        <span class="input_error">
+                    <div class="infos_right">
+                        <div class="input-row">
+                            <label for="catalog">Catalogue de Produits</label>
+                            <textarea class="form-control" id="catalog"
+                                      name="catalog">{{isset($store) ? $store[0]->catalog: ""}}</textarea>
+                            @error('catalog')
+                            <span class="input_error">
                     <strong>{{ $message }}</strong>
                 </span>
-                        @enderror
-                    </div>
-                    <div class="input-row">
-                        <label for="opening_hours">Horaires <span class="orange_requiered">*</span></label>
-                        <textarea class="input-store" id="opening_hours" name="opening_hours"
-                                  onfocusout="verifyHoraires(this.value)"
-                                  placeholder="Horaires d'ouverture">{{isset($store) ? $store[0]->opening_hours: ""}}</textarea>
-                        @error('opening_hours')
-                        <span class="input_error">
-                    <strong>{{ $message }}</strong>
-                </span>
-                        @enderror
-                    </div>
-                    <div class="input-row">
-                        <label for="siret">Numéro de Siret <span class="orange_requiered">*</span></label>
-                        <input type="text" id="siret" class="input-store" placeholder="Numero de Siret" name="siret"
-                               onfocusout="verifySiret(this.value)" value="{{isset($store) ? $store[0]->siret: ""}}"
-                               required>
-                        @error('siret')
-                        <span class="input_error">
-                    <strong>{{ $message }}</strong>
-                </span>
-                        @enderror
+                            @enderror
+                        </div>
                     </div>
                 </div>
-                <div class="infos_right">
-                    <div class="input-row">
-                        <label for="catalog">Catalogue de Produits</label>
-                        <textarea class="form-control" id="catalog"
-                                  name="catalog">{{isset($store) ? $store[0]->catalog: ""}}</textarea>
-                        @error('catalog')
-                        <span class="input_error">
-                    <strong>{{ $message }}</strong>
-                </span>
-                        @enderror
-                    </div>
+
+                <div class="infos_buttons">
+                    <input type="reset" class="reset" value="Annuler">
+                    <input type="submit" class="submit" value="Modifier">
                 </div>
-            </div>
-
-            <div class="infos_buttons">
-                <input type="reset" class="reset" value="Annuler">
-                <input type="submit" class="submit" value="Modifier">
-            </div>
-        </form>
-
+            </form>
+        </div>
     </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         function resetClassnameInfo() {
