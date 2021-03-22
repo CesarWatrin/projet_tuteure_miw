@@ -588,6 +588,10 @@ body {
   display: none;
 }
 
+.infoGestion {
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .user {
     width: 100%;
@@ -607,5 +611,12 @@ body {
   .user .user_droite {
     grid-column: 2/3;
     margin-top: 0;
+  }
+  .user .infoCommerces {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

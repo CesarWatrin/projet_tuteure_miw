@@ -4,7 +4,6 @@
 <img class="waves" src="images/sky_wave.svg">
     <h1>Vos Commerces</h1>
     @if($user->stores === null)
-    t'as pas de store et toc l'abricot
     @else
     @foreach($user->stores as $store)
     <div class="card-store">

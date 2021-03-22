@@ -411,8 +411,6 @@ async function nearStores(coord, cat = 0, subcat = 0) {
                   <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
                   <p>${store.ratings[i].rating}/5</p>
                   </span>
-                  <div class="r_comment"></div>
-                  </div>
                   `;
                }
             }
