@@ -89,11 +89,16 @@ function openFilters() {
          navigator.geolocation.getCurrentPosition(function(position) {
             carte.flyTo([position.coords.latitude, position.coords.longitude]);
             nearStores([position.coords.longitude, position.coords.latitude]);
+         }, () => {
+            alert('Votre géolocalisation est indisponible. Veuillez l\'activer dans les paramètres de votre navigateur.');
          });
       } else {
-         alert('Votre géolocalisation est indisponible');
+         alert('Votre géolocalisation est indisponible. Veuillez l\'activer dans les paramètres de votre navigateur.');
       }
    });
+
+   var url_string = window.location.href;
+   var url = new URL(url_string);
 
    var select_cat = document.getElementById('select_cat');
    var select_subcat = document.getElementById('select_subcat');
@@ -127,8 +132,10 @@ function openFilters() {
          `;
       }
       if (select_cat.value != 0) {
+         window.history.replaceState({id: 'search'}, 'Carte | MAC-YO', '/map?cat='+select_cat.value);
          nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
       } else {
+         window.history.replaceState({id: 'search'}, 'Carte | MAC-YO', '/map');
          nearStores([carte.getCenter().lng, carte.getCenter().lat]);
       }
    });
@@ -138,6 +145,10 @@ function openFilters() {
    area_search.addEventListener('click', () => {
       nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(select_cat.value), parseInt(select_subcat.value));
    });
+   var cat = url.searchParams.get("cat");
+   if (cat != null) {
+      select_cat.value = cat;
+   }
 }
 
 function switchFilter() {
@@ -400,8 +411,6 @@ async function nearStores(coord, cat = 0, subcat = 0) {
                   <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
                   <p>${store.ratings[i].rating}/5</p>
                   </span>
-                  <div class="r_comment"></div>
-                  </div>
                   `;
                }
             }
@@ -582,26 +591,35 @@ function userPosition() {
    if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function(position) {
          L.marker([position.coords.latitude, position.coords.longitude], {icon: markerPosition}).addTo(carte);
-         // carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
+         carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
+         withParams(position.coords.latitude, position.coords.longitude);
+      }, () => {
+         console.log('Votre géolocalisation est indisponible');
+         //coordonnées de Gap :
+         carte.setView([44.544606, 6.077989], 14, { animation: true });
+         withParams(44.544606, 6.077989);
       });
    } else {
       /* la géolocalisation n'est pas disponible */
-      alert('Votre géolocalisation est indisponible');
+      console.log('Votre géolocalisation est indisponible');
    }
 }
 userPosition();
 
-var url_string = window.location.href;
-var url = new URL(url_string);
-var lat = url.searchParams.get("lat");
-var lon = url.searchParams.get("lon");
-if (lat !== null && lon !== null) {
-   carte.setView([lat, lon], 20, { animation: true });
-   nearStores([lon, lat]);
-} else {
-   //coordonnées de Gap :
-   carte.setView([44.544606, 6.077989], 14, { animation: true });
-   nearStores([6.077989, 44.544606]);
+function withParams(latitude, longitude) {
+   var url_string = window.location.href;
+   var url = new URL(url_string);
+   var lat = url.searchParams.get("lat");
+   var lon = url.searchParams.get("lon");
+   var cat = url.searchParams.get("cat");
+   if (lat !== null && lon !== null) {
+      carte.setView([lat, lon], 20, { animation: true });
+      nearStores([lon, lat]);
+   } else if (cat !== null) {
+      nearStores([carte.getCenter().lng, carte.getCenter().lat], parseInt(cat));
+   } else {
+      nearStores([longitude, latitude]);
+   }
 }
 
 async function addView(store_id) {

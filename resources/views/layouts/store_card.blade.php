@@ -21,7 +21,7 @@
       </div>
       <div class="icons">
          <div class="card_btn">
-            <svg class="icon"><use id="heart_fav" xlink:href="images/sprite.svg#heart_full"></use></svg>
+            <svg class="icon"><use class="heart_fav" id="heart_fav" xlink:href="images/sprite.svg#heart_full"></use></svg>
             <span>Favori</span>
          </div>
       </div>

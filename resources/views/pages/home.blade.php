@@ -139,9 +139,7 @@
 </div>
 
 <div class="carousel_index">
-   @for($i = 0; $i < 4; $i++)
-      @include('layouts.store_card')
-   @endfor
+   <p class="nocom">Il n'y a aucun commerce à proximité de votre localisation</p>
 </div>
 
 <form method="get" action="{{ route('map') }}">
@@ -149,3 +147,7 @@
 </form>
 
 @endsection
+
+@push('scripts')
+   <script src="{{ asset('js/index.js') }}"></script>
+@endpush

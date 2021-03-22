@@ -3,6 +3,10 @@
   width: 450px;
   max-width: 100%;
 }
+.form_center strong {
+  display: block;
+  text-align: center;
+}
 
 label {
   display: block;
@@ -84,6 +88,42 @@ label {
   text-align: center;
 }
 
+.roles_row {
+  display: flex;
+  flex-direction: column;
+}
+.roles_row .role_button {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.roles_row .role_radio {
+  display: none;
+}
+.roles_row .role_radio:checked ~ .role_label {
+  color: white;
+  background-color: #475BF5;
+}
+.roles_row .role_label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  border: solid #475BF5 1px;
+  border-radius: 15px;
+  color: #475BF5;
+  background-color: #FFFFFF;
+  padding: 5px 20px;
+  box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
+}
+.roles_row .role_titre {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 .rate {
   display: flex;
   flex-direction: row-reverse;
@@ -138,10 +178,18 @@ label {
   color: #FFFFFF;
   border: none;
   transition: 0.2s;
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
 }
 .bouton_form:hover {
   text-decoration: none;
   color: #FFFFFF;
+  cursor: pointer;
+}
+.bouton_form:disabled {
+  filter: grayscale(0.3) brightness(1.3);
+  cursor: not-allowed;
 }
 
 .bbleu {
@@ -158,7 +206,6 @@ label {
 }
 .brouge:hover {
   box-shadow: 0 2px 9px 0 rgba(228, 83, 75, 0.4);
-  cursor: pointer;
 }
 
 .bsubmit {
@@ -377,6 +424,10 @@ body {
   width: 450px;
   max-width: 100%;
 }
+.form_center strong {
+  display: block;
+  text-align: center;
+}
 
 label {
   display: block;
@@ -458,6 +509,42 @@ label {
   text-align: center;
 }
 
+.roles_row {
+  display: flex;
+  flex-direction: column;
+}
+.roles_row .role_button {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.roles_row .role_radio {
+  display: none;
+}
+.roles_row .role_radio:checked ~ .role_label {
+  color: white;
+  background-color: #475BF5;
+}
+.roles_row .role_label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  border: solid #475BF5 1px;
+  border-radius: 15px;
+  color: #475BF5;
+  background-color: #FFFFFF;
+  padding: 5px 20px;
+  box-shadow: 0 2px 9px 0 rgba(150, 180, 244, 0.2);
+}
+.roles_row .role_titre {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 .rate {
   display: flex;
   flex-direction: row-reverse;
@@ -512,10 +599,18 @@ label {
   color: #FFFFFF;
   border: none;
   transition: 0.2s;
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
 }
 .bouton_form:hover {
   text-decoration: none;
   color: #FFFFFF;
+  cursor: pointer;
+}
+.bouton_form:disabled {
+  filter: grayscale(0.3) brightness(1.3);
+  cursor: not-allowed;
 }
 
 .bbleu {
@@ -532,7 +627,6 @@ label {
 }
 .brouge:hover {
   box-shadow: 0 2px 9px 0 rgba(228, 83, 75, 0.4);
-  cursor: pointer;
 }
 
 .bsubmit {
@@ -754,12 +848,12 @@ body {
   z-index: 2;
   height: 300px;
   max-width: 270px;
-  padding: 10px;
 }
 .card .img_store {
   width: 100%;
   height: auto;
   cursor: pointer;
+  padding: 10px;
 }
 .card .img_store img {
   width: 250px;
@@ -767,7 +861,7 @@ body {
   border-radius: 16px;
 }
 .card .img_store:hover {
-  filter: drop-shadow(0px 4px 4px grey);
+  filter: drop-shadow(0px 4px 4px rgba(2, 11, 93, 0.25));
 }
 .card .infos_store {
   display: flex;
@@ -775,6 +869,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 10px 10px;
 }
 .card .id_store {
   display: none;
@@ -833,6 +928,7 @@ body {
 .icons .card_btn .icon {
   width: 2rem;
   height: 2rem;
+  margin: 0.1rem;
   transition: all 0.05s;
 }
 .icons .card_btn:hover {
@@ -841,6 +937,7 @@ body {
 .icons .card_btn:hover .icon {
   width: 2.2rem;
   height: 2.2rem;
+  margin: 0;
 }
 
 footer {
