@@ -5,6 +5,9 @@ return [
     'back_to_site' => 'Retour au site',
     'admin_portal' => 'Panneau d\'administration MAC-YO',
 
+    'stores_related' => 'Relatif aux commerces',
+    'users_related' => 'Relatif aux utilisateurs',
+
     'user' => 'Utilisateur',
     'users' => 'Utilisateurs',
     'surname' => 'Nom',
@@ -19,6 +22,11 @@ return [
     'comment' => 'Commentaire',
     'reported' => 'Signalé',
     'reported_only' => 'Commentaires signalés uniquement',
+
+    'category' => 'Catégorie',
+    'subcategory' => 'Sous-catégorie',
+    'subcategories' => 'Sous-catégories',
+    'can_be_deleted' => 'Peut être supprimé',
 
     'remove_report' => 'Suppr. signalement',
     'information' => 'Information',
