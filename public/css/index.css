@@ -848,12 +848,12 @@ body {
   z-index: 2;
   height: 300px;
   max-width: 270px;
-  padding: 10px;
 }
 .card .img_store {
   width: 100%;
   height: auto;
   cursor: pointer;
+  padding: 10px;
 }
 .card .img_store img {
   width: 250px;
@@ -861,7 +861,7 @@ body {
   border-radius: 16px;
 }
 .card .img_store:hover {
-  filter: drop-shadow(0px 4px 4px grey);
+  filter: drop-shadow(0px 4px 4px rgba(2, 11, 93, 0.25));
 }
 .card .infos_store {
   display: flex;
@@ -869,6 +869,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 10px 10px;
 }
 .card .id_store {
   display: none;
@@ -927,6 +928,7 @@ body {
 .icons .card_btn .icon {
   width: 2rem;
   height: 2rem;
+  margin: 0.1rem;
   transition: all 0.05s;
 }
 .icons .card_btn:hover {
@@ -935,6 +937,7 @@ body {
 .icons .card_btn:hover .icon {
   width: 2.2rem;
   height: 2.2rem;
+  margin: 0;
 }
 
 .index_header {
@@ -989,7 +992,7 @@ body {
 
 .accroche_index {
   text-align: center;
-  margin: 30px 0;
+  margin: 30px 1rem;
 }
 .accroche_index p {
   font-family: "Yeseva One", serif;
