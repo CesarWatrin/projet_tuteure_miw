@@ -14,7 +14,7 @@
     @csrf
         <div class="input-row">
             <label for="name"> Nom du commerce <span class="orange_requiered">*</span></label>
-            <input type="text" id="name" class="input-store" placeholder="Nom du commerce" name="name" onfocusout="verifyName(this.value)" autofocus required>
+            <input type="text" value="{{ old('name') }}" id="name" class="input-store" placeholder="Nom du commerce" name="name" onfocusout="verifyName(this.value)" autofocus required>
             @error('name')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
 
         <div class="input-row">
             <label for="category_id">Catégorie <span class="orange_requiered">*</span></label>
-            <select name="category_id" id="category_id" class="cat" onChange="toggleCat(this.value)">
+            <select name="category_id" value="{{ old('category_id') }}" id="category_id" class="cat" onChange="toggleCat(this.value)">
                 <option disabled selected>Catégorie du commerce</option>
                 @foreach($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
@@ -39,7 +39,7 @@
 
         <div class="input-row">
             <label for="subcategory_id">Sous-catégorie <span class="orange_requiered">*</span></label>
-            <select name="subcategory_id" id="subcategory_id" class="cat">
+            <select name="subcategory_id" value="{{ old('subcategory_id') }}" id="subcategory_id" class="cat">
                 <option disabled selected>Sous-Catégorie du commerce</option>
             </select>
             @error('subcategory_id')
@@ -51,7 +51,7 @@
 
         <div class="input-row">
             <label for="description">Description <span class="orange_requiered">*</span></label>
-            <textarea class="input-store" id="description" name="description"  onfocusout="verifyDesc(this.value)"  placeholder="Description du commerce"></textarea>
+            <textarea class="input-store" id="description" name="description" value="{{ old('description') }}" onfocusout="verifyDesc(this.value)"  placeholder="Description du commerce"></textarea>
             @error('description')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -61,7 +61,7 @@
 
         <div class="input-row">
             <label for="email">Adresse Email <span class="orange_requiered">*</span></label>
-            <input type="email" id="email" class="input-store" placeholder="Adresse Email" name="email" onfocusout="verifyEmail(this.value)" required>
+            <input type="email" id="email" value="{{ old('email') }}" class="input-store" placeholder="Adresse Email" name="email" onfocusout="verifyEmail(this.value)" required>
             @error('email')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -71,7 +71,7 @@
 
         <div class="input-row">
             <label for="phonenumber">Téléphone <span class="orange_requiered">*</span></label>
-            <input type="phone" id="phonenumber" maxlength="10" class="input-store" placeholder="Numéro de Téléphone" name="phonenumber" onfocusout="verifyPhone(this.value)" required>
+            <input type="phone" id="phonenumber" value="{{ old('phonenumber') }}" maxlength="10" class="input-store" placeholder="Numéro de Téléphone" name="phonenumber" onfocusout="verifyPhone(this.value)" required>
             @error('phonenumber')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -81,7 +81,7 @@
 
         <div class="input-row">
             <label for="ville">Ville <span class="orange_requiered">*</span></label>
-            <input type="text" id="city_Id" class="input-store" placeholder="Ville" name="ville"  onfocusout="verifyVille(this.value)" required>
+            <input type="text" id="city_Id" value="{{ old('ville') }}" class="input-store" placeholder="Ville" name="ville"  onfocusout="verifyVille(this.value)" required>
             @error('ville')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -92,7 +92,7 @@
 
         <div class="input-row">
             <label for="zip">Code Postal <span class="orange_requiered">*</span></label>
-            <input type="text" id="zip" maxlength="5" class="input-store" placeholder="Code Postal" name="zip"  onfocusout="verifyZip(this.value)" required>
+            <input type="text" id="zip" maxlength="5" value="{{ old('zip') }}" class="input-store" placeholder="Code Postal" name="zip"  onfocusout="verifyZip(this.value)" required>
             @error('zip')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -103,7 +103,7 @@
 
         <div class="input-row">
             <label for="address1">Adresse <span class="orange_requiered">*</span></label>
-            <input type="text" id="address1" class="input-store" placeholder="Adresse" name="address1"  onfocusout="verifyAdresse1(this.value)" required>
+            <input type="text" id="address1" value="{{ old('address1') }}" class="input-store" placeholder="Adresse" name="address1"  onfocusout="verifyAdresse1(this.value)" required>
             @error('address1')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -113,7 +113,7 @@
 
         <div class="input-row">
             <label for="address2">Complement d'adresse</label>
-            <input type="text" id="address2" class="input-store" placeholder="Complement d'adresse" name="address2" >
+            <input type="text" id="address2" class="input-store" value="{{ old('address2') }}" placeholder="Complement d'adresse" name="address2" >
             @error('address2')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -123,7 +123,7 @@
 
         <div class="input-row">
             <label for="catalog">Catalogue de Produits</label>
-            <textarea class="form-control" id="catalog"  name="catalog"></textarea>
+            <textarea class="form-control" id="catalog" value="{{ old('catalog') }}" name="catalog"></textarea>
             @error('catalog')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -133,7 +133,7 @@
 
         <div class="input-file">
             <label for="photo">Photo du magasin <span class="orange_requiered">*</span></label>
-            <input type="file" id="photo" name="photo" accept="image/png, image/jpeg" required>
+            <input type="file" id="photo" name="photo" value="{{ old('photo') }}" accept="image/png, image/jpeg" required>
             @error('photo')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -144,7 +144,7 @@
 
         <div class="input-row">
             <label for="opening_hours">Horaires</label>
-            <textarea class="input-store" id="opening_hours" name="opening_hours"   placeholder="Horaires d'ouverture"></textarea>
+            <textarea class="input-store" id="opening_hours" name="opening_hours"  value="{{ old('opening_hours') }}" placeholder="Horaires d'ouverture"></textarea>
             @error('opening_hours')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -154,7 +154,7 @@
         
         <div class="input-row">
             <label for="siret">Numéro de Siret <span class="orange_requiered">*</span></label>
-            <input type="text" id="siret" class="input-store" placeholder="Numero de Siret" name="siret"  onfocusout="verifySiret(this.value)"  required>
+            <input type="text" id="siret" class="input-store" maxlength="14" placeholder="Numero de Siret" name="siret" value="{{ old('siret') }}" onfocusout="verifySiret(this.value)"  required>
             @error('siret')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -164,7 +164,7 @@
 
         <div class="input-row">
             <label for="website">Site Web</label>
-            <input type="text" id="website" class="input-store" placeholder="Url du site web" name="website"  onfocusout="verifyWeb(this.value)" required>
+            <input type="text" id="website" class="input-store" placeholder="Url du site web" name="website" value="{{ old('website') }}" onfocusout="verifyWeb(this.value)">
             @error('website')
                 <span class="input_error">
                     <strong>{{ $message }}</strong>
@@ -197,10 +197,10 @@
 
         <div class="input-row">
             <label for="delivery_conditions">Conditions de livraison</label>
-            <input type="text" id="delivery_conditions" class="input-store" placeholder="Conditions de livraison" name="delivery_conditions">
+            <input type="text" value="{{ old('delivery_conditions') }}" id="delivery_conditions" class="input-store" placeholder="Conditions de livraison" name="delivery_conditions">
         </div>
 
-        <input type="submit" class="bouton_form brouge bsubmit" value="Ajouter le commerce">
+        <input type="submit" id="submit" class="bouton_form brouge bsubmit" title="Veuillez completer tous les champs" disabled value="Ajouter le commerce">
 
         <input type="hidden" id="lat" name="lat" />
         <input type="hidden" id="long" name="long" />
@@ -300,8 +300,8 @@ CKEDITOR.replace( 'catalog' );
             description.style.borderColor = "red"
             description.style.color = "red"
             description.setAttribute('title','La description du commerce doit comporter au minimum 5 caracteres.')
-            
         }
+            console.log(descriptionValid)
         validateForm()
     }
 
@@ -322,7 +322,8 @@ CKEDITOR.replace( 'catalog' );
             email.setAttribute('title','Veuillez de saisir une adresse email valide.')
             console.log()
         }
-        console.log(content)
+        console.log(emailValid)
+        validateForm()
         
     }
 
@@ -343,7 +344,8 @@ CKEDITOR.replace( 'catalog' );
             phonenumber.setAttribute('title','Veuillez de saisir un numéro de téléphone valide. Format: 0102030405')
             console.log()
         }
-        console.log(content)
+        console.log(phonenumberValid)
+        validateForm()
     }
 
     function verifyVille(content)
@@ -359,7 +361,7 @@ CKEDITOR.replace( 'catalog' );
             city.style.borderColor = "red"
             city.style.color = "red"
         }
-        console.log(content)
+        console.log(cityValid)
         getCoords()
     }
 
@@ -376,7 +378,7 @@ CKEDITOR.replace( 'catalog' );
             address1.style.borderColor = "red"
             address1.style.color = "red"
         }
-        console.log(content)
+        console.log(address1Valid)
         getCoords();
     }
 
@@ -397,6 +399,8 @@ CKEDITOR.replace( 'catalog' );
             siret.style.color = "red"
             siret.setAttribute('title','Veuillez de saisir un numéro de Siret valide.')
         } 
+        console.log(siretValid)
+        validateForm()
     }
     
     function verifyWeb(content)
@@ -414,6 +418,8 @@ CKEDITOR.replace( 'catalog' );
             website.style.color = "red"
             phonenumber.setAttribute('title','Veuillez de saisir une Url valide.')
         }
+        console.log(websiteValid)
+        validateForm()
     }
     
     function verifyZip(content)
@@ -431,6 +437,7 @@ CKEDITOR.replace( 'catalog' );
             zip.setAttribute('title','Veuillez saisir un code postal valide.')
             
         }
+        console.log(zipValid)
         validateForm()
     }
 
@@ -447,16 +454,26 @@ CKEDITOR.replace( 'catalog' );
         document.getElementById('lat').value = lat;
         document.getElementById('long').value = long;
 
-        console.log("la long: "+long+" la lat "+lat)        
+        console.log("la long: "+long+" la lat "+lat)     
+        validateForm()   
     }
+
+    let valider = document.getElementById("submit")
+            valider.style.backgroundColor = "#feb3b1";
 
     function validateForm()
     {
         
         //rajouter code postal et desc et cat
-        if(nameValid && emailValid && phonenumberValid && cityValid && address1Valid && opening_hoursValid && siretValid && websiteValid)
+        if(nameValid && emailValid && phonenumberValid && cityValid && address1Valid && siretValid)
         {
-            
+            valider.style.backgroundColor = "#ff847c";
+            valider.removeAttribute("disabled")
+            console.log("C4EST BOOOON")
+        }
+        else{
+            valider.style.backgroundColor = "#feb3b1";
+            valider.setAttribute("disabled",true)
         }
     }
 

@@ -46,3 +46,5 @@ mix.sass('resources/sass/stores_add.scss', 'public/css').sourceMaps();
 mix.sass('resources/sass/dashboard.scss', 'public/css').sourceMaps();
 
 mix.sass('resources/sass/ratings.scss', 'public/css').sourceMaps();
+
+mix.sass('resources/sass/404.scss', 'public/css').sourceMaps();
