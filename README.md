@@ -4,7 +4,7 @@
 
 ## ☑️ Le projet
 
-Dans le cadre de la Licence Professionnelle MIW à Gap. Nous avons réalisé par groupe de 4 étudiants, un site web dédié au Click and Collect pour les petits commerçants en France.
+Dans le cadre de la Licence Professionnelle MIW à Gap, nous avons réalisé pendant 12 semaines par groupe de 4 étudiants, un site web dédié au Click and Collect pour les petits commerçants en France.
 
 Le but étant de permettre à n'importe quel gérant de magasin de se créer un compte et de pouvoir y renseigner les informations relatives à son ou ses commerces. Il peut par la suite gérer ses commerces ainsi que gérer les avis déposés par les consommateurs.
 
@@ -32,9 +32,9 @@ L'équipe du projet Mac-Yo est composée de 4 étudiants de la promo MIW 2020-20
 
 ➡️ <a href="https://www.yohansalamone.com/" target="_blank">Yohan Salamone</a>
 
-➡️ Anthony Brochier
+➡️ <a href="https://github.com/antho-fly" target="_blank">Anthony Brochier</a>
 
-➡️ Maxime Didier
+➡️ <a href="https://github.com/maxBDL" target="_blank">Maxime Didier</a>
 </strong>
 
 
