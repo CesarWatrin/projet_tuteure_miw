@@ -100,7 +100,7 @@
         @if (Route::current()->uri !== 'map')
            <footer>
               <div class="wave">
-                <img src="{{ asset('images/footer.svg') }}" alt="footer_wave">
+                <img src="{{ asset('images/footer.svg') }}" alt="footer vague">
               </div>
               <div class="content_footer">
                 <p>Retrouvez-nous</p>
