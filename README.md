@@ -26,8 +26,6 @@ La partie back-office est quant à elle réalisée grâce à l'outil Backpack fo
 
 L'équipe du projet Mac-Yo est composée de 4 étudiants de la promo MIW 2020-2021 à Gap.
 
-
-<strong>
 ➡️ <a href="https://cesarwatrin.fr" target="_blank">César Watrin</a>
 
 ➡️ <a href="https://www.yohansalamone.com/" target="_blank">Yohan Salamone</a>
@@ -35,8 +33,6 @@ L'équipe du projet Mac-Yo est composée de 4 étudiants de la promo MIW 2020-20
 ➡️ <a href="https://github.com/antho-fly" target="_blank">Anthony Brochier</a>
 
 ➡️ <a href="https://github.com/maxBDL" target="_blank">Maxime Didier</a>
-</strong>
-
 
 ## ☑️ Le site
 
