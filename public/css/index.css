@@ -1085,6 +1085,7 @@ body {
   margin-left: 10px;
   max-width: 1085px;
   margin: 0 auto;
+  overflow-y: hidden;
 }
 .carousel_index .card {
   min-width: 270px;

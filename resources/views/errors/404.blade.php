@@ -38,7 +38,7 @@
       text-decoration:none;
       font-family: Nunito, sans-serif;
       font-size: 2rem;
-      
+
     }
 
     .perdu{
@@ -48,7 +48,7 @@
       color: #020b5d;
       order:0;
     }
-    
+
     .tqt{
       text-align:center;
       color: #475BF5;
@@ -56,7 +56,7 @@
       order:2;
       font-family: Nunito, sans-serif;
     }
-    
+
     svg{
       order:1;
       margin:20px;
@@ -64,7 +64,7 @@
 
 
 @media screen and (min-width: 481px) {
-    
+
 .retourHome{
   font-size: 1.6rem;
   height:86px;
@@ -81,7 +81,7 @@
 
 }
 @media screen and (min-width: 992px) {
-   
+
   .retourHome{
   font-size: 1.3rem;
   height:73px;
@@ -293,8 +293,8 @@
 
 
 
-<h1 class="perdu">Oups, ce n'etait pas censé se produire</h1>
-<h2 class="tqt">Mais pas d'inquietude, nous allons vous ramener à bon port</h2>
+<h1 class="perdu">Oups, ce n'était pas censé se produire !</h1>
+<h2 class="tqt">Pas d'inquiétude, nous allons vous ramener à bon port.</h2>
 
 <a class="retourHome" href="/">Retour à l'accueil</a>
 </div>
