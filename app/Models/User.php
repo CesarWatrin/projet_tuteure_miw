@@ -63,6 +63,10 @@ class User extends Authenticatable
         return $this->role->id === 3; // 3 = "Modérateur" dans la bdd
     }
 
+    public function getFullnameAttribute() {
+        return $this->firstname.' '.$this->surname;
+    }
+
     public function stores() {
         return $this->hasMany(Store::class, 'manager_id');
     }

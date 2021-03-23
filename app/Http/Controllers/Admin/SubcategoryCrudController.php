@@ -18,6 +18,7 @@ class SubcategoryCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation { show as traitShow; }
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -86,7 +87,7 @@ class SubcategoryCrudController extends CrudController
                 $this->crud->addClause('whereDoesntHave', 'stores');
             });
 
-        $this->crud->denyAccess('show');
+        //$this->crud->denyAccess('show');
 
         $this->crud->removeButton('delete');
         $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete_if_no_children', 'end');
@@ -140,5 +141,14 @@ class SubcategoryCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    public function show($id)
+    {
+        $this->crud->set('show.setFromDb', false);
+
+        $content = $this->traitShow($id);
+
+        return $content;
     }
 }

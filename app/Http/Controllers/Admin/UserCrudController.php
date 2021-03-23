@@ -23,6 +23,7 @@ class UserCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation { store as traitStore; }
+    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation { show as traitShow; }
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -34,28 +35,6 @@ class UserCrudController extends CrudController
         CRUD::setModel(\App\Models\User::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/user');
         CRUD::setEntityNameStrings(trans('macyo_custom.user'), trans('macyo_custom.users'));
-    }
-
-    /**
-     * Define what happens when the List operation is loaded.
-     *
-     * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
-     * @return void
-     */
-    protected function setupListOperation()
-    {
-        //CRUD::column('surname');
-        //CRUD::column('firstname');
-        //CRUD::column('phonenumber');
-        //CRUD::column('email');
-        //CRUD::column('password');
-        //CRUD::column('role_id');
-
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
-         */
 
         $this->crud->addColumn([
             'name' => 'surname',
@@ -84,8 +63,42 @@ class UserCrudController extends CrudController
             'type' => 'relationship',
             'label' => trans('macyo_custom.role'),
             'entity'    => 'role',
-            'attribute' => 'name'
+            'attribute' => 'name','wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+
+                    switch ($entry->role_id) {
+                        case 1: return 'badge badge-secondary';
+                        case 2: return 'badge badge-primary';
+                        case 3: return 'badge badge-dark';
+                        default: return null;
+                    }
+
+                },
+            ],
         ]);
+    }
+
+    /**
+     * Define what happens when the List operation is loaded.
+     *
+     * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
+     * @return void
+     */
+    protected function setupListOperation()
+    {
+        //CRUD::column('surname');
+        //CRUD::column('firstname');
+        //CRUD::column('phonenumber');
+        //CRUD::column('email');
+        //CRUD::column('password');
+        //CRUD::column('role_id');
+
+        /**
+         * Columns can be defined using the fluent syntax or array syntax:
+         * - CRUD::column('price')->type('number');
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
+         */
 
         $this->crud->addFilter([
             'name'  => 'role',
@@ -97,7 +110,7 @@ class UserCrudController extends CrudController
             $this->crud->addClause('where', 'role_id', $value);
         });
 
-        $this->crud->denyAccess('show');
+        //$this->crud->denyAccess('show');
     }
 
     /**
@@ -191,5 +204,14 @@ class UserCrudController extends CrudController
         $this->crud->unsetValidation(); // Validation has already been run
 
         return $this->traitStore();
+    }
+
+    public function show($id)
+    {
+        $this->crud->set('show.setFromDb', false);
+
+        $content = $this->traitShow($id);
+
+        return $content;
     }
 }
