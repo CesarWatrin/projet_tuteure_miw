@@ -18,6 +18,8 @@
   width: 100%;
   opacity: 0.5;
   transition: all 0.2s;
+  color: white;
+  text-decoration: none;
 }
 .navbar .onglet div {
   margin: auto 0;
@@ -82,6 +84,9 @@
     color: #020B5D;
     transition: position 0.2s;
   }
+  .navbar .onglet {
+    color: #020B5D;
+  }
   .navbar .onglet div:first-of-type span {
     color: transparent;
   }
@@ -99,6 +104,9 @@
   .navbar_blue {
     position: fixed;
     background-color: #020B5D;
+    color: white;
+  }
+  .navbar_blue .onglet {
     color: white;
   }
   .navbar_blue .onglet:hover div:first-of-type span {
