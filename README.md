@@ -29,6 +29,7 @@ L'équipe du projet Mac-Yo est composée de 4 étudiants de la promo MIW 2020-20
 
 <strong>
 ➡️ <a href="https://cesarwatrin.fr" target="_blank">César Watrin</a>
+</br>
 
 ➡️ <a href="https://yohansalamone.com" target="_blank">Yohan Salamone</a>
 
