@@ -73,12 +73,11 @@ class AccountController extends Controller
         $rating = null;
         $messages = [
             'comments_code.required' => 'Ce champ est requis.',
-            'comments_code.min' => 'Le code doit faire 10 caractères.',
-            'comments_code.max' => 'Le code doit faire 10 caractères.',
+            'comments_code.min' => 'Le code doit faire au minimum 9 caractères.',
             'comments_code.exists' => 'Le code ne correspond à aucun commerce.'
         ];
         $this->validate($request, [
-            'comments_code' => ['required', 'string', 'min:10', 'max:10', 'exists:stores,comments_code'],
+            'comments_code' => ['required', 'string', 'min:9', 'exists:stores,comments_code'],
         ], $messages);
         $store = Store::all()->where('comments_code', $request->input('comments_code'))->first();
         $rating = Rating::all()->where('user_id', Auth::id())->where('store_id', $store->id)->first();
