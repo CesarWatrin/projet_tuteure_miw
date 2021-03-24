@@ -79,6 +79,10 @@ class User extends Authenticatable
         return $this->hasMany(Rating::class);
     }
 
+    public function moderations() {
+        return $this->hasMany(Moderation::class);
+    }
+
     /**
      * Send the password reset notification.
      *

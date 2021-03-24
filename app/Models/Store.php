@@ -29,6 +29,10 @@ class Store extends Model
         return $this->hasMany(Rating::class);
     }
 
+    public function moderations() {
+        return $this->hasMany(Moderation::class);
+    }
+
     public function pictures() {
         return $this->belongsToMany(Picture::class);
     }
