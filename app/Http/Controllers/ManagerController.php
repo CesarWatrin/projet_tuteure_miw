@@ -83,35 +83,43 @@ class ManagerController extends Controller
         }
 
     public function dashboard($storeId){
+        $idOwner = Auth::id();
         $store = Store::where('id', '=', $storeId)->get();
-        $comments = Rating::where('store_id', '=', $storeId)->get();
-        $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
-        $categories = Category::all();
-        $subcategories = Subcategory::all();
-        $shops = Store::where('category_id', '=', $store[0]->category_id)->get();
-        $shops_avg = [];
-        foreach ($shops as $shop){
-            $shop_avg = Rating::where('store_id', '=', $shop->id)->avg('rating');
-            if ($shop_avg != null){
-                array_push($shops_avg, $shop_avg);
+
+        if ($idOwner != $store[0]->manager_id){
+            return redirect()->route('stores');
+        }else{
+            $comments = Rating::where('store_id', '=', $storeId)->get();
+            $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
+            $categories = Category::all();
+            $subcategories = Subcategory::all();
+            $shops = Store::where('category_id', '=', $store[0]->category_id)->get();
+            $shops_avg = [];
+            foreach ($shops as $shop){
+                $shop_avg = Rating::where('store_id', '=', $shop->id)->avg('rating');
+                if ($shop_avg != null){
+                    array_push($shops_avg, $shop_avg);
+                }
+
             }
+            rsort($shops_avg);
+            $rank_c = array_search($avg, $shops_avg)+1;
 
-        }
-        rsort($shops_avg);
-        $rank_c = array_search($avg, $shops_avg)+1;
-
-        $shops = Store::where('subcategory_id', '=', $store[0]->subcategory_id)->get();
-        $shops_avg = [];
-        foreach ($shops as $shop){
-            $shop_avg = Rating::where('store_id', '=', $shop->id)->avg('rating');
-            if ($shop_avg != null){
-                array_push($shops_avg, $shop_avg);
+            $shops = Store::where('subcategory_id', '=', $store[0]->subcategory_id)->get();
+            $shops_avg = [];
+            foreach ($shops as $shop){
+                $shop_avg = Rating::where('store_id', '=', $shop->id)->avg('rating');
+                if ($shop_avg != null){
+                    array_push($shops_avg, $shop_avg);
+                }
             }
-
+            rsort($shops_avg);
+            $rank_sc = array_search($avg, $shops_avg)+1;
+            return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc, "categories" => $categories, "subcategories" => $subcategories]);
         }
-        rsort($shops_avg);
-        $rank_sc = array_search($avg, $shops_avg)+1;
-        return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc, "categories" => $categories, "subcategories" => $subcategories]);
+
+
+
     }
 
     public function storeUpdate($id, Request $request)
