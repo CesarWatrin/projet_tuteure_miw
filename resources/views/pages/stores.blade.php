@@ -14,7 +14,7 @@
         <div class="info-store">
             <h2 class="titre-store">{{$store->name}}</h2>
             <div class="contain">
-                <a href="#dashboard" class="voir-info">
+                <a href="/dashboard/{{$store->id}}" class="voir-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30.31" height="18.758" viewBox="0 0 15.31 9.758">
                     <g id="view" transform="translate(0 -92.835)">
                         <g id="Groupe_106" data-name="Groupe 106" transform="translate(0 92.835)">

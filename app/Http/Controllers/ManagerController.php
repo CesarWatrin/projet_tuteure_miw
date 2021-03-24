@@ -126,8 +126,8 @@ class ManagerController extends Controller
     {
         $this->validate($request, [
             'name' => ['required', 'string', 'min:2', 'max:191'],
-            'category_id' => ['required', 'string','min:1','max:1','exists:categories,id'],
-            'subcategory_id' => ['required', 'string','min:1','max:1','exists:subcategories,id'],
+            'category_id' => ['required', 'string','exists:categories,id'],
+            'subcategory_id' => ['nullable', 'string','exists:subcategories,id'],
             'phonenumber' => ['required', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:191'],
             'ville' => ['required','string','max:191'],
