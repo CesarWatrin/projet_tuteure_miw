@@ -123,7 +123,7 @@ class ManagerController extends Controller
             'phonenumber' => ['required', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:191'],
             'ville' => ['required','string','max:191'],
-            //'zip' => ['required','string','max:5','min:2'],
+            'zip' => ['required','string','max:5','min:2'],
             'address1' => ['required','string','min:1','max:191'],
             'address2' => ['nullable','string','min:1','max:191'],
             'description' => ['required','string','min:1'],
@@ -150,6 +150,9 @@ class ManagerController extends Controller
         $store->address2 = $request->input('address2');
         $store->delivery = $request->input('delivery');
         $store->delivery_conditions = $request->input('delivery_conditions');
+        $store->zip = $request->input('zip');
+        $store->lat = $request->input('lat');
+        $store->lon = $request->input('long');
 
         $store->category_id = $request->input('category_id');
         $store->subcategory_id = $request->input('subcategory_id');
@@ -157,10 +160,15 @@ class ManagerController extends Controller
         $store->siret = $request->input('siret');
         $store->catalog = $request->input('catalog');
 
-
-        // !!!!! changement de code postal pas encore fait
-
         $store->save();
+        return back();
+    }
+
+    public function commentReport($id)
+    {
+        $comment = Rating::where('id', '=', $id)->first();
+        $comment->reported = 1;
+        $comment->save();
         return back();
     }
 }

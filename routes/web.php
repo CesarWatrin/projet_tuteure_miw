@@ -48,7 +48,7 @@ Route::post('/api/view/add', 'MapController@addView')->name('addView');
 
 Route::get('/dashboard/{store_id}', 'ManagerController@dashboard')->name('dashboard');
 Route::post('/dashboard/{id}', 'ManagerController@storeUpdate')->name('store_update');
-
+Route::get('/report/{id}', 'ManagerController@commentReport')->name('comment_report');
 
 
 Route::get('/store_card', 'Store_cardController@home')->name('store_card');

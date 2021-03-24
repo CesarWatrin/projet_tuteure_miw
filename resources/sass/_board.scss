@@ -1,9 +1,10 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .dashboard{
+
+    .dashboard {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -13,20 +14,22 @@
     }
 }
 
-.dashboard{
-    .header_dashboard{
+.dashboard {
+    .header_dashboard {
         margin-bottom: 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        h1{
+
+        h1 {
             text-align: center;
             font-family: Nunito;
             color: $dark_blue;
 
         }
-        a{
+
+        a {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -38,12 +41,13 @@
             width: 150px;
             height: 40px;
         }
-        a:hover{
+
+        a:hover {
             background-color: $light_blue;
         }
     }
 
-    .dashboard_bar{
+    .dashboard_bar {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -51,7 +55,7 @@
     }
 }
 
-.shops{
+.shops {
     margin-top: 25px;
     border-radius: 15px;
     background-color: $white;
@@ -61,10 +65,10 @@
     margin-bottom: 25px;
     color: $dark_blue;
     font-family: "Yeseva One";
-    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
 }
 
-.data_time{
+.data_time {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -74,26 +78,29 @@
     border-radius: 15px;
     width: 300px;
     margin-bottom: 25px;
-    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-    p{
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+
+    p {
         margin: 0;
         color: $light_blue;
         font-family: "Yeseva One";
     }
-    .active_data{
+
+    .active_data {
         color: $dark_blue;
         border-bottom: solid 3px $dark_red;
     }
 }
 
-.rewards{
+.rewards {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 95%;
     margin-bottom: 75px;
-    .reward{
+
+    .reward {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -101,42 +108,50 @@
         border-radius: 50%;
         height: 200px;
         width: 200px;
-        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-        p{
+        box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+
+        p {
             color: $white;
             font-family: "Yeseva One";
             margin: 0;
             text-align: center;
         }
-        p:first-child{
+
+        p:first-child {
             padding-top: 5px;
             font-size: 35px;
         }
-        p:nth-child(2n){
+
+        p:nth-child(2n) {
             font-size: 20px;
         }
-        svg{
+
+        svg {
             width: 200px;
         }
 
     }
-    .categorie_reward{
+
+    .categorie_reward {
         background-color: $light_red;
         align-self: flex-end;
-        svg{
+
+        svg {
             color: $dark_blue;
         }
     }
-    .subcategorie_reward{
+
+    .subcategorie_reward {
         background-color: $normal_blue;
         align-self: flex-start;
-        svg{
+
+        svg {
             color: $light_red;
         }
     }
 }
 
-.top_product{
+.top_product {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -147,25 +162,28 @@
     border-radius: 15px;
     padding-top: 25px;
     color: $white;
-    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-    h2{
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+
+    h2 {
         font-family: "Nunito";
         font-size: 30px;
     }
-    h3{
+
+    h3 {
         font-family: "Nunito";
         font-size: 20px;
     }
 }
 
-.data_shop{
+.data_shop {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 50px;
-    .data{
+
+    .data {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -173,39 +191,46 @@
         width: 165px;
         height: 165px;
         border-radius: 15px;
-        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-        p{
+        box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+
+        p {
             margin: 0;
             font-family: "Yeseva One";
             font-size: 20px;
             color: $dark_blue;
         }
     }
-    .data_visitors{
+
+    .data_visitors {
         background-color: $light_blue;
         margin-bottom: 20px;
-        p{
+
+        p {
             color: $white;
         }
     }
-    .data_avg{
+
+    .data_avg {
         background-color: $white;
         margin-bottom: 20px;
     }
-    .data_delivery{
+
+    .data_delivery {
         background-color: $white;
         margin-bottom: 20px;
     }
-    .data_followers{
+
+    .data_followers {
         background-color: $light_red;
         margin-bottom: 20px;
-        p{
+
+        p {
             color: $white;
         }
     }
 }
 
-.container_comments{
+.container_comments {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -213,28 +238,31 @@
     margin-top: 50px;
     background-color: $white;
     border-radius: 15px;
-    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
     width: 325px;
     height: 500px;
     padding: 15px 5px 5px 10px;
-    h3{
+
+    h3 {
         font-family: "Yeseva One";
         font-size: 30px;
         color: $dark_blue;
         margin-bottom: 25px;
     }
-    .comments{
+
+    .comments {
         width: 100%;
         overflow-y: auto;
-        -ms-overflow-style: none;  /* IE and Edge */
+        -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none;
     }
-    .comments::-webkit-scrollbar{
+
+    .comments::-webkit-scrollbar {
         display: none;
     }
 }
 
-.comment{
+.comment {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -243,9 +271,10 @@
     background-color: $bg_blue;
     border-radius: 25px;
     margin-bottom: 15px;
-    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.075);
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.075);
     padding: 5px;
-    .comment_text{
+
+    .comment_text {
         /*display: flex;
         flex-direction: row;
         justify-content: center;
@@ -266,46 +295,56 @@
             fill: $dark_blue;
         }*/
     }
-    .comment_actions{
+
+    .comment_actions {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 10%;
         height: 100%;
-        .rating_note{
+
+        .rating_note {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
             color: $dark_red;
             height: 50%;
-            svg{
+
+            svg {
                 width: 50%;
                 fill: $dark_red;
             }
-            p{
+
+            p {
                 font-size: 20px;
                 font-family: Nunito;
                 margin: 0;
             }
         }
-        svg{
-            width: 100%;
-            height: 50%;
+
+        a {
+            height: 50px;
+            svg {
+                width: 100%;
+                fill: red;
+            }
         }
+
     }
 }
 
 @media (min-width: 576px) {
-    .rewards{
+    .rewards {
         flex-direction: row;
         justify-content: space-evenly;
     }
 
-    .data_shop{
+    .data_shop {
         margin-top: 0;
         width: 80%;
+
         .data {
             width: 200px;
             height: 200px;
@@ -314,9 +353,10 @@
         }
     }
 
-    .container_comments{
+    .container_comments {
         width: 80%;
-        .comments{
+
+        .comments {
             justify-content: center;
             width: 85%;
         }
@@ -326,8 +366,8 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 992px) {
-    .container{
-        .dashboard{
+    .container {
+        .dashboard {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
@@ -336,23 +376,28 @@
             margin-top: 85px;
             width: 80%;
         }
-        .head{
+
+        .head {
             height: 860px;
-            .rewards{
+
+            .rewards {
                 display: flex;
                 flex-direction: column;
                 height: 65%;
-                .reward{
+
+                .reward {
                     margin-bottom: 25px;
                 }
             }
         }
-        .data_shop{
+
+        .data_shop {
             display: flex;
             flex-direction: column;
             width: 50%;
         }
-        .container_comments{
+
+        .container_comments {
             height: 860px;
             margin: 0;
             width: 80%;
