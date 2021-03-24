@@ -28,7 +28,7 @@
 
 <div class="popup">
    <div class="popup_header">
-      <img src="images/wave_popup.svg" alt="wave-image">
+      <img src="images/wave_popup.svg" alt="image vague">
    </div>
    <div class="popup_body">
       @include('layouts.store_card')

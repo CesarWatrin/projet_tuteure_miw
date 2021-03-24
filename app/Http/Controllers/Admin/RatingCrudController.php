@@ -36,16 +36,15 @@ class RatingCrudController extends CrudController
 
         $this->crud->addColumn([
             'name' => 'user',
-            'label' => trans('macyo_custom.firstname'),
+            'label' => trans('macyo_custom.user'),
             'type' => 'relationship',
-            'attribute' => 'firstname',
-        ]);
-        $this->crud->addColumn([
-            'name' => 'user',
-            'label' => trans('macyo_custom.surname'),
-            'type' => 'relationship',
-            'attribute' => 'surname',
-            'key' => 'user_surname'
+            'attribute' => 'fullname',
+            'wrapper' => [
+                'element' => 'a',
+                'href' => function ($crud, $column, $entry, $related_key) {
+                    return backpack_url('user/'.$related_key.'/show');
+                },
+            ]
         ]);
 
         $this->crud->addColumn([
@@ -53,6 +52,12 @@ class RatingCrudController extends CrudController
             'label' => trans('macyo_custom.store'),
             'type' => 'relationship',
             'attribute' => 'name',
+            'wrapper' => [
+                'element' => 'a',
+                'href' => function ($crud, $column, $entry, $related_key) {
+                    return backpack_url('store/'.$related_key.'/show');
+                },
+            ]
         ]);
 
         $this->crud->addColumn([
@@ -69,7 +74,18 @@ class RatingCrudController extends CrudController
         $this->crud->addColumn([
             'name' => 'reported',
             'label' => trans('macyo_custom.reported'),
-            'type' => 'boolean'
+            'type' => 'boolean',
+            'wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+
+                    if($entry->reported)
+                        return 'badge badge-error';
+
+                    return 'badge badge-secondary';
+
+                },
+            ],
         ]);
 
         $this->crud->denyAccess('create');

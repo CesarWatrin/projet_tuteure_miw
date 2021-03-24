@@ -4,9 +4,10 @@
     "/js/favori.js": "/js/favori.js",
     "/js/navbar.js": "/js/navbar.js",
     "/js/catalogue.js": "/js/catalogue.js",
+    "/js/index.js": "/js/index.js",
     "/css/app.css": "/css/app.css",
     "/css/account.css": "/css/account.css",
-    "/css/connect.css": "/css/connect.css",
+    "/css/index.css": "/css/index.css",
     "/css/catalogue.css": "/css/catalogue.css",
     "/css/navbar.css": "/css/navbar.css",
     "/css/map.css": "/css/map.css",
@@ -15,7 +16,7 @@
     "/css/dashboard.css": "/css/dashboard.css",
     "/css/stores_add.css": "/css/stores_add.css",
     "/css/stores.css": "/css/stores.css",
-    "/css/index.css": "/css/index.css",
     "/css/footer.css": "/css/footer.css",
-    "/css/favoris.css": "/css/favoris.css"
+    "/css/favoris.css": "/css/favoris.css",
+    "/css/connect.css": "/css/connect.css"
 }

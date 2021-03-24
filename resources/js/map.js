@@ -276,8 +276,6 @@ async function nearStores(coord, cat = 0, subcat = 0) {
       var stores = await response.json();
    }
 
-   console.log(stores);
-
    stores.forEach((store) => {
       if (store.category_id == 1) {
          var marker = L.marker([store.lat, store.lon], {icon: markerRestaurant}).bindTooltip(
@@ -594,7 +592,6 @@ function userPosition() {
          carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
          withParams(position.coords.latitude, position.coords.longitude);
       }, () => {
-         console.log('Votre géolocalisation est indisponible');
          //coordonnées de Gap :
          carte.setView([44.544606, 6.077989], 14, { animation: true });
          withParams(44.544606, 6.077989);
