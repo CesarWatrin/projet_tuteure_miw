@@ -409,13 +409,18 @@
             });
         }*/
 
-            let buttonReport = document.getElementsByClassName('buttonReport')[0];
+        {{$i = 0}}
+        for (let i = 0; i < document.getElementsByClassName('buttonReport').length; i++) {
+            let buttonReport = document.getElementsByClassName('buttonReport')[i];
             buttonReport.addEventListener('click', function(){
                 rep = confirm("Voulez vous vraiment signaler le commentaire ?");
                 if (rep) {
-                    buttonReport.href = "{{route('comment_report', ['id' => $comment->id])}}";
+                    {{--dd($comments)--}}
+                    {{--buttonReport.href = "{{route('comment_report', ['id' => $comments[$i]->id])}}";--}}
+                    {{$i = $i +1}}
                 }
             });
+        }
 
         CKEDITOR.replace( 'catalog' );
 
