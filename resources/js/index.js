@@ -111,6 +111,11 @@ async function randomNearStores(coord) {
 
       for (var i = 0; i < heart_fav.length; i++) {
          card_btn[i].addEventListener('click', addToFav);
+         img_store[i].addEventListener('click', () => {
+            var lat = event.target.parentNode.parentNode.children[1].children[0].children[3].children[1].textContent;
+            var lon = event.target.parentNode.parentNode.children[1].children[0].children[3].children[2].textContent;
+            window.location.href = window.location.origin + '/map?lat=' + lat + '&lon=' + lon;
+         });
       }
    }
 }

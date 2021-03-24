@@ -1269,12 +1269,12 @@ body {
   z-index: 2;
   height: 300px;
   max-width: 270px;
-  padding: 10px;
 }
 .card .img_store {
   width: 100%;
   height: auto;
   cursor: pointer;
+  padding: 10px;
 }
 .card .img_store img {
   width: 250px;
@@ -1282,7 +1282,7 @@ body {
   border-radius: 16px;
 }
 .card .img_store:hover {
-  filter: drop-shadow(0px 4px 4px grey);
+  filter: drop-shadow(0px 4px 4px rgba(2, 11, 93, 0.25));
 }
 .card .infos_store {
   display: flex;
@@ -1290,6 +1290,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 10px 10px;
 }
 .card .id_store {
   display: none;
@@ -1348,6 +1349,7 @@ body {
 .icons .card_btn .icon {
   width: 2rem;
   height: 2rem;
+  margin: 0.1rem;
   transition: all 0.05s;
 }
 .icons .card_btn:hover {
@@ -1356,6 +1358,7 @@ body {
 .icons .card_btn:hover .icon {
   width: 2.2rem;
   height: 2.2rem;
+  margin: 0;
 }
 
 footer {
@@ -1411,4 +1414,29 @@ footer {
 
 #store_link:hover {
   color: #020b5d;
+}
+
+.ckeditor_container {
+  border: thick double #020b5d;
+  border-radius: 16px;
+  margin: 70px auto 0 auto;
+  padding: 20px;
+  max-width: 1100px;
+}
+.ckeditor_container * {
+  width: 100% !important;
+  height: auto !important;
+}
+.ckeditor_container p {
+  text-align: justify;
+}
+.ckeditor_container img {
+  max-width: 400px !important;
+  margin: 15px;
+}
+.ckeditor_container table {
+  border: #020b5d;
+}
+.ckeditor_container table tr, .ckeditor_container table td, .ckeditor_container table th {
+  padding: 10px;
 }

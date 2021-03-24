@@ -13,7 +13,7 @@ $corner: 16px;
    bottom: 0;
    left: 0;
    z-index: 100;
-    padding-bottom: env(safe-area-inset-bottom); // padding pour barre de navigation iPhone borderless
+   padding-bottom: env(safe-area-inset-bottom); // padding pour barre de navigation iPhone borderless
 
    .onglet {
       display: flex;
@@ -21,6 +21,8 @@ $corner: 16px;
       width: 100%;
       opacity: 0.5;
       transition: all 0.2s;
+      color: white;
+      text-decoration: none;
 
       div {
          margin: auto 0;
@@ -103,42 +105,49 @@ $corner: 16px;
       left: auto;
       top: 20px;
       right: 20px;
-       padding-bottom: 0; // suppression du padding pour barre de navigation iPhone borderless
+      padding-bottom: 0; // suppression du padding pour barre de navigation iPhone borderless
+      position: absolute;
+      background-color: transparent;
+      color: $color;
+      transition: position 0.2s;
 
-       position: absolute;
-       background-color: transparent;
-       color: $color;
-       transition: position 0.2s;
+      .onglet {
+         color: $color;
+      }
 
-       .onglet div:first-of-type span {
-           color: transparent;
-       }
+      .onglet div:first-of-type span {
+         color: transparent;
+      }
 
-       .onglet:hover div:first-of-type span {
-           color: $color;
-       }
+      .onglet:hover div:first-of-type span {
+         color: $color;
+      }
 
-       .currentPage div:first-of-type span {
-           color: $color;
-       }
+      .currentPage div:first-of-type span {
+         color: $color;
+      }
 
-       .onglet {
+      .onglet {
          width: initial;
          padding: 5px;
       }
    }
 
-    .navbar_blue {
-        position: fixed;
-        background-color: $color;
-        color: white;
+   .navbar_blue {
+      position: fixed;
+      background-color: $color;
+      color: white;
 
-        .onglet:hover div:first-of-type span {
-            color: white;
-        }
+      .onglet {
+         color: white;
+      }
 
-        .currentPage div:first-of-type span {
-            color: white;
-        }
-    }
+      .onglet:hover div:first-of-type span {
+         color: white;
+      }
+
+      .currentPage div:first-of-type span {
+         color: white;
+      }
+   }
 }

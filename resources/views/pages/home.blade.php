@@ -41,7 +41,7 @@
    <div class="etape">
       <div class="etape_img">
          <!-- <svg><use xlink:href="images/sprite.svg#illustration_index_1"></use></svg> -->
-         <img src="images/illustration_index_1.svg" alt="illustration_1">
+         <img src="images/illustration_index_1.svg" alt="carte">
       </div>
       <div class="etape_text">
          <p>Trouvez les commerces proposant la vente à emporter près de chez vous.</p>
@@ -55,7 +55,7 @@
          <p>Pour chaque commerce, consultez le catalogue et les avis laissés par les clients.</p>
       </div>
       <div class="etape_img">
-         <img src="images/illustration_index_2.svg" alt="illustration_2">
+         <img src="images/illustration_index_2.svg" alt="magasin">
       </div>
    </div>
    <div class="etape etape_link_2">
@@ -63,7 +63,7 @@
    </div>
    <div class="etape">
       <div class="etape_img">
-         <img src="images/illustration_index_3.svg" alt="illustration_3">
+         <img src="images/illustration_index_3.svg" alt="sac">
       </div>
       <div class="etape_text">
          <p>Contactez le commerce pour passer commande.</p>
@@ -102,7 +102,7 @@
    </div>
    <div class="categorie">
       <div class="cat_img">
-         <a href="{{ route('map', 'cat=4') }}"><img src="images/icon_cat/fruits_legumes.svg" alt="fruits_et_legumes"></a>
+         <a href="{{ route('map', 'cat=4') }}"><img src="images/icon_cat/fruits_legumes.svg" alt="fruits et legumes"></a>
       </div>
       <div class="cat_text">
          <p>Fruits et légumes</p>
@@ -110,7 +110,7 @@
    </div>
    <div class="categorie">
       <div class="cat_img">
-         <a href="{{ route('map', 'cat=5') }}"><img src="images/icon_cat/debit_boissons.svg" alt="debit_de_boissons"></a>
+         <a href="{{ route('map', 'cat=5') }}"><img src="images/icon_cat/debit_boissons.svg" alt="debit de boissons"></a>
       </div>
       <div class="cat_text">
          <p>Débit de boissons</p>
@@ -118,7 +118,7 @@
    </div>
    <div class="categorie">
       <div class="cat_img">
-         <a href="{{ route('map', 'cat=6') }}"><img src="images/icon_cat/magasin_vetements.svg" alt="magasins_de_vetements"></a>
+         <a href="{{ route('map', 'cat=6') }}"><img src="images/icon_cat/magasin_vetements.svg" alt="magasins de vetements"></a>
       </div>
       <div class="cat_text">
          <p>Magasin de vêtements</p>

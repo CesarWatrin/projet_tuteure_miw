@@ -37,9 +37,9 @@
     <div id="app">
       <div class="navbar" id="navbar">
          @if (Route::current()->uri === '/')
-            <div class="onglet currentPage" onclick="location.href='{{ url('/') }}';">
+            <a class="onglet currentPage" href="{{ url('/') }}">
          @else
-            <div class="onglet" onclick="location.href='{{ url('/') }}';">
+            <a class="onglet" href="{{ url('/') }}">
          @endif
             <div>
                 <svg><use xlink:href="{{ asset('images/sprite.svg#accueil') }}"></use></svg>
@@ -48,11 +48,11 @@
             <div>
                <span>Accueil</span>
             </div>
-         </div>
+         </a>
          @if (Route::current()->uri === 'map')
-            <div class="onglet currentPage" onclick="location.href='{{ route('map') }}';">
+            <a class="onglet currentPage" href="{{ route('map') }}">
          @else
-            <div class="onglet" onclick="location.href='{{ route('map') }}';">
+            <a class="onglet" href="{{ route('map') }}">
          @endif
             <div>
                 <svg><use xlink:href="{{ asset('images/sprite.svg#carte') }}"></use></svg>
@@ -61,11 +61,11 @@
             <div>
                <span>Carte</span>
             </div>
-         </div>
+         </a>
          @if (Route::current()->uri === 'favoris')
-            <div class="onglet currentPage" onclick="location.href='{{ route('favoris') }}';">
+            <a class="onglet currentPage" href="{{ route('favoris') }}">
          @else
-            <div class="onglet" onclick="location.href='{{ route('favoris') }}';">
+            <a class="onglet" href="{{ route('favoris') }}">
          @endif
             <div>
                 <svg><use xlink:href="{{ asset('images/sprite.svg#favoris') }}"></use></svg>
@@ -74,11 +74,11 @@
             <div>
                <span>Favoris</span>
             </div>
-         </div>
+         </a>
          @if (Route::current()->uri === 'login' || Route::current()->uri === 'register' || Route::current()->uri === 'account')
-            <div class="onglet currentPage" onclick="location.href='{{ route('login') }}';">
+            <a class="onglet currentPage" href="{{ route('login') }}">
          @else
-            <div class="onglet" onclick="location.href='{{ route('login') }}';">
+            <a class="onglet" href="{{ route('login') }}">
          @endif
             <div>
                 <svg><use xlink:href="{{ asset('images/sprite.svg#mon_compte') }}"></use></svg>
@@ -91,7 +91,7 @@
                 <span>Connexion</span>
                 @endif
             </div>
-         </div>
+         </a>
       </div>
         <main>
             @yield('content')
@@ -100,7 +100,7 @@
         @if (Route::current()->uri !== 'map')
            <footer>
               <div class="wave">
-                <img src="{{ asset('images/footer.svg') }}" alt="footer_wave">
+                <img src="{{ asset('images/footer.svg') }}" alt="footer vague">
               </div>
               <div class="content_footer">
                 <p>Retrouvez-nous</p>
