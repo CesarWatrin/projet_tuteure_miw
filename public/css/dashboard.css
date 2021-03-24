@@ -319,48 +319,35 @@
   }
 }
 @media (min-width: 992px) {
-  .container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: start;
-    margin: 0 auto;
-    margin-top: 100px;
-    width: 90%;
-    height: 860px;
-  }
   .container .dashboard {
-    margin: 0;
-    width: 25%;
-    height: 860px;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
-  }
-  .container .dashboard .rewards {
-    margin-top: 75px;
-    flex-direction: column;
-  }
-  .container .dashboard .rewards .reward {
-    margin: 0 auto;
-    align-self: normal;
-    margin-bottom: 50px;
-  }
-
-  h1 {
-    font-size: 45px;
-  }
-
-  .data_shop {
-    margin-top: 0;
-    width: 25%;
-  }
-  .data_shop .data {
-    width: 200px;
-    height: 200px;
-  }
-
-  .container_comments {
-    margin: 0;
-    width: 50%;
+    align-items: flex-start;
     height: 860px;
+    margin-top: 85px;
+    width: 80%;
+  }
+  .container .head {
+    height: 860px;
+  }
+  .container .head .rewards {
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+  }
+  .container .head .rewards .reward {
+    margin-bottom: 25px;
+  }
+  .container .data_shop {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .container .container_comments {
+    height: 860px;
+    margin: 0;
+    width: 80%;
   }
 }
 .info_shop {
@@ -378,17 +365,31 @@
   align-items: center;
   width: 100%;
 }
+.info_shop .infos_header button {
+  color: #FFFFFF;
+  height: 50px;
+  width: 200px;
+  border-radius: 15px;
+  border: 2px solid #020b5d;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+  padding-left: 10px;
+  background-color: #020b5d;
+}
+.info_shop .infos_header button:hover {
+  background-color: #96b4f4;
+}
 .info_shop form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .infos_title {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -396,6 +397,7 @@
   height: 40px;
   width: 40px;
   color: #020b5d;
+  margin-right: 20px;
 }
 .infos_title h2 {
   color: #020b5d;
@@ -431,9 +433,6 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  position: absolute;
-  transform: translateX(-150%);
-  transition: 1s ease-in-out;
 }
 .infos_general .infos_left, .infos_complementary .infos_left, .infos_localisation .infos_left {
   display: flex;
@@ -528,12 +527,11 @@
   box-shadow: none;
 }
 
-.infos_active {
-  position: relative;
-  transform: translateX(0%);
-  transition: 1s ease-in-out;
-}
-
+/*.infos_active{
+    position: relative;
+    transform: translateX(0%);
+    transition: 1s ease-in-out;
+}*/
 .infos_buttons {
   display: flex;
   flex-direction: row;

@@ -327,44 +327,36 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 992px) {
     .container{
-        flex-direction: row;
-        justify-content: center;
-        align-items: start;
-        margin: 0 auto;
-        margin-top: 100px;
-        width: 90%;
-        height: 860px;
         .dashboard{
-            margin: 0;
-            width: 25%;
-            height: 860px;
+            display: flex;
+            flex-direction: row;
             justify-content: flex-start;
+            align-items: flex-start;
+            height: 860px;
+            margin-top: 85px;
+            width: 80%;
+        }
+        .head{
+            height: 860px;
             .rewards{
-                margin-top: 75px;
+                display: flex;
                 flex-direction: column;
+                height: 65%;
                 .reward{
-                    margin: 0 auto;
-                    align-self: normal;
-                    margin-bottom: 50px;
+                    margin-bottom: 25px;
                 }
             }
         }
-    }
-
-    h1{font-size: 45px}
-
-    .data_shop{
-        margin-top: 0;
-        width: 25%;
-        .data {
-            width: 200px;
-            height: 200px;
+        .data_shop{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        .container_comments{
+            height: 860px;
+            margin: 0;
+            width: 80%;
         }
     }
 
-    .container_comments{
-        margin: 0;
-        width: 50%;
-        height: 860px;
-    }
 }

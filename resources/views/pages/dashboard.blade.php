@@ -10,89 +10,87 @@
 @section ('content')
     <div class="container">
         <div class="dashboard">
-            <div class="header_dashboard">
-                <h1>{{$store[0]->name}}</h1>
-                <a href="{{ route('stores') }}"><- Vos Magasins</a>
-            </div>
-        <!--<div class="dashboard_bar">
-                <select class="shops" onchange="changeStore()">
-                    {{--@foreach($stores as $store)
-                        <option value="{{$store->id}}">{{$store->name}}</option>
-                    @endforeach--}}
-            </select>
-        </div>-->
-            <div class="rewards">
-                <div class="categorie_reward reward">
-                    <p>n°{{$rank_c}}</p>
-                    <p>{{ucfirst($store[0]->category->name)}}</p>
-                    <svg>
-                        <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
-                    </svg>
+            <div class="head">
+                <div class="header_dashboard">
+                    <h1>{{$store[0]->name}}</h1>
+                    <a href="{{ route('stores') }}"><- Vos Magasins</a>
                 </div>
-                <div class="subcategorie_reward reward">
-                    <p>n°{{$rank_sc}}</p>
-                    <p>{{ucfirst($store[0]->subcategory->name)}}</p>
-                    <svg>
-                        <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
-                    </svg>
+
+                <div class="rewards">
+                    <div class="categorie_reward reward">
+                        <p>n°{{$rank_c}}</p>
+                        <p>{{ucfirst($store[0]->category->name)}}</p>
+                        <svg>
+                            <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
+                        </svg>
+                    </div>
+
+                    <div class="subcategorie_reward reward">
+                        <p>n°{{$rank_sc}}</p>
+                        <p>{{ucfirst($store[0]->subcategory->name)}}</p>
+                        <svg>
+                            <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="data_shop">
-            <div class="data data_visitors">
-                <p>{{sizeof($store[0]->views_all)}}</p>
-                <p>Visiteurs</p>
-            </div>
-            <div class="data data_avg">
-                <p>{{round($avg, 1)}}</p>
-                <p>Moyenne</p>
-            </div>
-            <div class="data data_delivery">
-                <p>{{sizeof($store[0]->ratings)}}</p>
-                <p>Avis</p>
-            </div>
-            <div class="data data_followers">
-                <p>{{sizeof($store[0]->favorited_by)}}</p>
-                <p>Abonnés</p>
-            </div>
-        </div>
 
-        <div class="container_comments">
-            <h3>Commentaires</h3>
-            <p>Nombre de commentaires: {{sizeof($comments)}}</p>
-            <div class="comments">
-                @if(sizeof($comments) == 0)
-                    <p>Vous n'avez aucun commentaires</p>
-                @else
-                    @foreach($comments as $comment)
-                        <div class="comment">
-                            <div class="comment_text">
-                                @if(is_null($comment->comment))
-                                    <p>Aucun message</p>
-                                @else
-                                    {{--<svg><use xlink:href="{{asset("images/sprite.svg#quote")}}">
-                                        </use></svg>--}}<p>{{$comment->comment}}</p>
-                                    {{--<svg><use xlink:href="{{asset("images/sprite.svg#quote")}}">
-                                        </use></svg>--}}
-                                @endif
-                            </div>
-                            <div class="comment_actions">
-                                <div class="rating_note">
-                                    <p>{{$comment->rating}} </p>
-                                    <svg class="icon">
-                                        <use xlink:href="{{asset("images/sprite.svg#star")}}"></use>
-                                    </svg>
+                <div class="data_shop">
+                    <div class="data data_visitors">
+                        <p>{{sizeof($store[0]->views_all)}}</p>
+                        <p>Visiteurs</p>
+                    </div>
+                    <div class="data data_avg">
+                        <p>{{round($avg, 1)}}</p>
+                        <p>Moyenne</p>
+                    </div>
+                    <div class="data data_delivery">
+                        <p>{{sizeof($store[0]->ratings)}}</p>
+                        <p>Avis</p>
+                    </div>
+                    <div class="data data_followers">
+                        <p>{{sizeof($store[0]->favorited_by)}}</p>
+                        <p>Abonnés</p>
+                    </div>
+                </div>
+
+                <div class="container_comments">
+                    <h3>Commentaires</h3>
+                    <p>Nombre de commentaires: {{sizeof($comments)}}</p>
+                    <div class="comments">
+                        @if(sizeof($comments) == 0)
+                            <p>Vous n'avez aucun commentaires</p>
+                        @else
+                            @foreach($comments as $comment)
+                                <div class="comment">
+                                    <div class="comment_text">
+                                        @if(is_null($comment->comment))
+                                            <p>Aucun message</p>
+                                        @else
+                                            {{--<svg><use xlink:href="{{asset("images/sprite.svg#quote")}}">
+                                                </use></svg>--}}<p>{{$comment->comment}}</p>
+                                            {{--<svg><use xlink:href="{{asset("images/sprite.svg#quote")}}">
+                                                </use></svg>--}}
+                                        @endif
+                                    </div>
+                                    <div class="comment_actions">
+                                        <div class="rating_note">
+                                            <p>{{$comment->rating}} </p>
+                                            <svg class="icon">
+                                                <use xlink:href="{{asset("images/sprite.svg#star")}}"></use>
+                                            </svg>
+                                        </div>
+                                        <svg>
+                                            <use xlink:href="{{asset("images/sprite.svg#report")}}"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <svg>
-                                    <use xlink:href="{{asset("images/sprite.svg#report")}}"></use>
-                                </svg>
-                            </div>
-                        </div>
-                    @endforeach
-                @endif
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
             </div>
-        </div>
 
         <div class="info_shop">
             <div class="infos_header">
@@ -103,11 +101,11 @@
                     <h2>Votre Commerce</h2>
                 </div>
                 <button>Voir votre commerce</button>
-                <div class="infos_categorie">
+                {{--<div class="infos_categorie">
                     <p class="active_categorie">Général</p>
                     <p>Localisation</p>
                     <p>Complément</p>
-                </div>
+                </div>--}}
             </div>
 
             <form method="post" action="{{route('store_update', ['id' => $store[0]->id])}}" enctype="multipart/form-data">
@@ -391,7 +389,7 @@
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
-        function resetClassnameInfo() {
+        /*function resetClassnameInfo() {
             let formDiv = document.getElementsByTagName('form')[0].children;
             formDiv[0].className = "infos_general";
             formDiv[1].className = "infos_localisation";
@@ -414,7 +412,7 @@
                 let formDiv = document.getElementsByTagName('form')[0].children;
                 formDiv[i].className += " infos_active";
             });
-        }
+        }*/
 
         CKEDITOR.replace('catalog');
 
