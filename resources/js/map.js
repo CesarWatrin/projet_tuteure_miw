@@ -453,7 +453,12 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var phonenumber = formatTel(store.phonenumber);
          store_tel.textContent = phonenumber;
          store_mail.textContent = store.email;
-         store_website.href = store.website;
+         if (store.website != null) {
+            store_website.href = store.website;
+         } else {
+            store_website.textContent = 'Ce magasin n\'a pas de site web';
+            store_website.href = '#';
+         }
          store_id.textContent = store.id;
 
          var macyofavoris = localStorage.getItem('macyofavoris');
