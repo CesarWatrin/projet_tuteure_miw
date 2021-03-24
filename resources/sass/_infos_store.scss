@@ -11,25 +11,34 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        button{
+            color: $white;
+            height: 50px;
+            width: 200px;
+            border-radius: 15px;
+            border: 2px solid $dark_blue;
+            box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+            padding-left: 10px;
+            background-color: $dark_blue;
+        }
+        button:hover{
+            background-color: $light_blue;
+        }
     }
 }
 
 .infos_title{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
     svg{
         height: 40px;
         width: 40px;
         color: $dark_blue;
+        margin-right: 20px;
     }
     h2{
         color: $dark_blue;
@@ -66,9 +75,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    position: absolute;
-    transform: translateX(-150%);
-    transition: 1s ease-in-out;
+    //position: absolute;
+    //transform: translateX(-150%);
+    //transition: 1s ease-in-out;
     .infos_left{
         display: flex;
         flex-direction: column;
@@ -154,11 +163,11 @@
 }
 
 
-.infos_active{
+/*.infos_active{
     position: relative;
     transform: translateX(0%);
     transition: 1s ease-in-out;
-}
+}*/
 
 .infos_buttons{
     display: flex;
@@ -182,3 +191,15 @@
         background-color: $dark_blue;
     }
 }
+
+@media (min-width: 576px) {
+
+}
+
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 992px) {
+
+
+}
+

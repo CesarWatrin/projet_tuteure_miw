@@ -22,20 +22,6 @@ class ManagerController extends Controller
         return view('pages.manager.stores_add',["categories" => $categories, "subcategories" => $subcategories]);
     }
 
-    /*public function dashboard() {
-        $manager_id = Auth::user()->id;
-        $stores = Store::where('manager_id', '=', $manager_id)->get();
-        return view('pages.dashboard', ['stores' => $stores]);
-    }*/
-
-    /*public function dashboard($storeId){
-        $manager_id = Auth::user()->id;
-        $stores = Store::where('manager_id', '=', $manager_id)->get();
-        $store_info = Store::where('id', '=', $storeId)->get();
-        return view('pages.dashboard', ['stores' => $stores, 'store_info' => $store_info]);
-    }*/
-
-
     public function storePost(Request $request)
     {
         $this->validate($request, [
@@ -57,13 +43,13 @@ class ManagerController extends Controller
             'delivery_conditions' => ['nullable','string']
             ]);
 
-            
+
             $last_store = Store::orderBy('id','desc')->first();
             $newId = $last_store->id+1;
             $store = new Store();
-            
-            
-            
+
+
+
             $store->id = $newId;
             $store->name = $request->input('name');
             $store->address1 = $request->input('address1');
@@ -88,25 +74,20 @@ class ManagerController extends Controller
             $store->category_id = $request->input('category_id');
             $store->subcategory_id = $request->input('subcategory_id');
             $store->manager_id = Auth::id();
-            
+
             $request->file('photo')->storeAs('./images/store_'.$newId, 'commerce.jpg');
-    
+
             $store->save();
 
             return redirect()->route('stores');
-
-
         }
 
     public function dashboard($storeId){
         $store = Store::where('id', '=', $storeId)->get();
-        $categories = Category::all();
-        $subCategories = Subcategory::all();
         $comments = Rating::where('store_id', '=', $storeId)->get();
-        $views = View::where('store_id', '=', $storeId)->count();
         $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
-
-
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
         $shops = Store::where('category_id', '=', $store[0]->category_id)->get();
         $shops_avg = [];
         foreach ($shops as $shop){
@@ -130,11 +111,64 @@ class ManagerController extends Controller
         }
         rsort($shops_avg);
         $rank_sc = array_search($avg, $shops_avg)+1;
-        return view('pages.dashboard', ['store' => $store, 'categories' => $categories, 'subCategories' => $subCategories, 'comments' => $comments, 'avg' => $avg, 'views' => $views, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc]);
+        return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc, "categories" => $categories, "subcategories" => $subcategories]);
     }
 
-    public function modify_store(Request $request){
-       $store_data = Store::$request->update([]);
+    public function storeUpdate($id, Request $request)
+    {
+        $this->validate($request, [
+            'name' => ['required', 'string', 'min:2', 'max:191'],
+            'category_id' => ['required', 'string','min:1','max:1','exists:categories,id'],
+            'subcategory_id' => ['required', 'string','min:1','max:1','exists:subcategories,id'],
+            'phonenumber' => ['required', 'digits:10'],
+            'email' => ['required', 'string', 'email', 'max:191'],
+            'ville' => ['required','string','max:191'],
+            'zip' => ['required','string','max:5','min:2'],
+            'address1' => ['required','string','min:1','max:191'],
+            'address2' => ['nullable','string','min:1','max:191'],
+            'description' => ['required','string','min:1'],
+            'catalog' => ['nullable','string'],
+            'opening_hours' => ['nullable','string','min:1'],
+            'siret' => ['required','string','digits:14'],
+            'website' => ['nullable','string','max:191'],
+            'delivery' => ['required','boolean'],
+            'delivery_conditions' => ['nullable','string']
+        ]);
+
+        $store = Store::where('id', '=', $id)->first();
+
+        $store->state = 3;
+
+        $store->name = $request->input('name');
+        $store->phonenumber = $request->input('phonenumber');
+        $store->email = $request->input('email');
+        $store->website = $request->input('website');
+        $store->description = $request->input('description');
+
+        $store->city = $request->input('ville');
+        $store->address1 = $request->input('address1');
+        $store->address2 = $request->input('address2');
+        $store->delivery = $request->input('delivery');
+        $store->delivery_conditions = $request->input('delivery_conditions');
+        $store->zip = $request->input('zip');
+        $store->lat = $request->input('lat');
+        $store->lon = $request->input('long');
+
+        $store->category_id = $request->input('category_id');
+        $store->subcategory_id = $request->input('subcategory_id');
+        $store->opening_hours = $request->input('opening_hours');
+        $store->siret = $request->input('siret');
+        $store->catalog = $request->input('catalog');
+
+        $store->save();
+        return back();
+    }
+
+    public function commentReport($id)
+    {
+        $comment = Rating::where('id', '=', $id)->first();
+        $comment->reported = 1;
+        $comment->save();
         return back();
     }
 }
