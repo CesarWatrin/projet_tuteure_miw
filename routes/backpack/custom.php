@@ -13,6 +13,7 @@ Route::get('admin/edit-account-info', 'App\Http\Controllers\Admin\MyAccountContr
 Route::post('admin/edit-account-info', 'App\Http\Controllers\Admin\MyAccountController@postAccountInfoForm')->middleware('web')->name('backpack.account.info.store');
 
 Route::post('admin/rating/{id}/removereport', 'App\Http\Controllers\Admin\RatingCrudController@removeReport')->middleware('web')->name('macyo_custom.removereport');
+Route::post('admin/store/{id}/changestate', 'App\Http\Controllers\Admin\StoreCrudController@changeStoreState')->middleware('web')->name('macyo_custom.changestorestate');
 
 Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
@@ -25,4 +26,5 @@ Route::group([
     Route::crud('user', 'UserCrudController');
     Route::crud('rating', 'RatingCrudController');
     Route::crud('subcategory', 'SubcategoryCrudController');
+    Route::crud('store', 'StoreCrudController');
 }); // this should be the absolute last line of this file
