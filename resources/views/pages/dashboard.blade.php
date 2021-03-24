@@ -150,7 +150,7 @@
                             <input type="text" id="website" class="input-store" placeholder="Url du site web"
                                    name="website"
                                    onfocusout="verifyWeb(this.value)" value="{{isset($store) ? $store[0]->website: ""}}"
-                                   required>
+                                   >
                             @error('website')
                             <span class="input_error">
                             <strong>{{ $message }}</strong>
@@ -650,8 +650,8 @@
                 document.getElementById('lat').value = lat;
                 document.getElementById('long').value = long;
 
-                console.log("la long: "+long+" la lat "+lat)     
-                validateForm()  
+                console.log("la long: "+long+" la lat "+lat)
+                validateForm()
             }
 
             let valider = document.getElementById("submit")
