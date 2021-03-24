@@ -453,7 +453,6 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var phonenumber = formatTel(store.phonenumber);
          store_tel.textContent = phonenumber;
          store_mail.textContent = store.email;
-         console.log(store.website);
          if (store.website != null) {
             store_website.href = store.website;
          } else {
