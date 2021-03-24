@@ -14,12 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/stores.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/stores_add.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.min.css') }}" rel="stylesheet">
 
 @stack('styles')
 
@@ -128,9 +123,7 @@
     </div>
 </body>
    <!-- Scripts -->
-   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="Nzhw9TVU"></script>
-   <script src="{{ asset('js/app.js') }}" defer></script>
-   <script src="{{ asset('js/navbar.js') }}" defer></script>
+   <script src="{{ asset('js/main.min.js') }}" defer></script>
 
 @stack('scripts')
 

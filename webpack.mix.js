@@ -49,3 +49,17 @@ mix.sass('resources/sass/dashboard.scss', 'public/css').sourceMaps();
 mix.sass('resources/sass/ratings.scss', 'public/css').sourceMaps();
 
 mix.sass('resources/sass/404.scss', 'public/css').sourceMaps();
+
+mix.combine([
+    'public/css/app.css',
+    'public/css/navbar.css',
+    'public/css/footer.css',
+    'public/css/stores.css',
+    'public/css/stores_add.css',
+    'public/css/dashboard.css'
+], 'public/css/main.min.css');
+
+mix.combine([
+    'public/js/app.js',
+    'public/js/navbar.js'
+], 'public/js/main.min.js');
