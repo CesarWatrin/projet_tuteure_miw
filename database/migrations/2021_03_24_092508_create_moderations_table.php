@@ -17,6 +17,7 @@ class CreateModerationsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('store_id')->constrained();
+            $table->enum('state', ['1', '2' ,'3', '4']);
             $table->text('comment')->nullable();
             $table->timestamps();
         });

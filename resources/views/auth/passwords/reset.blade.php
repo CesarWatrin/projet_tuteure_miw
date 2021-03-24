@@ -18,7 +18,7 @@
 
                 <label for="email">Adresse e-mail :</label>
                 <input id="email" name="email" type="email" class="input input_center"
-                       @if(old('email')) value="{{ $email ?? old('email') }}" @endif
+                       @if(old('email')) value="{{ $email ?? old('email') }}" @elseif($_GET['email']) value="{{ $_GET['email'] }}" disabled @endif
                        required autocomplete="email" autofocus>
 
                 @error('email')
