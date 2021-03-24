@@ -3,7 +3,7 @@ import 'leaflet.markercluster';
 let carte = L.map('map', {center: [46.3630104, 2.9846608],zoom: 5, /*attributionControl : false,*/ zoomControl: false});
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(carte);
 L.control.zoom({position:'bottomright'}).addTo(carte);
-let markers = L.markerClusterGroup({
+var markers = L.markerClusterGroup({
    iconCreateFunction: function(cluster) {
       return L.divIcon({
          html: cluster.getChildCount(),
@@ -260,8 +260,6 @@ var markerCulture = L.icon({
 
 async function nearStores(coord, cat = 0, subcat = 0) {
 
-   markers.clearLayers();
-
    let lat = coord[1];
    let lon = coord[0];
 
@@ -276,7 +274,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
       var stores = await response.json();
    }
 
-   console.log(stores);
+   markers.clearLayers();
 
    stores.forEach((store) => {
       if (store.category_id == 1) {
@@ -594,7 +592,6 @@ function userPosition() {
          carte.setView([position.coords.latitude, position.coords.longitude], 14, { animation: true });
          withParams(position.coords.latitude, position.coords.longitude);
       }, () => {
-         console.log('Votre géolocalisation est indisponible');
          //coordonnées de Gap :
          carte.setView([44.544606, 6.077989], 14, { animation: true });
          withParams(44.544606, 6.077989);

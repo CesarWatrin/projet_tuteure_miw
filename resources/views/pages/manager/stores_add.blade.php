@@ -38,7 +38,7 @@
         </div>
 
         <div class="input-row">
-            <label for="subcategory_id">Sous-catégorie <span class="orange_requiered">*</span></label>
+            <label for="subcategory_id">Sous-catégorie</label>
             <select name="subcategory_id" value="{{ old('subcategory_id') }}" id="subcategory_id" class="cat">
                 <option disabled selected>Sous-Catégorie du commerce</option>
             </select>
@@ -176,7 +176,7 @@
             <p>Livraison <span class="orange_requiered">*</span></p>
 
             <div class="livraison_button">
-                <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1" onclick="ischecked(this)"/>
+                <input type="radio" name="delivery" class="livraison_radio" id="deliveryOui" value="1"/>
                 <label for="deliveryOui" class="livraison_label">
                     <span class="livraison_titre">Oui</span>
                 </label>
@@ -460,6 +460,23 @@ CKEDITOR.replace( 'catalog' );
 
     let valider = document.getElementById("submit")
             valider.style.backgroundColor = "#feb3b1";
+
+
+
+
+    function verifyAll()
+    {
+        if(name.value != "" && email.value != "" && phonenumber.value != "")
+        {
+            verifyName(name.value)
+            verifyEmail(email.value)
+            verifyPhone(phonenumber.value)
+            verifyVille(city.value)
+            verifyAdresse1(address1.value)
+            verifySiret(siret.value)
+        }
+    }
+    verifyAll()
 
     function validateForm()
     {

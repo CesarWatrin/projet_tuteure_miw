@@ -81,7 +81,7 @@ if (list_favoris.length !== 0) { //si on est sur la page favoris
 async function getStoresById(ids) {
    let response = await fetch(`${window.location.origin}/api/stores?ids=${ids}`);
    let stores = await response.json();
-   console.log(stores);
+   
    var img_store = document.getElementsByClassName('img_store');
    var store_name = document.getElementsByClassName('store_name');
    var store_distance = document.getElementsByClassName('store_distance');
