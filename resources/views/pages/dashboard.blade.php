@@ -150,7 +150,7 @@
                             <input type="text" id="website" class="input-store" placeholder="Url du site web"
                                    name="website"
                                    onfocusout="verifyWeb(this.value)" value="{{isset($store) ? $store[0]->website: ""}}"
-                                   required>
+                                   >
                             @error('website')
                             <span class="input_error">
                             <strong>{{ $message }}</strong>
@@ -408,19 +408,19 @@
                 formDiv[i].className += " infos_active";
             });
         }*/
-
-        {{$i = 0}}
-        for (let i = 0; i < document.getElementsByClassName('buttonReport').length; i++) {
-            let buttonReport = document.getElementsByClassName('buttonReport')[i];
-            buttonReport.addEventListener('click', function(){
-                rep = confirm("Voulez vous vraiment signaler le commentaire ?");
-                if (rep) {
-                    {{--dd($comments)--}}
-                    {{--buttonReport.href = "{{route('comment_report', ['id' => $comments[$i]->id])}}";--}}
-                    {{$i = $i +1}}
-                }
-            });
+        console.log(document.getElementsByClassName('buttonReport').length);
+        if ( document.getElementsByClassName('buttonReport').length != 0){
+            for (let i = 0; i < document.getElementsByClassName('buttonReport').length; i++) {
+                let buttonReport = document.getElementsByClassName('buttonReport')[i];
+                buttonReport.addEventListener('click', function(){
+                    rep = confirm("Voulez vous vraiment signaler le commentaire ?");
+                    if (rep) {
+                        buttonReport.href = "{{--route('comment_report', ['id' => $comments[$i]->id])--}}";
+                    }
+                });
+            }
         }
+
 
         CKEDITOR.replace( 'catalog' );
 
@@ -650,8 +650,8 @@
                 document.getElementById('lat').value = lat;
                 document.getElementById('long').value = long;
 
-                console.log("la long: "+long+" la lat "+lat)     
-                validateForm()  
+                console.log("la long: "+long+" la lat "+lat)
+                validateForm()
             }
 
             let valider = document.getElementById("submit")
