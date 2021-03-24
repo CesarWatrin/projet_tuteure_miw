@@ -415,7 +415,7 @@
             buttonReport.addEventListener('click', function(){
                 rep = confirm("Voulez vous vraiment signaler le commentaire ?");
                 if (rep) {
-                    {{dd($comments)}}
+                    {{--dd($comments)--}}
                     {{--buttonReport.href = "{{route('comment_report', ['id' => $comments[$i]->id])}}";--}}
                     {{$i = $i +1}}
                 }
