@@ -14,7 +14,7 @@ async function getStore(id) {
    titre.textContent = store.name + ' à ' + store.city;
    store_link.href = window.location.origin + '/map?lat=' + store.lat + '&lon=' + store.lon;
 
-   if (store.catalog.length !== 0) {
+   if (store.catalog !== null) {
       ckeditor_container.innerHTML = store.catalog;
    }
 }
