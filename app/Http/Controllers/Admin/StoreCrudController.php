@@ -277,7 +277,7 @@ class StoreCrudController extends CrudController
             'wrapper' => [
                 'element' => 'a',
                 'href' => function ($crud, $column, $entry, $related_key) {
-                    return url($entry->website);
+                    return $entry->website;
                 },
             ]
         ]);
