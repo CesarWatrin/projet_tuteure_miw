@@ -1418,6 +1418,7 @@ footer {
 
 .ckeditor_container {
   border: thick double #020b5d;
+  background-color: white;
   border-radius: 16px;
   margin: 70px auto 0 auto;
   padding: 20px;
