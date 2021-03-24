@@ -641,12 +641,17 @@
             async function getCoords()
             {
                 let url = "https://api-adresse.data.gouv.fr/search/?q="+address1.value+"+"+city.value;
+                console.log(encodeURI(url))
                 const res = await fetch(url);
+                const adresse = await res.json();
+                console.log(adresse.features[0].geometry.coordinates);
                 let long = adresse.features[0].geometry.coordinates[0];
                 let lat = adresse.features[0].geometry.coordinates[1];
                 document.getElementById('lat').value = lat;
                 document.getElementById('long').value = long;
-                validateForm()
+
+                console.log("la long: "+long+" la lat "+lat)     
+                validateForm()  
             }
 
             let valider = document.getElementById("submit")
