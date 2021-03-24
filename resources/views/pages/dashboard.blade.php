@@ -408,19 +408,19 @@
                 formDiv[i].className += " infos_active";
             });
         }*/
-
-        {{$i = 0}}
-        for (let i = 0; i < document.getElementsByClassName('buttonReport').length; i++) {
-            let buttonReport = document.getElementsByClassName('buttonReport')[i];
-            buttonReport.addEventListener('click', function(){
-                rep = confirm("Voulez vous vraiment signaler le commentaire ?");
-                if (rep) {
-                    {{--dd($comments)--}}
-                    {{--buttonReport.href = "{{route('comment_report', ['id' => $comments[$i]->id])}}";--}}
-                    {{$i = $i +1}}
-                }
-            });
+        console.log(document.getElementsByClassName('buttonReport').length);
+        if ( document.getElementsByClassName('buttonReport').length != 0){
+            for (let i = 0; i < document.getElementsByClassName('buttonReport').length; i++) {
+                let buttonReport = document.getElementsByClassName('buttonReport')[i];
+                buttonReport.addEventListener('click', function(){
+                    rep = confirm("Voulez vous vraiment signaler le commentaire ?");
+                    if (rep) {
+                        buttonReport.href = "{{--route('comment_report', ['id' => $comments[$i]->id])--}}";
+                    }
+                });
+            }
         }
+
 
         CKEDITOR.replace( 'catalog' );
 
