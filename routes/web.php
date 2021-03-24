@@ -46,11 +46,10 @@ Route::post('/stores/add', 'ManagerController@storePost')->name('store_post');
 Route::get('/api/stores', 'MapController@getStores')->name('getStores');
 Route::post('/api/view/add', 'MapController@addView')->name('addView');
 
-//Route::get('/dashboard', 'ManagerController@dashboard')->name('account');
-
 Route::get('/dashboard/{store_id}', 'ManagerController@dashboard')->name('dashboard');
+Route::post('/dashboard/{id}', 'ManagerController@storeUpdate')->name('store_update');
+Route::get('/report/{id}', 'ManagerController@commentReport')->name('comment_report');
 
-Route::get('/dashboard', 'AccountController@dashboard')->name('dashboard');
 
 Route::get('/store_card', 'Store_cardController@home')->name('store_card');
 

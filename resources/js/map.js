@@ -3,7 +3,7 @@ import 'leaflet.markercluster';
 let carte = L.map('map', {center: [46.3630104, 2.9846608],zoom: 5, /*attributionControl : false,*/ zoomControl: false});
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(carte);
 L.control.zoom({position:'bottomright'}).addTo(carte);
-let markers = L.markerClusterGroup({
+var markers = L.markerClusterGroup({
    iconCreateFunction: function(cluster) {
       return L.divIcon({
          html: cluster.getChildCount(),
@@ -260,8 +260,6 @@ var markerCulture = L.icon({
 
 async function nearStores(coord, cat = 0, subcat = 0) {
 
-   markers.clearLayers();
-
    let lat = coord[1];
    let lon = coord[0];
 
@@ -275,6 +273,8 @@ async function nearStores(coord, cat = 0, subcat = 0) {
       var response = await fetch(`${window.location.origin}/api/stores?lat=${lat}&lon=${lon}`);
       var stores = await response.json();
    }
+
+   markers.clearLayers();
 
    stores.forEach((store) => {
       if (store.category_id == 1) {
@@ -453,7 +453,12 @@ async function nearStores(coord, cat = 0, subcat = 0) {
          var phonenumber = formatTel(store.phonenumber);
          store_tel.textContent = phonenumber;
          store_mail.textContent = store.email;
-         store_website.href = store.website;
+         if (store.website != null) {
+            store_website.href = store.website;
+         } else {
+            store_website.textContent = 'Ce magasin n\'a pas de site web';
+            store_website.href = '#';
+         }
          store_id.textContent = store.id;
 
          var macyofavoris = localStorage.getItem('macyofavoris');
