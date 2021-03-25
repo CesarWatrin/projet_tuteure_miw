@@ -449,7 +449,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
             store_delivery.textContent = 'Livraison indisponible';
          }
          store_desc.textContent = store.description;
-         store_schedule.textContent = store.opening_hours;
+         store_schedule.innerText = store.opening_hours;
          var phonenumber = formatTel(store.phonenumber);
          store_tel.textContent = phonenumber;
          store_mail.textContent = store.email;
