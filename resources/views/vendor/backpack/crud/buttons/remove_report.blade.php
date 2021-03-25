@@ -27,8 +27,6 @@
 				$.ajax({
 			      url: route,
 			      type: 'POST',
-                  data: 'id={{ $entry->getKey() }}',
-                  dataType: 'json',
 			      success: function(result) {
 			          if (result == 1) {
 						  // Redraw the table

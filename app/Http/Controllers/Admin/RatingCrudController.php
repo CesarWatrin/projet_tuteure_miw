@@ -150,8 +150,7 @@ class RatingCrudController extends CrudController
         return $content;
     }
 
-    public function removeReport(Request $request) {
-        $id = $request->input('id');
+    public function removeReport($id) {
         $rating = Rating::find($id);
         $rating->reported = false;
         return $rating->save();
