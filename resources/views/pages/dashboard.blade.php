@@ -111,8 +111,11 @@
                 <div class="infos_title">
                     <h2>Votre Commerce</h2>
                 </div>
-                <button onclick="location.href = '/map?lat=' + {{$store[0]->lat}} + '&lon=' + {{$store[0]->lon}};"  class="view_shop">Voir votre commerce</button>
-                <button onclick="showForm()"  class="view_shop">Modifier votre commerce</button>
+                <div class="modifCom">
+                    <button onclick="location.href = '/map?lat=' + {{$store[0]->lat}} + '&lon=' + {{$store[0]->lon}};"  class="view_shop">Voir votre commerce</button>
+                    <button onclick="showForm()" class="view_shop2">Modifier votre commerce</button>
+                    <button class="view_shop3">Desactiver votre commerce</button>
+                </div>
             </div>
 
             <form id="formModif" method="post" action="{{route('store_update', ['id' => $store[0]->id])}}"
@@ -635,22 +638,41 @@
                 validateForm()
             }
 
-            let valider = document.getElementById("submit")
-            valider.style.backgroundColor = "#feb3b1";
+            // let valider = document.getElementById("submit")
+            // valider.style.backgroundColor = "#feb3b1";
 
             function validateForm()
             {
 
                 //rajouter code postal et desc et cat
                 if(nameValid && emailValid && phonenumberValid && cityValid && address1Valid && siretValid)
-            {
-                valider.style.backgroundColor = "#ff847c";
-                valider.removeAttribute("disabled")
-            }
+                {
+                    valider.style.backgroundColor = "#ff847c";
+                    valider.removeAttribute("disabled")
+                }
                 else{
-                valider.style.backgroundColor = "#feb3b1";
-                valider.setAttribute("disabled",true)
+                    valider.style.backgroundColor = "#feb3b1";
+                    valider.setAttribute("disabled",true)
+                }
             }
+
+
+            let form = document.getElementById('formModif');
+            let showed = true;
+            showForm();
+
+            function showForm()
+            {
+                if(showed)
+                {
+                    form.style.display = "none"
+                    showed = false
+                }
+                else{
+
+                    form.style.display = "block"
+                    showed = true
+                }
             }
 
     </script>
