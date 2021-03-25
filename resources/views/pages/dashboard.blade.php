@@ -58,17 +58,18 @@
             <div class="container_comments">
                 <h3>Commentaires</h3>
                 <h4>Code commentaire: {{$store[0]->comments_code}}</h4>
-                <p>Nombre de commentaires: {{sizeof($comments)}}</p>
+                <p>Commentaires validés: {{sizeof($comments)}}</p>
+                <p>Commentaires en attente: {{$all_comments - sizeof($comments)}}</p>
                 <div class="comments">
                     @if(sizeof($comments) == 0)
-                        <p>Vous n'avez aucun commentaires</p>
+                        <p style="text-align: center">Vous n'avez aucun commentaires validés</p>
                     @else
                         @foreach($comments as $comment)
                             @if(!$comment->reported)
                             <div class="comment">
                                 <div class="comment_text">
                                     @if(is_null($comment->comment))
-                                        <p>Aucun message</p>
+                                        <p style="text-align: center">Aucun message</p>
                                     @else
                                         <p>{{$comment->comment}}</p>
                                     @endif
@@ -80,7 +81,7 @@
                                             <use xlink:href="{{asset("images/sprite.svg#star")}}"></use>
                                         </svg>
                                     </div>
-                                    <a class="buttonReport">
+                                    <a href="{{route('comment_report', ['id' => $comment->id])}}" class="buttonReport">
                                         <svg class="report">
                                             <use xlink:href="{{asset("images/sprite.svg#report")}}"></use>
                                         </svg>
@@ -100,11 +101,6 @@
                     <h2>Votre Commerce</h2>
                 </div>
                 <button onclick="location.href = '/map?lat=' + {{$store[0]->lat}} + '&lon=' + {{$store[0]->lon}};"  class="view_shop">Voir votre commerce</button>
-                {{--<div class="infos_categorie">
-                    <p class="active_categorie">Général</p>
-                    <p>Localisation</p>
-                    <p>Complément</p>
-                </div>--}}
             </div>
 
             <form method="post" action="{{route('store_update', ['id' => $store[0]->id])}}"
@@ -317,13 +313,13 @@
                             @enderror
                         </div>
                         <div class="input-row">
-                            <label for="subcategory_id">Sous-catégorie <span class="orange_requiered">*</span></label>
+                            <label for="subcategory_id">Sous-catégorie</label>
                             <select name="subcategory_id" id="subcategory_id" class="cat">
                                 @if(isset($store))
                                     <option
                                         value="{{$store[0]->subcategory_id}}">{{$store[0]->subcategory->name}}</option>
                                 @else
-                                    <option disabled selected>Sous-Catégorie du commerce</option>
+                                    <option selected>Sous-Catégorie du commerce</option>
                                 @endif
                             </select>
                             @error('subcategory_id')
@@ -384,47 +380,23 @@
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
-        /*function resetClassnameInfo() {
-            let formDiv = document.getElementsByTagName('form')[0].children;
-            formDiv[0].className = "infos_general";
-            formDiv[1].className = "infos_localisation";
-            formDiv[2].className = "infos_complementary";
-        }
-
-        function resetClassnameCategorie() {
-            let navShop = document.getElementsByClassName('infos_categorie')[0].getElementsByTagName('p');
-            for (let i = 0; i < navShop.length; i++) {
-                navShop[i].className = "";
-            }
-        }
-
-        let navShop = document.getElementsByClassName('infos_categorie')[0].getElementsByTagName('p');
-        for (let i = 0; i < navShop.length; i++) {
-            navShop[i].addEventListener("click", function () {
-                resetClassnameInfo();
-                resetClassnameCategorie();
-                navShop[i].className = "active_categorie";
-                let formDiv = document.getElementsByTagName('form')[0].children;
-                formDiv[i].className += " infos_active";
-            });
-        }*/
-        console.log(document.getElementsByClassName('buttonReport').length);
         if ( document.getElementsByClassName('buttonReport').length != 0){
             for (let i = 0; i < document.getElementsByClassName('buttonReport').length; i++) {
                 let buttonReport = document.getElementsByClassName('buttonReport')[i];
-                buttonReport.addEventListener('click', function(){
+                buttonReport.addEventListener('click', function(e) {
+
                     rep = confirm("Voulez vous vraiment signaler le commentaire ?");
-                    if (rep) {
-                        buttonReport.href = "{{--route('comment_report', ['id' => $comments[$i]->id])--}}";
+
+                    if (rep !== true) {
+                        e.preventDefault();
                     }
                 });
             }
         }
 
-
         CKEDITOR.replace( 'catalog' );
 
-            let subcategories = {!! $subcategories !!}
+            let subcategories = {!! $subcategories !!};
 
             let lesSousCat = document.getElementById('subcategory_id');
 

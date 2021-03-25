@@ -87,7 +87,8 @@ class ManagerController extends Controller
         $store = Store::where('id', '=', $storeId)->get();
 
         if ($idOwner == $store[0]->manager_id){
-            $comments = Rating::where('store_id', '=', $storeId)->get();
+            $all_comments = Rating::where('store_id', '=', $storeId)->count();
+            $comments = Rating::where('store_id', '=', $storeId)->where('reported', '=', 0)->get();
             $avg = Rating::where('store_id', '=', $storeId)->avg('rating');
             $categories = Category::all();
             $subcategories = Subcategory::all();
@@ -116,7 +117,7 @@ class ManagerController extends Controller
             $rank_sc = array_search($avg, $shops_avg)+1;
 
             //dd($store, $comments, $avg, $rank_c, $rank_sc);
-            return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc, "categories" => $categories, "subcategories" => $subcategories]);
+            return view('pages.dashboard', ['store' => $store, 'comments' => $comments, 'all_comments' => $all_comments, 'avg' => $avg, 'rank_c' => $rank_c, 'rank_sc' => $rank_sc, "categories" => $categories, "subcategories" => $subcategories]);
         }else{
         return redirect()->route('stores');
 
@@ -167,13 +168,21 @@ class ManagerController extends Controller
         $store->lon = $request->input('long');
 
         $store->category_id = $request->input('category_id');
-        $store->subcategory_id = $request->input('subcategory_id');
+        if ($request->input('subcategory_id') == null){
+            $store->subcategory_id = null;
+        }else{
+            $store->subcategory_id = $request->input('subcategory_id');
+        }
+
+
+        //$store->subcategory_id = $request->input('subcategory_id');
         $store->opening_hours = $request->input('opening_hours');
         $store->siret = $request->input('siret');
         $store->catalog = $request->input('catalog');
 
-        $store->save();
-        return back();
+       $store->save();
+       return back();
+        //return redirect()->route('stores');
     }
 
     public function commentReport($id)

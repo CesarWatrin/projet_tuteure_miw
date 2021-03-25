@@ -18,7 +18,5 @@
     "/css/stores.css": "/css/stores.css",
     "/css/footer.css": "/css/footer.css",
     "/css/favoris.css": "/css/favoris.css",
-    "/css/connect.css": "/css/connect.css",
-    "/css/main.min.css": "/css/main.min.css",
-    "/js/main.min.js": "/js/main.min.js"
+    "/css/connect.css": "/css/connect.css"
 }

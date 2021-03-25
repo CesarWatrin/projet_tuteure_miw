@@ -1,173 +1,159 @@
 .info_shop{
+    margin-top: 100px;
+}
+
+h2{
+    color: $dark_blue;
+    font-family: "Yeseva One";
+    font-size: 30px;
+    text-align: center;
+}
+
+.infos_header{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 50px;
-    .infos_header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        button{
-            color: $white;
-            height: 50px;
-            width: 200px;
-            border-radius: 15px;
-            border: 2px solid $dark_blue;
-            box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-            margin-bottom: 15px;
-            padding-left: 10px;
-            background-color: $dark_blue;
-        }
-        button:hover{
-            background-color: $light_blue;
-        }
+    margin-bottom: 25px;
+    button{
+        color: $white;
+        height: 50px;
+        width: 200px;
+        border-radius: 15px;
+        border: 2px solid $dark_blue;
+        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+        margin-bottom: 15px;
+        padding-left: 10px;
+        background-color: $dark_blue;
+    }
+    button:hover{
+        background-color: $light_blue;
     }
 }
 
-.infos_title{
+.input-file{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    svg{
-        height: 40px;
-        width: 40px;
-        color: $dark_blue;
-        margin-right: 20px;
-    }
-    h2{
-        color: $dark_blue;
-        font-family: "Yeseva One";
-        font-size: 30px;
+    margin: 40px;
+    input{
+        margin-top: 10px;
     }
 }
 
-.infos_categorie{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: $white;
+.orange_requiered{
+    color: #E4534B;
+
+}
+
+h1
+{
+    font-family: 'Yeseva One', cursive;
+    color: #020B5D;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
+
+}
+
+.validate
+{
+    background-color: #feb3b1;
+    width: 80%;
+    max-width: 500px;
     height: 50px;
-    width: 300px;
+    box-shadow: 0 2px 9px 0 rgb(228 83 75 / 20%);
+    font-size: 1rem;
     border-radius: 15px;
-    margin-top: 25px;
-    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-    p{
-        margin: 0;
-        color: $light_blue;
-        font-family: "Yeseva One";
-    }
-    .active_categorie{
-        color: $dark_blue;
-        border-bottom: solid 3px $dark_red;
-    }
-}
-
-.infos_general, .infos_complementary, .infos_localisation{
+    color: #FFFFFF;
+    border: none;
     display: flex;
-    flex-direction: column;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    //position: absolute;
-    //transform: translateX(-150%);
-    //transition: 1s ease-in-out;
-    .infos_left{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        input{
-            height: 50px;
-            width: 300px;
-            border-radius: 15px;
-            border: 0;
-            box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-            margin-bottom: 15px;
-            padding-left: 10px;
-        }
-        input::placeholder{
-            color: $dark_blue;
-            font-family: "Nunito";
-        }
+    margin-top: 40px;
+}
+
+.input-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+
+    p{
+        color: #475BF5;
+        margin-bottom: 2px;
     }
-}
 
-.infos_general, .infos_complementary{
-        textarea{
-            height: 350px;
-            width: 300px;
-            border-radius: 15px;
-            border: 0;
-            box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
-            margin-bottom: 15px;
-            padding-left: 10px;
-            padding-top: 10px;
-        }
-        textarea::placeholder{
-            color: $dark_blue;
-            font-family: "Nunito";
-        }
-}
 
-.infos_localisation{
-    .infos_right{
+    input, textarea, select{
+        width: 80%;
+        max-width: 500px;
+        margin: 5px auto;
+        height: 50px;
+        font-size: 1rem;
+        border: solid #475BF5 1px;
+        border-radius: 15px;
+        color: #475BF5;
+        padding: 0 20px;
+        box-shadow: 0 2px 9px 0 rgba(#475BF5, 0.2);
+    }
+
+
+    input::placeholder{
+        color: #96B4F4;
+    }
+
+    textarea::placeholder{
+        color: #96B4F4;
+    }
+
+    .cke_chrome{
+        font-size: 1rem;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0 2px 9px 0 rgba(#475BF5, 0.2);
+    }
+
+
+
+    textarea{
+        height: 100px;
+        padding-top: 10px;
+    }
+
+    .livraison_button {
+        width: 80%;
+        max-width: 500px;
+        margin: 0 auto;
+        //background-color: $normal-red;
+    }
+    .livraison_radio {
         display: none;
     }
-}
-
-.infos_complementary{
-    select{
-        border-radius: 15px;
-        background-color: $white;
-        height: 50px;
-        border: 0;
-        width: 250px;
-        margin-bottom: 25px;
-        color: $dark_blue;
-        font-family: "Nunito";
-        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+    .livraison_radio:checked ~ .livraison_label {
+        color: white;
+        background-color: $normal-blue;
     }
-    .delivery{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
+    .livraison_label {
         width: 100%;
-        .delivery_cat{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100px;
-            .oui, .non{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-items: center;
-                width: 75px;
-                input{
-                    height: auto;
-                    width: auto;
-                    box-shadow: none;
-                }
-            }
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        border: solid $normal-blue 1px;
+        border-radius: 15px;
+        color: $normal-blue;
+        background-color: $white;
+        padding: 5px 20px;
+        box-shadow: 0 2px 9px 0 rgba($light-blue, 0.2);
+    }
+    .livraison_titre {
+        font-size: 1.2rem;
+        font-weight: bold;
     }
 }
-
-
-/*.infos_active{
-    position: relative;
-    transform: translateX(0%);
-    transition: 1s ease-in-out;
-}*/
 
 .infos_buttons{
     display: flex;
@@ -191,15 +177,3 @@
         background-color: $dark_blue;
     }
 }
-
-@media (min-width: 576px) {
-
-}
-
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 992px) {
-
-
-}
-
