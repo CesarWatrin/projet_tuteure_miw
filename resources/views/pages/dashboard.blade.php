@@ -112,9 +112,10 @@
                     <h2>Votre Commerce</h2>
                 </div>
                 <button onclick="location.href = '/map?lat=' + {{$store[0]->lat}} + '&lon=' + {{$store[0]->lon}};"  class="view_shop">Voir votre commerce</button>
+                <button onclick="showForm()"  class="view_shop">Modifier votre commerce</button>
             </div>
 
-            <form method="post" action="{{route('store_update', ['id' => $store[0]->id])}}"
+            <form id="formModif" method="post" action="{{route('store_update', ['id' => $store[0]->id])}}"
                   enctype="multipart/form-data">
                 @csrf
                 <div class="infos_general infos_active">

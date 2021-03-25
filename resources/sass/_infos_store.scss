@@ -20,13 +20,15 @@ h2{
         width: 200px;
         border-radius: 15px;
         border: 2px solid $dark_blue;
-        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+        // box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+        box-shadow: 0 2px 9px 0 rgba($light-blue, 0.2);
         margin-bottom: 15px;
         padding-left: 10px;
         background-color: $dark_blue;
     }
     button:hover{
-        background-color: $light_blue;
+        box-shadow: 0 2px 9px 0 rgba($light-blue, 0.6);
+        cursor: pointer;
     }
 }
 
@@ -172,8 +174,18 @@ h1
     }
     .reset{
         background-color: $dark_red;
+        box-shadow: 0 2px 9px 0 rgba($dark_red, 0.2);
     }
     .submit{
         background-color: $dark_blue;
+        box-shadow: 0 2px 9px 0 rgba($light-blue, 0.2);
+    }
+    .reset:hover{
+       box-shadow: 0 2px 9px 0 rgba($dark_red, 0.6);
+       cursor:pointer;
+    }
+    .submit:hover{
+        box-shadow: 0 2px 9px 0 rgba($light-blue, 0.6);
+        cursor:pointer;
     }
 }
