@@ -22,7 +22,6 @@
 		  icon: "info",
 		  buttons: ["{!! trans('backpack::crud.cancel') !!}", "{!! trans('backpack::crud.delete') !!}"],
 		}).then((value) => {
-		    console.log(route);
 			if (value) {
 				$.ajax({
 			      url: route,
