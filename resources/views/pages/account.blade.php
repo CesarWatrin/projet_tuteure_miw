@@ -34,6 +34,11 @@
 
             </div>
 
+            @if (session()->has('success'))
+                <div class="input_success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
 
             <div class="info">
                 <div class="imgUser">
