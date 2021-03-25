@@ -226,10 +226,32 @@ label {
     margin-top: 2rem;
 }
 
+.grid_with_title {
+    display: grid;
+    grid-row-gap: 2rem;
+}
+
+.grid_title {
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
 
     .inputText {
         font-size: 1.2rem;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .grid_with_title {
+        grid-template: auto 1fr/1fr 1fr;
+    }
+
+    .grid_title {
+        grid-column: 1/3;
     }
 
 }

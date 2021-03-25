@@ -31,6 +31,7 @@ Route::get('/favoris', 'FavorisController@home')->name('favoris');
 Route::get('/account', 'AccountController@home')->name('account');
 Route::get('/account/edit', 'AccountController@edit')->name('account_edit');
 Route::post('/account/update', 'AccountController@update')->name('account_update');
+Route::post('/account/password/update', 'AccountController@updatePassword')->name('password_update');
 
 Route::get('/ratings/findstore', 'AccountController@commentscode')->name('commentscode_input');
 Route::get('/ratings/add', 'AccountController@rateStore')->name('rate_store');

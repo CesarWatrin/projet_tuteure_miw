@@ -4,12 +4,18 @@
 
     @include('layouts.container_corp')
 
-    <div class="container_center">
+    <div class="grid_with_title">
 
-    <a class="back_link" href="{{ route('account') }}"><i class="fas fa-chevron-left"></i> Retour à mon compte</a>
+        <div class="grid_title">
+            <a class="back_link" href="{{ route('account') }}"><i class="fas fa-chevron-left"></i> Retour à mon compte</a>
+        </div>
+
+
+        <div class="container_center">
+
     <h1 class="titre">Modifier mon profil</h1>
 
-    <form class="form_center" id="account_edit_form" method="POST" action="{{ route('account_update') }}">
+        <form class="form_center" id="account_edit_form" method="POST" action="{{ route('account_update') }}">
         @csrf
 
         <input type="hidden" name="role" value="{{ $user->role->id }}"/>
@@ -81,5 +87,61 @@
     </form>
 
     </div>
+
+
+    <div class="container_center">
+
+        <h1 class="titre">Modifier mon mot de passe</h1>
+
+        <form class="form_center" id="account_edit_password" method="POST" action="{{ route('password_update') }}">
+            @csrf
+
+            <div class="input_row">
+
+                <label for="current_password">Mot de passe actuel</label>
+                <input id="current_password" type="password" class="input"
+                       name="current_password" required>
+
+
+                @error('current_password')
+                <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="input_row">
+
+                <label for="password">Nouveau mot de passe</label>
+                <input id="password" type="password" class="input"
+                       name="password" required autocomplete="new-password">
+
+            </div>
+
+            <div class="input_row">
+
+                <label for="password">Confirmation du mot de passe</label>
+                <input id="password_confirmation" type="password" class="input"
+                       name="password_confirmation" required autocomplete="new-password">
+
+                @error('password')
+                <span class="input_error">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div>
+                <button type="submit" class="bouton_form brouge bsubmit">
+                    Modifier mon mot de passe
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    </div>
+
 
 @endsection
