@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                if(Auth::user()->is_admin()) {
+                if(Auth::user() && Auth::user()->is_admin()) {
                     return redirect(backpack_url('dashboard'));
                 } else {
                     return redirect(RouteServiceProvider::HOME);
