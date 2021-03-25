@@ -113,7 +113,7 @@
                         <a href="#"><svg class="big_icon"><use xlink:href="{{ asset('images/sprite.svg#instagram') }}"></use></svg></a>
                      </div>
                 </div>
-                <p>Plan du site</p>
+                <!--<p>Plan du site</p>-->
                   <p class="ml"><a href="{{ route('legal') }}">Mentions légales</a></p>
                   <p class="ml"><a href="{{ route('backpack.auth.login') }}">Portail de modération</a></p>
                 <div class="copyright">
