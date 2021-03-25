@@ -58,18 +58,18 @@
             <div class="container_comments">
                 <h3>Commentaires</h3>
                 <h4>Code commentaire: {{$store[0]->comments_code}}</h4>
-                <p>Nombre de commentaires validé: {{sizeof($comments)}}</p>
-                <p>Commentaire en attente: {{$all_comments - sizeof($comments)}}</p>
+                <p>Commentaires validés: {{sizeof($comments)}}</p>
+                <p>Commentaires en attente: {{$all_comments - sizeof($comments)}}</p>
                 <div class="comments">
                     @if(sizeof($comments) == 0)
-                        <p>Vous n'avez aucun commentaires</p>
+                        <p style="text-align: center">Vous n'avez aucun commentaires validés</p>
                     @else
                         @foreach($comments as $comment)
                             @if(!$comment->reported)
                             <div class="comment">
                                 <div class="comment_text">
                                     @if(is_null($comment->comment))
-                                        <p>Aucun message</p>
+                                        <p style="text-align: center">Aucun message</p>
                                     @else
                                         <p>{{$comment->comment}}</p>
                                     @endif
@@ -380,10 +380,23 @@
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
+        if ( document.getElementsByClassName('buttonReport').length != 0){
+            for (let i = 0; i < document.getElementsByClassName('buttonReport').length; i++) {
+                let buttonReport = document.getElementsByClassName('buttonReport')[i];
+                buttonReport.addEventListener('click', function(e) {
+
+                    rep = confirm("Voulez vous vraiment signaler le commentaire ?");
+
+                    if (rep !== true) {
+                        e.preventDefault();
+                    }
+                });
+            }
+        }
 
         CKEDITOR.replace( 'catalog' );
 
-            let subcategories = {!! $subcategories !!}
+            let subcategories = {!! $subcategories !!};
 
             let lesSousCat = document.getElementById('subcategory_id');
 
