@@ -13,7 +13,7 @@
             <div class="head">
                 <div class="header_dashboard">
                     <h1>{{$store[0]->name}}</h1>
-                    <a href="{{ route('stores') }}"><- Vos Magasins</a>
+                    <a href="{{ route('stores') }}">← Vos Magasins</a>
                 </div>
 
                 <div class="rewards">
@@ -24,14 +24,25 @@
                             <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
                         </svg>
                     </div>
+                    @if($store[0]->subcategory == null)
+                        <div class="subcategorie_reward reward">
+                            <p>Pas de</p>
+                            <p>Sous-Catégorie</p>
+                            <svg>
+                                <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
+                            </svg>
+                        </div>
+                    @else
 
-                    <div class="subcategorie_reward reward">
-                        <p>n°{{$rank_sc}}</p>
-                        <p>{{ucfirst($store[0]->subcategory->name)}}</p>
-                        <svg>
-                            <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
-                        </svg>
-                    </div>
+                        <div class="subcategorie_reward reward">
+                            <p>n°{{$rank_sc}}</p>
+                            <p>{{ucfirst($store[0]->subcategory->name)}}</p>
+                            <svg>
+                                <use xlink:href="{{asset("images/sprite.svg#reward_bg")}}"></use>
+                            </svg>
+                        </div>
+                    @endif
+
                 </div>
             </div>
 
@@ -50,7 +61,7 @@
                     <p>Avis</p>
                 </div>
                 <div class="data data_followers">
-                    <p>{{sizeof($store[0]->favorited_by)}}</p>
+                    <p>{{$store[0]->favorite_number}}</p>
                     <p>Abonnés</p>
                 </div>
             </div>
@@ -286,7 +297,7 @@
                                    value="{{isset($store) ? $store[0]->delivery_conditions: ""}}">
                         </div>
                         <input type="hidden" id="lat" name="lat" value="{{isset($store) ? $store[0]->lat: ""}}"/>
-                        <input type="hidden" id="long" name="long" value="{{isset($store) ? $store[0]->long: ""}}"/>
+                        <input type="hidden" id="long" name="long" value="{{isset($store) ? $store[0]->lon: ""}}"/>
                     </div>
                 </div>
 
@@ -315,7 +326,7 @@
                         <div class="input-row">
                             <label for="subcategory_id">Sous-catégorie</label>
                             <select name="subcategory_id" id="subcategory_id" class="cat">
-                                @if(isset($store))
+                                @if(isset($store) && $store[0]->subcategory != null)
                                     <option
                                         value="{{$store[0]->subcategory_id}}">{{$store[0]->subcategory->name}}</option>
                                 @else
@@ -372,9 +383,6 @@
             </form>
         </div>
     </div>
-
-
-
 
 
 

@@ -174,7 +174,6 @@ class ManagerController extends Controller
             $store->subcategory_id = $request->input('subcategory_id');
         }
 
-
         //$store->subcategory_id = $request->input('subcategory_id');
         $store->opening_hours = $request->input('opening_hours');
         $store->siret = $request->input('siret');
