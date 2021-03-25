@@ -52,8 +52,10 @@
       div {
          margin: 5px 0;
 
-         span > svg {
+         .info_icon {
             width: 16px;
+             display: inline-flex;
+             justify-content: center;
             color: #E4534B;
          }
       }
