@@ -14,12 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/stores.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/stores_add.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.min.css') }}" rel="stylesheet">
 
 @stack('styles')
 
@@ -28,6 +23,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/06dfa3cb1d.js" crossorigin="anonymous"></script>
 
     <!-- Importation de LeafLet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
@@ -128,9 +126,7 @@
     </div>
 </body>
    <!-- Scripts -->
-   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="Nzhw9TVU"></script>
-   <script src="{{ asset('js/app.js') }}" defer></script>
-   <script src="{{ asset('js/navbar.js') }}" defer></script>
+   <script src="{{ asset('js/main.min.js') }}" defer></script>
 
 @stack('scripts')
 

@@ -991,8 +991,10 @@ body {
 .popup .popup_info div {
   margin: 5px 0;
 }
-.popup .popup_info div svg {
+.popup .popup_info div .info_icon {
   width: 16px;
+  display: inline-flex;
+  justify-content: center;
   color: #E4534B;
 }
 .popup .popup_body {

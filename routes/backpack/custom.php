@@ -27,4 +27,7 @@ Route::group([
     Route::crud('rating', 'RatingCrudController');
     Route::crud('subcategory', 'SubcategoryCrudController');
     Route::crud('store', 'StoreCrudController');
+    Route::get('charts/daily-users', 'Charts\DailyUsersChartController@response')->name('charts.daily-users.index');
+    Route::get('charts/weekly-stores', 'Charts\WeeklyStoresChartController@response')->name('charts.weekly-stores.index');
+    Route::get('charts/weekly-ratings', 'Charts\WeeklyRatingsChartController@response')->name('charts.weekly-ratings.index');
 }); // this should be the absolute last line of this file

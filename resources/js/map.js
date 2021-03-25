@@ -392,7 +392,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
                   <span class="r_store_name">${store.ratings[i].user.firstname}</span>
                   <span class="r_rating">
                   <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
-                  <p>${store.ratings[i].rating}/5</p>
+                  ${store.ratings[i].rating}/5
                   </span>
                   <div class="r_comment">
                   <svg class="big_icon quote"><use xlink:href="images/sprite.svg#quote" </svg>
@@ -407,7 +407,7 @@ async function nearStores(coord, cat = 0, subcat = 0) {
                   <span class="r_store_name">${store.ratings[i].user.firstname}</span>
                   <span class="r_rating">
                   <svg class="small_icon with_label"><use xlink:href="images/sprite.svg#star"></use></svg>
-                  <p>${store.ratings[i].rating}/5</p>
+                  ${store.ratings[i].rating}/5
                   </span>
                   `;
                }
