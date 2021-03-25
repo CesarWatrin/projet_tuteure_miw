@@ -144,6 +144,7 @@ class RatingCrudController extends CrudController
     public function show($id)
     {
         $this->crud->set('show.setFromDb', false);
+        $this->crud->addButton('line', 'remove_report', 'view', 'crud::buttons.remove_report', 'end');
 
         $content = $this->traitShow($id);
 
