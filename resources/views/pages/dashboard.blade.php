@@ -114,7 +114,6 @@
                 <div class="modifCom">
                     <button onclick="location.href = '/map?lat=' + {{$store[0]->lat}} + '&lon=' + {{$store[0]->lon}};"  class="view_shop">Voir votre commerce</button>
                     <button onclick="showForm()" class="view_shop2">Modifier votre commerce</button>
-                    <button class="view_shop3">Desactiver votre commerce</button>
                 </div>
             </div>
 
