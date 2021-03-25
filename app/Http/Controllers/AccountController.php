@@ -6,6 +6,7 @@ use App\Models\Rating;
 use App\Models\Store;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
@@ -63,6 +64,29 @@ class AccountController extends Controller
         Auth::user()->save();
 
         return redirect()->route('account')->with('success', 'Profil modifié avec succès.');
+    }
+
+    public function editPassword() {
+        return view('pages.password_edit', ['user' => Auth::user()]);
+    }
+
+    public function updatePassword(Request $request) {
+
+        $messages = [
+            'current_password.password' => 'Le mot de passe actuel est incorrect.',
+            'password.min:8' => 'Le nouveau mot de passe doit contenir au moins 8 caractères.'
+        ];
+
+        $this->validate($request, [
+            'current_password' => 'password',
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], $messages);
+
+        Auth::user()->password = Hash::make($request->input('password'));
+
+        Auth::user()->save();
+
+        return redirect()->route('account')->with('success', 'Mot de passe modifié avec succès.');
     }
 
     public function commentscode() {
