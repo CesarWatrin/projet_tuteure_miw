@@ -1,4 +1,4 @@
-.info_shop{
+/*.info_shop{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -162,12 +162,187 @@
     }
 }
 
+.infos_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    input{
+        width: 125px;
+        height: 50px;
+        border: 0;
+        border-radius: 15px;
+        color: $white;
+        font-family: Nunito;
+    }
+    .reset{
+        background-color: $dark_red;
+    }
+    .submit{
+        background-color: $dark_blue;
+   }
 
-/*.infos_active{
-    position: relative;
-    transform: translateX(0%);
-    transition: 1s ease-in-out;
 }*/
+.info_shop{
+    margin-top: 100px;
+}
+
+h2{
+    color: $dark_blue;
+    font-family: "Yeseva One";
+    font-size: 30px;
+    text-align: center;
+}
+
+.infos_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    button{
+        color: $white;
+        height: 50px;
+        width: 200px;
+        border-radius: 15px;
+        border: 2px solid $dark_blue;
+        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.15);
+        margin-bottom: 15px;
+        padding-left: 10px;
+        background-color: $dark_blue;
+    }
+    button:hover{
+        background-color: $light_blue;
+    }
+}
+
+.input-file{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    input{
+        margin-top: 10px;
+    }
+}
+
+.orange_requiered{
+    color: #E4534B;
+
+}
+
+h1
+{
+    font-family: 'Yeseva One', cursive;
+    color: #020B5D;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
+
+}
+
+.validate
+{
+    background-color: #feb3b1;
+    width: 80%;
+    max-width: 500px;
+    height: 50px;
+    box-shadow: 0 2px 9px 0 rgb(228 83 75 / 20%);
+    font-size: 1rem;
+    border-radius: 15px;
+    color: #FFFFFF;
+    border: none;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.input-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+
+    p{
+        color: #475BF5;
+        margin-bottom: 2px;
+    }
+
+
+    input, textarea, select{
+        width: 80%;
+        max-width: 500px;
+        margin: 5px auto;
+        height: 50px;
+        font-size: 1rem;
+        border: solid #475BF5 1px;
+        border-radius: 15px;
+        color: #475BF5;
+        padding: 0 20px;
+        box-shadow: 0 2px 9px 0 rgba(#475BF5, 0.2);
+    }
+
+
+    input::placeholder{
+        color: #96B4F4;
+    }
+
+    textarea::placeholder{
+        color: #96B4F4;
+    }
+
+    .cke_chrome{
+        font-size: 1rem;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0 2px 9px 0 rgba(#475BF5, 0.2);
+    }
+
+
+
+    textarea{
+        height: 100px;
+        padding-top: 10px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    .livraison_button {
+        width: 80%;
+        max-width: 500px;
+        margin: 0 auto;
+        //background-color: $normal-red;
+    }
+    .livraison_radio {
+        display: none;
+    }
+    .livraison_radio:checked ~ .livraison_label {
+        color: white;
+        background-color: $normal-blue;
+    }
+    .livraison_label {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        border: solid $normal-blue 1px;
+        border-radius: 15px;
+        color: $normal-blue;
+        background-color: $white;
+        padding: 5px 20px;
+        box-shadow: 0 2px 9px 0 rgba($light-blue, 0.2);
+    }
+    .livraison_titre {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
 
 .infos_buttons{
     display: flex;
@@ -191,15 +366,3 @@
         background-color: $dark_blue;
     }
 }
-
-@media (min-width: 576px) {
-
-}
-
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 992px) {
-
-
-}
-
