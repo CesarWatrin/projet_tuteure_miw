@@ -29,7 +29,6 @@
                 },
             },
 		}).then((value) => {
-		    console.log(value);
 			if (value) {
 				$.ajax({
 			      url: route,

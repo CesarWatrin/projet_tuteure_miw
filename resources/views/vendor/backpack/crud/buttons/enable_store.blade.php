@@ -22,7 +22,6 @@
 		  icon: "info",
 		  buttons: ["{!! trans('backpack::crud.cancel') !!}", "{!! trans('macyo_custom.enable_store') !!}"],
 		}).then((value) => {
-		    console.log(value);
 			if (value) {
 				$.ajax({
 			      url: route,
