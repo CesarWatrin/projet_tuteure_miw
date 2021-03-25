@@ -21,7 +21,6 @@
 		  text: "{!! trans('macyo_custom.remove_report_confirm') !!}",
 		  icon: "info",
 		  buttons: ["{!! trans('backpack::crud.cancel') !!}", "{!! trans('backpack::crud.delete') !!}"],
-		  dangerMode: true,
 		}).then((value) => {
 		    console.log(route);
 			if (value) {
