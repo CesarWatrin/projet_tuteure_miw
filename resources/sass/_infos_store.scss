@@ -14,6 +14,7 @@ h2{
     flex-direction: column;
     align-items: center;
     margin-bottom: 25px;
+
     button{
         color: $white;
         height: 50px;
@@ -25,10 +26,23 @@ h2{
         margin-bottom: 15px;
         padding-left: 10px;
         background-color: $dark_blue;
+        margin: 0 10px;
     }
     button:hover{
         box-shadow: 0 2px 9px 0 rgba($light-blue, 0.6);
         cursor: pointer;
+    }
+    .view_shop2{
+        background-color: #475bf5;
+        border-color: #475bf5;
+    }
+    .view_shop3{
+        background-color: #ff847c;
+        border-color: #ff847c;
+    }
+    .modifCom
+    {
+        display: flex;
     }
 }
 
