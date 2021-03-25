@@ -87,7 +87,7 @@ class SubcategoryCrudController extends CrudController
                 $this->crud->addClause('whereDoesntHave', 'stores');
             });
 
-        //$this->crud->denyAccess('show');
+        $this->crud->denyAccess('show');
 
         $this->crud->removeButton('delete');
         $this->crud->addButton('line', 'delete', 'view', 'crud::buttons.delete_if_no_children', 'end');
