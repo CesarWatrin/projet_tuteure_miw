@@ -37,15 +37,15 @@
             <h4>Infos pratiques</h4>
          </div>
          <div>
-            <span><i class="fas fa-map-marker-alt"></i></span>
+            <span class="info_icon"><i class="fas fa-map-marker-alt"></i></span>
             <span id="store_address">Adresse</span>
          </div>
          <div>
-            <span><i id="delivery_check" class="fas fa-check"></i></span>
+            <span class="info_icon"><i id="delivery_check" class="fas fa-check"></i></span>
             <span id="store_delivery">Livraison possible</span>
          </div>
          <div>
-            <span><i id="delivery_check" class="fas fa-calendar-alt"></i></span>
+            <span class="info_icon"><i id="delivery_check" class="fas fa-calendar-alt"></i></span>
             <span id="store_schedule">Tous les jours : 11h-14h - 18h-23h</span>
          </div>
          <div>
@@ -58,15 +58,15 @@
             <h4>Contact</h4>
          </div>
          <div>
-            <span><i class="fas fa-phone-alt"></i> </span>
+            <span class="info_icon"><i class="fas fa-phone-alt"></i> </span>
             <span id="store_tel">06 01 32 59 89</span>
          </div>
          <div>
-            <span><i class="fas fa-envelope"></i></span>
+            <span class="info_icon"><i class="fas fa-envelope"></i></span>
             <span id="store_mail">magasin.macyo@hotmail.com</span>
          </div>
          <div>
-            <span><i class="fas fa-globe"></i> </span>
+            <span class="info_icon"><i class="fas fa-globe"></i> </span>
             <span><a id="store_website" target="_blank" href="https://cesarwatrin.fr">Accéder au site web</a></span>
          </div>
          <div>
