@@ -4,7 +4,7 @@
 
 ## ☑️ Le projet
 
-Dans le cadre de la Licence Professionnelle MIW à Gap, nous avons réalisé pendant 12 semaines par groupe de 4 étudiants, un site web dédié au Click and Collect pour les petits commerçants en France.
+Dans le cadre de la Licence Professionnelle MIW à Gap, nous avons réalisé pendant 12 semaines par groupe de 4 étudiants, un site web dédié au Click and Drive pour les petits/grands commerçants en France.
 
 Le but étant de permettre à n'importe quel gérant de magasin de se créer un compte et de pouvoir y renseigner les informations relatives à son ou ses commerces. Il peut par la suite gérer ses commerces ainsi que gérer les avis déposés par les consommateurs.
 
